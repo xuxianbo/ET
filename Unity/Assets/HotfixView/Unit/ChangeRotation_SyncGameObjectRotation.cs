@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using ET;
+using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
-    public class ChangeRotation_SyncGameObjectRotation: AEvent<EventType.ChangeRotation>
+    public class ChangeRotation_SyncGameObjectRotation: AEvent<HotfixEventType.ChangeRotation>
     {
-        protected override async ETTask Run(EventType.ChangeRotation args)
+        protected override async ETTask Run(HotfixEventType.ChangeRotation args)
         {
             Transform transform = args.Unit.GetComponent<GameObjectComponent>().GameObject.transform;
             transform.rotation = args.Unit.Rotation;

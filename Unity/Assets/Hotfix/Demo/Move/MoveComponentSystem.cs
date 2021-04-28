@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using ET;
 using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
     [ObjectSystem]
     public class MoveComponentDestroySystem: DestroySystem<MoveComponent>
@@ -80,7 +81,7 @@ namespace ET
             ETTaskCompletionSource<bool> tcs = new ETTaskCompletionSource<bool>();
             self.Callback = (ret) => { tcs.SetResult(ret); };
 
-            Game.EventSystem.Publish(new EventType.MoveStart(){Unit = self.GetParent<Unit>()}).Coroutine();
+            Game.EventSystem.Publish(new HotfixEventType.MoveStart(){Unit = self.GetParent<Unit>()}).Coroutine();
             
             self.StartMove();
             
@@ -102,7 +103,7 @@ namespace ET
 
             if (moveRet)
             {
-                Game.EventSystem.Publish(new EventType.MoveStop(){Unit = self.GetParent<Unit>()}).Coroutine();
+                Game.EventSystem.Publish(new HotfixEventType.MoveStop(){Unit = self.GetParent<Unit>()}).Coroutine();
             }
             return moveRet;
         }

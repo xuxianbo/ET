@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using ET;
+using UnityEngine;
 using UnityEngine.UI;
 
-namespace ET
+namespace ETHotfix
 {
     public class UiLoadingComponentAwakeSystem : AwakeSystem<UILoadingComponent>
     {

@@ -1,4 +1,6 @@
-namespace ET
+using ET;
+
+namespace ETHotfix
 {
     public static class SceneFactory
     {
@@ -11,7 +13,7 @@ namespace ET
             zoneScene.AddComponent<AIComponent, int>(1);
             
             // UI层的初始化
-            await Game.EventSystem.Publish(new EventType.AfterCreateZoneScene() {ZoneScene = zoneScene});
+            await Game.EventSystem.Publish(new HotfixEventType.AfterCreateZoneScene() {ZoneScene = zoneScene});
             
             return zoneScene;
         }

@@ -1,4 +1,6 @@
-namespace ET
+using ET;
+
+namespace ETHotfix
 {
     public static class UIHelper
     {

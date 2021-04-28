@@ -1,8 +1,9 @@
 ﻿﻿using System;
 using System.IO;
 using System.Net;
+ using ET;
 
-namespace ET
+ namespace ETHotfix
 {
     [ObjectSystem]
     public class NetKcpComponentAwakeSystem: AwakeSystem<NetKcpComponent>

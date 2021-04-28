@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using ET;
 
-namespace ET
+namespace ETHotfix
 {
 	public class UIComponentAwakeSystem : AwakeSystem<UIComponent>
 	{

@@ -1,6 +1,7 @@
-﻿using UnityEngine.SceneManagement;
+﻿using ET;
+using UnityEngine.SceneManagement;
 
-namespace ET
+namespace ETHotfix
 {
     public class SceneChangeComponentUpdateSystem: UpdateSystem<SceneChangeComponent>
     {

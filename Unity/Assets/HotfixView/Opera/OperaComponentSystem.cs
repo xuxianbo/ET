@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
     public class OperaComponentAwakeSystem : AwakeSystem<OperaComponent>
     {

@@ -1,6 +1,7 @@
 using System;
+using ET;
 
-namespace ET
+namespace ETHotfix
 {
     [ObjectSystem]
     public class PingComponentAwakeSystem: AwakeSystem<PingComponent>
@@ -35,7 +36,7 @@ namespace ET
                     long time2 = TimeHelper.ClientNow();
                     self.Ping = time2 - time1;
                     
-                    Game.TimeInfo.ServerMinusClientTime = response.Time + (time2 - time1) / 2 - time2;
+                    ET.Game.TimeInfo.ServerMinusClientTime = response.Time + (time2 - time1) / 2 - time2;
 
                     await TimerComponent.Instance.WaitAsync(2000);
                 }

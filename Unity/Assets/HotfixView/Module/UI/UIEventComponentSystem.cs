@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using ET;
 using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
 	public class UIEventComponentAwakeSystem : AwakeSystem<UIEventComponent>
 	{

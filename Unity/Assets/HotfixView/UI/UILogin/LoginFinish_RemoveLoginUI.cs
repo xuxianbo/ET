@@ -1,10 +1,12 @@
 ﻿
 
-namespace ET
+using ET;
+
+namespace ETHotfix
 {
-	public class LoginFinish_RemoveLoginUI: AEvent<EventType.LoginFinish>
+	public class LoginFinish_RemoveLoginUI: AEvent<HotfixEventType.LoginFinish>
 	{
-		protected override async ETTask Run(EventType.LoginFinish args)
+		protected override async ETTask Run(HotfixEventType.LoginFinish args)
 		{
 			await UIHelper.Remove(args.ZoneScene, UIType.UILogin);
 		}

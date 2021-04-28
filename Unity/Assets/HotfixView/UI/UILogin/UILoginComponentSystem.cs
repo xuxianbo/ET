@@ -4,7 +4,7 @@ using System.Net;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ET
+namespace ETHotfix
 {
 	public class UILoginComponentAwakeSystem : AwakeSystem<UILoginComponent>
 	{

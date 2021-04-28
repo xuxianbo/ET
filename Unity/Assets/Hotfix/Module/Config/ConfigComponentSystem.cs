@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ET;
 
-namespace ET
+namespace ETHotfix
 {
     public class ConfigAwakeSystem : AwakeSystem<ConfigComponent>
     {

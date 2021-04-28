@@ -25,6 +25,16 @@ namespace ET
                 return scene;
             }
         }
+        
+        private static Hotfix hotfix;
+
+        public static Hotfix Hotfix
+        {
+            get
+            {
+                return hotfix ??= new Hotfix();
+            }
+        }
 
         public static ObjectPool ObjectPool => ObjectPool.Instance;
 

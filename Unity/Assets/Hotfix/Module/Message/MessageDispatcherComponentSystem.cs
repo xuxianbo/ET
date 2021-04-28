@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using ET;
 
-namespace ET
+namespace ETHotfix
 {
-    [ObjectSystem]
     public class MessageDispatcherComponentAwakeSystem: AwakeSystem<MessageDispatcherComponent>
     {
         public override void Awake(MessageDispatcherComponent self)
@@ -12,8 +12,7 @@ namespace ET
             self.Load();
         }
     }
-
-    [ObjectSystem]
+    
     public class MessageDispatcherComponentLoadSystem: LoadSystem<MessageDispatcherComponent>
     {
         public override void Load(MessageDispatcherComponent self)
@@ -21,8 +20,7 @@ namespace ET
             self.Load();
         }
     }
-
-    [ObjectSystem]
+    
     public class MessageDispatcherComponentDestroySystem: DestroySystem<MessageDispatcherComponent>
     {
         public override void Destroy(MessageDispatcherComponent self)

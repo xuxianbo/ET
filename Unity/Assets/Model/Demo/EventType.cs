@@ -4,16 +4,7 @@
     {
         public struct AppStart
         {
-        }
-
-        public struct ChangePosition
-        {
-            public Unit Unit;
-        }
-
-        public struct ChangeRotation
-        {
-            public Unit Unit;
+           public int i;
         }
 
         public struct PingChange
@@ -55,21 +46,6 @@
         public struct EnterMapFinish
         {
             public Scene ZoneScene;
-        }
-
-        public struct AfterUnitCreate
-        {
-            public Unit Unit;
-        }
-        
-        public struct MoveStart
-        {
-            public Unit Unit;
-        }
-
-        public struct MoveStop
-        {
-            public Unit Unit;
         }
     }
 }

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading;
+using ET;
 
-namespace ET
+namespace ETHotfix
 {
     [ObjectSystem]
     public class NetThreadComponentAwakeSystem: AwakeSystem<NetThreadComponent>

@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using ET;
+using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
-    public class AfterUnitCreate_CreateUnitView: AEvent<EventType.AfterUnitCreate>
+    public class AfterUnitCreate_CreateUnitView: AEvent<HotfixEventType.AfterUnitCreate>
     {
-        protected override async ETTask Run(EventType.AfterUnitCreate args)
+        protected override async ETTask Run(HotfixEventType.AfterUnitCreate args)
         {
             // Unit View层
             // 这里可以改成异步加载，demo就不搞了

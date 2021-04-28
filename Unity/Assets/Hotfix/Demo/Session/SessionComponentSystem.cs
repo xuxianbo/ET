@@ -1,4 +1,4 @@
-﻿namespace ET
+﻿namespace ETHotfix
 {
 	public class SessionComponentDestroySystem: DestroySystem<SessionComponent>
 	{

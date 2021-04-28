@@ -1,9 +1,9 @@
 ﻿
+using ET;
 using Vector3 = UnityEngine.Vector3;
 
-namespace ET
+namespace ETHotfix
 {
-	[MessageHandler]
 	public class M2C_CreateUnitsHandler : AMHandler<M2C_CreateUnits>
 	{
 		protected override async ETVoid Run(Session session, M2C_CreateUnits message)

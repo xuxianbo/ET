@@ -1,8 +1,10 @@
-﻿namespace ET
+﻿using ET;
+
+namespace ETHotfix
 {
-    public class LoadingFinishEvent_RemoveLoadingUI : AEvent<EventType.LoadingFinish>
+    public class LoadingFinishEvent_RemoveLoadingUI : AEvent<HotfixEventType.LoadingFinish>
     {
-        protected override async ETTask Run(EventType.LoadingFinish args)
+        protected override async ETTask Run(HotfixEventType.LoadingFinish args)
         {
             await UIHelper.Create(args.Scene, UIType.UILoading);
         }

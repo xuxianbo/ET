@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
     public static class XunLuoPathComponentSystem
     {

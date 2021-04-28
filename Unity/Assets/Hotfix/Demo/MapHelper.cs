@@ -1,7 +1,8 @@
 using System;
+using ET;
 using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
     public static class MapHelper
     {
@@ -13,7 +14,7 @@ namespace ET
 
                 UnitComponent unitComponent = zoneScene.GetComponent<UnitComponent>();
                 unitComponent.MyUnit = unitComponent.Get(g2CEnterMap.UnitId);
-                Game.EventSystem.Publish(new EventType.EnterMapFinish() {ZoneScene = zoneScene}).Coroutine();
+                Game.EventSystem.Publish(new HotfixEventType.EnterMapFinish() {ZoneScene = zoneScene}).Coroutine();
             }
             catch (Exception e)
             {

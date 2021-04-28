@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using ET;
+using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
-    public class LoadingBeginEvent_CreateLoadingUI : AEvent<EventType.LoadingBegin>
+    public class LoadingBeginEvent_CreateLoadingUI : AEvent<HotfixEventType.LoadingBegin>
     {
-        protected override async ETTask Run(EventType.LoadingBegin args)
+        protected override async ETTask Run(HotfixEventType.LoadingBegin args)
         {
             await UIHelper.Create(args.Scene, UIType.UILoading);
         }

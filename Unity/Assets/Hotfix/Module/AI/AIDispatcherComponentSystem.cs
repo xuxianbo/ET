@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ET;
 
-namespace ET
+namespace ETHotfix
 {
     [ObjectSystem]
     public class AIDispatcherComponentAwakeSystem: AwakeSystem<AIDispatcherComponent>

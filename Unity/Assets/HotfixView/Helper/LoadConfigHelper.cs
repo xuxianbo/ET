@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.IO;
+using ET;
 using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
     public static class LoadConfigHelper
     {

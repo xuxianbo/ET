@@ -1,7 +1,8 @@
 ﻿using System;
+using ET;
 using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
     [UIEvent(UIType.UILobby)]
     public class UILobbyEvent: AUIEvent

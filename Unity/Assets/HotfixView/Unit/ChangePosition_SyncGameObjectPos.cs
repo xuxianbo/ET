@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using ET;
+using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
-    public class ChangePosition_SyncGameObjectPos: AEvent<EventType.ChangePosition>
+    public class ChangePosition_SyncGameObjectPos: AEvent<HotfixEventType.ChangePosition>
     {
-        protected override async ETTask Run(EventType.ChangePosition args)
+        protected override async ETTask Run(HotfixEventType.ChangePosition args)
         {
             GameObjectComponent gameObjectComponent = args.Unit.GetComponent<GameObjectComponent>();
             if (gameObjectComponent == null)

@@ -1,7 +1,8 @@
 using System;
+using ET;
 using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
     [ObjectSystem]
     public class AIComponentAwakeSystem: AwakeSystem<AIComponent, int>

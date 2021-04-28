@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using ET;
 using UnityEngine;
 
-namespace ET
+namespace ETHotfix
 {
     public static class MoveHelper
     {
