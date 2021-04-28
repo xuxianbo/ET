@@ -38,8 +38,8 @@ namespace ET
                 Game.Scene.AddComponent<ResourcesComponent>();
 
                 Debug.Log("下载热更包，其中包含热更用的dll文件");
-
                 Game.Hotfix.LoadHotfixAssembly();
+                
                 Debug.Log("进入热更初始化");
                 Game.Hotfix.GotoHotfix();
 

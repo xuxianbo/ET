@@ -8,6 +8,7 @@ namespace ET
 	{
 		protected override async ETTask Run(Session session, C2G_EnterMap request, G2C_EnterMap response, Action reply)
 		{
+			Log.Info("Enter Map-----------------------------");
 			Player player = session.GetComponent<SessionPlayerComponent>().Player;
 			// 在map服务器上创建战斗Unit
 			long mapInstanceId = StartSceneConfigCategory.Instance.GetBySceneName(session.DomainZone(), "Map").SceneId;

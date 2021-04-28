@@ -10,6 +10,7 @@ namespace ETHotfix
         {
             try
             {
+                Log.Info("Prepare to enter map;");
                 G2C_EnterMap g2CEnterMap = await zoneScene.GetComponent<SessionComponent>().Session.Call(new C2G_EnterMap()) as G2C_EnterMap;
 
                 UnitComponent unitComponent = zoneScene.GetComponent<UnitComponent>();
