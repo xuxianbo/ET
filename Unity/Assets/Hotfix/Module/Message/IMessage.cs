@@ -1,4 +1,4 @@
-﻿namespace ET
+﻿namespace ETHotfix
 {
     public interface IMessage
     {

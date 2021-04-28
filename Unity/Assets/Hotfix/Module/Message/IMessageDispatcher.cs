@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace ET
+namespace ETHotfix
 {
     public interface IMessageDispatcher
     {
