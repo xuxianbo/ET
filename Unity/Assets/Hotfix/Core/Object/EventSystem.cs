@@ -21,8 +21,6 @@ namespace ETHotfix
 
         private readonly Dictionary<long, Entity> allComponents = new Dictionary<long, Entity>();
 
-        private readonly Dictionary<string, Assembly> assemblies = new Dictionary<string, Assembly>();
-
         private readonly UnOrderMultiMapSet<Type, Type> types = new UnOrderMultiMapSet<Type, Type>();
 
         private readonly Dictionary<Type, List<IEvent>> allEvents = new Dictionary<Type, List<IEvent>>();
@@ -54,29 +52,63 @@ namespace ETHotfix
         private Queue<long> lateUpdates = new Queue<long>();
         private Queue<long> lateUpdates2 = new Queue<long>();
 
-        public void Add(Assembly assembly)
+        /// <summary>
+        /// 用于注册热更层Attribute
+        /// </summary>
+        /// <param name="attribute"></param>
+        public void RegisterAttribute<T>() where T : BaseAttribute
         {
-            this.assemblies[assembly.ManifestModule.ScopeName] = assembly;
-            this.types.Clear();
-            foreach (Assembly value in this.assemblies.Values)
+            List<Type> hotfixTypes = ET.Game.Hotfix.GetHotfixTypes();
+            //List<Type> hotfixViewTypes = ET.Game.Hotfix.GetHotfixViewTypes();
+
+            void RegisterAttributeInternal(List<Type> types)
             {
-                foreach (Type type in value.GetTypes())
+                foreach (Type type in types)
                 {
                     if (type.IsAbstract)
                     {
                         continue;
                     }
 
-                    object[] objects = type.GetCustomAttributes(typeof (BaseAttribute), true);
-                    if (objects.Length == 0)
-                    {
-                        continue;
-                    }
+                    object[] targetAttribute = type.GetCustomAttributes(typeof(T), false);
 
-                    foreach (BaseAttribute baseAttribute in objects)
+                    if (targetAttribute.Length > 0)
                     {
-                        this.types.Add(baseAttribute.AttributeType, type);
+                        foreach (BaseAttribute objectSystem in targetAttribute)
+                        {
+                            this.types.Add(objectSystem.AttributeType, type);
+                        }
                     }
+                }
+            }
+
+            RegisterAttributeInternal(hotfixTypes);
+            //RegisterAttributeInternal(hotfixViewTypes);
+        }
+
+        public void Add(List<Type> hotfixTypes)
+        {
+            foreach (Type type in hotfixTypes)
+            {
+                if (type.IsAbstract)
+                {
+                    continue;
+                }
+
+                object[] objects_ObjectSystemAttribute = type.GetCustomAttributes(typeof (ObjectSystemAttribute), false);
+
+                if (objects_ObjectSystemAttribute.Length > 0)
+                {
+                    Log.Info(type.ToString());
+                    this.types.Add(typeof (ObjectSystemAttribute), type);
+                }
+
+                object[] objects_EventAttribute = type.GetCustomAttributes(typeof (EventAttribute), false);
+
+                if (objects_EventAttribute.Length > 0)
+                {
+                    Log.Info(type.ToString());
+                    this.types.Add(typeof (EventAttribute), type);
                 }
             }
 
@@ -88,7 +120,7 @@ namespace ETHotfix
             this.changeSystems.Clear();
             this.destroySystems.Clear();
             this.deserializeSystems.Clear();
-
+            
             foreach (Type type in this.GetTypes(typeof (ObjectSystemAttribute)))
             {
                 object obj = Activator.CreateInstance(type);
@@ -121,11 +153,11 @@ namespace ETHotfix
                 }
             }
 
-            this.allEvents.Clear();
-            foreach (Type type in types[typeof (EventAttribute)])
+            allEvents.Clear();
+            foreach (Type type in this.GetTypes(typeof (EventAttribute)))
             {
                 Log.Info(type.ToString());
-                object eventInstance =  Activator.CreateInstance(type);
+                object eventInstance = Activator.CreateInstance(type);
                 Log.Info($"事件实例的真正类型： {eventInstance.GetType().FullName}");
                 IEvent obj = Activator.CreateInstance(type) as IEvent;
                 if (obj == null)
@@ -152,11 +184,6 @@ namespace ETHotfix
             this.Load();
         }
 
-        public Assembly GetAssembly(string name)
-        {
-            return this.assemblies[name];
-        }
-
         public void RegisterEvent(Type eventType, IEvent e)
         {
             if (!this.allEvents.ContainsKey(eventType))
@@ -175,17 +202,6 @@ namespace ETHotfix
             }
 
             return this.types[systemAttributeType];
-        }
-
-        public List<Type> GetTypes()
-        {
-            List<Type> allTypes = new List<Type>();
-            foreach (Assembly assembly in this.assemblies.Values)
-            {
-                allTypes.AddRange(assembly.GetTypes());
-            }
-
-            return allTypes;
         }
 
         public void RegisterSystem(Entity component, bool isRegister = true)

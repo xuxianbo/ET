@@ -28,6 +28,7 @@ namespace ETHotfix
 		public static async ETTask LoadAsync(this ConfigComponent self)
 		{
 			self.AllConfig.Clear();
+			Game.EventSystem.RegisterAttribute<ConfigAttribute>();
 			HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
 			
 			Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();

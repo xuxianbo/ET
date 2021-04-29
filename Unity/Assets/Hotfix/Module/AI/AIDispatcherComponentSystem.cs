@@ -39,7 +39,7 @@ namespace ETHotfix
         public static void Load(this AIDispatcherComponent self)
         {
             self.AIHandlers.Clear();
-
+            Game.EventSystem.RegisterAttribute<AIHandlerAttribute>();
             var types = Game.EventSystem.GetTypes(typeof (AIHandlerAttribute));
             foreach (Type type in types)
             {

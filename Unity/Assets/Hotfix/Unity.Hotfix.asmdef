@@ -1,8 +1,10 @@
 {
     "name": "Unity.Hotfix",
+    "rootNamespace": "",
     "references": [
         "Unity.Model",
-        "Unity.ThirdParty"
+        "Unity.ThirdParty",
+        "Unity.ModelView"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

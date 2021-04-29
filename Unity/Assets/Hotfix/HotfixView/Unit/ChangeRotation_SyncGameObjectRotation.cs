@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace ETHotfix
 {
-
-    [Event]    public class ChangeRotation_SyncGameObjectRotation: AEvent<HotfixEventType.ChangeRotation>
+    [Event]    
+    public class ChangeRotation_SyncGameObjectRotation: AEvent<HotfixEventType.ChangeRotation>
     {
         protected override async ETTask Run(HotfixEventType.ChangeRotation args)
         {

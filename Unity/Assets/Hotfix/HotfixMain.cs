@@ -20,12 +20,10 @@ namespace ETHotfix
             ET.Game.Hotfix.HotfixUpdate = () => { Update(); };
             ET.Game.Hotfix.LateUpdate = () => { LateUpdate(); };
             ProtobufHelper.Init();
-            Assembly[] assemblys = { Assembly.Load("Unity.Hotfix"), Assembly.Load("Unity.HotfixView") };
 
-            foreach (Assembly assembly in assemblys)
-            {
-                Game.EventSystem.Add(assembly);
-            }
+            //Game.EventSystem.Add(ET.Game.Hotfix.GetHotfixViewTypes());
+            Game.EventSystem.Add(ET.Game.Hotfix.GetHotfixTypes());
+
 
             Debug.Log("Hotfix初始化完成");
         }

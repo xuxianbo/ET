@@ -41,6 +41,7 @@ namespace ETHotfix
 		{
 			this.allWatchers = new Dictionary<NumericType, List<INumericWatcher>>();
 
+			Game.EventSystem.RegisterAttribute<NumericWatcherAttribute>();
 			HashSet<Type> types = Game.EventSystem.GetTypes(typeof(NumericWatcherAttribute));
 			foreach (Type type in types)
 			{

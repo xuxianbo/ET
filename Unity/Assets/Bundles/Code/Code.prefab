@@ -48,7 +48,3 @@ MonoBehaviour:
     gameObject: {fileID: 4900000, guid: 3f4c4a599bfe3e84a96edf584aea71ab, type: 3}
   - key: Hotfix.pdb
     gameObject: {fileID: 4900000, guid: 364c1dd355ec54845a54da1ed5b00cd9, type: 3}
-  - key: HotfixView.dll
-    gameObject: {fileID: 4900000, guid: d876f468dc8f14a4caeed701595bffb2, type: 3}
-  - key: HotfixView.pdb
-    gameObject: {fileID: 4900000, guid: ee8b3b022154a074699d29067164e959, type: 3}

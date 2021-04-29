@@ -3,7 +3,8 @@
 namespace ETHotfix
 {
 
-    [Event]    public class LoadingFinishEvent_RemoveLoadingUI : AEvent<HotfixEventType.LoadingFinish>
+    [Event]    
+    public class LoadingFinishEvent_RemoveLoadingUI : AEvent<HotfixEventType.LoadingFinish>
     {
         protected override async ETTask Run(HotfixEventType.LoadingFinish args)
         {

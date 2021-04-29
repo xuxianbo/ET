@@ -40,6 +40,7 @@ namespace ETHotfix
             this.typeOpcodes.Clear();
             this.requestResponse.Clear();
 
+            Game.EventSystem.RegisterAttribute<MessageAttribute>();
             HashSet<Type> types = Game.EventSystem.GetTypes(typeof (MessageAttribute));
             foreach (Type type in types)
             {

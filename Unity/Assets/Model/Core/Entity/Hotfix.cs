@@ -29,7 +29,7 @@ namespace ET
 
         private IStaticMethod s_hotfixInit;
         private List<Type> s_hotfixTypes;
-        private List<Type> s_hotfixViewTypes;
+        //private List<Type> s_hotfixViewTypes;
 
         public Action HotfixUpdate;
         public Action LateUpdate;
@@ -47,10 +47,10 @@ namespace ET
             return s_hotfixTypes;
         }
 
-        public List<Type> GetHotfixViewTypes()
-        {
-            return s_hotfixViewTypes;
-        }
+        // public List<Type> GetHotfixViewTypes()
+        // {
+        //     return s_hotfixViewTypes;
+        // }
 
         public void LoadHotfixAssembly()
         {
@@ -59,8 +59,8 @@ namespace ET
 
             byte[] hotfixAssBytes = code.GetComponent<ReferenceCollector>().Get<TextAsset>("Hotfix.dll").bytes;
             byte[] hotfixPdbBytes = code.GetComponent<ReferenceCollector>().Get<TextAsset>("Hotfix.pdb").bytes;
-            byte[] hotfixViewAssBytes = code.GetComponent<ReferenceCollector>().Get<TextAsset>("HotfixView.dll").bytes;
-            byte[] hotfixViewPdbBytes = code.GetComponent<ReferenceCollector>().Get<TextAsset>("HotfixView.pdb").bytes;
+            // byte[] hotfixViewAssBytes = code.GetComponent<ReferenceCollector>().Get<TextAsset>("HotfixView.dll").bytes;
+            // byte[] hotfixViewPdbBytes = code.GetComponent<ReferenceCollector>().Get<TextAsset>("HotfixView.pdb").bytes;
 
 #if ILRUNTIME
 			Log.Debug($"当前使用的是ILRuntime模式");
@@ -69,29 +69,29 @@ namespace ET
 			s_hotfixDllStream = new MemoryStream(hotfixAssBytes);
 			s_hotfixPdbStream = new MemoryStream(hotfixPdbBytes);
 			
-			s_hotfixViewDllStream = new MemoryStream(hotfixViewAssBytes);
-			s_hotfixViewPdbStream = new MemoryStream(hotfixViewPdbBytes);
+			// s_hotfixViewDllStream = new MemoryStream(hotfixViewAssBytes);
+			// s_hotfixViewPdbStream = new MemoryStream(hotfixViewPdbBytes);
 			
 			s_appDomain.LoadAssembly(s_hotfixDllStream, s_hotfixPdbStream, new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider());
-			s_appDomain.LoadAssembly(s_hotfixViewDllStream, s_hotfixViewPdbStream, new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider());
+			//s_appDomain.LoadAssembly(s_hotfixViewDllStream, s_hotfixViewPdbStream, new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider());
 
 			s_hotfixInit = new ILStaticMethod(s_appDomain, "ETHotfix.HotfixMain", "Init", 0);
 			
 			s_hotfixTypes = s_appDomain.LoadedTypes.Values.Select(x => x.ReflectionType).ToList();
-			s_hotfixViewTypes = s_appDomain.LoadedTypes.Values.Select(x => x.ReflectionType).ToList();
+			//s_hotfixViewTypes = s_appDomain.LoadedTypes.Values.Select(x => x.ReflectionType).ToList();
 
 #else
             Log.Debug($"当前使用的是Mono模式");
 
             s_hotfixAssembly = Assembly.Load(hotfixAssBytes, hotfixPdbBytes);
-            s_hotfixViewAssembly = Assembly.Load(hotfixViewAssBytes, hotfixViewPdbBytes);
+            //s_hotfixViewAssembly = Assembly.Load(hotfixViewAssBytes, hotfixViewPdbBytes);
             
             Type hotfixInit = s_hotfixAssembly.GetType("ETHotfix.HotfixMain");
             
             s_hotfixInit = new MonoStaticMethod(hotfixInit, "Init");
             
             s_hotfixTypes = s_hotfixAssembly.GetTypes().ToList();
-            s_hotfixViewTypes = s_hotfixViewAssembly.GetTypes().ToList();
+            //s_hotfixViewTypes = s_hotfixViewAssembly.GetTypes().ToList();
 #endif
 
             Game.Scene.GetComponent<ResourcesComponent>().UnloadBundle($"code.unity3d");
