@@ -17,6 +17,10 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Runtime.Serialization;
+using ILRuntime.CLR.Method;
+using ILRuntime.CLR.Utils;
+using ILRuntime.Runtime.Intepreter;
+using ILRuntime.Runtime.Stack;
 using LitJson.Extensions;
 
 namespace LitJson
@@ -1040,6 +1044,71 @@ namespace LitJson
         public static void UnregisterImporters()
         {
             custom_importers_table.Clear();
+        }
+        
+        public unsafe static void RegisterILRuntimeCLRRedirection(ILRuntime.Runtime.Enviorment.AppDomain appdomain)
+        {
+            foreach(var i in typeof(JsonMapper).GetMethods())
+            {
+                if(i.Name == "ToObject" && i.IsGenericMethodDefinition)
+                {
+                    var param = i.GetParameters();
+                    if(param[0].ParameterType == typeof(string))
+                    {
+                        appdomain.RegisterCLRMethodRedirection(i, JsonToObject);
+                    }
+                    else if(param[0].ParameterType == typeof(JsonReader))
+                    {
+                        appdomain.RegisterCLRMethodRedirection(i, JsonToObject2);
+                    }
+                    else if (param[0].ParameterType == typeof(TextReader))
+                    {
+                        appdomain.RegisterCLRMethodRedirection(i, JsonToObject3);
+                    }
+                }
+            }
+        }
+
+        public unsafe static StackObject* JsonToObject(ILIntepreter intp, StackObject* esp, IList<object> mStack, CLRMethod method, bool isNewObj)
+        {
+            ILRuntime.Runtime.Enviorment.AppDomain __domain = intp.AppDomain;
+            StackObject* ptr_of_this_method;
+            StackObject* __ret = ILIntepreter.Minus(esp, 1);
+            ptr_of_this_method = ILIntepreter.Minus(esp, 1);
+            System.String json = (System.String)typeof(System.String).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, mStack));
+            intp.Free(ptr_of_this_method);
+            var type = method.GenericArguments[0].ReflectionType;
+            var result_of_this_method = ReadValue(type, new JsonReader(json));
+
+            return ILIntepreter.PushObject(__ret, mStack, result_of_this_method);
+        }
+
+        public unsafe static StackObject* JsonToObject2(ILIntepreter intp, StackObject* esp, IList<object> mStack, CLRMethod method, bool isNewObj)
+        {
+            ILRuntime.Runtime.Enviorment.AppDomain __domain = intp.AppDomain;
+            StackObject* ptr_of_this_method;
+            StackObject* __ret = ILIntepreter.Minus(esp, 1);
+            ptr_of_this_method = ILIntepreter.Minus(esp, 1);
+            JsonReader json = (JsonReader)typeof(JsonReader).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, mStack));
+            intp.Free(ptr_of_this_method);
+            var type = method.GenericArguments[0].ReflectionType;
+            var result_of_this_method = ReadValue(type, json);
+
+            return ILIntepreter.PushObject(__ret, mStack, result_of_this_method);
+        }
+
+        public unsafe static StackObject* JsonToObject3(ILIntepreter intp, StackObject* esp, IList<object> mStack, CLRMethod method, bool isNewObj)
+        {
+            ILRuntime.Runtime.Enviorment.AppDomain __domain = intp.AppDomain;
+            StackObject* ptr_of_this_method;
+            StackObject* __ret = ILIntepreter.Minus(esp, 1);
+            ptr_of_this_method = ILIntepreter.Minus(esp, 1);
+            TextReader json = (TextReader)typeof(TextReader).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, mStack));
+            intp.Free(ptr_of_this_method);
+            var type = method.GenericArguments[0].ReflectionType;
+            var result_of_this_method = ReadValue(type, new JsonReader(json));
+
+            return ILIntepreter.PushObject(__ret, mStack, result_of_this_method);
         }
     }
 }

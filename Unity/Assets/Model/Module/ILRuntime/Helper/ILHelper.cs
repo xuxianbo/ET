@@ -82,7 +82,7 @@ namespace ET
         static void RegisterILRuntimeCLRRedirection(AppDomain appdomain)
         {
             //LitJson适配
-            //LitJson.JsonMapper.RegisterILRuntimeCLRRedirection(appdomain);
+            LitJson.JsonMapper.RegisterILRuntimeCLRRedirection(appdomain);
             //Protobuf适配
             PType.RegisterILRuntimeCLRRedirection(appdomain);
         }
