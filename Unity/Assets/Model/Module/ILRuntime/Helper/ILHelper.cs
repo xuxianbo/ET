@@ -101,6 +101,7 @@ namespace ET
         /// </summary>
         static void RegisterFunctionDelegate(AppDomain appdomain)
         {
+            appdomain.DelegateManager.RegisterFunctionDelegate<System.Object, ET.ETTask>();
         }
 
         /// <summary>
