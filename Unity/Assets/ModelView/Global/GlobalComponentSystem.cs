@@ -1,7 +1,7 @@
 using ET;
 using UnityEngine;
 
-namespace ETHotfix
+namespace ET
 {
     public class GlobalComponentAwakeSystem: AwakeSystem<GlobalComponent>
     {
