@@ -13,8 +13,8 @@ namespace ETHotfix
             self.Load();
         }
     }
-    [ObjectSystem]
     
+    [ObjectSystem]
     public class MessageDispatcherComponentLoadSystem: LoadSystem<MessageDispatcherComponent>
     {
         public override void Load(MessageDispatcherComponent self)
@@ -22,6 +22,7 @@ namespace ETHotfix
             self.Load();
         }
     }
+    
     [ObjectSystem]
     public class MessageDispatcherComponentDestroySystem: DestroySystem<MessageDispatcherComponent>
     {
@@ -40,7 +41,7 @@ namespace ETHotfix
         public static void Load(this MessageDispatcherComponent self)
         {
             self.Handlers.Clear();
-
+            Game.EventSystem.RegisterAttribute<MessageHandlerAttribute>();
             HashSet<Type> types = Game.EventSystem.GetTypes(typeof (MessageHandlerAttribute));
 
             foreach (Type type in types)

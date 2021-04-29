@@ -1,5 +1,8 @@
+using ET;
+
 namespace ETHotfix
 {
+    [ObjectSystem]
     public class UnitSystem: AwakeSystem<Unit, int>
     {
         public override void Awake(Unit self, int configId)
