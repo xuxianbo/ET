@@ -61,6 +61,7 @@ namespace ET
 
         private void LateUpdate()
         {
+            Game.Hotfix.LateUpdate?.Invoke();
             Game.EventSystem.LateUpdate();
         }
 

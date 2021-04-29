@@ -31,6 +31,7 @@ namespace ET
         private List<Type> s_hotfixViewTypes;
 
         public Action HotfixUpdate;
+        public Action LateUpdate;
 
         public void GotoHotfix()
         {

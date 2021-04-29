@@ -18,6 +18,7 @@ namespace ETHotfix
         {
             Debug.Log("HotfixMain Init！");
             ET.Game.Hotfix.HotfixUpdate = () => { Update(); };
+            ET.Game.Hotfix.LateUpdate = () => { LateUpdate(); };
             ProtobufHelper.Init();
             Assembly[] assemblys = { Assembly.Load("Unity.Hotfix"), Assembly.Load("Unity.HotfixView") };
 
@@ -27,6 +28,18 @@ namespace ETHotfix
             }
 
             Debug.Log("Hotfix初始化完成");
+        }
+
+        private static void LateUpdate()
+        {
+            try
+            {
+                Game.EventSystem.LateUpdate();
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
         }
 
         public static void Update()
