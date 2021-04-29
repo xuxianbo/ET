@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace ETHotfix
 {
+    [ObjectSystem]
     public class SceneChangeComponentUpdateSystem: UpdateSystem<SceneChangeComponent>
     {
         public override void Update(SceneChangeComponent self)
@@ -16,14 +17,14 @@ namespace ETHotfix
             {
                 return;
             }
-            
+
             ETTaskCompletionSource tcs = self.tcs;
             self.tcs = null;
             tcs.SetResult();
         }
     }
-	
-    
+
+    [ObjectSystem]
     public class SceneChangeComponentDestroySystem: DestroySystem<SceneChangeComponent>
     {
         public override void Destroy(SceneChangeComponent self)
@@ -43,14 +44,15 @@ namespace ETHotfix
             //this.loadMapOperation.allowSceneActivation = false;
             await self.tcs.Task;
         }
-        
+
         public static int Process(this SceneChangeComponent self)
         {
             if (self.loadMapOperation == null)
             {
                 return 0;
             }
-            return (int)(self.loadMapOperation.progress * 100);
+
+            return (int) (self.loadMapOperation.progress * 100);
         }
     }
 }

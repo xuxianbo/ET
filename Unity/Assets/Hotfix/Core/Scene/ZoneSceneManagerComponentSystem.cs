@@ -1,7 +1,9 @@
 ﻿using System;
+using ET;
 
 namespace ETHotfix
 {
+	[ObjectSystem]
     public class ZoneSceneManagerComponentAwakeSystem: AwakeSystem<ZoneSceneManagerComponent>
     {
         public override void Awake(ZoneSceneManagerComponent self)
@@ -10,6 +12,7 @@ namespace ETHotfix
         }
     }
     
+    [ObjectSystem]
     public class ZoneSceneManagerComponentDestroySystem: DestroySystem<ZoneSceneManagerComponent>
     {
         public override void Destroy(ZoneSceneManagerComponent self)

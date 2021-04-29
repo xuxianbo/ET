@@ -2,6 +2,7 @@ using ET;
 
 namespace ETHotfix
 {
+    [Event]    
     public class AfterCreateZoneScene_AddComponent: AEvent<HotfixEventType.AfterCreateZoneScene>
     {
         protected override async ETTask Run(HotfixEventType.AfterCreateZoneScene args)

@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace ETHotfix
 {
+	[ObjectSystem]
 	public class UIEventComponentAwakeSystem : AwakeSystem<UIEventComponent>
 	{
 		public override void Awake(UIEventComponent self)

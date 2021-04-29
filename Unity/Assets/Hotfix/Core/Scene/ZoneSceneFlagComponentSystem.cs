@@ -1,5 +1,8 @@
-﻿namespace ETHotfix
+﻿using ET;
+
+namespace ETHotfix
 {
+    [ObjectSystem]
     public class ZoneSceneFlagComponentDestroySystem: DestroySystem<ZoneSceneFlagComponent>
     {
         public override void Destroy(ZoneSceneFlagComponent self)
@@ -8,6 +11,7 @@
         }
     }
     
+    [ObjectSystem]
     public class ZoneSceneFlagComponentAwakeSystem: AwakeSystem<ZoneSceneFlagComponent>
     {
         public override void Awake(ZoneSceneFlagComponent self)

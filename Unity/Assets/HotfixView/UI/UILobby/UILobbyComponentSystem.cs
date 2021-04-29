@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using ET;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace ETHotfix
 {
+    [ObjectSystem]
     public class UILobbyComponentAwakeSystem : AwakeSystem<UILobbyComponent>
     {
         public override void Awake(UILobbyComponent self)

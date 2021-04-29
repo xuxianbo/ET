@@ -5,6 +5,7 @@ using ET;
 
 namespace ETHotfix
 {
+	[ObjectSystem]
     public class ConfigAwakeSystem : AwakeSystem<ConfigComponent>
     {
         public override void Awake(ConfigComponent self)
@@ -13,6 +14,7 @@ namespace ETHotfix
         }
     }
     
+	[ObjectSystem]
     public class ConfigDestroySystem : DestroySystem<ConfigComponent>
     {
 	    public override void Destroy(ConfigComponent self)

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 namespace ETHotfix
 {
+    [ObjectSystem]
     public class UiLoadingComponentAwakeSystem : AwakeSystem<UILoadingComponent>
     {
         public override void Awake(UILoadingComponent self)
@@ -12,6 +13,7 @@ namespace ETHotfix
         }
     }
 
+    [ObjectSystem]
     public class UiLoadingComponentStartSystem : StartSystem<UILoadingComponent>
     {
         public override void Start(UILoadingComponent self)

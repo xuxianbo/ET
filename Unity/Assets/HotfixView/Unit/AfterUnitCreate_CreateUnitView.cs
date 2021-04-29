@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace ETHotfix
 {
+    [Event]
     public class AfterUnitCreate_CreateUnitView: AEvent<HotfixEventType.AfterUnitCreate>
     {
         protected override async ETTask Run(HotfixEventType.AfterUnitCreate args)

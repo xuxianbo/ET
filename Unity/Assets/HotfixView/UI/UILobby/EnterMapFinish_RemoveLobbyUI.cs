@@ -2,6 +2,7 @@
 
 namespace ETHotfix
 {
+    [Event]
     public class EnterMapFinish_RemoveLobbyUI: AEvent<HotfixEventType.EnterMapFinish>
     {
         protected override async ETTask Run(HotfixEventType.EnterMapFinish args)

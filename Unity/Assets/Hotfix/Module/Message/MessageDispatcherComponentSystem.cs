@@ -4,6 +4,7 @@ using ET;
 
 namespace ETHotfix
 {
+    [ObjectSystem]
     public class MessageDispatcherComponentAwakeSystem: AwakeSystem<MessageDispatcherComponent>
     {
         public override void Awake(MessageDispatcherComponent self)
@@ -12,6 +13,7 @@ namespace ETHotfix
             self.Load();
         }
     }
+    [ObjectSystem]
     
     public class MessageDispatcherComponentLoadSystem: LoadSystem<MessageDispatcherComponent>
     {
@@ -20,7 +22,7 @@ namespace ETHotfix
             self.Load();
         }
     }
-    
+    [ObjectSystem]
     public class MessageDispatcherComponentDestroySystem: DestroySystem<MessageDispatcherComponent>
     {
         public override void Destroy(MessageDispatcherComponent self)

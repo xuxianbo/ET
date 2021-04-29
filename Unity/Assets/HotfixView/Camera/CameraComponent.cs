@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using ET;
+using UnityEngine;
 
 namespace ETHotfix
 {
+	[ObjectSystem]
 	public class CameraComponentAwakeSystem : AwakeSystem<CameraComponent>
 	{
 		public override void Awake(CameraComponent self)
@@ -10,6 +12,7 @@ namespace ETHotfix
 		}
 	}
 
+	[ObjectSystem]
 	public class CameraComponentLateUpdateSystem : LateUpdateSystem<CameraComponent>
 	{
 		public override void LateUpdate(CameraComponent self)

@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace ETHotfix
 {
+	[ObjectSystem]
 	public class AnimatorComponentAwakeSystem : AwakeSystem<AnimatorComponent>
 	{
 		public override void Awake(AnimatorComponent self)
@@ -12,6 +13,7 @@ namespace ETHotfix
 		}
 	}
 
+	[ObjectSystem]
 	public class AnimatorComponentUpdateSystem : UpdateSystem<AnimatorComponent>
 	{
 		public override void Update(AnimatorComponent self)
@@ -20,6 +22,7 @@ namespace ETHotfix
 		}
 	}
 	
+	[ObjectSystem]
 	public class AnimatorComponentDestroySystem : DestroySystem<AnimatorComponent>
 	{
 		public override void Destroy(AnimatorComponent self)

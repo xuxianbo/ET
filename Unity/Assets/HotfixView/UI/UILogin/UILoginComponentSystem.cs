@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Net;
-
+using ET;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace ETHotfix
 {
+	[ObjectSystem]
 	public class UILoginComponentAwakeSystem : AwakeSystem<UILoginComponent>
 	{
 		public override void Awake(UILoginComponent self)

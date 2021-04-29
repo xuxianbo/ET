@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace ETHotfix
 {
+    [Event]
     public class AppStart_Init: AEvent<ET.EventType.AppStart>
     {
         protected override async ETTask Run(ET.EventType.AppStart args)

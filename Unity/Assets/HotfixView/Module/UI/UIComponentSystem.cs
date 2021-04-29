@@ -3,6 +3,7 @@ using ET;
 
 namespace ETHotfix
 {
+	[ObjectSystem]
 	public class UIComponentAwakeSystem : AwakeSystem<UIComponent>
 	{
 		public override void Awake(UIComponent self)

@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace ETHotfix
 {
+    [Event]
     public class ChangePosition_SyncGameObjectPos: AEvent<HotfixEventType.ChangePosition>
     {
         protected override async ETTask Run(HotfixEventType.ChangePosition args)

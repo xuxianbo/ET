@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace ETHotfix
 {
+	[MessageHandler]
 	public class M2C_PathfindingResultHandler : AMHandler<M2C_PathfindingResult>
 	{
 		protected override async ETVoid Run(Session session, M2C_PathfindingResult message)

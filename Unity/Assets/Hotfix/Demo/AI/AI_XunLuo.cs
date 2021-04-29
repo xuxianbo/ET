@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace ETHotfix
 {
+    [AIHandlerAttribute]
     public class AI_XunLuo: AAIHandler
     {
         public override int Check(AIComponent aiComponent, AIConfig aiConfig)
