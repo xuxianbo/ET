@@ -1,4 +1,4 @@
-﻿namespace ETHotfix
+﻿namespace ET
 {
     public enum NumericType
     {

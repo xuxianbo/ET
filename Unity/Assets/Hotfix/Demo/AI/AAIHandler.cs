@@ -3,10 +3,6 @@ using ET;
 
 namespace ETHotfix
 {
-    public class AIHandlerAttribute: BaseAttribute
-    {
-    }
-    
     [AIHandler]
     public abstract class AAIHandler
     {

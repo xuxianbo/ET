@@ -1,7 +1,7 @@
 using System;
 using ET;
 
-namespace ETHotfix
+namespace ET
 {
     public class UIEventAttribute: BaseAttribute
     {

@@ -124,10 +124,18 @@ namespace ETHotfix
             this.allEvents.Clear();
             foreach (Type type in types[typeof (EventAttribute)])
             {
+                Log.Info(type.ToString());
+                object eventInstance =  Activator.CreateInstance(type);
+                Log.Info($"事件实例的真正类型： {eventInstance.GetType().FullName}");
                 IEvent obj = Activator.CreateInstance(type) as IEvent;
                 if (obj == null)
                 {
-                    throw new Exception($"type not is AEvent: {obj.GetType().Name}");
+                    Log.Error($"type: {type} not is AEvent! ");
+                    continue;
+                }
+                else
+                {
+                    Log.Info($"{type.ToString()} create successfully");
                 }
 
                 Type eventType = obj.GetEventType();

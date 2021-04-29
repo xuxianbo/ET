@@ -10,12 +10,13 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
+using ILRuntime.Runtime.Enviorment;
 
 namespace ET
 {
     public class Hotfix
     {
-#if ILRuntime
+#if ILRUNTIME
 		private ILRuntime.Runtime.Enviorment.AppDomain s_appDomain;
 		private MemoryStream s_hotfixDllStream;
 		private MemoryStream s_hotfixPdbStream;
@@ -35,8 +36,8 @@ namespace ET
 
         public void GotoHotfix()
         {
-#if ILRuntime
-			ILHelper.InitILRuntime(this.appDomain);
+#if ILRUNTIME
+			ILHelper.InitILRuntime(s_appDomain);
 #endif
             s_hotfixInit.Run();
         }
@@ -61,7 +62,7 @@ namespace ET
             byte[] hotfixViewAssBytes = code.GetComponent<ReferenceCollector>().Get<TextAsset>("HotfixView.dll").bytes;
             byte[] hotfixViewPdbBytes = code.GetComponent<ReferenceCollector>().Get<TextAsset>("HotfixView.pdb").bytes;
 
-#if ILRuntime
+#if ILRUNTIME
 			Log.Debug($"当前使用的是ILRuntime模式");
 			s_appDomain = new ILRuntime.Runtime.Enviorment.AppDomain();
 
