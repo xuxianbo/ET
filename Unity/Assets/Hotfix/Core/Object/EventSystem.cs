@@ -99,7 +99,6 @@ namespace ETHotfix
 
                 if (objects_ObjectSystemAttribute.Length > 0)
                 {
-                    Log.Info(type.ToString());
                     this.types.Add(typeof (ObjectSystemAttribute), type);
                 }
 
@@ -107,7 +106,6 @@ namespace ETHotfix
 
                 if (objects_EventAttribute.Length > 0)
                 {
-                    Log.Info(type.ToString());
                     this.types.Add(typeof (EventAttribute), type);
                 }
             }
@@ -156,18 +154,11 @@ namespace ETHotfix
             allEvents.Clear();
             foreach (Type type in this.GetTypes(typeof (EventAttribute)))
             {
-                Log.Info(type.ToString());
-                object eventInstance = Activator.CreateInstance(type);
-                Log.Info($"事件实例的真正类型： {eventInstance.GetType().FullName}");
                 IEvent obj = Activator.CreateInstance(type) as IEvent;
                 if (obj == null)
                 {
                     Log.Error($"type: {type} not is AEvent! ");
                     continue;
-                }
-                else
-                {
-                    Log.Info($"{type.ToString()} create successfully");
                 }
 
                 Type eventType = obj.GetEventType();

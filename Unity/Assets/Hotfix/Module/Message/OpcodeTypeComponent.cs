@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ET;
+using ProtoBuf;
 
 namespace ETHotfix
 {
@@ -39,7 +40,7 @@ namespace ETHotfix
             this.opcodeTypes.Clear();
             this.typeOpcodes.Clear();
             this.requestResponse.Clear();
-
+            
             Game.EventSystem.RegisterAttribute<MessageAttribute>();
             HashSet<Type> types = Game.EventSystem.GetTypes(typeof (MessageAttribute));
             foreach (Type type in types)
@@ -82,7 +83,7 @@ namespace ETHotfix
                     }
 
                     ResponseTypeAttribute responseTypeAttribute = attrs[0] as ResponseTypeAttribute;
-                    this.requestResponse.Add(type, responseTypeAttribute.Type);
+                    this.requestResponse.Add(type, Type.GetType(responseTypeAttribute.Type));
                 }
             }
         }
