@@ -17,11 +17,11 @@ namespace ETHotfix
         }
     }
     
-    public static class UILobbyComponentSystem
-    {
-        public static void EnterMap(this UILobbyComponent self)
-        {
-            MapHelper.EnterMapAsync(self.ZoneScene(), "Map").Coroutine();
-        }
-    }
+    // public static class UILobbyComponentSystem
+    // {
+    //     public static void EnterMap(this UILobbyComponent self)
+    //     {
+    //         MapHelper.EnterMapAsync(self.ZoneScene(), "Map").Coroutine();
+    //     }
+    // }
 }

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Threading;
 using ILRuntime.CLR.Method;
@@ -25,14 +26,17 @@ namespace ET
 {
     public static class ILHelper
     {
-        public static void InitILRuntime(ILRuntime.Runtime.Enviorment.AppDomain appdomain)
+        public static void LaunchDebugService(ILRuntime.Runtime.Enviorment.AppDomain appdomain)
         {
 #if DEBUG && (UNITY_EDITOR || UNITY_ANDROID || UNITY_IPHONE)
             //由于Unity的Profiler接口只允许在主线程使用，为了避免出异常，需要告诉ILRuntime主线程的线程ID才能正确将函数运行耗时报告给Profiler
             appdomain.UnityMainThreadID = Thread.CurrentThread.ManagedThreadId;
             appdomain.DebugService.StartDebugService(56000);
 #endif
+        }
 
+        public static void InitILRuntime(ILRuntime.Runtime.Enviorment.AppDomain appdomain)
+        {
             // 注册跨域继承适配器
             RegisterCrossBindingAdaptor(appdomain);
             // 注册重定向函数
@@ -79,12 +83,96 @@ namespace ET
         /// 注册CLR重定向
         /// </summary>
         /// <param name="appdomain"></param>
-        static void RegisterILRuntimeCLRRedirection(AppDomain appdomain)
+        static unsafe void RegisterILRuntimeCLRRedirection(AppDomain appdomain)
         {
+            //注册3种Log
+            Type debugType = typeof (Debug);
+            var logMethod = debugType.GetMethod("Log", new[] { typeof (object) });
+            appdomain.RegisterCLRMethodRedirection(logMethod, Log);
+            var logWarningMethod = debugType.GetMethod("LogWarning", new[] { typeof (object) });
+            appdomain.RegisterCLRMethodRedirection(logWarningMethod, LogWarning);
+            var logErrorMethod = debugType.GetMethod("LogError", new[] { typeof (object) });
+            appdomain.RegisterCLRMethodRedirection(logErrorMethod, LogError);
+
             //LitJson适配
             LitJson.JsonMapper.RegisterILRuntimeCLRRedirection(appdomain);
             //Protobuf适配
             PType.RegisterILRuntimeCLRRedirection(appdomain);
+        }
+
+        /// <summary>
+        /// Debug.LogError 实现
+        /// </summary>
+        /// <param name="__intp"></param>
+        /// <param name="__esp"></param>
+        /// <param name="__mStack"></param>
+        /// <param name="__method"></param>
+        /// <param name="isNewObj"></param>
+        /// <returns></returns>
+        unsafe static StackObject* LogError(ILIntepreter __intp, StackObject* __esp, IList<object> __mStack,
+        CLRMethod __method, bool isNewObj)
+        {
+            AppDomain __domain = __intp.AppDomain;
+            StackObject* ptr_of_this_method;
+            StackObject* __ret = ILIntepreter.Minus(__esp, 1);
+            ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
+
+            object message = typeof (object).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
+            __intp.Free(ptr_of_this_method);
+
+            var stacktrace = __domain.DebugService.GetStackTrace(__intp);
+            Debug.LogError(message + "\n\n==========ILRuntime StackTrace==========\n" + stacktrace);
+            return __ret;
+        }
+
+        /// <summary>
+        /// Debug.LogWarning 实现
+        /// </summary>
+        /// <param name="__intp"></param>
+        /// <param name="__esp"></param>
+        /// <param name="__mStack"></param>
+        /// <param name="__method"></param>
+        /// <param name="isNewObj"></param>
+        /// <returns></returns>
+        unsafe static StackObject* LogWarning(ILIntepreter __intp, StackObject* __esp, IList<object> __mStack,
+        CLRMethod __method, bool isNewObj)
+        {
+            AppDomain __domain = __intp.AppDomain;
+            StackObject* ptr_of_this_method;
+            StackObject* __ret = ILIntepreter.Minus(__esp, 1);
+            ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
+
+            object message = typeof (object).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
+            __intp.Free(ptr_of_this_method);
+
+            var stacktrace = __domain.DebugService.GetStackTrace(__intp);
+            Debug.LogWarning(message + "\n\n==========ILRuntime StackTrace==========\n" + stacktrace);
+            return __ret;
+        }
+
+        /// <summary>
+        /// Debug.Log 实现
+        /// </summary>
+        /// <param name="__intp"></param>
+        /// <param name="__esp"></param>
+        /// <param name="__mStack"></param>
+        /// <param name="__method"></param>
+        /// <param name="isNewObj"></param>
+        /// <returns></returns>
+        unsafe static StackObject* Log(ILIntepreter __intp, StackObject* __esp, IList<object> __mStack,
+        CLRMethod __method, bool isNewObj)
+        {
+            AppDomain __domain = __intp.AppDomain;
+            StackObject* ptr_of_this_method;
+            StackObject* __ret = ILIntepreter.Minus(__esp, 1);
+            ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
+
+            object message = typeof (object).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
+            __intp.Free(ptr_of_this_method);
+
+            var stacktrace = __domain.DebugService.GetStackTrace(__intp);
+            Debug.Log(message + "\n\n==========ILRuntime StackTrace==========\n" + stacktrace);
+            return __ret;
         }
 
         /// <summary>
@@ -93,7 +181,12 @@ namespace ET
         static void RegisterMethodDelegate(AppDomain appdomain)
         {
             appdomain.DelegateManager.RegisterMethodDelegate<List<object>>();
-            appdomain.DelegateManager.RegisterMethodDelegate<ILTypeInstance>();
+            //appdomain.DelegateManager.RegisterMethodDelegate<ILTypeInstance>();
+            //appdomain.DelegateManager.RegisterMethodDelegate<AChannel, System.Net.Sockets.SocketError>();
+            //appdomain.DelegateManager.RegisterMethodDelegate<byte[], int, int>();
+            appdomain.DelegateManager.RegisterMethodDelegate<long, int>();
+            appdomain.DelegateManager.RegisterMethodDelegate<long, MemoryStream>();
+            appdomain.DelegateManager.RegisterMethodDelegate<long, IPEndPoint>();
         }
 
         /// <summary>
@@ -109,6 +202,10 @@ namespace ET
         /// </summary>
         static void RegisterDelegateConvertor(AppDomain appdomain)
         {
+            appdomain.DelegateManager.RegisterDelegateConvertor<UnityEngine.Events.UnityAction>((action) =>
+            {
+                return new UnityEngine.Events.UnityAction((System.Action) action);
+            });
         }
 
         /// <summary>

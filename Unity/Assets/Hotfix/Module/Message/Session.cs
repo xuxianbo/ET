@@ -182,7 +182,9 @@ namespace ETHotfix
                 }
                 case ServiceType.Outer:
                 {
+                    Log.Info($"start serialize");
                     (ushort opcode, MemoryStream stream) = MessageSerializeHelper.MessageToStream(message);
+                    Log.Info($"{opcode.ToString()}------------------{message.ToString()}");
                     OpcodeHelper.LogMsg(this.DomainZone(), opcode, message);
                     this.Send(0, stream);
                     break;

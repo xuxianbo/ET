@@ -8,5 +8,10 @@ namespace ETHotfix
 	{
 		public GameObject enterMap;
 		public Text text;
+		
+		public void EnterMap()
+		{
+			MapHelper.EnterMapAsync(this.ZoneScene(), "Map").Coroutine();
+		}
 	}
 }

@@ -24,7 +24,6 @@ namespace ETHotfix
             //Game.EventSystem.Add(ET.Game.Hotfix.GetHotfixViewTypes());
             Game.EventSystem.Add(ET.Game.Hotfix.GetHotfixTypes());
 
-
             Debug.Log("Hotfix初始化完成");
         }
 

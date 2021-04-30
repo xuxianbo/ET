@@ -8,7 +8,7 @@ namespace ET
 {
     public class Init: MonoBehaviour
     {
-        private void Start()
+        private async void Start()
         {
             try
             {
@@ -39,12 +39,16 @@ namespace ET
 
                 Debug.Log("下载热更包，其中包含热更用的dll文件");
                 Game.Hotfix.LoadHotfixAssembly();
-                
+
+                //ILHelper.LaunchDebugService(Game.Hotfix.GetAppDomain());
+
+                await TimerComponent.Instance.WaitAsync(1);
+
                 Debug.Log("进入热更初始化");
                 Game.Hotfix.GotoHotfix();
 
                 Debug.Log("向热更层发出事件");
-                Game.EventSystem.Publish(new EventType.AppStart() { i = 10});
+                await Game.EventSystem.Publish(new EventType.AppStart() { i = 10});
             }
             catch (Exception e)
             {

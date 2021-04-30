@@ -20,8 +20,6 @@ namespace ET
 		private ILRuntime.Runtime.Enviorment.AppDomain s_appDomain;
 		private MemoryStream s_hotfixDllStream;
 		private MemoryStream s_hotfixPdbStream;
-		private MemoryStream s_hotfixViewDllStream;
-		private MemoryStream s_hotfixViewPdbStream;
 #else
         private Assembly s_hotfixAssembly;
         private Assembly s_hotfixViewAssembly;
@@ -46,7 +44,12 @@ namespace ET
         {
             return s_hotfixTypes;
         }
-
+#if ILRUNTIME
+        public ILRuntime.Runtime.Enviorment.AppDomain GetAppDomain()
+        {
+            return s_appDomain;
+        }
+#endif
         // public List<Type> GetHotfixViewTypes()
         // {
         //     return s_hotfixViewTypes;

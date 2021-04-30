@@ -14,16 +14,10 @@ namespace ETHotfix
         public const int recvMaxIdleTime = 60000;
         public const int sendMaxIdleTime = 60000;
 
-#if NET_THREAD
-        public Thread Thread;
-#endif
         public ThreadSynchronizationContext ThreadSynchronizationContext;
         
         public HashSet<AService> Services = new HashSet<AService>();
 
-#if NET_THREAD
-        public bool isRun;
-#endif
         
         public Random Random = new Random(Guid.NewGuid().GetHashCode());
     }

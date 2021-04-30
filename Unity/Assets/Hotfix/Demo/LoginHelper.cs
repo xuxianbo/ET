@@ -13,10 +13,11 @@ namespace ETHotfix
                 R2C_Login r2CLogin;
                 
                 Session reamlSession = zoneScene.GetComponent<NetKcpComponent>().Create(NetworkHelper.ToIPEndPoint(address));
+                
+                Log.Info("Prepare send login reaml msg!");
                 r2CLogin = (R2C_Login) await reamlSession.Call(new C2R_Login() { Account = account, Password = "111111" });
                 reamlSession.Dispose();
                 
-
                 // 创建一个gate Session,并且保存到SessionComponent中
                 Session gateSession = zoneScene.GetComponent<NetKcpComponent>().Create(NetworkHelper.ToIPEndPoint(r2CLogin.Address));
                 gateSession.AddComponent<PingComponent>();

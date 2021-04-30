@@ -18,6 +18,7 @@ namespace ETHotfix
 		}
 	}
 	
+	//ILRT donnot support extension method as a delegate!!!!!!!
 	public static class UILoginComponentSystem
 	{
 		public static void OnLogin(this UILoginComponent self)

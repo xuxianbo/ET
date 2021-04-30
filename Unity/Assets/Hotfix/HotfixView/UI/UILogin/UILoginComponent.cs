@@ -10,5 +10,10 @@ namespace ETHotfix
 	{
 		public GameObject account;
 		public GameObject loginBtn;
+		
+		public void OnLogin()
+		{
+			LoginHelper.Login(this.DomainScene(), "127.0.0.1:10002", this.account.GetComponent<InputField>().text).Coroutine();
+		}
 	}
 }

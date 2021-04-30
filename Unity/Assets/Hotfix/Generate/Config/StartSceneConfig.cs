@@ -18,21 +18,21 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private List<StartSceneConfig> list = new List<StartSceneConfig>();
+        private StartSceneConfig[] list = new StartSceneConfig[10];
 		
         public StartSceneConfigCategory()
         {
             Instance = this;
         }
 		
-		[ProtoAfterDeserialization]
+
         public void AfterDeserialization()
         {
             foreach (StartSceneConfig config in list)
             {
                 this.dict.Add(config.Id, config);
             }
-            list.Clear();
+            list = null;
             this.EndInit();
         }
 		
@@ -84,8 +84,6 @@ namespace ETHotfix
 		[ProtoMember(6, IsRequired  = true)]
 		public int OuterPort { get; set; }
 
-
-		[ProtoAfterDeserialization]
         public void AfterDeserialization()
         {
             this.EndInit();

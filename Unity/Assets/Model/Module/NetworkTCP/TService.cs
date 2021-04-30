@@ -84,8 +84,6 @@ namespace ET
 			}			
 		}
 		
-
-
 		private void AcceptAsync()
 		{
 			this.innArgs.AcceptSocket = null;

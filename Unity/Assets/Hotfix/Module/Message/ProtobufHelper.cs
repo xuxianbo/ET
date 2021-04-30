@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using ET;
 using ProtoBuf;
 
 namespace ETHotfix
@@ -9,27 +11,24 @@ namespace ETHotfix
         static ProtobufHelper()
         {
             //TODO 预热在老版本的pb是不支持的
-            // var types = Game.EventSystem.GetTypes();
-            //
-            // foreach (Type type in types)
-            // {
-            //     if (type.GetCustomAttributes(typeof (ProtoContractAttribute), false).Length == 0)
-            //     {
-            //         continue;
-            //     }
-            //     if (!type.IsSubclassOf(typeof (ProtoObject)))
-            //     {
-            //         continue;
-            //     }
-            //
-            //     Serializer.NonGeneric.PrepareSerializer(type);
-            // }
+
+            foreach (Type type in ET.Game.Hotfix.GetHotfixTypes())
+            {
+                if (type.GetCustomAttributes(typeof (ProtoContractAttribute), false).Length == 0 &&
+                    type.GetCustomAttributes(typeof (ProtoMemberAttribute), false).Length == 0)
+                {
+                    continue;
+                }
+
+                PType.RegisterType(type.FullName, type);
+                //Log.Info($"{type} -------------------------- 注册完毕");
+            }
         }
 
         public static void Init()
         {
         }
-        
+
         public static object FromBytes(Type type, byte[] bytes, int index, int count)
         {
             using (MemoryStream stream = new MemoryStream(bytes, index, count))
@@ -37,7 +36,7 @@ namespace ETHotfix
                 return ProtoBuf.Serializer.Deserialize(type, stream);
             }
         }
-        
+
         public static byte[] ToBytes(object message)
         {
             using (MemoryStream stream = new MemoryStream())
@@ -46,7 +45,7 @@ namespace ETHotfix
                 return stream.ToArray();
             }
         }
-        
+
         public static void ToStream(object message, MemoryStream stream)
         {
             ProtoBuf.Serializer.Serialize(stream, message);

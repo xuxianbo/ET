@@ -10,11 +10,11 @@ namespace ETHotfix
             zoneScene.AddComponent<ZoneSceneFlagComponent>();
             zoneScene.AddComponent<NetKcpComponent>();
             zoneScene.AddComponent<UnitComponent>();
-            zoneScene.AddComponent<AIComponent, int>(1);
+            //TODO Fill while Config Module has fixed
+            //zoneScene.AddComponent<AIComponent, int>(1);
             
             // UI层的初始化
             await Game.EventSystem.Publish(new HotfixEventType.AfterCreateZoneScene() {ZoneScene = zoneScene});
-            
             return zoneScene;
         }
     }

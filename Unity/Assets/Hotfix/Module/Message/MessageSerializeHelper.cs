@@ -71,14 +71,14 @@ namespace ETHotfix
             MemoryStream stream = GetStream(Packet.OpcodeLength + count);
 
             ushort opcode = OpcodeTypeComponent.Instance.GetOpcode(message.GetType());
-            
+            Log.Info($"opcode: {opcode}");
             stream.Seek(Packet.OpcodeLength, SeekOrigin.Begin);
             stream.SetLength(Packet.OpcodeLength);
             
             stream.GetBuffer().WriteTo(0, opcode);
-            
+            Log.Info($"Prepare to serialize opcode: {opcode} and message: {message}");
             MessageSerializeHelper.SerializeTo(opcode, message, stream);
-            
+            Log.Info("successfully to serialize opcode: {opcode} and message: {message}");
             stream.Seek(0, SeekOrigin.Begin);
             return (opcode, stream);
         }
@@ -89,16 +89,15 @@ namespace ETHotfix
             MemoryStream stream = GetStream(actorSize + Packet.OpcodeLength + count);
 
             ushort opcode = OpcodeTypeComponent.Instance.GetOpcode(message.GetType());
-            
+
             stream.Seek(actorSize + Packet.OpcodeLength, SeekOrigin.Begin);
             stream.SetLength(actorSize + Packet.OpcodeLength);
 
             // 写入actorId
             stream.GetBuffer().WriteTo(0, actorId);
             stream.GetBuffer().WriteTo(actorSize, opcode);
-            
             MessageSerializeHelper.SerializeTo(opcode, message, stream);
-            
+
             stream.Seek(0, SeekOrigin.Begin);
             return (opcode, stream);
         }

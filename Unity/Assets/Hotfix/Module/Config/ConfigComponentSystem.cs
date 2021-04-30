@@ -5,56 +5,56 @@ using ET;
 
 namespace ETHotfix
 {
-	[ObjectSystem]
-    public class ConfigAwakeSystem : AwakeSystem<ConfigComponent>
+    [ObjectSystem]
+    public class ConfigAwakeSystem: AwakeSystem<ConfigComponent>
     {
         public override void Awake(ConfigComponent self)
         {
-	        ConfigComponent.Instance = self;
+            ConfigComponent.Instance = self;
         }
     }
-    
-	[ObjectSystem]
-    public class ConfigDestroySystem : DestroySystem<ConfigComponent>
+
+    [ObjectSystem]
+    public class ConfigDestroySystem: DestroySystem<ConfigComponent>
     {
-	    public override void Destroy(ConfigComponent self)
-	    {
-		    ConfigComponent.Instance = null;
-	    }
+        public override void Destroy(ConfigComponent self)
+        {
+            ConfigComponent.Instance = null;
+        }
     }
-    
+
     public static class ConfigComponentSystem
-	{
-		public static async ETTask LoadAsync(this ConfigComponent self)
-		{
-			self.AllConfig.Clear();
-			Game.EventSystem.RegisterAttribute<ConfigAttribute>();
-			HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
-			
-			Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
-			ConfigComponent.GetAllConfigBytes(configBytes);
+    {
+        public static void Load(this ConfigComponent self)
+        {
+            self.AllConfig.Clear();
+            Game.EventSystem.RegisterAttribute<ConfigAttribute>();
+            HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
 
-			List<Task> listTasks = new List<Task>();
+            Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
+            ConfigComponent.GetAllConfigBytes(configBytes);
 
-			foreach (Type type in types)
-			{
-				Task task = Task.Run(() => self.LoadOneInThread(type, configBytes));
-				listTasks.Add(task);
-			}
+            foreach (Type type in types)
+            {
+                try
+                {
+                    self.LoadOne(type, configBytes);
+                }
+                catch (Exception e)
+                {
+                    Log.Error(e);
+                    throw;
+                }
 
-			await Task.WhenAll(listTasks.ToArray());
-		}
+            }
+        }
 
-		private static void LoadOneInThread(this ConfigComponent self, Type configType, Dictionary<string, byte[]> configBytes)
-		{
-			byte[] oneConfigBytes = configBytes[configType.Name];
+        private static void LoadOne(this ConfigComponent self, Type configType, Dictionary<string, byte[]> configBytes)
+        {
+            byte[] oneConfigBytes = configBytes[configType.Name];
 
-			object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
-
-			lock (self)
-			{
-				self.AllConfig[configType] = category;	
-			}
-		}
-	}
+            object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
+            self.AllConfig[configType] = category;
+        }
+    }
 }

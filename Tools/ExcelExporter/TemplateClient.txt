@@ -18,7 +18,7 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private List<(ConfigName)> list = new List<(ConfigName)>();
+        private (ConfigName)[] list = new (ConfigName)[10];
 		
         public (ConfigName)Category()
         {
@@ -32,7 +32,7 @@ namespace ETHotfix
             {
                 this.dict.Add(config.Id, config);
             }
-            list.Clear();
+            list = null;
             this.EndInit();
         }
 		

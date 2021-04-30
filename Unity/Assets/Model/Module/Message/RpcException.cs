@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ETHotfix
+namespace ET
 {
     /// <summary>
     /// RPC异常,带ErrorCode

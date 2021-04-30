@@ -18,21 +18,21 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private List<StartZoneConfig> list = new List<StartZoneConfig>();
+        private StartZoneConfig[] list = new StartZoneConfig[10];
 		
         public StartZoneConfigCategory()
         {
             Instance = this;
         }
 		
-		[ProtoAfterDeserialization]
+
         public void AfterDeserialization()
         {
             foreach (StartZoneConfig config in list)
             {
                 this.dict.Add(config.Id, config);
             }
-            list.Clear();
+            list = null;
             this.EndInit();
         }
 		
@@ -79,7 +79,6 @@ namespace ETHotfix
 		public string DBName { get; set; }
 
 
-		[ProtoAfterDeserialization]
         public void AfterDeserialization()
         {
             this.EndInit();

@@ -47,40 +47,19 @@ namespace ET
         
         protected void OnAccept(long channelId, IPEndPoint ipEndPoint)
         {
-#if NET_THREAD
-            ThreadSynchronizationContext.Instance.Post(() =>
-            {
-                this.AcceptCallback.Invoke(channelId, ipEndPoint);
-            });
-#else
             this.AcceptCallback.Invoke(channelId, ipEndPoint);
-#endif
         }
 
         public void OnRead(long channelId, MemoryStream memoryStream)
         {
-#if NET_THREAD
-            ThreadSynchronizationContext.Instance.Post(() =>
-            {
-                this.ReadCallback.Invoke(channelId, memoryStream);
-            });
-#else
             this.ReadCallback.Invoke(channelId, memoryStream);
-#endif
         }
 
         public void OnError(long channelId, int e)
         {
             this.Remove(channelId);
             
-#if NET_THREAD
-            ThreadSynchronizationContext.Instance.Post(() =>
-            {
-                this.ErrorCallback?.Invoke(channelId, e);
-            });
-#else
             this.ErrorCallback?.Invoke(channelId, e);
-#endif
         }
 
 #endregion
@@ -94,47 +73,22 @@ namespace ET
 
         public void Destroy()
         {
-#if NET_THREAD
-            this.ThreadSynchronizationContext.Post(this.Dispose);
-#else
             this.Dispose();
-#endif
         }
 
         public void RemoveChannel(long channelId)
         {
-#if NET_THREAD
-            this.ThreadSynchronizationContext.Post(() =>
-            {
-                this.Remove(channelId);
-            });
-#else
             this.Remove(channelId);
-#endif
         }
 
         public void SendStream(long channelId, long actorId, MemoryStream stream)
         {
-#if NET_THREAD
-            this.ThreadSynchronizationContext.Post(() =>
-            {
-                this.Send(channelId, actorId, stream);
-            });
-#else
             this.Send(channelId, actorId, stream);
-#endif
         }
 
         public void GetOrCreate(long id, IPEndPoint address)
         {
-#if NET_THREAD
-            this.ThreadSynchronizationContext.Post(()=>
-            {
-                this.Get(id, address);
-            });
-#else
             this.Get(id, address);
-#endif
         }
 
 #endregion

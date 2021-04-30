@@ -13,14 +13,9 @@ public class ILRuntimeCLRBinding
         ILRuntime.Runtime.Enviorment.AppDomain domain = new ILRuntime.Runtime.Enviorment.AppDomain();
         using (FileStream fsHotfix = new FileStream("Assets/Res/Code/Hotfix.dll.bytes", FileMode.Open, FileAccess.Read))
         {
-            using (FileStream fsHotfixView = new FileStream("Assets/Res/Code/HotfixView.dll.bytes", FileMode.Open, FileAccess.Read))
-            {
-                domain.LoadAssembly(fsHotfix);
-                domain.LoadAssembly(fsHotfixView);
-                //Crossbind Adapter is needed to generate the correct binding code
-                ILHelper.InitILRuntime(domain);
-                BindingCodeGenerator.GenerateBindingCode(domain, "Assets/Model/Module/ILRuntime/Generated");
-            }
+            domain.LoadAssembly(fsHotfix);
+            ILHelper.InitILRuntime(domain);
+            BindingCodeGenerator.GenerateBindingCode(domain, "Assets/Model/Module/ILRuntime/Generated");
         }
 
         AssetDatabase.Refresh();
