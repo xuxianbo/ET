@@ -140,6 +140,7 @@ namespace ETHotfix
 		[ProtoMember(93)]
 		public long ActorId { get; set; }
 
+		//ILRT donnot support List<T> when the T is not a base type 
 		[ProtoMember(2)]
 		public List<UnitInfo> Units = new List<UnitInfo>();
 
