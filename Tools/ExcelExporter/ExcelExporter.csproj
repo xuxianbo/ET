@@ -6,47 +6,53 @@
         <RootNamespace>ET</RootNamespace>
         <LangVersion>8</LangVersion>
     </PropertyGroup>
-    
+
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
-    
+
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <OutputPath>./Bin</OutputPath>
-      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <OutputPath>./Bin</OutputPath>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
-    
+
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <OutputPath>./Bin</OutputPath>
-      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <OutputPath>./Bin</OutputPath>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
-    
+
     <ItemGroup>
-      <PackageReference Include="EPPlus" Version="5.5.2" />
-      <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.9.0" />
+        <PackageReference Include="EPPlus" Version="5.5.2"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.9.0"/>
     </ItemGroup>
-    
+
     <ItemGroup>
-      <None Update="Template.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+        <None Update="TemplateClient.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="TemplateServer.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
-    
+
     <ItemGroup>
-      <ProjectReference Include="..\..\Server\ThirdParty\Server.ThirdParty.csproj" />
+        <ProjectReference Include="..\..\Server\ThirdParty\Server.ThirdParty.csproj"/>
     </ItemGroup>
-    
+
     <ItemGroup>
-      <Compile Include="..\..\Unity\Assets\Model\Core\Object\BaseAttribute.cs">
-        <Link>BaseAttribute.cs</Link>
-      </Compile>
-      <Compile Include="..\..\Unity\Assets\Model\Module\Config\ConfigAttribute.cs">
-        <Link>ConfigAttribute.cs</Link>
-      </Compile>
-      <Compile Include="..\..\Unity\Assets\Model\Module\Config\IConfig.cs">
-        <Link>IConfig.cs</Link>
-      </Compile>
+        <Compile Include="..\..\Unity\Assets\Model\Core\Object\BaseAttribute.cs">
+            <Link>BaseAttribute.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Assets\Model\Module\Config\ConfigAttribute.cs">
+            <Link>ConfigAttribute.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Assets\Hotfix\Module\Config\IConfig.cs">
+            <Link>IConfigClient.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Server\Model\Module\Config\IConfig.cs">
+            <Link>IConfigServer.cs</Link>
+        </Compile>
     </ItemGroup>
 
 </Project>

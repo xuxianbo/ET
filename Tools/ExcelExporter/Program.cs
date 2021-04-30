@@ -39,9 +39,10 @@ namespace ET
     
     class Program
     {
-        private static string template;
+        private static string templateClient;
+        private static string templateServer;
 
-        private const string clientClassDir = "../../../Unity/Assets/Model/Generate/Config";
+        private const string clientClassDir = "../../../Unity/Assets/Hotfix/Generate/Config";
         private const string serverClassDir = "../../../Server/Model/Generate/Config";
         
         private const string excelDir = "../../../Excel";
@@ -73,7 +74,8 @@ namespace ET
         {
             try
             {
-                template = File.ReadAllText("Template.txt");
+                templateClient = File.ReadAllText("TemplateClient.txt");
+                templateServer = File.ReadAllText("TemplateServer.txt");
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                 foreach (string path in Directory.GetFiles(excelDir, "*.xlsx"))
                 {
@@ -156,6 +158,8 @@ namespace ET
                 sb.Append($"\t\t[ProtoMember({i + 1}, IsRequired  = true)]\n");
                 sb.Append($"\t\tpublic {headInfo.FieldType} {headInfo.FieldName} {{ get; set; }}\n");
             }
+
+            string template = configType == ConfigType.Client? templateClient : templateServer;
             string content = template.Replace("(ConfigName)", protoName).Replace(("(Fields)"), sb.ToString());
             sw.Write(content);
         }
@@ -280,7 +284,8 @@ namespace ET
             references.Add(AssemblyMetadata.CreateFromFile(typeof(object).Assembly.Location).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(typeof(ProtoMemberAttribute).Assembly.Location).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(typeof(BsonDefaultValueAttribute).Assembly.Location).GetReference());
-            references.Add(AssemblyMetadata.CreateFromFile(typeof(IConfig).Assembly.Location).GetReference());
+            references.Add(AssemblyMetadata.CreateFromFile(typeof(ET.IConfig).Assembly.Location).GetReference());
+            references.Add(AssemblyMetadata.CreateFromFile(typeof(ETHotfix.IConfig).Assembly.Location).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(typeof(Attribute).Assembly.Location).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(Path.Combine(assemblyPath, "mscorlib.dll")).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(Path.Combine(assemblyPath, "System.dll")).GetReference());
@@ -318,11 +323,13 @@ namespace ET
             {
                 Directory.CreateDirectory(dir);
             }
-            
+
+            //根据配置类型选择导出的namespace
+            string targetNamespace = configType == ConfigType.Client? "ETHotfix" : "ET";
             foreach (string protoName in protoNames)
             {
-                Type type = ass.GetType($"ET.{protoName}Category");
-                Type subType = ass.GetType($"ET.{protoName}");
+                Type type = ass.GetType($"{targetNamespace}.{protoName}Category");
+                Type subType = ass.GetType($"{targetNamespace}.{protoName}");
 
 
                 string json = File.ReadAllText(Path.Combine(string.Format(jsonDir, configType), $"{protoName}.txt"));
