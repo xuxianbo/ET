@@ -18,15 +18,14 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private StartMachineConfig[] list = new StartMachineConfig[10];
+        private StartMachineConfig[] list;
 		
         public StartMachineConfigCategory()
         {
             Instance = this;
         }
 		
-
-        public  void AfterDeserialization()
+        public void AfterDeserialization()
         {
             foreach (StartMachineConfig config in list)
             {
@@ -79,7 +78,8 @@ namespace ETHotfix
 		public string OuterIP { get; set; }
 
 
-        public  void AfterDeserialization()
+
+        public void AfterDeserialization()
         {
             this.EndInit();
         }

@@ -18,14 +18,13 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private StartZoneConfig[] list = new StartZoneConfig[10];
+        private StartZoneConfig[] list;
 		
         public StartZoneConfigCategory()
         {
             Instance = this;
         }
 		
-
         public void AfterDeserialization()
         {
             foreach (StartZoneConfig config in list)
@@ -77,6 +76,7 @@ namespace ETHotfix
 		public string DBConnection { get; set; }
 		[ProtoMember(3, IsRequired  = true)]
 		public string DBName { get; set; }
+
 
 
         public void AfterDeserialization()

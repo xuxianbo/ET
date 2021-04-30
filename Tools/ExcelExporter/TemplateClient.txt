@@ -18,14 +18,13 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private (ConfigName)[] list = new (ConfigName)[10];
+        private (ConfigName)[] list;
 		
         public (ConfigName)Category()
         {
             Instance = this;
         }
 		
-		[ProtoAfterDeserialization]
         public void AfterDeserialization()
         {
             foreach ((ConfigName) config in list)
@@ -73,7 +72,7 @@ namespace ETHotfix
 	{
 (Fields)
 
-		[ProtoAfterDeserialization]
+
         public void AfterDeserialization()
         {
             this.EndInit();

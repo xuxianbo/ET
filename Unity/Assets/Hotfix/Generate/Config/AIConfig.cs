@@ -18,26 +18,20 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private AIConfig[] list = new AIConfig[10];
+        private AIConfig[] list;
 		
         public AIConfigCategory()
         {
             Instance = this;
         }
-        
+		
         public void AfterDeserialization()
         {
-            if (this.list == null)
-            {
-                Log.Info("????????????????????????????????????????????????????????????????");
-            }
             foreach (AIConfig config in list)
             {
-                Log.Info(config.Id.ToString());
                 this.dict.Add(config.Id, config);
             }
             list = null;
-            Log.Info("????????????????????????????????");
             this.EndInit();
         }
 		
@@ -87,7 +81,8 @@ namespace ETHotfix
 		[ProtoMember(5, IsRequired  = true)]
 		public int[] NodeParams { get; set; }
 
-        
+
+
         public void AfterDeserialization()
         {
             this.EndInit();

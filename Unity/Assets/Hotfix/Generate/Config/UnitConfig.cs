@@ -18,15 +18,14 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private UnitConfig[] list = new UnitConfig[10];
+        private UnitConfig[] list;
 		
         public UnitConfigCategory()
         {
             Instance = this;
         }
 		
-
-        public  void AfterDeserialization()
+        public void AfterDeserialization()
         {
             foreach (UnitConfig config in list)
             {
@@ -84,7 +83,8 @@ namespace ETHotfix
 		[ProtoMember(6, IsRequired  = true)]
 		public int Weight { get; set; }
 
-        
+
+
         public void AfterDeserialization()
         {
             this.EndInit();

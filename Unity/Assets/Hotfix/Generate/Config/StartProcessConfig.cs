@@ -18,14 +18,13 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private StartProcessConfig[] list = new StartProcessConfig[10];
+        private StartProcessConfig[] list;
 		
         public StartProcessConfigCategory()
         {
             Instance = this;
         }
 		
-
         public void AfterDeserialization()
         {
             foreach (StartProcessConfig config in list)
@@ -77,6 +76,7 @@ namespace ETHotfix
 		public int MachineId { get; set; }
 		[ProtoMember(3, IsRequired  = true)]
 		public int InnerPort { get; set; }
+
 
 
         public void AfterDeserialization()

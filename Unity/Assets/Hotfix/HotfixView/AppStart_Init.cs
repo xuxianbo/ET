@@ -18,18 +18,15 @@ namespace ETHotfix
             ConfigComponent.Instance.Load();
             ResourcesComponent.Instance.UnloadBundle("config.unity3d");
 
-            // Log.Info("配置表加载完成！");
-            //
-            // foreach (var configs in ConfigComponent.Instance.AllConfig)
-            // {
-            //     //object config = configs;
-            //     //Log.Info(configs.Value.ToString());
-            //     MethodInfo methodInfo = configs.Value.GetType().GetMethod("AfterDeserialization", BindingFlags.Public);
-            //     methodInfo.Invoke(configs.Value,null);
-            //     //((ProtoObject)(configs.Value)).AfterDeserialization();
-            // }
-            //
-            // Log.Info("配置表序列化完成！");
+            Log.Info("配置表加载完成！");
+            
+            foreach (var configs in ConfigComponent.Instance.AllConfig)
+            {
+                MethodInfo methodInfo = configs.Value.GetType().GetMethod("AfterDeserialization", BindingFlags.Public);
+                methodInfo.Invoke(configs.Value,null);
+            }
+            
+            Log.Info("配置表序列化完成！");
 
             Game.Scene.AddComponent<OpcodeTypeComponent>();
             Game.Scene.AddComponent<MessageDispatcherComponent>();
