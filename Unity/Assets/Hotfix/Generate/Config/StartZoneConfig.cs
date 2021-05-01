@@ -18,7 +18,7 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private StartZoneConfig[] list;
+        private List<StartZoneConfig> list = new List<StartZoneConfig>();
 		
         public StartZoneConfigCategory()
         {

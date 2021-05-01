@@ -18,7 +18,7 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private StartMachineConfig[] list;
+        private List<StartMachineConfig> list = new List<StartMachineConfig>();
 		
         public StartMachineConfigCategory()
         {

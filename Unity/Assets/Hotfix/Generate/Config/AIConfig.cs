@@ -18,7 +18,7 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private AIConfig[] list;
+        private List<AIConfig> list = new List<AIConfig>();
 		
         public AIConfigCategory()
         {

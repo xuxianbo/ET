@@ -18,7 +18,7 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private StartSceneConfig[] list;
+        private List<StartSceneConfig> list = new List<StartSceneConfig>();
 		
         public StartSceneConfigCategory()
         {

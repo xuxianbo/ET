@@ -18,7 +18,7 @@ namespace ETHotfix
 		
         [BsonElement]
         [ProtoMember(1)]
-        private StartProcessConfig[] list;
+        private List<StartProcessConfig> list = new List<StartProcessConfig>();
 		
         public StartProcessConfigCategory()
         {
