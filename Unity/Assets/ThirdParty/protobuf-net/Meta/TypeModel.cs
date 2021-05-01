@@ -2,6 +2,11 @@
 using System.IO;
 
 using System.Collections;
+#if !SERVER
+
+using ILRuntime.Reflection;
+
+#endif
 #if FEAT_IKVM
 using Type = IKVM.Reflection.Type;
 using IKVM.Reflection;
@@ -851,7 +856,15 @@ namespace ProtoBuf.Meta
                 || !model.MapType(typeof(IEnumerable)).IsAssignableFrom(listType)) return null;
 			if (listType.FullName == "System.String") return null;
 #endif
-            
+#if !SERVER
+
+            if (listType is ILRuntimeWrapperType)
+            {
+                return ((ILRuntimeWrapperType)listType).CLRType.GenericArguments[0].Value.ReflectionType;
+            }
+
+#endif
+
             BasicList candidates = new BasicList();
 #if WINRT
             foreach (MethodInfo method in listType.GetRuntimeMethods())
