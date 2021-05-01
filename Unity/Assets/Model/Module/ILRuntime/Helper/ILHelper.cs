@@ -187,6 +187,8 @@ namespace ET
             appdomain.DelegateManager.RegisterMethodDelegate<long, int>();
             appdomain.DelegateManager.RegisterMethodDelegate<long, MemoryStream>();
             appdomain.DelegateManager.RegisterMethodDelegate<long, IPEndPoint>();
+            
+            appdomain.DelegateManager.RegisterMethodDelegate<System.Single, LitJson.JsonWriter>();
         }
 
         /// <summary>
@@ -195,6 +197,8 @@ namespace ET
         static void RegisterFunctionDelegate(AppDomain appdomain)
         {
             appdomain.DelegateManager.RegisterFunctionDelegate<System.Object, ET.ETTask>();
+            appdomain.DelegateManager.RegisterFunctionDelegate<System.String, System.Single>();
+
         }
 
         /// <summary>
@@ -206,6 +210,22 @@ namespace ET
             {
                 return new UnityEngine.Events.UnityAction((System.Action) action);
             });
+            
+            appdomain.DelegateManager.RegisterDelegateConvertor<LitJson.ExporterFunc<System.Single>>((act) =>
+            {
+                return new LitJson.ExporterFunc<System.Single>((obj, writer) =>
+                {
+                    ((Action<System.Single, LitJson.JsonWriter>)act)(obj, writer);
+                });
+            });
+            appdomain.DelegateManager.RegisterDelegateConvertor<LitJson.ImporterFunc<System.String, System.Single>>((act) =>
+            {
+                return new LitJson.ImporterFunc<System.String, System.Single>((input) =>
+                {
+                    return ((Func<System.String, System.Single>)act)(input);
+                });
+            });
+
         }
 
         /// <summary>

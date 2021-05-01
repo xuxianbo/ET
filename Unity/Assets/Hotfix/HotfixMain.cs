@@ -19,6 +19,8 @@ namespace ETHotfix
             Debug.Log("HotfixMain Init！");
             ET.Game.Hotfix.HotfixUpdate = () => { Update(); };
             ET.Game.Hotfix.LateUpdate = () => { LateUpdate(); };
+            
+            LitJsonHelper.Init();
             ProtobufHelper.Init();
 
             //Game.EventSystem.Add(ET.Game.Hotfix.GetHotfixViewTypes());
