@@ -78,7 +78,7 @@ namespace ETHotfix
             self.IsTurnHorizontal = true;
             self.TurnTime = turnTime;
             self.Speed = speed;
-            ETTaskCompletionSource<bool> tcs = new ETTaskCompletionSource<bool>();
+            ETTask<bool> tcs = ETTask<bool>.Create(true);
             self.Callback = (ret) => { tcs.SetResult(ret); };
 
             Game.EventSystem.Publish(new HotfixEventType.MoveStart(){Unit = self.GetParent<Unit>()}).Coroutine();
@@ -94,7 +94,7 @@ namespace ETHotfix
             try
             {
                 cancellationToken?.Add(CancelAction);
-                moveRet = await tcs.Task;
+                moveRet = await tcs;
             }
             finally
             {
