@@ -71,14 +71,11 @@ namespace ETHotfix
             MemoryStream stream = GetStream(Packet.OpcodeLength + count);
 
             ushort opcode = OpcodeTypeComponent.Instance.GetOpcode(message.GetType());
-            Log.Info($"opcode: {opcode}");
             stream.Seek(Packet.OpcodeLength, SeekOrigin.Begin);
             stream.SetLength(Packet.OpcodeLength);
             
             stream.GetBuffer().WriteTo(0, opcode);
-            Log.Info($"Prepare to serialize opcode: {opcode} and message: {message}");
             MessageSerializeHelper.SerializeTo(opcode, message, stream);
-            Log.Info("successfully to serialize opcode: {opcode} and message: {message}");
             stream.Seek(0, SeekOrigin.Begin);
             return (opcode, stream);
         }

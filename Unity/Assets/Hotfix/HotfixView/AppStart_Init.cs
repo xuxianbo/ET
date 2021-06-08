@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using ET;
+using ETHotfix.WaitType;
 using UnityEngine;
 
 namespace ETHotfix
@@ -22,7 +23,7 @@ namespace ETHotfix
             
             foreach (var configs in ConfigComponent.Instance.AllConfig)
             {
-                MethodInfo methodInfo = configs.Value.GetType().GetMethod("AfterDeserialization", BindingFlags.Public);
+                MethodInfo methodInfo = configs.Value.GetType().GetMethod("AfterDeserialization");
                 methodInfo.Invoke(configs.Value,null);
             }
             
@@ -40,7 +41,7 @@ namespace ETHotfix
 
             await Game.EventSystem.Publish(new HotfixEventType.AppStartInitFinish() { ZoneScene = zoneScene });
         }
-
+        
         public override Func<object, ETTask> GetEventTask()
         {
             return (eventParam) => Game.EventSystem.Publish((ET.EventType.AppStart) eventParam);

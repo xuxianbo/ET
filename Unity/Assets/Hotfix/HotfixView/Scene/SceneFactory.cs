@@ -10,7 +10,6 @@ namespace ETHotfix
             zoneScene.AddComponent<ZoneSceneFlagComponent>();
             zoneScene.AddComponent<NetKcpComponent>();
             zoneScene.AddComponent<UnitComponent>();
-            //TODO Fill while Config Module has fixed
             zoneScene.AddComponent<AIComponent, int>(1);
             
             // UI层的初始化
