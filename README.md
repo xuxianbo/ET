@@ -16,3 +16,5 @@ ET是一个开源的游戏客户端（基于unity3d）服务端双端框架，�
 [状态帧同步Moba，包含基于双端行为树技能系统](https://gitee.com/NKG_admin/NKGMobaBasedOnET)
 
 [ET框架视频教程-6.0版本](https://space.bilibili.com/33595745/favlist?fid=759596845&ftype=create)
+
+今天看到ET已经更新机器人了，架构也有了细小的调整和优化，但是这阵子比较忙，等忙完同步更新了，我现在工作就是在接xLua，真的感觉ILRuntime才是永远的神，顺带一提，ILRuntime最新的master现在已经可以兼容AI模块测试用例了，而且蓝大还在火力全开BUG修复中，给自己一个承诺，8月火力全开更新！
