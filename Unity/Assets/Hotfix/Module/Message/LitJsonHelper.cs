@@ -17,7 +17,7 @@ namespace ETHotfix
         {
             JsonMapper.RegisterExporter<float>((obj, writer)=>writer.Write(obj.ToString()));
             JsonMapper.RegisterImporter<string, float>(input => float.Parse(input));
-
+            
         }
     }
 }
