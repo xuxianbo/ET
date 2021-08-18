@@ -23,10 +23,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="EPPlus" Version="5.5.2"/>
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.9.0"/>
+        <PackageReference Include="EPPlus" Version="5.5.2" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.9.0" />
+        <PackageReference Include="MongoDB.Bson" Version="2.13.0" />
     </ItemGroup>
-
+    
     <ItemGroup>
         <None Update="TemplateClient.txt">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -37,7 +38,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Server\ThirdParty\Server.ThirdParty.csproj"/>
+        <ProjectReference Include="..\..\ThirdParty\protobuf-net\protobuf-net.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
