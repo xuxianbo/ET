@@ -1,4 +1,4 @@
-﻿#if !NO_RUNTIME
+#if !NO_RUNTIME
 using System;
 using ProtoBuf.Meta;
 #if FEAT_COMPILER
@@ -145,7 +145,7 @@ namespace ProtoBuf.Serializers
         private IProtoSerializer GetMoreSpecificSerializer(object value)
         {
             if (!CanHaveInheritance) return null;
-			Type actualType = PType.GetPType(value);
+			Type actualType = PBType.GetPType(value);
             if (actualType == forType) return null;
             for (int i = 0; i < serializers.Length; i++)
             {
@@ -309,7 +309,7 @@ namespace ProtoBuf.Serializers
             else if (useConstructor)
             {
                 if (!hasConstructor) TypeModel.ThrowCannotCreateInstance(constructType);
-				obj = PType.CreateInstance(constructType);
+				obj = PBType.CreateInstance(constructType);
             }
             else
             {

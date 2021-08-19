@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using ET;
 
-namespace ETHotfix
+namespace ET
 {
     [ObjectSystem]
     public class MessageDispatcherComponentAwakeSystem: AwakeSystem<MessageDispatcherComponent>
@@ -13,7 +12,7 @@ namespace ETHotfix
             self.Load();
         }
     }
-    
+
     [ObjectSystem]
     public class MessageDispatcherComponentLoadSystem: LoadSystem<MessageDispatcherComponent>
     {
@@ -22,7 +21,7 @@ namespace ETHotfix
             self.Load();
         }
     }
-    
+
     [ObjectSystem]
     public class MessageDispatcherComponentDestroySystem: DestroySystem<MessageDispatcherComponent>
     {
@@ -41,7 +40,7 @@ namespace ETHotfix
         public static void Load(this MessageDispatcherComponent self)
         {
             self.Handlers.Clear();
-            Game.EventSystem.RegisterAttribute<MessageHandlerAttribute>();
+
             HashSet<Type> types = Game.EventSystem.GetTypes(typeof (MessageHandlerAttribute));
 
             foreach (Type type in types)

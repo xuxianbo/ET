@@ -4,11 +4,17 @@ __讨论QQ群 : 474643097__
 
 [ET论坛](https://et-framework.cn)  
 
-# 注意！现在master(6.0版)还在开发中，不过基本架构已经完成，本项目是ET6.0接入ILRuntime热更新的示例，后续将保持维护状态，与ET同步更新。
+# 本项目是ET6.0接入ILRuntime热更新的示例，后续将保持维护状态，与ET同步更新。
 
-接入ILRtuntime教程地址：[https://www.lfzxb.top/et-6-with-ilruntime/](https://www.lfzxb.top/et-6-with-ilruntime/)
+接入ILRtuntime教程地址：[https://www.lfzxb.top/et-6-with-ilruntime/](https://www.lfzxb.top/et-6-with-ilruntime/) (完全仿照ET 5.0接入ILRuntime的思路进行开发的) 但已过时，出于学习的目的，可以前往：[et6以5.0思路接入ilrt里程碑](https://github.com/wqaetly/ET/releases/tag/ilrt-change) 进行查看
+
+**当前master采用了一种与上述博客不同的，全新的思路**
+
+- 热更层：当前master会把Model, ModelView，Hotfix，HotfixView打成一个程序集，然后以全热更的方式进行，最大限度保留了ET的结构，方便后续跟进更新
+- 非热更层：Unity.Mono，整个框架的底层驱动，网络协议的收发与序列化都在这里
 
 # ET的介绍：
+
 ET是一个开源的游戏客户端（基于unity3d）服务端双端框架，服务端是使用C# .net core开发的分布式游戏服务端，其特点是开发效率高，性能强，双端共享逻辑代码，客户端服务端热更机制完善，同时支持可靠udp tcp websocket协议，支持服务端3D recast寻路等等
 
 [ET学习笔记](https://www.lfzxb.top/)
@@ -17,4 +23,4 @@ ET是一个开源的游戏客户端（基于unity3d）服务端双端框架，�
 
 [ET框架视频教程-6.0版本](https://space.bilibili.com/33595745/favlist?fid=759596845&ftype=create)
 
-今天看到ET已经更新机器人了，架构也有了细小的调整和优化，但是这阵子比较忙，等忙完同步更新了，我现在工作就是在接xLua，真的感觉ILRuntime才是永远的神，顺带一提，ILRuntime最新的master现在已经可以兼容AI模块测试用例了，而且蓝大还在火力全开BUG修复中，给自己一个承诺，8月火力全开更新！
+[91焦先生ET-ILRuntime](https://github.com/mister91jiao/ET_ILRuntime/)

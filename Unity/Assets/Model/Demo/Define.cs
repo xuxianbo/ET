@@ -7,5 +7,6 @@
 #else
         public static bool IsAsync = true;
 #endif
+		
 	}
 }

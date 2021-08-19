@@ -39,17 +39,16 @@ namespace ET
     
     class Program
     {
-        private static string templateClient;
-        private static string templateServer;
+        private static string template;
 
-        private const string clientClassDir = "../../../Unity/Assets/Hotfix/Generate/Config";
+        private const string clientClassDir = "../../../Unity/Assets/Model/Generate/Config";
         private const string serverClassDir = "../../../Server/Model/Generate/Config";
         
         private const string excelDir = "../../../Excel";
         
         private const string jsonDir = "./{0}/Json";
         
-        private const string clientProtoDir = "../../../Unity/Assets/Bundles/Config";
+        private const string clientProtoDir = "../../../Unity/Assets/Resources/Config/Config";
         private const string serverProtoDir = "../../../Config";
 
         private static string GetProtoDir(ConfigType configType)
@@ -74,8 +73,7 @@ namespace ET
         {
             try
             {
-                templateClient = File.ReadAllText("TemplateClient.txt");
-                templateServer = File.ReadAllText("TemplateServer.txt");
+                template = File.ReadAllText("Template.txt");
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                 foreach (string path in Directory.GetFiles(excelDir, "*.xlsx"))
                 {
@@ -94,6 +92,7 @@ namespace ET
                 ExportExcelProtobuf(ConfigType.Server);
                 
                 Console.WriteLine("导表成功!");
+                Console.ReadKey();
             }
             catch (Exception e)
             {
@@ -158,8 +157,6 @@ namespace ET
                 sb.Append($"\t\t[ProtoMember({i + 1}, IsRequired  = true)]\n");
                 sb.Append($"\t\tpublic {headInfo.FieldType} {headInfo.FieldName} {{ get; set; }}\n");
             }
-
-            string template = configType == ConfigType.Client? templateClient : templateServer;
             string content = template.Replace("(ConfigName)", protoName).Replace(("(Fields)"), sb.ToString());
             sw.Write(content);
         }
@@ -214,6 +211,10 @@ namespace ET
             
             for (int row = 6; row <= worksheet.Dimension.End.Row; ++row)
             {
+                if (worksheet.Cells[row, 3].Text.Trim() == "")
+                {
+                    continue;
+                }
                 sb.Append("{");
                 for (int col = 3; col <= worksheet.Dimension.End.Column; ++col)
                 {
@@ -257,6 +258,10 @@ namespace ET
                 case "long":
                 case "float":
                 case "double":
+                    if (value == "")
+                    {
+                        return "0";
+                    }
                     return value;
                 case "string":
                     return $"\"{value}\"";
@@ -284,8 +289,7 @@ namespace ET
             references.Add(AssemblyMetadata.CreateFromFile(typeof(object).Assembly.Location).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(typeof(ProtoMemberAttribute).Assembly.Location).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(typeof(BsonDefaultValueAttribute).Assembly.Location).GetReference());
-            references.Add(AssemblyMetadata.CreateFromFile(typeof(ET.IConfig).Assembly.Location).GetReference());
-            references.Add(AssemblyMetadata.CreateFromFile(typeof(ETHotfix.IConfig).Assembly.Location).GetReference());
+            references.Add(AssemblyMetadata.CreateFromFile(typeof(IConfig).Assembly.Location).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(typeof(Attribute).Assembly.Location).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(Path.Combine(assemblyPath, "mscorlib.dll")).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(Path.Combine(assemblyPath, "System.dll")).GetReference());
@@ -323,15 +327,15 @@ namespace ET
             {
                 Directory.CreateDirectory(dir);
             }
-
-            //根据配置类型选择导出的namespace
-            string targetNamespace = configType == ConfigType.Client? "ETHotfix" : "ET";
+            
             foreach (string protoName in protoNames)
             {
-                Type type = ass.GetType($"{targetNamespace}.{protoName}Category");
-                Type subType = ass.GetType($"{targetNamespace}.{protoName}");
-
-
+                Type type = ass.GetType($"ET.{protoName}Category");
+                Type subType = ass.GetType($"ET.{protoName}");
+                // Serializer.NonGeneric.PrepareSerializer(type);
+                // Serializer.NonGeneric.PrepareSerializer(subType);
+                
+                
                 string json = File.ReadAllText(Path.Combine(string.Format(jsonDir, configType), $"{protoName}.txt"));
                 object deserialize = BsonSerializer.Deserialize(json, type);
 

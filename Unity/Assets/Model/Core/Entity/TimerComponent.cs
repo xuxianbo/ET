@@ -196,7 +196,7 @@ namespace ET
             }
             finally
             {
-                cancellationToken?.Remove(CancelAction);    
+                cancellationToken?.Remove(CancelAction);
             }
             return ret;
         }
@@ -236,14 +236,14 @@ namespace ET
             }
             finally
             {
-                cancellationToken?.Remove(CancelAction); 
+                cancellationToken?.Remove(CancelAction);
             }
             return ret;
         }
 
         public long NewFrameTimer(Action action)
         {
-#if NOT_CLIENT
+#if SERVER
 			return NewRepeatedTimerInner(100, action);
 #else
             return NewRepeatedTimerInner(1, action);
@@ -255,7 +255,7 @@ namespace ET
         /// </summary>
         private long NewRepeatedTimerInner(long time, Action action)
         {
-#if NOT_CLIENT
+#if SERVER
 			if (time < 100)
 			{
 				throw new Exception($"repeated timer < 100, timerType: time: {time}");

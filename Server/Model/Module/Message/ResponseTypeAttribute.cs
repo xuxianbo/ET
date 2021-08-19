@@ -1,5 +1,5 @@
+#if SERVER
 using System;
-
 namespace ET
 {
     public class ResponseTypeAttribute: BaseAttribute
@@ -12,3 +12,4 @@ namespace ET
         }
     }
 }
+#endif

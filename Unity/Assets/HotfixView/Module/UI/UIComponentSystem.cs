@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
-using ET;
 
-namespace ETHotfix
+namespace ET
 {
-	[ObjectSystem]
 	public class UIComponentAwakeSystem : AwakeSystem<UIComponent>
 	{
 		public override void Awake(UIComponent self)

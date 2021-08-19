@@ -42,7 +42,7 @@ namespace ET
             Proto2CS("ET", "../../../Proto/OuterMessage.proto", clientMessagePath, "OuterOpcode", 20000);
             GenerateOpcode("ET", "OuterOpcode", clientMessagePath);
             
- 
+            
         }
 
         public static void Proto2CS(string ns, string protoName, string outputPath, string opcodeClassName, int startOpcode)
@@ -79,7 +79,12 @@ namespace ET
                 if (newline.StartsWith("//ResponseType"))
                 {
                     string responseType = line.Split(" ")[1].TrimEnd('\r', '\n');
+                    
+                    sb.AppendLine($"\t#if SERVER");
                     sb.AppendLine($"\t[ResponseType(typeof({responseType}))]");
+                    sb.AppendLine($"\t#else");
+                    sb.AppendLine($"\t[ResponseType(\"" + responseType + "\")]");
+                    sb.AppendLine($"\t#endif");
                     continue;
                 }
 

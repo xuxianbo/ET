@@ -64,6 +64,7 @@ namespace UnityEngine
             this.w = (float) ((double) num9 * (double) num6 * (double) num3 + (double) num8 * (double) num5 * (double) num2);
         }
         
+
         public override string ToString()
         {
             CultureInfo currentCulture = CultureInfo.CurrentCulture;

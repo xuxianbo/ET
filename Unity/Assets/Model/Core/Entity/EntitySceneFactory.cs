@@ -1,4 +1,6 @@
-﻿namespace ET
+﻿using UnityEngine;
+
+namespace ET
 {
     public static class EntitySceneFactory
     {
@@ -12,20 +14,19 @@
             return scene;
         }
 
-        public static Scene CreateScene(long id, int zone, SceneType sceneType, string name, Entity parent = null)
+        public static Scene CreateScene(long instanceId, int zone, SceneType sceneType, string name, Entity parent = null)
         {
-            Scene scene = new Scene(id, zone, sceneType, name);
+            Scene scene = new Scene(instanceId, zone, sceneType, name);
             scene.IsRegister = true;
             scene.Parent = parent;
             scene.Domain = scene;
-
             return scene;
         }
 
         public static Scene CreateScene(int zone, SceneType sceneType, string name, Entity parent = null)
         {
-            long id = IdGenerater.Instance.GenerateId();
-            Scene scene = new Scene(id, zone, sceneType, name);
+            long instanceId = IdGenerater.Instance.GenerateInstanceId();
+            Scene scene = new Scene(instanceId, zone, sceneType, name);
             scene.IsRegister = true;
             scene.Parent = parent;
             scene.Domain = scene;

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace ETHotfix
+namespace ET
 {
 	public static class GameObjectHelper
 	{

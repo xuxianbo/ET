@@ -1,6 +1,4 @@
-﻿﻿using ET;
-
- namespace ETHotfix
+﻿﻿namespace ET
 {
     [ObjectSystem]
     public class SessionAcceptTimeoutComponentAwakeSystem: AwakeSystem<SessionAcceptTimeoutComponent>

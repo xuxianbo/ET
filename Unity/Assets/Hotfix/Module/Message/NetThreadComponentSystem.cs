@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Threading;
-using ET;
 
-namespace ETHotfix
+namespace ET
 {
     [ObjectSystem]
     public class NetThreadComponentAwakeSystem: AwakeSystem<NetThreadComponent>
@@ -10,12 +9,11 @@ namespace ETHotfix
         public override void Awake(NetThreadComponent self)
         {
             NetThreadComponent.Instance = self;
-
+            
             self.ThreadSynchronizationContext = ThreadSynchronizationContext.Instance;
         }
     }
 
-#if !NET_THREAD
     [ObjectSystem]
     public class NetThreadComponentUpdateSystem: LateUpdateSystem<NetThreadComponent>
     {
@@ -27,7 +25,6 @@ namespace ETHotfix
             }
         }
     }
-#endif
     
     [ObjectSystem]
     public class NetThreadComponentDestroySystem: DestroySystem<NetThreadComponent>
@@ -40,11 +37,9 @@ namespace ETHotfix
     
     public static class NetThreadComponentSystem
     {
-#region 主线程
 
         public static void Stop(this NetThreadComponent self)
         {
-
         }
 
         public static void Add(this NetThreadComponent self, AService kService)
@@ -72,8 +67,6 @@ namespace ETHotfix
                 self.Services.Remove(kService);
             });
         }
-
-#endregion
         
     }
 }

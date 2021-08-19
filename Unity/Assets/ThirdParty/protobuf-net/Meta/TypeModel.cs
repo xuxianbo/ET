@@ -1,11 +1,9 @@
-﻿using System;
+using System;
 using System.IO;
-
 using System.Collections;
 #if !SERVER
-
+using UnityEngine;
 using ILRuntime.Reflection;
-
 #endif
 #if FEAT_IKVM
 using Type = IKVM.Reflection.Type;
@@ -195,7 +193,7 @@ namespace ProtoBuf.Meta
         }
         private void SerializeCore(ProtoWriter writer, object value)
         {
-			SerializeCore(writer, PType.GetPType(value), value);
+			SerializeCore(writer, PBType.GetPType(value), value);
         }
 
         private void SerializeCore(ProtoWriter writer, Type type, object value)

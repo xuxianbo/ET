@@ -1,9 +1,5 @@
-﻿using ET;
-
-namespace ETHotfix
+﻿namespace ET
 {
-
-	[ObjectSystem]	
 	public class SessionComponentDestroySystem: DestroySystem<SessionComponent>
 	{
 		public override void Destroy(SessionComponent self)

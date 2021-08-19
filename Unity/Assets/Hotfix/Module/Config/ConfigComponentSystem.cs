@@ -1,60 +1,79 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Threading.Tasks;
-using ET;
+using UnityEngine;
 
-namespace ETHotfix
+namespace ET
 {
-    [ObjectSystem]
-    public class ConfigAwakeSystem: AwakeSystem<ConfigComponent>
+	[ObjectSystem]
+    public class ConfigAwakeSystem : AwakeSystem<ConfigComponent>
     {
         public override void Awake(ConfigComponent self)
         {
-            ConfigComponent.Instance = self;
+	        ConfigComponent.Instance = self;
         }
     }
-
+    
     [ObjectSystem]
-    public class ConfigDestroySystem: DestroySystem<ConfigComponent>
+    public class ConfigDestroySystem : DestroySystem<ConfigComponent>
     {
-        public override void Destroy(ConfigComponent self)
-        {
-            ConfigComponent.Instance = null;
-        }
+	    public override void Destroy(ConfigComponent self)
+	    {
+		    ConfigComponent.Instance = null;
+	    }
     }
-
+    
     public static class ConfigComponentSystem
-    {
-        public static void Load(this ConfigComponent self)
-        {
-            self.AllConfig.Clear();
-            Game.EventSystem.RegisterAttribute<ConfigAttribute>();
-            HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
+	{
+		public static void LoadOneConfig(this ConfigComponent self, Type configType)
+		{
+			byte[] oneConfigBytes = self.ConfigLoader.GetOneConfigBytes(configType.FullName);
 
-            Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
-            ConfigComponent.GetAllConfigBytes(configBytes);
+			object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
 
-            foreach (Type type in types)
-            {
-                try
-                {
-                    self.LoadOne(type, configBytes);
-                }
-                catch (Exception e)
-                {
-                    Log.Error(e);
-                    throw;
-                }
+			self.AllConfig[configType] = category;
+		}
+		
+		public static async ETTask LoadAsync(this ConfigComponent self)
+		{
+			self.AllConfig.Clear();
+			HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
+			
+			Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
+			self.ConfigLoader.GetAllConfigBytes(configBytes);
+			
+			
+			async ETTask Load(Type configType, Dictionary<string, byte[]> configBytes)
+			{
+				await ETTask.CompletedTask;
+				self.LoadOneInThread(configType, configBytes);
+			}
 
-            }
-        }
+			MonoListComponent<ETTask> tasks = MonoListComponent<ETTask>.Create();
+			foreach (var item in types)
+			{
+				tasks.List.Add(Load(item, configBytes));//好像这么写还是同步加载
+			}
+			
+			await ETTaskHelper.WaitAll(tasks.List);
+			
+			tasks.Dispose();
+		}
 
-        private static void LoadOne(this ConfigComponent self, Type configType, Dictionary<string, byte[]> configBytes)
-        {
-            byte[] oneConfigBytes = configBytes[configType.Name];
+		private static void LoadOneInThread(this ConfigComponent self, Type configType, Dictionary<string, byte[]> configBytes)
+		{
+			byte[] oneConfigBytes = configBytes[configType.Name];
+			object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
 
-            object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
-            self.AllConfig[configType] = category;
-        }
-    }
+#if !SERVER
+			MethodInfo methodInfo = category.GetType().GetMethod("AfterDeserialization");
+			methodInfo?.Invoke(category,null);
+#endif
+			lock (self)
+			{
+				self.AllConfig[configType] = category;	
+			}
+		}
+	}
 }

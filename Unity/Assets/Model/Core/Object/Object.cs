@@ -10,6 +10,20 @@ using UnityEngine;
 
 namespace ET
 {
+#if !SERVER
+    //ILRT 里不能用适配器IDisposable，会导致PB解析错误
+    public interface IDisposable
+    {
+        void Dispose();
+    }
+#endif
+    
+    public interface ISupportInitialize
+    {
+        void BeginInit();
+        void EndInit();
+    }
+    
     public abstract class Object: ISupportInitialize, IDisposable
     {
 #if UNITY_EDITOR && VIEWGO

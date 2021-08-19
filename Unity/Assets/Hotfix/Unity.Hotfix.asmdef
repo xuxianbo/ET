@@ -1,12 +1,14 @@
 {
     "name": "Unity.Hotfix",
-    "rootNamespace": "",
+    "rootNamespace": "ET",
     "references": [
         "Unity.Model",
         "Unity.ThirdParty",
-        "Unity.ModelView"
+        "Unity.Mono"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
     "overrideReferences": false,

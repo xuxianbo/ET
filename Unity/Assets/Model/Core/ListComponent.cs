@@ -1,3 +1,6 @@
+#if SERVER
+
+
 /**
  * 封装List，用于重用
  */
@@ -70,3 +73,5 @@ namespace ET
         }
     }
 }
+
+#endif

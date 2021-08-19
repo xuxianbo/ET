@@ -1,7 +1,6 @@
-﻿using ET;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace ETHotfix
+namespace ET
 {
 	[MessageHandler]
 	public class M2C_PathfindingResultHandler : AMHandler<M2C_PathfindingResult>
@@ -12,7 +11,7 @@ namespace ETHotfix
 
 			float speed = unit.GetComponent<NumericComponent>().GetAsFloat(NumericType.Speed);
 
-			using var list = ListComponent<Vector3>.Create();
+			using MonoListComponent<Vector3> list = MonoListComponent<Vector3>.Create();
 			
 			for (int i = 0; i < message.Xs.Count; ++i)
 			{

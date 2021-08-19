@@ -1,9 +1,7 @@
-using ET;
 using UnityEngine;
 
-namespace ETHotfix
+namespace ET
 {
-    [AIHandlerAttribute]
     public class AI_XunLuo: AAIHandler
     {
         public override int Check(AIComponent aiComponent, AIConfig aiConfig)

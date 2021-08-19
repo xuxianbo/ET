@@ -1,7 +1,6 @@
-﻿using ET;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace ETHotfix
+namespace ET
 {
     public static class UnitFactory
     {
@@ -24,7 +23,7 @@ namespace ETHotfix
 	        UnitComponent unitComponent = domain.GetComponent<UnitComponent>();
             unitComponent.Add(unit);
             
-	        Game.EventSystem.Publish(new HotfixEventType.AfterUnitCreate() {Unit = unit}).Coroutine();
+            Game.EventSystem.Publish(new EventType.AfterUnitCreate() {Unit = unit});
             return unit;
         }
     }

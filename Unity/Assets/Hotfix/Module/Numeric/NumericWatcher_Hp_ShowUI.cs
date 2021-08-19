@@ -1,6 +1,4 @@
-﻿using ET;
-
-namespace ETHotfix
+﻿namespace ET
 {
 	/// <summary>
 	/// 监视hp数值变化，改变血条值

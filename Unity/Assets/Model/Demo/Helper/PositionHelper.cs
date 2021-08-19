@@ -19,11 +19,6 @@ namespace ET
 			return new Vector3(pos.x, 0, pos.z);
 		}
 
-		public static Quaternion AngleToQuaternion(int angle)
-		{
-			return Quaternion.AngleAxis(-angle, Vector3.up) * Quaternion.AngleAxis(90, Vector3.up);
-		}
-
 		public static Quaternion GetVector3ToQuaternion(Vector3 source, Vector3 dire)
 		{
 			Vector3 nowPos = source;
@@ -34,18 +29,20 @@ namespace ET
 			Vector3 direction = (dire - nowPos).normalized;
 			return Quaternion.LookRotation(direction, Vector3.up);
 		}
-		
-		public static float Distance2D(Vector3 v1, Vector3 v2)
+
+        public static float Distance2D(Unit u1, Unit u2)
+        {
+            Vector2 v1 = new Vector2(u1.Position.x, u1.Position.z);
+            Vector2 v2 = new Vector2(u2.Position.x, u2.Position.z);
+            return Vector2.Distance(v1, v2);
+        }
+
+        public static float Distance2D(Vector3 v1, Vector3 v2)
         {
             Vector2 d1 = new Vector2(v1.x, v1.z);
             Vector2 d2 = new Vector2(v2.x, v2.z);
             return Vector2.Distance(d1, d2);
         }
-
-        public static Quaternion GetAngleToQuaternion(float angle)
-		{
-			return Quaternion.AngleAxis(-angle, Vector3.up) * Quaternion.AngleAxis(90, Vector3.up);
-		}
 
 		public static float Vector3ToAngle360(Vector3 from, Vector3 to)
 		{
@@ -69,29 +66,7 @@ namespace ET
             float C = endVe2.x * startVe2.y - startVe2.x * endVe2.y;
             float denominator = Mathf.Sqrt(A * A + B * B);
             Vector2 pointVe2 = point.IgnoreYAxis();
-            return Mathf.Abs((A * pointVe2.x + B * pointVe2.y + C) / denominator); ;
-        }
-        /// <summary>
-        /// 判断射线是否碰撞到球体，如果碰撞到，返回射线起点到碰撞点之间的距离
-        /// </summary>
-        /// <param name="ray"></param>
-        /// <param name="center"></param>
-        /// <param name="redius"></param>
-        /// <param name="dist"></param>
-        /// <returns></returns>
-        public static bool RayCastSphere(Ray ray, Vector3 center, float redius, out float dist)
-        {
-            dist = 0;
-            Vector3 ma = center - ray.origin;
-            float distance = Vector3.Cross(ma, ray.direction).magnitude / ray.direction.magnitude;
-            if (distance < redius)
-            {
-                float op = GGTheorem(Vector3.Distance(center, ray.origin), distance);
-                float rp = GGTheorem(redius, distance);
-                dist = op - rp;
-                return true;
-            }
-            return false;
+            return Mathf.Abs((A * pointVe2.x + B * pointVe2.y + C) / denominator);
         }
         /// <summary>
         /// 勾股定理

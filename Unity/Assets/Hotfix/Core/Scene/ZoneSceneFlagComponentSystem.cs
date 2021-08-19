@@ -1,6 +1,4 @@
-﻿using ET;
-
-namespace ETHotfix
+﻿namespace ET
 {
     [ObjectSystem]
     public class ZoneSceneFlagComponentDestroySystem: DestroySystem<ZoneSceneFlagComponent>
@@ -10,7 +8,7 @@ namespace ETHotfix
             ZoneSceneManagerComponent.Instance.Remove(self.DomainZone());
         }
     }
-    
+
     [ObjectSystem]
     public class ZoneSceneFlagComponentAwakeSystem: AwakeSystem<ZoneSceneFlagComponent>
     {

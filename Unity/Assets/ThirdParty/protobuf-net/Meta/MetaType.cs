@@ -1,4 +1,4 @@
-﻿#if !NO_RUNTIME
+#if !NO_RUNTIME
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -1183,12 +1183,12 @@ namespace ProtoBuf.Meta
 			if (itemType != null && itemType.FullName == "ILRuntime.Runtime.Intepreter.ILTypeInstance") {
 				if (typeName == null)
 					throw new ProtoException ("TypeName Must Not Null For " + itemType);
-				itemType = PType.FindType (typeName);
+				itemType = PBType.FindType (typeName);
 			}
 			if (defaultType != null && defaultType.FullName == "ILRuntime.Runtime.Intepreter.ILTypeInstance") {
 				if (typeName == null)
 					throw new ProtoException ("TypeName Must Not Null For " + itemType);
-				defaultType = PType.FindType (typeName);
+				defaultType = PBType.FindType (typeName);
 			}
             ValueMember vm = ((isEnum || normalizedAttribute.Tag > 0))
                 ? new ValueMember(model, type, normalizedAttribute.Tag, member, effectiveType, itemType, defaultType, normalizedAttribute.DataFormat, defaultValue)

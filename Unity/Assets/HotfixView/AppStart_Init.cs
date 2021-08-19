@@ -1,50 +1,36 @@
-using System;
-using System.Reflection;
-using ET;
-using ETHotfix.WaitType;
-using UnityEngine;
-
-namespace ETHotfix
+namespace ET
 {
-    [Event]
-    public class AppStart_Init: AEvent<ET.EventType.AppStart>
+    public class AppStart_Init: AEvent<EventType.AppStart>
     {
-        protected override async ETTask Run(ET.EventType.AppStart args)
+        protected override async ETTask Run(EventType.AppStart args)
         {
-            Debug.Log($"Hotfix receive a event from Model!---------------{args.i}");
-
-            ResourcesComponent.Instance.LoadBundle("config.unity3d");
+            Log.Info("APP Start回调");
+            Game.Scene.AddComponent<TimerComponent>();
+            Game.Scene.AddComponent<CoroutineLockComponent>();
+            // 加载配置
+            Game.Scene.AddComponent<ResourcesComponent>();
+            
             Game.Scene.AddComponent<ConfigComponent>();
-            ConfigComponent.GetAllConfigBytes = LoadConfigHelper.LoadAllConfigBytes;
-            ConfigComponent.Instance.Load();
-            ResourcesComponent.Instance.UnloadBundle("config.unity3d");
-
-            Log.Info("配置表加载完成！");
+            await ConfigComponent.Instance.LoadAsync();
             
-            foreach (var configs in ConfigComponent.Instance.AllConfig)
-            {
-                MethodInfo methodInfo = configs.Value.GetType().GetMethod("AfterDeserialization");
-                methodInfo.Invoke(configs.Value,null);
-            }
-            
-            Log.Info("配置表序列化完成！");
-
             Game.Scene.AddComponent<OpcodeTypeComponent>();
             Game.Scene.AddComponent<MessageDispatcherComponent>();
+            
             Game.Scene.AddComponent<NetThreadComponent>();
+            
             Game.Scene.AddComponent<ZoneSceneManagerComponent>();
+            
+            Game.Scene.AddComponent<GlobalComponent>();
+            
             Game.Scene.AddComponent<AIDispatcherComponent>();
-
+            
+            
             ResourcesComponent.Instance.LoadBundle("unit.unity3d");
+            
+            Scene zoneScene = await SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
+            
+            await Game.EventSystem.Publish(new EventType.AppStartInitFinish() { ZoneScene = zoneScene });
 
-            Scene zoneScene = await SceneFactory.CreateZoneScene(1, "Hotfix Zone [1]");
-
-            await Game.EventSystem.Publish(new HotfixEventType.AppStartInitFinish() { ZoneScene = zoneScene });
-        }
-        
-        public override Func<object, ETTask> GetEventTask()
-        {
-            return (eventParam) => Game.EventSystem.Publish((ET.EventType.AppStart) eventParam);
         }
     }
 }

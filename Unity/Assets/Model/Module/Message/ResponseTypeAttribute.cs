@@ -1,3 +1,4 @@
+#if !SERVER
 using System;
 
 namespace ET
@@ -12,3 +13,5 @@ namespace ET
         }
     }
 }
+#endif
+

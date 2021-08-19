@@ -24,7 +24,7 @@
 
     <ItemGroup>
       <Compile Remove=".vs\**" />
-      <Compile Include="..\..\Unity\Assets\Model\Core\ProcessHelper.cs">
+      <Compile Include="..\..\Unity\Assets\Editor\Helper\ProcessHelper.cs">
         <Link>ProcessHelper.cs</Link>
       </Compile>
     </ItemGroup>

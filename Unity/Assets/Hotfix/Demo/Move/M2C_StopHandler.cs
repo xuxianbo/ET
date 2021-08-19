@@ -1,10 +1,8 @@
-﻿using ET;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace ETHotfix
+namespace ET
 {
-
-	[MessageHandler]	
+	[MessageHandler]
 	public class M2C_StopHandler : AMHandler<M2C_Stop>
 	{
 		protected override async ETVoid Run(Session session, M2C_Stop message)

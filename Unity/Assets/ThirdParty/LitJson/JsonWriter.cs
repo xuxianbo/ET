@@ -225,7 +225,12 @@ namespace LitJson
 
             writer.Write ('"');
 
-            int n = str.Length;
+	        //直接存储原始字符串，不再做任何转义字符的解析
+	        writer.Write(str);
+	        writer.Write('"');
+	        return;
+
+			int n = str.Length;
             for (int i = 0; i < n; i++) {
                 switch (str[i]) {
                 case '\n':
@@ -365,6 +370,7 @@ namespace LitJson
             context.ExpectingValue = false;
         }
 
+        [CLSCompliant(false)]
         public void Write (ulong number)
         {
             DoValidation (Condition.Value);
@@ -457,6 +463,17 @@ namespace LitJson
                 writer.Write (':');
 
             context.ExpectingValue = true;
+        }
+        
+        public void Write(float number)
+        {
+            DoValidation(Condition.Value);
+            PutNewline();
+ 
+            string str = number.ToString();
+            Put(str);
+ 
+            context.ExpectingValue = false;
         }
     }
 }

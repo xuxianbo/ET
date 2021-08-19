@@ -1,9 +1,8 @@
-﻿﻿using System;
+﻿using System;
 using System.IO;
 using System.Net;
- using ET;
 
- namespace ETHotfix
+namespace ET
 {
     [ObjectSystem]
     public class NetKcpComponentAwakeSystem: AwakeSystem<NetKcpComponent>
@@ -13,9 +12,9 @@ using System.Net;
             self.MessageDispatcher = new OuterMessageDispatcher();
             
             self.Service = new TService(NetThreadComponent.Instance.ThreadSynchronizationContext, ServiceType.Outer);
-            self.Service.ErrorCallback += self.OnError;
-            self.Service.ReadCallback += self.OnRead;
-
+            self.Service.ErrorCallback += (channelId, error) => self.OnError(channelId, error);
+            self.Service.ReadCallback += (channelId, Memory) => self.OnRead(channelId, Memory);
+            
             NetThreadComponent.Instance.Add(self.Service);
         }
     }
@@ -28,9 +27,9 @@ using System.Net;
             self.MessageDispatcher = new OuterMessageDispatcher();
             
             self.Service = new TService(NetThreadComponent.Instance.ThreadSynchronizationContext, address, ServiceType.Outer);
-            self.Service.ErrorCallback += self.OnError;
-            self.Service.ReadCallback += self.OnRead;
-            self.Service.AcceptCallback += self.OnAccept;
+            self.Service.ErrorCallback += (channelId, error) => self.OnError(channelId, error);
+            self.Service.ReadCallback += (channelId, Memory) => self.OnRead(channelId, Memory);
+            self.Service.AcceptCallback += (channelId, IPAddress) => self.OnAccept(channelId, IPAddress);
 
             NetThreadComponent.Instance.Add(self.Service);
         }
@@ -57,6 +56,41 @@ using System.Net;
 
     public static class NetKcpComponentSystem
     {
+        public static void OnRead(this NetKcpComponent self, long channelId, MemoryStream memoryStream)
+        {
+            Session session = self.GetChild<Session>(channelId);
+            if (session == null)
+            {
+                return;
+            }
+
+            session.LastRecvTime = TimeHelper.ClientNow();
+            self.MessageDispatcher.Dispatch(session, memoryStream);
+        }
+
+        public static void OnError(this NetKcpComponent self, long channelId, int error)
+        {
+            Session session = self.GetChild<Session>(channelId);
+            if (session == null)
+            {
+                return;
+            }
+
+            session.Error = error;
+            session.Dispose();
+        }
+
+        // 这个channelId是由CreateAcceptChannelId生成的
+        public static void OnAccept(this NetKcpComponent self, long channelId, IPEndPoint ipEndPoint)
+        {
+            Session session = EntityFactory.CreateWithParentAndId<Session, AService>(self, channelId, self.Service);
+            session.RemoteAddress = ipEndPoint;
+
+            session.AddComponent<SessionAcceptTimeoutComponent>();
+            // 客户端连接，2秒检查一次recv消息，10秒没有消息则断开
+            session.AddComponent<SessionIdleCheckerComponent, int>(NetThreadComponent.checkInteral);
+        }
+
         public static Session Get(this NetKcpComponent self, long id)
         {
             Session session = self.GetChild<Session>(id);
