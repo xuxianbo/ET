@@ -21,10 +21,12 @@ ET是一个开源的游戏客户端（基于unity3d）服务端双端框架，�
 
 - [x] 接入ILRuntime
 - [ ] 接入xAsset作为资源管理方案（必要，因为当前非热更层直接从Resources目录加载的Hotfix Dll和配置数据，而这些数据理应是热更的）
+- [ ] 更新 [ET 6.0学习笔记](https://www.lfzxb.top/et6.0-study/)
+- [ ] 以ET 6.0为底层框架，更新 [状态帧同步Moba，包含基于双端行为树技能系统](https://gitee.com/NKG_admin/NKGMobaBasedOnET)
 
 # 引用
 
-[ET学习笔记](https://www.lfzxb.top/)
+[ET 6.0学习笔记](https://www.lfzxb.top/et6.0-study/)
 
 [状态帧同步Moba，包含基于双端行为树技能系统](https://gitee.com/NKG_admin/NKGMobaBasedOnET)
 
