@@ -42,14 +42,7 @@ namespace ET
             
             if (GUILayout.Button("构建DLL"))
             {
-                BuildAssemblieEditor.BuildMuteAssembly("Hotfix", new []
-                {
-                    "Assets/Model/",
-                    "Assets/ModelView/",
-                    "Assets/Hotfix/",
-                    "Assets/HotfixView/"
-                });
-                AssetDatabase.Refresh();
+                BuildAssemblieEditor.BuildMuteAssembly();
             }
             
             if (GUILayout.Button("刷新资源"))

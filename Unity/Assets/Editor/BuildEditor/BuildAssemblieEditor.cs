@@ -8,39 +8,124 @@ using UnityEditor.Compilation;
 
 namespace ET
 {
-    public class BuildAssemblieEditor : MonoBehaviour
+    [InitializeOnLoad]
+    public static class BuildAssemblieEditor
     {
-        public const string ScriptAssembliesDir = "Temp/MyAssembly/";
-        private const string CodeDir = "Assets/Res/Code/";
-        
-        private static void CopyDllAndPdb(string FileName)
+        /// <summary>
+        /// 最原始的4个程序集路径
+        /// </summary>
+        private static string[] s_OriginDllDirs = new[]
         {
-            File.Copy(Path.Combine(ScriptAssembliesDir, FileName + ".dll"), Path.Combine(CodeDir, FileName + ".dll.bytes"), true);
-            File.Copy(Path.Combine(ScriptAssembliesDir, FileName + ".pdb"), Path.Combine(CodeDir, FileName + ".pdb.bytes"), true);
-        }
-        public static void BuildMuteAssembly(string Name, string[] CodeDirectorys)
+            "Library/ScriptAssemblies/Unity.Model.dll",
+            "Library/ScriptAssemblies/Unity.ModelView.dll",
+            "Library/ScriptAssemblies/Unity.Hotfix.dll",
+            "Library/ScriptAssemblies/Unity.HotfixView.dll"
+        };
+
+        /// <summary>
+        /// 脚本所在目录
+        /// </summary>
+        private static string[] s_OriginScriptsDirs = new[]
         {
-            List<string> Scripts = new List<string>();
-            for (int i = 0; i < CodeDirectorys.Length; i++)
+            "Assets/Model/",
+            "Assets/ModelView/",
+            "Assets/Hotfix/",
+            "Assets/HotfixView/"
+        };
+
+        /// <summary>
+        /// 最终构建的dll名称
+        /// </summary>
+        private static string s_FinalHotfixDllName = "Hotfix";
+
+        /// <summary>
+        /// 合并的程序集路径
+        /// </summary>
+        private static string s_ScriptAssembliesDir = "Temp/FinalHotfixAssembly/";
+
+        /// <summary>
+        /// m_OriginDll的md5文件，只有发生了改变才会进行重新编译
+        /// </summary>
+        private static string s_ScriptAssembliesMd5FilePath = $"{s_ScriptAssembliesDir}md5.txt";
+
+        /// <summary>
+        /// 最终的Hotfix dll路径
+        /// </summary>
+        private static string s_FinalHotfixDllDir = "Assets/Res/Code/";
+
+
+        static BuildAssemblieEditor()
+        {
+            Directory.CreateDirectory(s_ScriptAssembliesDir);
+
+            if (File.Exists(s_ScriptAssembliesMd5FilePath))
             {
-                DirectoryInfo dti = new DirectoryInfo(CodeDirectorys[i]);
-                FileInfo[] fileInfos = dti.GetFiles("*.cs", System.IO.SearchOption.AllDirectories); 
-                for (int j = 0; j < fileInfos.Length; j++)
+                string oldMD5 = File.ReadAllText(s_ScriptAssembliesMd5FilePath);
+                string newMD5 = "";
+                foreach (var t in s_OriginDllDirs)
                 {
-                    Scripts.Add(fileInfos[j].FullName); 
+                    newMD5 += MD5Helper.FileMD5(t);
+                }
+
+                if (newMD5 == oldMD5)
+                {
+                    return;
+                }
+
+                BuildMuteAssembly();
+            }
+            else
+            {
+                BuildMuteAssembly();
+                using (StreamWriter file = File.CreateText(s_ScriptAssembliesMd5FilePath))
+                {
+                    string newMD5 = "";
+                    foreach (var t in s_OriginDllDirs)
+                    {
+                        newMD5 += MD5Helper.FileMD5(t).ToString();
+                    }
+
+                    file.Write(newMD5);
                 }
             }
-        
-            string outputAssembly = "Temp/MyAssembly/" + Name + ".dll";
-        
-            Directory.CreateDirectory("Temp/MyAssembly");
-        
-            AssemblyBuilder assemblyBuilder = new AssemblyBuilder(outputAssembly, Scripts.ToArray());
+        }
+
+        private static void CopyDllAndPdb(string FileName)
+        {
+            File.Copy(Path.Combine(s_ScriptAssembliesDir, FileName + ".dll"),
+                Path.Combine(s_FinalHotfixDllDir, FileName + ".dll.bytes"), true);
+            File.Copy(Path.Combine(s_ScriptAssembliesDir, FileName + ".pdb"),
+                Path.Combine(s_FinalHotfixDllDir, FileName + ".pdb.bytes"), true);
+            AssetDatabase.Refresh();
+        }
+
+        public static void BuildMuteAssembly()
+        {
+            List<string> scripts = new List<string>();
+            for (int i = 0; i < s_OriginScriptsDirs.Length; i++)
+            {
+                DirectoryInfo dti = new DirectoryInfo(s_OriginScriptsDirs[i]);
+                FileInfo[] fileInfos = dti.GetFiles("*.cs", System.IO.SearchOption.AllDirectories);
+                for (int j = 0; j < fileInfos.Length; j++)
+                {
+                    scripts.Add(fileInfos[j].FullName);
+                }
+            }
+
+            string outputAssembly = s_ScriptAssembliesDir + s_FinalHotfixDllName + ".dll";
+
+            Directory.CreateDirectory(s_ScriptAssembliesDir);
+
+            BuildTargetGroup buildTargetGroup =
+                BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget);
+
+            AssemblyBuilder assemblyBuilder = new AssemblyBuilder(outputAssembly, scripts.ToArray());
 
             //启用UnSafe
             assemblyBuilder.compilerOptions.AllowUnsafeCode = true;
 
-            assemblyBuilder.compilerOptions.ApiCompatibilityLevel = ApiCompatibilityLevel.NET_4_6;
+            assemblyBuilder.compilerOptions.ApiCompatibilityLevel =
+                PlayerSettings.GetApiCompatibilityLevel(buildTargetGroup);
 
             assemblyBuilder.compilerOptions.CodeOptimization = CodeOptimization.Release;
 
@@ -48,67 +133,60 @@ namespace ET
             //AssemblyBuilderFlags.None                 正常发布
             //AssemblyBuilderFlags.DevelopmentBuild     开发模式打包
             //AssemblyBuilderFlags.EditorAssembly       编辑器状态
-            
-        
+
+
             assemblyBuilder.referencesOptions = ReferencesOptions.UseEngineModules;
 
             assemblyBuilder.buildTarget = EditorUserBuildSettings.activeBuildTarget;
 
-            assemblyBuilder.buildTargetGroup = BuildTargetGroup.Standalone;
+            assemblyBuilder.buildTargetGroup = buildTargetGroup;
 
             //添加额外的宏定义
             // assemblyBuilder.additionalDefines = new[]
             // {
             //     ""
             // };
-            
+
             //需要排除自身的引用
-            assemblyBuilder.excludeReferences = new[]
-            { 
-                "Library/ScriptAssemblies/Unity.Model.dll",
-                "Library/ScriptAssemblies/Unity.ModelView.dll",
-                "Library/ScriptAssemblies/Unity.Hotfix.dll",
-                "Library/ScriptAssemblies/Unity.HotfixView.dll"
-            };
-                
+            assemblyBuilder.excludeReferences = s_OriginDllDirs;
+
             assemblyBuilder.buildStarted += delegate(string assemblyPath)
             {
                 Debug.LogFormat("程序集开始构建：" + assemblyPath);
             };
-        
+
             assemblyBuilder.buildFinished += delegate(string assemblyPath, CompilerMessage[] compilerMessages)
+
             {
                 int errorCount = compilerMessages.Count(m => m.type == CompilerMessageType.Error);
                 int warningCount = compilerMessages.Count(m => m.type == CompilerMessageType.Warning);
-                
                 Debug.LogFormat("程序集构建完成：" + assemblyPath);
                 Debug.LogFormat("Warnings: {0} - Errors: {1}", warningCount, errorCount);
-
-                if (warningCount > 0)
+                for (int i = 0;
+                    i < compilerMessages.Length;
+                    i++)
                 {
-                    Debug.LogFormat("有{0}个Warning!!!", warningCount);
-                }
-                
-                if (errorCount > 0)
-                {
-                    for (int i = 0; i < compilerMessages.Length; i++)
+                    if (compilerMessages[i].type == CompilerMessageType.Error)
                     {
-                        if (compilerMessages[i].type == CompilerMessageType.Error)
-                        {
-                            Debug.LogError(compilerMessages[i].message);
-                        }
+                        Debug.LogError(compilerMessages[i].message);
+                    }
+
+                    if (compilerMessages[i].type == CompilerMessageType.Warning)
+                    {
+                        Debug.LogWarning(compilerMessages[i].message);
                     }
                 }
-                else
+
+                if (errorCount == 0)
                 {
-                    CopyDllAndPdb(Name);
+                    CopyDllAndPdb(s_FinalHotfixDllName);
                 }
             };
-        
-            //开始构建
-            if(!assemblyBuilder.Build())
+
+//开始构建
+            if (!assemblyBuilder.Build())
             {
-                Debug.LogErrorFormat("构建程序集失败：" + assemblyBuilder.assemblyPath);
+                Debug.LogErrorFormat("构建程序集失败：" + assemblyBuilder.assemblyPath + "构建程序集时遇到致命错误，请修复！");
                 return;
             }
         }
