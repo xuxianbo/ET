@@ -181,9 +181,6 @@ namespace ET
         static void RegisterMethodDelegate(AppDomain appdomain)
         {
             appdomain.DelegateManager.RegisterMethodDelegate<List<object>>();
-            //appdomain.DelegateManager.RegisterMethodDelegate<ILTypeInstance>();
-            //appdomain.DelegateManager.RegisterMethodDelegate<AChannel, System.Net.Sockets.SocketError>();
-            //appdomain.DelegateManager.RegisterMethodDelegate<byte[], int, int>();
             appdomain.DelegateManager.RegisterMethodDelegate<long, int>();
             appdomain.DelegateManager.RegisterMethodDelegate<long, MemoryStream>();
             appdomain.DelegateManager.RegisterMethodDelegate<long, IPEndPoint>();

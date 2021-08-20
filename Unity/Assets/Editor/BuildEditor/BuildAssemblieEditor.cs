@@ -183,7 +183,7 @@ namespace ET
                 }
             };
 
-//开始构建
+            //开始构建
             if (!assemblyBuilder.Build())
             {
                 Debug.LogErrorFormat("构建程序集失败：" + assemblyBuilder.assemblyPath + "构建程序集时遇到致命错误，请修复！");

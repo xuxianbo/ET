@@ -551,7 +551,7 @@ namespace LitJson
                                 continue;
                             }
                         }
-                        //ÕâÀïÊÇÎªÁË À©Õ¹¿ÉÒÔÈÃËûÖ§³Ö ×ÖµäµÄkeyÎªintÀàĞÍ
+                        //è¿™é‡Œæ˜¯ä¸ºäº† æ‰©å±•å¯ä»¥è®©ä»–æ”¯æŒ å­—å…¸çš„keyä¸ºintç±»å‹
                         if (t_data.IsDictionary)
                         {
                             var dicTypes = instance.GetType().GetGenericArguments();
