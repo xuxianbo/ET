@@ -73,6 +73,11 @@ namespace ET
                 }
 
                 BuildMuteAssembly();
+                
+                using (StreamWriter file = File.CreateText(s_ScriptAssembliesMd5FilePath))
+                {
+                    file.Write(newMD5);
+                }
             }
             else
             {

@@ -13,9 +13,6 @@ namespace ET
 {
     public static class HotfixHelper
     {
-        private static byte[] _dllByte;
-        private static byte[] _pdbByte;
-
         private static MemoryStream s_hotfixDllStream;
         private static MemoryStream s_hotfixPdbStream;
         
@@ -29,9 +26,6 @@ namespace ET
         /// </summary>
         public static void GoToHotfix(byte[] dllByte, byte[] pdbByte)
         {
-            _dllByte = dllByte;
-            _pdbByte = pdbByte;
-
             if (GloabDefine.ILRuntimeMode)
             {
                 _appDomain = new ILRuntime.Runtime.Enviorment.AppDomain();

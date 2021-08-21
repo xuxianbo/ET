@@ -59,14 +59,12 @@
      <Compile Include="Assets\ModelView\Demo\Global\GlobalComponent.cs" />
      <Compile Include="Assets\ModelView\Module\UI\UIEventComponent.cs" />
      <Compile Include="Assets\ModelView\Module\UI\LayerNames.cs" />
-     <Compile Include="Assets\ModelView\Demo\Resource\ResourcesComponent.cs" />
      <Compile Include="Assets\ModelView\Demo\Scene\SceneChangeComponent.cs" />
      <Compile Include="Assets\ModelView\Module\UI\UIComponent.cs" />
      <Compile Include="Assets\ModelView\Demo\Opera\OperaComponent.cs" />
      <Compile Include="Assets\ModelView\Demo\InitEntry.cs" />
      <Compile Include="Assets\ModelView\Demo\UI\UILobby\UILobbyComponent.cs" />
      <Compile Include="Assets\ModelView\Module\UI\AUIEvent.cs" />
-     <Compile Include="Assets\ModelView\Demo\Resource\PathHelper.cs" />
      <Compile Include="Assets\ModelView\Module\UI\UIType.cs" />
      <Compile Include="Assets\ModelView\Demo\UI\UILogin\UILoginComponent.cs" />
      <Compile Include="Assets\ModelView\Demo\Unit\GameObjectComponent.cs" />

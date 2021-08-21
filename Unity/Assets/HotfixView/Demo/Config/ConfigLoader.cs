@@ -11,20 +11,13 @@ namespace ET
 
             foreach (var kv in types)
             {
-                
-                string path = @"Config/Config/" + kv.Name;
-
-                
-                output[kv.Name] = Resources.Load<TextAsset>(path).bytes;
+                output[kv.Name] = XAssetLoader.LoadAsset<TextAsset>(XAssetPathUtilities.GetNormalConfigPath(kv.Name)).bytes;
             }
         }
 
         public byte[] GetOneConfigBytes(string configName)
         {
-            string path = @"Config/Config/" + configName;
-
-            var v = Resources.Load<TextAsset>(path);
-            return v.bytes;
+            return XAssetLoader.LoadAsset<TextAsset>(XAssetPathUtilities.GetNormalConfigPath(configName)).bytes;;
         }
     }
 }

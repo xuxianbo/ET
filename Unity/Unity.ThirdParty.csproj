@@ -154,9 +154,9 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Debugger\Protocol\SCBindBreakpointResult.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ListDecorator.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\IConstantProvider.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Debugger\BreakPointContext.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\Buffers.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Enviorment\ValueTypeBinder.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Debugger\BreakPointContext.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\PInvokeAttributes.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\IMarshalInfoProvider.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ProtoIncludeAttribute.cs" />
@@ -377,8 +377,8 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\BclHelpers.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\SubItemToken.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\NetObjectSerializer.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\ArrayType.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.FCP.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\ArrayType.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ByteSerializer.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\Int16Serializer.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\PBType.cs" />

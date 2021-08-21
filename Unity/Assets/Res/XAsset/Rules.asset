@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03142c330ced64e0ab46cddcd0484ab7, type: 3}
+  m_Name: Rules
+  m_EditorClassIdentifier: 
+  searchPatternAsset: '*.asset'
+  searchPatternController: '*.controller'
+  searchPatternDir: '*'
+  searchPatternMaterial: '*.mat'
+  searchPatternPng: '*.png'
+  searchPatternPrefab: '*.prefab'
+  searchPatternScene: '*.unity'
+  searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
+  version: 3
+  scenesInBuild:
+  - {fileID: 102900000, guid: e0d691ac8c1d0454ba07089ea820e18a, type: 3}
+  rules:
+  - searchPath: Assets/Res/Code
+    searchPattern: '*'
+    nameBy: 2
+    assetBundleName: 
+  - searchPath: Assets/Res/Config
+    searchPattern: '*'
+    nameBy: 2
+    assetBundleName: 
+  - searchPath: Assets/Res/UI
+    searchPattern: '*.prefab'
+    nameBy: 1
+    assetBundleName: 
+  - searchPath: Assets/Res/Unit
+    searchPattern: '*.prefab'
+    nameBy: 1
+    assetBundleName: 
+  - searchPath: Assets/Res/Scenes
+    searchPattern: '*.unity'
+    nameBy: 1
+    assetBundleName: 
+  ruleAssets:
+  - bundle: 647fd131331f17390d20e9e0c3fb0c2f.unity3d
+    path: Assets/Res/Code/Hotfix.dll.bytes
+  - bundle: 647fd131331f17390d20e9e0c3fb0c2f.unity3d
+    path: Assets/Res/Code/Hotfix.pdb.bytes
+  - bundle: 7ee94e7fe13203e5d37c4500bdd34a9b.unity3d
+    path: Assets/Res/Config/Config/AIConfigCategory.bytes
+  - bundle: 7ee94e7fe13203e5d37c4500bdd34a9b.unity3d
+    path: Assets/Res/Config/Config/StartMachineConfigCategory.bytes
+  - bundle: 7ee94e7fe13203e5d37c4500bdd34a9b.unity3d
+    path: Assets/Res/Config/Config/StartProcessConfigCategory.bytes
+  - bundle: 7ee94e7fe13203e5d37c4500bdd34a9b.unity3d
+    path: Assets/Res/Config/Config/StartSceneConfigCategory.bytes
+  - bundle: 7ee94e7fe13203e5d37c4500bdd34a9b.unity3d
+    path: Assets/Res/Config/Config/StartZoneConfigCategory.bytes
+  - bundle: 7ee94e7fe13203e5d37c4500bdd34a9b.unity3d
+    path: Assets/Res/Config/Config/UnitConfigCategory.bytes
+  - bundle: fc039017318c5f01bfafeb7267bc1e6b.unity3d
+    path: Assets/Res/Config/GlobalProto.txt
+  - bundle: 65072f691e2032b733bad06645816713.unity3d
+    path: Assets/Res/Scenes/Map.unity
+  - bundle: 7771b59ecc81a33b4da547d71950fdcd.unity3d
+    path: Assets/Res/UI/UILobby.prefab
+  - bundle: b978027a19a99b136f553f78f66496e5.unity3d
+    path: Assets/Res/UI/UILogin.prefab
+  - bundle: 89719b306fc42f650449e9e2aae41258.unity3d
+    path: Assets/Res/Unit/Unit.prefab
+  ruleBundles:
+  - name: 647fd131331f17390d20e9e0c3fb0c2f.unity3d
+    assets:
+    - Assets/Res/Code/Hotfix.dll.bytes
+    - Assets/Res/Code/Hotfix.pdb.bytes
+  - name: fc039017318c5f01bfafeb7267bc1e6b.unity3d
+    assets:
+    - Assets/Res/Config/GlobalProto.txt
+  - name: 7ee94e7fe13203e5d37c4500bdd34a9b.unity3d
+    assets:
+    - Assets/Res/Config/Config/AIConfigCategory.bytes
+    - Assets/Res/Config/Config/StartMachineConfigCategory.bytes
+    - Assets/Res/Config/Config/StartProcessConfigCategory.bytes
+    - Assets/Res/Config/Config/StartSceneConfigCategory.bytes
+    - Assets/Res/Config/Config/StartZoneConfigCategory.bytes
+    - Assets/Res/Config/Config/UnitConfigCategory.bytes
+  - name: 7771b59ecc81a33b4da547d71950fdcd.unity3d
+    assets:
+    - Assets/Res/UI/UILobby.prefab
+  - name: b978027a19a99b136f553f78f66496e5.unity3d
+    assets:
+    - Assets/Res/UI/UILogin.prefab
+  - name: 89719b306fc42f650449e9e2aae41258.unity3d
+    assets:
+    - Assets/Res/Unit/Unit.prefab
+  - name: 65072f691e2032b733bad06645816713.unity3d
+    assets:
+    - Assets/Res/Scenes/Map.unity

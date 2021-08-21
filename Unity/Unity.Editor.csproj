@@ -55,19 +55,17 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\RecastNavDataExporter\NavMeshExporter.cs" />
-     <Compile Include="Assets\Editor\BuildEditor\BuildHelper.cs" />
+     <Compile Include="Assets\Editor\BuildEditor\WebFileHelper.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\FloatTypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\Vector2TypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\LongTypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawerAttribute.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\AnimationCurveTypeDrawer.cs" />
      <Compile Include="Assets\Editor\ReferenceCollectorEditor\ReferenceCollectorEditor.cs" />
-     <Compile Include="Assets\Editor\BuildEditor\BuildEditor.cs" />
      <Compile Include="Assets\Editor\RsyncEditor\RsyncEditor.cs" />
      <Compile Include="Assets\Editor\Helper\MongoHelper.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\ComponentViewEditor.cs" />
      <Compile Include="Assets\Editor\ILRuntimeEditor\ILRuntimeCrossBinding.cs" />
-     <Compile Include="Assets\Editor\BuildEditor\ETBuildSettings.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\CharTypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\EnumTypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\Vector4TypeDrawer.cs" />

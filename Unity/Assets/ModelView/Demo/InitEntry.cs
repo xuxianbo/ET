@@ -8,6 +8,7 @@ namespace ET
 	{
 		public static void RegFunction()
 		{
+			Log.Info("初始化RegFunction");
 			GloabLifeCycle.StartAction = Start;
 			GloabLifeCycle.UpdateAction = Update;
 			GloabLifeCycle.LateUpdateAction = LateUpdate;
@@ -18,7 +19,7 @@ namespace ET
 		{
 			try
 			{
-				//初始化EventSystem
+				Log.Info("初始化EventSystem");
 				{
 					List<Type> types = new List<Type>();
 					types.AddRange( HotfixHelper.GetAssemblyTypes());

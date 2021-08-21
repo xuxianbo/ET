@@ -720,6 +720,10 @@
       <Project>{5910fa29-5797-199c-985b-fc9fc473328e}</Project>
       <Name>Unity.Mono</Name>
     </ProjectReference>
+    <ProjectReference Include="XAsset.Runtime.csproj">
+      <Project>{fb79c1d2-40c3-f61e-3d5c-f52409c3a8b0}</Project>
+      <Name>XAsset.Runtime</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

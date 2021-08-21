@@ -1,50 +1,68 @@
 ﻿using System;
 using System.Reflection;
 using System.Threading;
+using libx;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace ET
 {
-	public class Init: MonoBehaviour
-	{
-		public bool ILRuntimeMode = false;
-		
-		private void Awake()
-		{
-			GloabDefine.ILRuntimeMode = this.ILRuntimeMode;
-			
-			SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
-			
-			DontDestroyOnLoad(gameObject);
+    public class Init : MonoBehaviour
+    {
+        public bool ILRuntimeMode = false;
 
-			// TODO 使用XAsset进行加载
-			byte[] dllByte = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Res/Code/Code.prefab").GetComponent<ReferenceCollector>().Get<TextAsset>("Hotfix.dll").bytes;
-			byte[] pdbByte = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Res/Code/Code.prefab").GetComponent<ReferenceCollector>().Get<TextAsset>("Hotfix.pdb").bytes;
-			
-			HotfixHelper.GoToHotfix(dllByte, pdbByte);
-		}
+        private XAssetUpdater m_XAssetUpdater;
 
-		private void Start()
-		{
-			GloabLifeCycle.StartAction?.Invoke();
-		}
+        private void Awake()
+        {
+            InternalAwake().Coroutine();
+        }
 
-		private void Update()
-		{
-			ThreadSynchronizationContext.Instance.Update();
-			GloabLifeCycle.UpdateAction?.Invoke();
-		}
+        private async ETVoid InternalAwake()
+        {
+            try
+            {
+                GloabDefine.ILRuntimeMode = this.ILRuntimeMode;
 
-		private void LateUpdate()
-		{
-			GloabLifeCycle.LateUpdateAction?.Invoke();
-		}
+                SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
 
-		private void OnApplicationQuit()
-		{
-			GloabLifeCycle.OnApplicationQuitAction?.Invoke();
-		}
-	}
+                DontDestroyOnLoad(gameObject);
+
+                m_XAssetUpdater = new XAssetUpdater(this.GetComponent<Updater>());
+
+                await m_XAssetUpdater.StartUpdate();
+
+                byte[] dllByte = XAssetLoader.LoadAsset<TextAsset>(XAssetPathUtilities.GetHotfixDllPath("Hotfix"))
+                    .bytes;
+                byte[] pdbByte = XAssetLoader.LoadAsset<TextAsset>(XAssetPathUtilities.GetHotfixPdbPath("Hotfix"))
+                    .bytes;
+
+                HotfixHelper.GoToHotfix(dllByte, pdbByte);
+
+                GloabLifeCycle.StartAction?.Invoke();
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+                throw;
+            }
+        }
+
+        private void Update()
+        {
+            ThreadSynchronizationContext.Instance.Update();
+            GloabLifeCycle.UpdateAction?.Invoke();
+        }
+
+        private void LateUpdate()
+        {
+            GloabLifeCycle.LateUpdateAction?.Invoke();
+        }
+
+        private void OnApplicationQuit()
+        {
+            GloabLifeCycle.OnApplicationQuitAction?.Invoke();
+        }
+    }
 }

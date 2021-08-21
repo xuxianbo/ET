@@ -143,8 +143,8 @@
      <Compile Include="Assets\Model\Demo\EventType.cs" />
      <Compile Include="Assets\Model\Module\CoroutineLock\CoroutineLock.cs" />
      <Compile Include="Assets\Model\Core\Object\ProtoObject.cs" />
-     <Compile Include="Assets\Model\Module\Message\NetThreadComponent.cs" />
      <Compile Include="Assets\Model\Generate\Config\StartSceneConfig.cs" />
+     <Compile Include="Assets\Model\Module\Message\NetThreadComponent.cs" />
      <Compile Include="Assets\Model\Core\Object\ISerializeToEntity.cs" />
      <Compile Include="Assets\Model\Core\Object\EntityEventAttribute.cs" />
      <Compile Include="Assets\Model\Core\Object\IdGenerater.cs" />
@@ -156,8 +156,8 @@
      <Compile Include="Assets\Model\Demo\Define.cs" />
      <Compile Include="Assets\Model\Generate\Config\AIConfig.cs" />
      <Compile Include="Assets\Model\Module\Message\MessagePool.cs" />
-     <Compile Include="Assets\Model\Module\Config\IConfig.cs" />
      <Compile Include="Assets\Model\Module\Message\ResponseTypeAttribute.cs" />
+     <Compile Include="Assets\Model\Module\Config\IConfig.cs" />
      <Compile Include="Assets\Model\Core\Object\ObjectPool.cs" />
      <None Include="Assets\Model\csc.rsp" />
      <None Include="Assets\Model\Unity.Model.asmdef" />

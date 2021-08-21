@@ -7,9 +7,7 @@ namespace ET
             Log.Info("APP Start回调");
             Game.Scene.AddComponent<TimerComponent>();
             Game.Scene.AddComponent<CoroutineLockComponent>();
-            // 加载配置
-            Game.Scene.AddComponent<ResourcesComponent>();
-            
+
             Game.Scene.AddComponent<ConfigComponent>();
             await ConfigComponent.Instance.LoadAsync();
             
@@ -23,10 +21,7 @@ namespace ET
             Game.Scene.AddComponent<GlobalComponent>();
             
             Game.Scene.AddComponent<AIDispatcherComponent>();
-            
-            
-            ResourcesComponent.Instance.LoadBundle("unit.unity3d");
-            
+
             Scene zoneScene = await SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
             
             await Game.EventSystem.Publish(new EventType.AppStartInitFinish() { ZoneScene = zoneScene });
