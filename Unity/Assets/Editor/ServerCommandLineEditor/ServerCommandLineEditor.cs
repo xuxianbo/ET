@@ -30,7 +30,7 @@ namespace ET
             
             if (GUILayout.Button("启动机器人"))
             {
-                string arguments = $"--AppType=Robot --Console=1";
+                string arguments = $"--AppType=Robot --Process=2 --Console=1";
                 ProcessHelper.Run("Robot.exe", arguments, "../Bin/");
             }
             

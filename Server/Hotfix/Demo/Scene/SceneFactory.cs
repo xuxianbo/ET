@@ -17,6 +17,7 @@ namespace ET
             await ETTask.CompletedTask;
             Scene scene = EntitySceneFactory.CreateScene(id, instanceId, zone, sceneType, name, parent);
 
+            // 添加注册邮箱，因为内网通信都是通过Actor消息
             scene.AddComponent<MailBoxComponent, MailboxType>(MailboxType.UnOrderMessageDispatcher);
 
             switch (scene.SceneType)

@@ -4,7 +4,6 @@ namespace ET
     {
         protected override async ETTask Run(EventType.AppStart args)
         {
-            Log.Info("APP Start回调");
             Game.Scene.AddComponent<TimerComponent>();
             Game.Scene.AddComponent<CoroutineLockComponent>();
 
@@ -24,6 +23,7 @@ namespace ET
 
             Scene zoneScene = await SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
             
+            //显示登陆界面
             await Game.EventSystem.Publish(new EventType.AppStartInitFinish() { ZoneScene = zoneScene });
 
         }
