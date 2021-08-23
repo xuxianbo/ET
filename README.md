@@ -13,6 +13,17 @@ __讨论QQ群 : 474643097__
 - 热更层：当前master会把Model, ModelView，Hotfix，HotfixView打成一个程序集，然后以全热更的方式进行，最大限度保留了ET的结构，方便后续跟进更新
 - 非热更层：Unity.Mono，整个框架的底层驱动，网络协议的收发与序列化都在这里
 
+# 环境 && 版本
+
+ - Unity：2020.3.16
+ - 服务端：.Net 5.0
+ - 客户端：.Net Framework 4.7.2
+ - IDE：Rider 2020.2
+ - ET：commit 1532
+ - FGUI：2021.3.1
+ - ILRuntime：commit 1227
+ - xAsset 4.0
+
 # ET的介绍：
 
 ET是一个开源的游戏客户端（基于unity3d）服务端双端框架，服务端是使用C# .net core开发的分布式游戏服务端，其特点是开发效率高，性能强，双端共享逻辑代码，客户端服务端热更机制完善，同时支持可靠udp tcp websocket协议，支持服务端3D recast寻路等等
