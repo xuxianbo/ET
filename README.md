@@ -4,7 +4,7 @@ __讨论QQ群 : 474643097__
 
 [ET论坛](https://et-framework.cn)  
 
-# 本项目是ET6.0接入ILRuntime热更新的示例，后续将保持维护状态，与ET同步更新。
+# 本项目是ET6.0接入ILRuntime代码热更新，xAsset资源热更新，FairyGUI跨平台UI的示例，后续将保持维护状态，与ET同步更新。
 
 接入ILRtuntime教程地址：[https://www.lfzxb.top/et-6-with-ilruntime/](https://www.lfzxb.top/et-6-with-ilruntime/) (完全仿照ET 5.0接入ILRuntime的思路进行开发的) 但已过时，出于学习的目的，可以前往：[et6以5.0思路接入ilrt里程碑](https://github.com/wqaetly/ET/releases/tag/ilrt-change) 进行查看
 
