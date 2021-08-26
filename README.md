@@ -37,6 +37,10 @@ ET是一个开源的游戏客户端（基于unity3d）服务端双端框架，�
 - [ ] 更新 [ET使用FGUI开发的工作流程](https://www.lfzxb.top/et-fguilearn/)
 - [ ] 以ET 6.0为底层框架，更新 [状态帧同步Moba，包含基于双端行为树技能系统](https://gitee.com/NKG_admin/NKGMobaBasedOnET)
 
+# 项目截图
+
+![项目热更新演示](https://user-images.githubusercontent.com/35335061/130989045-3051d56d-8598-447a-90db-73e78b09c303.png)
+
 # 引用
 
 [ET 6.0学习笔记](https://www.lfzxb.top/et6.0-study/)
