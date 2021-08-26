@@ -55,6 +55,8 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\RecastNavDataExporter\NavMeshExporter.cs" />
+     <Compile Include="Assets\Editor\FGUI\EditorToolSet.cs" />
+     <Compile Include="Assets\Editor\FGUI\StageCameraEditor.cs" />
      <Compile Include="Assets\Editor\BuildEditor\WebFileHelper.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\FloatTypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\Vector2TypeDrawer.cs" />
@@ -71,12 +73,16 @@
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\Vector4TypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\IntTypeDrawer.cs" />
      <Compile Include="Assets\Editor\Helper\ProcessHelper.cs" />
+     <Compile Include="Assets\Editor\FGUI\UIContentScalerEditor.cs" />
+     <Compile Include="Assets\Editor\FGUI\DisplayObjectEditor.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\BoolTypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\BoundsTypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\RectTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\FGUI\UIConfigEditor.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\DateTimeTypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\ITypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\Entity\EditorLayout.cs" />
+     <Compile Include="Assets\Editor\FGUI\UIPanelEditor.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\ColorTypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\Vector3TypeDrawer.cs" />
      <Compile Include="Assets\Editor\ServerCommandLineEditor\ServerCommandLineEditor.cs" />
@@ -84,9 +90,11 @@
      <Compile Include="Assets\Editor\BuildEditor\BuildAssemblieEditor.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\Entity\SerializationTypeExtension.cs" />
      <Compile Include="Assets\Editor\Helper\EditorResHelper.cs" />
+     <Compile Include="Assets\Editor\FGUI\UIPainterEditor.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\DoubleTypeDrawer.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\UnityObjectTypeDrawer.cs" />
      <Compile Include="Assets\Editor\RsyncEditor\RsyncConfig.cs" />
+     <Compile Include="Assets\Editor\FGUI\PackagesWindow.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\StringTypeDrawer.cs" />
      <None Include="Assets\Editor\Unity.Editor.asmdef" />
      <None Include="Assets\Editor\csc.rsp" />

@@ -445,7 +445,7 @@ MonoBehaviour:
   Step: 0
   UpdateProgress: 0
   DevelopmentMode: 0
-  EnableVFS: 1
+  EnableVFS: 0
   baseURL: http://127.0.0.1:8080/
 --- !u!114 &575235023
 MonoBehaviour:
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDownloads: 3
-  sampleTime: 0.5
+  sampleTime: 0.1
 --- !u!1 &630054495
 GameObject:
   m_ObjectHideFlags: 0

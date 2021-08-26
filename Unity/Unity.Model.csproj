@@ -155,8 +155,8 @@
      <Compile Include="Assets\Model\Core\ListComponent.cs" />
      <Compile Include="Assets\Model\Demo\Define.cs" />
      <Compile Include="Assets\Model\Generate\Config\AIConfig.cs" />
-     <Compile Include="Assets\Model\Module\Message\MessagePool.cs" />
      <Compile Include="Assets\Model\Module\Message\ResponseTypeAttribute.cs" />
+     <Compile Include="Assets\Model\Module\Message\MessagePool.cs" />
      <Compile Include="Assets\Model\Module\Config\IConfig.cs" />
      <Compile Include="Assets\Model\Core\Object\ObjectPool.cs" />
      <None Include="Assets\Model\csc.rsp" />

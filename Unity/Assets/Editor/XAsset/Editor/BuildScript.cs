@@ -257,6 +257,7 @@ namespace libx
 					dirs.Add (dir);
 				}
 
+				Debug.Log(Path.GetFileName (path));
 				var asset = new AssetRef { bundle = bundle2Ids [item.bundle], dir = index, name = Path.GetFileName (path) };
 				assets.Add (asset);
 			}

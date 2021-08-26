@@ -60,12 +60,14 @@
      <Compile Include="Assets\Mono\Core\TypeDict\DoubleMap.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_Dictionary_2_Int32_ILTypeInst_t1.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_KeyValuePair_2_Type_ILTypeIns.cs" />
+     <Compile Include="Assets\Mono\FGUI\FUIPackageManager.cs" />
      <Compile Include="Assets\Mono\Core\TypeDict\UnOrderMultiMapSet.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Activator_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_HashSet_1_Type_Binding_Enumer.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Reflection_Assembly_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_KeyValuePair_2_Int64_List_1_I_t1.cs" />
      <Compile Include="Assets\Mono\Core\Log\ILog.cs" />
+     <Compile Include="Assets\Mono\FGUI\FUIHelper.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_List_1_ILTypeInstance_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ET_ETTask_1_Int32_Binding.cs" />
      <Compile Include="Assets\Mono\Core\Helper\MonoTimeHelper.cs" />
@@ -96,6 +98,7 @@
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ET_ETAsyncTaskMethodBuilder_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_KeyValuePair_2_Int64_ILTypeIn.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ET_ETAsyncTaskMethodBuilder_1_Int32_Binding.cs" />
+     <Compile Include="Assets\Mono\FGUI\FUIEntry.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\UnityEngine_GameObject_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ET_ThreadSynchronizationContext_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\CLRBindings.cs" />
@@ -115,8 +118,8 @@
      <Compile Include="Assets\Mono\Core\Helper\FileHelper.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_IO_FileStream_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_Dictionary_2_String_ILTypeIns_t2.cs" />
-     <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_ValueTuple_2_UInt16_MemoryStream_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ET_JsonHelper_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_ValueTuple_2_UInt16_MemoryStream_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_List_1_Int64_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_Queue_1_Int64_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ET_ObjectHelper_Binding.cs" />
@@ -192,10 +195,11 @@
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\UnityEngine_Camera_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILAdaptor\ISupportInitializeAdapter.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_List_1_ILTypeInstance_Binding_t1.cs" />
+     <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_Dictionary_2_Type_Int32_Bindi.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_List_1_UnityWebRequest_Bindin_t1.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ET_ETTask_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_KeyValuePair_2_Type_Int32_Bin.cs" />
-     <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_Dictionary_2_Type_Int32_Bindi.cs" />
+     <Compile Include="Assets\Mono\FGUI\NKGGLoader.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_Dictionary_2_Int32_ILTypeInst.cs" />
      <Compile Include="Assets\Mono\Core\Gloab\GloabLifeCycle.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\UnityEngine_TextAsset_Binding.cs" />
@@ -209,8 +213,8 @@
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_List_1_Type_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_SortedDictionary_2_Int64_List_t2.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Math_Binding.cs" />
-     <Compile Include="Assets\Mono\ILHotfix\ILStaticMethod.cs" />
      <Compile Include="Assets\Mono\Core\Helper\ZipHelper.cs" />
+     <Compile Include="Assets\Mono\ILHotfix\ILStaticMethod.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_HashSet_1_UInt16_Binding.cs" />
      <Compile Include="Assets\Mono\Core\TypeDict\UnOrderMultiMap.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ET_UnOrderMultiMap_2_Type_ILTypeInstance_Binding.cs" />
@@ -271,8 +275,8 @@
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\UnityEngine_RuntimeAnimatorController_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\UnityEngine_PlayerPrefs_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_Dictionary_2_Type_Queue_1_Obj.cs" />
-     <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_Dictionary_2_Int32_SortedDict.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\UnityEngine_Input_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_Dictionary_2_Int32_SortedDict.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ET_MultiMap_2_Int64_Int64_Binding.cs" />
      <Compile Include="Assets\Mono\Core\Module\NetworkTCP\TService.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ProtoBuf_Serializer_Binding.cs" />
@@ -289,9 +293,14 @@
      <Compile Include="Assets\Mono\Core\Async\ETTaskHelper.cs" />
      <Compile Include="Assets\Mono\Core\Module\NetworkTCP\TChannel.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\System_Collections_Generic_Dictionary_2_Type_Type_Bindin.cs" />
+     <Compile Include="Assets\Mono\FGUI\GWindow.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ET_MultiMap_2_Int64_ILTypeInstance_Binding.cs" />
      <Compile Include="Assets\Mono\Core\Module\Network\AChannel.cs" />
      <Compile Include="Assets\Mono\ILRuntimeGenerate\ILBindingAuto\ET_ComponentView_Binding.cs" />
+     <Compile Include="Assets\Mono\Demo\AutoGeneratedCode\CheckForResUpdate\CheckForResUpdateBinder.cs" />
+     <Compile Include="Assets\Mono\Demo\AutoGeneratedCode\CheckForResUpdate\FUI_CheckForResUpdate.cs" />
+     <Compile Include="Assets\Mono\FGUI\FUIManager_MonoOnly.cs" />
+     <Compile Include="Assets\Mono\Demo\FUI_CheckForResUpdateComponent.cs" />
      <None Include="Assets\Mono\Unity.Mono.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Study/Unity/2020.3.16f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

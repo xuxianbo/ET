@@ -10,22 +10,22 @@ namespace ET
 {
     public class XAssetUpdater
     {
-        private Updater m_Updater;
+        public Updater Updater;
 
         public XAssetUpdater(Updater updater)
         {
-            m_Updater = updater;
-            m_Updater.Init();
+            Updater = updater;
+            Updater.Init();
         }
         
         public ETTask StartUpdate()
         {
             ETTask etTask = ETTask.Create(true);
-            m_Updater.ResPreparedCompleted = () =>
+            Updater.ResPreparedCompleted += () =>
             {
                 etTask.SetResult();
             };
-            m_Updater.StartUpdate();
+            Updater.StartUpdate();
             return etTask;
         }
     }

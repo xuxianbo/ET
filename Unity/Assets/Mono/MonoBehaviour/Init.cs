@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Threading;
+using FairyGUI;
 using libx;
 using UnityEditor;
 using UnityEngine;
@@ -29,17 +30,22 @@ namespace ET
 
                 DontDestroyOnLoad(gameObject);
 
+                // 初始化FGUI系统
+                FUIEntry.Init();
+
                 m_XAssetUpdater = new XAssetUpdater(this.GetComponent<Updater>());
-
+                
+                FUI_CheckForResUpdateComponent.Init(m_XAssetUpdater.Updater);
+                
                 await m_XAssetUpdater.StartUpdate();
-
+                
                 byte[] dllByte = XAssetLoader.LoadAsset<TextAsset>(XAssetPathUtilities.GetHotfixDllPath("Hotfix"))
                     .bytes;
                 byte[] pdbByte = XAssetLoader.LoadAsset<TextAsset>(XAssetPathUtilities.GetHotfixPdbPath("Hotfix"))
                     .bytes;
-
+                
                 HotfixHelper.GoToHotfix(dllByte, pdbByte);
-
+                
                 GloabLifeCycle.StartAction?.Invoke();
             }
             catch (Exception e)

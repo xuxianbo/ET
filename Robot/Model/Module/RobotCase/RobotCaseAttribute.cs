@@ -2,7 +2,7 @@
 
 namespace ET
 {
-    public class RobotCaseAttribute: BaseAttribute
+    public class RobotCaseAttribute : BaseAttribute
     {
         public int CaseType { get; }
 

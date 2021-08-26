@@ -44,8 +44,8 @@ namespace libx
         Completed,
     }
 
-    [RequireComponent(typeof (Downloader))]
-    public class Updater: MonoBehaviour
+    [RequireComponent(typeof(Downloader))]
+    public class Updater : MonoBehaviour
     {
         public Step Step;
 
@@ -57,21 +57,32 @@ namespace libx
 
         public bool EnableVFS = true;
 
-        [SerializeField]
-        private string baseURL = "http://127.0.0.1:7888/DLC/";
+        [SerializeField] private string baseURL = "http://127.0.0.1:7888/DLC/";
 
         private Downloader _downloader;
         private string _platform;
         private string _savePath;
         private List<VFile> _versions = new List<VFile>();
 
+        /// <summary>
+        /// 当更新状态发生改变
+        /// </summary>
+        public Action<string> OnStateUpdate;
+
+        /// <summary>
+        /// 当更新进度发生改变
+        /// </summary>
+        public Action<float> OnProgressUpdate;
+
         public void OnMessage(string msg)
         {
+            OnStateUpdate?.Invoke(msg);
             Debug.Log(msg);
         }
 
         public void OnProgress(float progress)
         {
+            OnProgressUpdate?.Invoke(progress);
             UpdateProgress = progress * 100;
         }
 
@@ -354,7 +365,7 @@ namespace libx
                     var files = new List<VFile>(downloads.Count);
                     foreach (var download in downloads)
                     {
-                        files.Add(new VFile { name = download.name, hash = download.hash, len = download.len, });
+                        files.Add(new VFile {name = download.name, hash = download.hash, len = download.len,});
                     }
 
                     var file = files[0];

@@ -17,6 +17,7 @@ MonoBehaviour:
   - Assets/Res/Code
   - Assets/Res/Config/Config
   - Assets/Res/Config
+  - Assets/Res/PerTest
   - Assets/Res/Scenes
   - Assets/Res/UI
   - Assets/Res/Unit
@@ -46,26 +47,29 @@ MonoBehaviour:
     bundle: 3
     dir: 1
   - name: GlobalProto.txt
-    bundle: 6
+    bundle: 7
     dir: 2
+  - name: FairyGUI-Editor.bytes
+    bundle: 5
+    dir: 3
   - name: Map.unity
     bundle: 1
-    dir: 3
+    dir: 4
   - name: UILobby.prefab
     bundle: 2
-    dir: 4
+    dir: 5
   - name: UILogin.prefab
-    bundle: 5
-    dir: 4
+    bundle: 6
+    dir: 5
   - name: Unit.prefab
     bundle: 4
-    dir: 5
+    dir: 6
   bundles:
   - name: 647fd131331f17390d20e9e0c3fb0c2f.unity3d
     id: 0
     deps: 
-    len: 125609
-    hash: 53ff806a1805b109d6e819e388b15847
+    len: 130446
+    hash: 0cd9995c0d63981c4df96059dca7ed0e
   - name: 65072f691e2032b733bad06645816713.unity3d
     id: 1
     deps: 
@@ -86,13 +90,18 @@ MonoBehaviour:
     deps: 
     len: 788111
     hash: 3a7f44d38a915cf2052dfce352732b54
-  - name: b978027a19a99b136f553f78f66496e5.unity3d
+  - name: b6865ba513712e0ddb71c6207b84addc.unity3d
     id: 5
+    deps: 
+    len: 45273062
+    hash: 0244e86bedbc04f71571e42e8febc081
+  - name: b978027a19a99b136f553f78f66496e5.unity3d
+    id: 6
     deps: 
     len: 14213
     hash: 33c7ba45e68312e5b0fde3f157e4144a
   - name: fc039017318c5f01bfafeb7267bc1e6b.unity3d
-    id: 6
+    id: 7
     deps: 
     len: 1279
     hash: 88bd90638904cf6f7dc26f23f5dfc334
