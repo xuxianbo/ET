@@ -44,10 +44,6 @@ MonoBehaviour:
     searchPattern: '*.unity'
     nameBy: 1
     assetBundleName: 
-  - searchPath: Assets/Res/PerTest
-    searchPattern: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-    nameBy: 1
-    assetBundleName: 
   ruleAssets:
   - bundle: 647fd131331f17390d20e9e0c3fb0c2f.unity3d
     path: Assets/Res/Code/Hotfix.dll.bytes
