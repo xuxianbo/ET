@@ -13,7 +13,7 @@ namespace ET
 
         public static FUI_CheckForResUpdate CreateInstance()
         {
-            return (FUI_CheckForResUpdate)UIPackage.CreateObject("CheckForResUpdate", "CheckForResUpdate");
+            return (FUI_CheckForResUpdate)UIPackage.CreateObject("CheckForResUpdate", "CheckForResUpdate", typeof(FUI_CheckForResUpdate));
         }
 
         public override void ConstructFromXML(XML xml)

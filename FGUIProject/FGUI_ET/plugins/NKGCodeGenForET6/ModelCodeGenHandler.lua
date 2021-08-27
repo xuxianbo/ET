@@ -46,7 +46,7 @@ function ModelCodeGenHandler.Do(handler, codeGenConfig)
 
         writer:writeln('public static %s CreateInstance()', classInfo.className)
         writer:startBlock()
-        writer:writeln('return (%s)UIPackage.CreateObject("%s", "%s");', classInfo.className, handler.pkg.name, classInfo.resName)
+        writer:writeln('return (%s)UIPackage.CreateObject("%s", "%s", typeof(%s));', classInfo.className, handler.pkg.name, classInfo.resName, classInfo.className)
         writer:endBlock()
         writer:writeln()
 
@@ -90,28 +90,6 @@ function ModelCodeGenHandler.Do(handler, codeGenConfig)
     end
 
     writer:reset()
-
-    local binderName = codePkgName .. 'Binder'
-
-    writer:writeln('using FairyGUI;')
-    writer:writeln()
-    writer:writeln('namespace %s', namespaceName)
-    writer:startBlock()
-    writer:writeln('public class %s', binderName)
-    writer:startBlock()
-
-    writer:writeln('public static void BindAll()')
-    writer:startBlock()
-    for i = 0, allClassesTobeExportCount - 1 do
-        local classInfo = allClassesTobeExport[i]
-        writer:writeln('UIObjectFactory.SetPackageItemExtension(%s.URL, typeof(%s));', classInfo.className, classInfo.className)
-    end
-    writer:endBlock() --bindall
-
-    writer:endBlock() --class
-    writer:endBlock() --namespace
-
-    writer:save(exportCodePath .. '/' .. binderName .. '.cs')
 end
 
 return ModelCodeGenHandler
