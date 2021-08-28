@@ -24,13 +24,16 @@ namespace ET
         public GComponent self;
             
     	public Controller m_Gro_ShowVersionInfo;
-    	public GButton m_Btn_Login;
-    	public GButton m_Btn_Registe;
+    	public GImage m_n0;
+    	public GImage m_n9;
+    	public GTextField m_n10;
+    	public FUI_Btn_Login m_Btn_Login;
+    	public FUI_Btn_Registe m_Btn_Registe;
     	public GImage m_accountInput;
     	public GImage m_passwordInput;
     	public GTextInput m_accountText;
     	public GTextField m_Tex_LoginInfo;
-    	public GButton m_ToTestSceneBtn;
+    	public FUI_Btn_ToTestScene m_ToTestSceneBtn;
     	public GTextInput m_passwordText;
     	public GGroup m_Gro_LoginInfo;
     	public Transition m_t0;
@@ -68,6 +71,12 @@ namespace ET
         }
         
        
+        /// <summary>
+        /// 仅用于go已经实例化情况下的创建（例如另一个组件引用了此组件）
+        /// </summary>
+        /// <param name="domain"></param>
+        /// <param name="go"></param>
+        /// <returns></returns>
         public static FUI_Login Create(Entity domain, GObject go)
         {
             return EntityFactory.Create<FUI_Login, GObject>(domain, go);
@@ -115,13 +124,16 @@ namespace ET
             {	
                 
     			m_Gro_ShowVersionInfo = com.GetControllerAt(0);
-    			m_Btn_Login = (GButton)com.GetChildAt(3);
-    			m_Btn_Registe = (GButton)com.GetChildAt(4);
+    			m_n0 = (GImage)com.GetChildAt(0);
+    			m_n9 = (GImage)com.GetChildAt(1);
+    			m_n10 = (GTextField)com.GetChildAt(2);
+    			m_Btn_Login = FUI_Btn_Login.Create(domain, com.GetChildAt(3));
+    			m_Btn_Registe = FUI_Btn_Registe.Create(domain, com.GetChildAt(4));
     			m_accountInput = (GImage)com.GetChildAt(5);
     			m_passwordInput = (GImage)com.GetChildAt(6);
     			m_accountText = (GTextInput)com.GetChildAt(7);
     			m_Tex_LoginInfo = (GTextField)com.GetChildAt(8);
-    			m_ToTestSceneBtn = (GButton)com.GetChildAt(9);
+    			m_ToTestSceneBtn = FUI_Btn_ToTestScene.Create(domain, com.GetChildAt(9));
     			m_passwordText = (GTextInput)com.GetChildAt(10);
     			m_Gro_LoginInfo = (GGroup)com.GetChildAt(11);
     			m_t0 = com.GetTransitionAt(0);
@@ -142,12 +154,18 @@ namespace ET
             self = null;
             
     		m_Gro_ShowVersionInfo = null;
+    		m_n0 = null;
+    		m_n9 = null;
+    		m_n10 = null;
+    		m_Btn_Login.Dispose();
     		m_Btn_Login = null;
+    		m_Btn_Registe.Dispose();
     		m_Btn_Registe = null;
     		m_accountInput = null;
     		m_passwordInput = null;
     		m_accountText = null;
     		m_Tex_LoginInfo = null;
+    		m_ToTestSceneBtn.Dispose();
     		m_ToTestSceneBtn = null;
     		m_passwordText = null;
     		m_Gro_LoginInfo = null;

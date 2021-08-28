@@ -10,10 +10,10 @@
   "codeGeneration": {
     "allowGenCode": true,
     "codePath": "",
-    "classNamePrefix": "FUI_",
-    "memberNamePrefix": "m_",
+    "classNamePrefix": "",
+    "memberNamePrefix": "",
     "packageName": null,
-    "ignoreNoname": true,
+    "ignoreNoname": false,
     "getMemberByName": false,
     "codeType": ""
   },

@@ -11,20 +11,25 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
     local exportCodePath = codeGenConfig.HotfixCodeOutPutPath .. '/' .. codePkgName
     local namespaceName = codeGenConfig.HotfixNameSpace
 
+    --- 初始化自定义组件名前缀
+    local classNamePrefix = codeGenConfig.ClassNamePrefix
+    --- 初始化自定义成员变量名前缀
+    local memberVarNamePrefix = codeGenConfig.MemerVarNamePrefix
+    
     --- 从FGUI编辑器中读取配置
     ---@type CS.FairyEditor.GlobalPublishSettings.CodeGenerationConfig
     local settings = handler.project:GetSettings("Publish").codeGeneration
     local getMemberByName = settings.getMemberByName
 
-    --- 所有将要导出的类
+    --- 所有将要导出的类（当前包的所有设置为导出的组件，以及当前包所有被引用的组件）
     ---@type CS.FairyEditor.PublishHandler.ClassInfo[]
-    local allClassesTobeExport = handler:CollectClasses(settings.ignoreNoname, settings.ignoreNoname, nil)
+    local classes = handler:CollectClasses(codeGenConfig.CodeStrip, codeGenConfig.CodeStrip, nil)
     handler:SetupCodeFolder(exportCodePath, "cs") --check if target folder exists, and delete old files
 
-    local allClassesTobeExportCount = allClassesTobeExport.Count
+    local classCnt = classes.Count
     local writer = CodeWriter.new()
-    for i = 0, allClassesTobeExportCount - 1 do
-        local classInfo = allClassesTobeExport[i]
+    for i = 0, classCnt - 1 do
+        local classInfo = classes[i]
         local members = classInfo.members
         writer:reset()
 
@@ -33,6 +38,9 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         writer:writeln()
         writer:writeln('namespace %s', namespaceName)
         writer:startBlock()
+        
+        --- 组装自定义组件前缀
+        local className = classNamePrefix .. classInfo.className
         -- 1
         writer:writeln([[public class %sAwakeSystem : AwakeSystem<%s, GObject>
     {
@@ -41,7 +49,7 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
             self.Awake(go);
         }
     }
-        ]], classInfo.className, classInfo.className, classInfo.className)
+        ]], className, className, className)
 
         writer:writeln([[public sealed class %s : FUI
     {	
@@ -52,12 +60,42 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
         public %s self;
-            ]], classInfo.className, codePkgName, classInfo.resName, classInfo.superClassName)
+            ]], className, codePkgName, classInfo.resName, classInfo.superClassName)
 
         local memberCnt = members.Count
-        for j = 0, memberCnt - 1 do
+
+        -- 是否为自定义类型组件标记数组
+        local customComponentFlagsArray = {}
+        -- 是否为跨包组件标记数组
+        local crossPackageFlagsArray = {}
+
+        for j = 0, memberCnt - 1
+        do
             local memberInfo = members[j]
-            writer:writeln('\tpublic %s %s;', memberInfo.type, memberInfo.varName)
+            customComponentFlagsArray[j] = false
+            crossPackageFlagsArray[j] = false
+
+            -- 判断是不是我们自定义类型组件
+            local typeName = memberInfo.type
+            for k = 0, classCnt - 1
+            do
+                if typeName == classes[k].className
+                then
+                    typeName = classNamePrefix .. classes[k].className
+                    customComponentFlagsArray[j] = true
+                    break
+                end
+            end
+
+            -- 判断是不是跨包类型组件
+            if memberInfo.res ~= nil then
+                --- 组装自定义组件前缀
+                typeName = classNamePrefix .. memberInfo.res.name
+                crossPackageFlagsArray[j] = true
+            end
+            
+            --- 组装自定义成员前缀
+            writer:writeln('\tpublic %s %s;', typeName, memberVarNamePrefix .. memberInfo.varName)
         end
         writer:writeln('\tpublic const string URL = "ui://%s%s";', handler.pkg.id, classInfo.resId)
         writer:writeln()
@@ -79,7 +117,7 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         {			
             return EntityFactory.Create<%s, GObject>(domain, CreateGObject());
         }
-        ]], classInfo.className, classInfo.className)
+        ]], className, className)
 
         writer:writeln([[   
         public static ETTask<%s> CreateInstanceAsync(Entity domain)
@@ -93,14 +131,20 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
     
             return tcs;
         }
-        ]], classInfo.className, classInfo.className, classInfo.className, classInfo.className)
+        ]], className, className, className, className)
 
         writer:writeln([[   
+        /// <summary>
+        /// 仅用于go已经实例化情况下的创建（例如另一个组件引用了此组件）
+        /// </summary>
+        /// <param name="domain"></param>
+        /// <param name="go"></param>
+        /// <returns></returns>
         public static %s Create(Entity domain, GObject go)
         {
             return EntityFactory.Create<%s, GObject>(domain, go);
         }
-            ]], classInfo.className, classInfo.className)
+            ]], className, className)
 
         writer:writeln([[   
         /// <summary>
@@ -119,7 +163,7 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         
             return fui;
         }
-            ]], classInfo.className, classInfo.className)
+            ]], className, className)
 
         writer:writeln([[
     public void Awake(GObject go)
@@ -146,49 +190,54 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
             {	
                 ]], classInfo.superClassName)
 
-        for j = 0, memberCnt - 1 do
+        for j = 0, memberCnt - 1
+        do
             local memberInfo = members[j]
-            local typeName = memberInfo.type
-            if memberInfo.group == 0 then
-                if getMemberByName then
-                    -- 判断是不是我们自定义类型
-                    local isCustomComponent = false
-                    for i = 0, allClassesTobeExportCount - 1 do
-                        if typeName == allClassesTobeExport[i].className then
-                            isCustomComponent = true
-                            break
-                        end
-                    end
-                    if isCustomComponent then
-                        writer:writeln('\t\t\t%s = %s.Create(com.GetChild("%s"));', memberInfo.varName, memberInfo.type, memberInfo.name)
+            --- 组装自定义成员前缀
+            local memberVarName = memberVarNamePrefix .. memberInfo.varName
+            if memberInfo.group == 0
+            then
+                if getMemberByName
+                then
+                    if customComponentFlagsArray[j]
+                    then
+                        --- 组装自定义组件前缀
+                        writer:writeln('\t\t\t%s = %s.Create(domain, com.GetChild("%s"));', memberVarName, classNamePrefix .. memberInfo.type, memberInfo.name)
+                    elseif crossPackageFlagsArray[j]
+                    then
+                        --- 组装自定义组件前缀
+                        writer:writeln('\t\t\t%s = %s.Create(domain, com.GetChild("%s"));', memberVarName, classNamePrefix .. memberInfo.res.name, memberInfo.name)
                     else
-                        writer:writeln('\t\t\t%s = (%s)com.GetChild("%s");', memberInfo.varName, memberInfo.type, memberInfo.name)
+                        writer:writeln('\t\t\t%s = (%s)com.GetChild("%s");', memberVarName, memberInfo.type, memberInfo.name)
                     end
+
                 else
-                    local isCustomComponent = false
-                    for i = 0, allClassesTobeExportCount - 1 do
-                        if typeName == allClassesTobeExport[i].className then
-                            isCustomComponent = true
-                            break
-                        end
-                    end
-                    if isCustomComponent then
-                        writer:writeln('\t\t\t%s = %s.Create(com.GetChildAt(%s));', memberInfo.varName, memberInfo.type, memberInfo.index)
+                    if customComponentFlagsArray[j]
+                    then
+                        --- 组装自定义组件前缀
+                        writer:writeln('\t\t\t%s = %s.Create(domain, com.GetChildAt(%s));', memberVarName, classNamePrefix .. memberInfo.type, memberInfo.index)
+                    elseif crossPackageFlagsArray[j]
+                    then
+                        --- 组装自定义组件前缀
+                        writer:writeln('\t\t\t%s = %s.Create(domain, com.GetChildAt(%s));', memberVarName, classNamePrefix .. memberInfo.res.name, memberInfo.index)
                     else
-                        writer:writeln('\t\t\t%s = (%s)com.GetChildAt(%s);', memberInfo.varName, memberInfo.type, memberInfo.index)
+                        writer:writeln('\t\t\t%s = (%s)com.GetChildAt(%s);', memberVarName, memberInfo.type, memberInfo.index)
                     end
                 end
-            elseif memberInfo.group == 1 then
-                if getMemberByName then
-                    writer:writeln('\t\t\t%s = com.GetController("%s");', memberInfo.varName, memberInfo.name)
+            elseif memberInfo.group == 1
+            then
+                if getMemberByName
+                then
+                    writer:writeln('\t\t\t%s = com.GetController("%s");', memberVarName, memberInfo.name)
                 else
-                    writer:writeln('\t\t\t%s = com.GetControllerAt(%s);', memberInfo.varName, memberInfo.index)
+                    writer:writeln('\t\t\t%s = com.GetControllerAt(%s);', memberVarName, memberInfo.index)
                 end
             else
-                if getMemberByName then
-                    writer:writeln('\t\t\t%s = com.GetTransition("%s");', memberInfo.varName, memberInfo.name)
+                if getMemberByName
+                then
+                    writer:writeln('\t\t\t%s = com.GetTransition("%s");', memberVarName, memberInfo.name)
                 else
-                    writer:writeln('\t\t\t%s = com.GetTransitionAt(%s);', memberInfo.varName, memberInfo.index)
+                    writer:writeln('\t\t\t%s = com.GetTransitionAt(%s);', memberVarName, memberInfo.index)
                 end
             end
         end
@@ -212,31 +261,18 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
 
         for j = 0, memberCnt - 1 do
             local memberInfo = members[j]
-            local typeName = memberInfo.type
+            
+            --- 组装自定义成员前缀
+            local memberVarName = memberVarNamePrefix .. memberInfo.varName
             if memberInfo.group == 0 then
-                if getMemberByName then
-                    if string.find(typeName, 'FUI') then
-                        writer:writeln('\t\t%s.Dispose();', memberInfo.varName)
-                    end
-                    writer:writeln('\t\t%s = null;', memberInfo.varName)
-                else
-                    if string.find(typeName, 'FUI') then
-                        writer:writeln('\t\t%s.Dispose();', memberInfo.varName)
-                    end
-                    writer:writeln('\t\t%s = null;', memberInfo.varName)
+                if customComponentFlagsArray[j] or crossPackageFlagsArray[j] then
+                    writer:writeln('\t\t%s.Dispose();', memberVarName)
                 end
+                writer:writeln('\t\t%s = null;', memberVarName)
             elseif memberInfo.group == 1 then
-                if getMemberByName then
-                    writer:writeln('\t\t%s = null;', memberInfo.varName)
-                else
-                    writer:writeln('\t\t%s = null;', memberInfo.varName)
-                end
+                writer:writeln('\t\t%s = null;', memberVarName)
             else
-                if getMemberByName then
-                    writer:writeln('\t\t%s = null;', memberInfo.varName)
-                else
-                    writer:writeln('\t\t%s = null;', memberInfo.varName)
-                end
+                writer:writeln('\t\t%s = null;', memberVarName)
             end
         end
         writer:writeln('\t}')
@@ -244,7 +280,7 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         writer:writeln('}')
         writer:endBlock()
 
-        writer:save(exportCodePath .. '/' .. classInfo.className .. '.cs')
+        writer:save(exportCodePath .. '/' .. className .. '.cs')
     end
 
     -- 写入fuipackage
@@ -257,8 +293,8 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
 
     writer:writeln('public const string %s = "%s";', codePkgName, codePkgName)
 
-    for i = 0, allClassesTobeExportCount - 1 do
-        local classInfo = allClassesTobeExport[i]
+    for i = 0, classCnt - 1 do
+        local classInfo = classes[i]
         writer:writeln('public const string %s_%s = "ui://%s/%s";', codePkgName, classInfo.resName, codePkgName, classInfo.resName)
     end
 
