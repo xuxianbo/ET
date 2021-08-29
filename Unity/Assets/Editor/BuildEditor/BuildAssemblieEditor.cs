@@ -73,7 +73,7 @@ namespace ET
                 }
 
                 BuildMuteAssembly();
-                
+
                 using (StreamWriter file = File.CreateText(s_ScriptAssembliesMd5FilePath))
                 {
                     file.Write(newMD5);
@@ -97,10 +97,17 @@ namespace ET
 
         private static void CopyDllAndPdb(string FileName)
         {
-            File.Copy(Path.Combine(s_ScriptAssembliesDir, FileName + ".dll"),
-                Path.Combine(s_FinalHotfixDllDir, FileName + ".dll.bytes"), true);
-            File.Copy(Path.Combine(s_ScriptAssembliesDir, FileName + ".pdb"),
-                Path.Combine(s_FinalHotfixDllDir, FileName + ".pdb.bytes"), true);
+            string dllOriPath = Path.Combine(s_ScriptAssembliesDir, FileName + ".dll");
+            string dllDesPath = Path.Combine(s_FinalHotfixDllDir, FileName + ".dll.bytes");
+
+            string pdbOriPath = Path.Combine(s_ScriptAssembliesDir, FileName + ".pdb");
+            string pdbDesPath = Path.Combine(s_FinalHotfixDllDir, FileName + ".pdb.bytes");
+            
+            File.Copy(dllOriPath, dllDesPath, true);
+            File.Copy(pdbOriPath, pdbDesPath, true);
+            
+            AssetDatabase.ImportAsset(dllDesPath);
+            AssetDatabase.ImportAsset(pdbDesPath);
             AssetDatabase.Refresh();
         }
 
@@ -161,7 +168,6 @@ namespace ET
             };
 
             assemblyBuilder.buildFinished += delegate(string assemblyPath, CompilerMessage[] compilerMessages)
-
             {
                 int errorCount = compilerMessages.Count(m => m.type == CompilerMessageType.Error);
                 int warningCount = compilerMessages.Count(m => m.type == CompilerMessageType.Warning);
