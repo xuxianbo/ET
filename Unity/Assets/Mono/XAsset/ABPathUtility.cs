@@ -15,20 +15,15 @@ namespace ET
         {
             return $"Assets/Bundles/Altas/{fileName}.prefab";
         }
-        
-        public static string GetUGUIPath(string fileName)
-        {
-            return $"Assets/Res/UI/{fileName}.prefab";
-        }
-        
+
         public static string GetFGUIDesPath(string fileName)
         {
-            return $"Assets/Bundles/FUI/{fileName}.bytes";
+            return $"Assets/Res/FGUI/{fileName}.bytes";
         }
         
         public static string GetFGUIResPath(string fileName,string extension)
         {
-            return $"Assets/Bundles/FUI/{fileName}{extension}";
+            return $"Assets/Res/FGUI/{fileName}{extension}";
         }
         
         public static string GetNormalConfigPath(string fileName)

@@ -15,9 +15,11 @@ namespace ET
         public static void Init(Updater updater)
         {
             s_Updater = updater;
-
-            FUIEntry.LoadPackage_MonoOnly("CheckForResUpdate");
             
+            
+            FUIEntry.LoadPackage_MonoOnly("CheckForResUpdate");
+
+            FUI_CheckForResUpdateBinder.BindAll();
             FUI_CheckForResUpdate forResUpdate = FUI_CheckForResUpdate.CreateInstance();
             forResUpdate.m_processbar.max = 100;
             forResUpdate.m_processbar.value = 0;

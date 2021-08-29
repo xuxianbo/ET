@@ -127,6 +127,31 @@ function ModelCodeGenHandler.Do(handler, codeGenConfig)
     end
 
     writer:reset()
+
+    --- 为了统一命名，这里也组装自定义组件前缀
+    local binderName = classNamePrefix .. codePkgName .. 'Binder'
+
+    writer:writeln('using FairyGUI;')
+    writer:writeln()
+    writer:writeln('namespace %s', 'ET')
+    writer:startBlock()
+    writer:writeln('public class %s', binderName)
+    writer:startBlock()
+
+    writer:writeln('public static void BindAll()')
+    writer:startBlock()
+    for i = 0, classCnt - 1 do
+        local classInfo = classes[i]
+        --- 组装自定义组件前缀
+        local className = classNamePrefix .. classInfo.className
+        writer:writeln('UIObjectFactory.SetPackageItemExtension(%s.URL, typeof(%s));', className, className)
+    end
+    writer:endBlock() --bindall
+
+    writer:endBlock() --class
+    writer:endBlock() --namespace
+
+    writer:save(exportCodePath .. '/' .. binderName .. '.cs')
 end
 
 return ModelCodeGenHandler

@@ -54,7 +54,7 @@ namespace ET
             Type t = Type.GetType("ILRuntime.Runtime.Generated.CLRBindings");
             if (t != null)
             {
-                t.GetMethod("Initialize")?.Invoke(null, new object[] { appdomain });
+                t.GetMethod("Initialize")?.Invoke(null, new object[] {appdomain});
             }
         }
 
@@ -65,8 +65,9 @@ namespace ET
         static void RegisterCrossBindingAdaptor(AppDomain appdomain)
         {
             //自动注册一波，无需再手动添加了，如果想要性能也可以手动自己加
-            Assembly assembly = typeof (ILHelper).Assembly;
-            foreach (Type type in assembly.GetTypes().ToList().FindAll(t => t.IsSubclassOf(typeof (CrossBindingAdaptor))))
+            Assembly assembly = typeof(ILHelper).Assembly;
+            foreach (Type type in assembly.GetTypes().ToList()
+                .FindAll(t => t.IsSubclassOf(typeof(CrossBindingAdaptor))))
             {
                 object obj = Activator.CreateInstance(type);
                 CrossBindingAdaptor adaptor = obj as CrossBindingAdaptor;
@@ -86,12 +87,12 @@ namespace ET
         static unsafe void RegisterILRuntimeCLRRedirection(AppDomain appdomain)
         {
             //注册3种Log
-            Type debugType = typeof (Debug);
-            var logMethod = debugType.GetMethod("Log", new[] { typeof (object) });
+            Type debugType = typeof(Debug);
+            var logMethod = debugType.GetMethod("Log", new[] {typeof(object)});
             appdomain.RegisterCLRMethodRedirection(logMethod, Log);
-            var logWarningMethod = debugType.GetMethod("LogWarning", new[] { typeof (object) });
+            var logWarningMethod = debugType.GetMethod("LogWarning", new[] {typeof(object)});
             appdomain.RegisterCLRMethodRedirection(logWarningMethod, LogWarning);
-            var logErrorMethod = debugType.GetMethod("LogError", new[] { typeof (object) });
+            var logErrorMethod = debugType.GetMethod("LogError", new[] {typeof(object)});
             appdomain.RegisterCLRMethodRedirection(logErrorMethod, LogError);
 
             //LitJson适配
@@ -110,14 +111,14 @@ namespace ET
         /// <param name="isNewObj"></param>
         /// <returns></returns>
         unsafe static StackObject* LogError(ILIntepreter __intp, StackObject* __esp, IList<object> __mStack,
-        CLRMethod __method, bool isNewObj)
+            CLRMethod __method, bool isNewObj)
         {
             AppDomain __domain = __intp.AppDomain;
             StackObject* ptr_of_this_method;
             StackObject* __ret = ILIntepreter.Minus(__esp, 1);
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
 
-            object message = typeof (object).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
+            object message = typeof(object).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             var stacktrace = __domain.DebugService.GetStackTrace(__intp);
@@ -135,14 +136,14 @@ namespace ET
         /// <param name="isNewObj"></param>
         /// <returns></returns>
         unsafe static StackObject* LogWarning(ILIntepreter __intp, StackObject* __esp, IList<object> __mStack,
-        CLRMethod __method, bool isNewObj)
+            CLRMethod __method, bool isNewObj)
         {
             AppDomain __domain = __intp.AppDomain;
             StackObject* ptr_of_this_method;
             StackObject* __ret = ILIntepreter.Minus(__esp, 1);
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
 
-            object message = typeof (object).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
+            object message = typeof(object).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             var stacktrace = __domain.DebugService.GetStackTrace(__intp);
@@ -160,14 +161,14 @@ namespace ET
         /// <param name="isNewObj"></param>
         /// <returns></returns>
         unsafe static StackObject* Log(ILIntepreter __intp, StackObject* __esp, IList<object> __mStack,
-        CLRMethod __method, bool isNewObj)
+            CLRMethod __method, bool isNewObj)
         {
             AppDomain __domain = __intp.AppDomain;
             StackObject* ptr_of_this_method;
             StackObject* __ret = ILIntepreter.Minus(__esp, 1);
             ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
 
-            object message = typeof (object).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
+            object message = typeof(object).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack));
             __intp.Free(ptr_of_this_method);
 
             var stacktrace = __domain.DebugService.GetStackTrace(__intp);
@@ -184,8 +185,17 @@ namespace ET
             appdomain.DelegateManager.RegisterMethodDelegate<long, int>();
             appdomain.DelegateManager.RegisterMethodDelegate<long, MemoryStream>();
             appdomain.DelegateManager.RegisterMethodDelegate<long, IPEndPoint>();
-            
+
             appdomain.DelegateManager.RegisterMethodDelegate<System.Single, LitJson.JsonWriter>();
+
+            #region FGUI
+
+            appdomain.DelegateManager
+                .RegisterMethodDelegate<System.String, System.String, System.Type, FairyGUI.PackageItem>();
+            appdomain.DelegateManager.RegisterMethodDelegate<FairyGUI.GObject>();
+            appdomain.DelegateManager.RegisterMethodDelegate<FairyGUI.EventContext>();
+
+            #endregion
         }
 
         /// <summary>
@@ -198,16 +208,21 @@ namespace ET
             appdomain.DelegateManager.RegisterFunctionDelegate<UnityEngine.Events.UnityAction>();
             appdomain.DelegateManager.RegisterFunctionDelegate<System.Object, ET.ETTask>();
             appdomain.DelegateManager.RegisterFunctionDelegate<ILTypeInstance, bool>();
-            appdomain.DelegateManager.RegisterFunctionDelegate<System.Collections.Generic.KeyValuePair<System.String, System.Int32>, System.String>();
-            appdomain.DelegateManager.RegisterFunctionDelegate<System.Collections.Generic.KeyValuePair<System.Int32, System.Int32>, System.Boolean>();
-            appdomain.DelegateManager.RegisterFunctionDelegate<System.Collections.Generic.KeyValuePair<System.String, System.Int32>, System.Int32>();
+            appdomain.DelegateManager
+                .RegisterFunctionDelegate<System.Collections.Generic.KeyValuePair<System.String, System.Int32>,
+                    System.String>();
+            appdomain.DelegateManager
+                .RegisterFunctionDelegate<System.Collections.Generic.KeyValuePair<System.Int32, System.Int32>,
+                    System.Boolean>();
+            appdomain.DelegateManager
+                .RegisterFunctionDelegate<System.Collections.Generic.KeyValuePair<System.String, System.Int32>,
+                    System.Int32>();
             appdomain.DelegateManager.RegisterFunctionDelegate<List<int>, int>();
             appdomain.DelegateManager.RegisterFunctionDelegate<List<int>, bool>();
-            appdomain.DelegateManager.RegisterFunctionDelegate<int, bool>();//Linq
-            appdomain.DelegateManager.RegisterFunctionDelegate<int, int, int>();//Linq
+            appdomain.DelegateManager.RegisterFunctionDelegate<int, bool>(); //Linq
+            appdomain.DelegateManager.RegisterFunctionDelegate<int, int, int>(); //Linq
             appdomain.DelegateManager.RegisterFunctionDelegate<KeyValuePair<int, List<int>>, bool>();
             appdomain.DelegateManager.RegisterFunctionDelegate<KeyValuePair<int, int>, KeyValuePair<int, int>, int>();
-
         }
 
         /// <summary>
@@ -219,28 +234,62 @@ namespace ET
             {
                 return new UnityEngine.Events.UnityAction((System.Action) action);
             });
-            
+
             appdomain.DelegateManager.RegisterDelegateConvertor<LitJson.ExporterFunc<System.Single>>((act) =>
             {
                 return new LitJson.ExporterFunc<System.Single>((obj, writer) =>
                 {
-                    ((Action<System.Single, LitJson.JsonWriter>)act)(obj, writer);
+                    ((Action<System.Single, LitJson.JsonWriter>) act)(obj, writer);
                 });
             });
-            appdomain.DelegateManager.RegisterDelegateConvertor<LitJson.ImporterFunc<System.String, System.Single>>((act) =>
-            {
-                return new LitJson.ImporterFunc<System.String, System.Single>((input) =>
+            appdomain.DelegateManager.RegisterDelegateConvertor<LitJson.ImporterFunc<System.String, System.Single>>(
+                (act) =>
                 {
-                    return ((Func<System.String, System.Single>)act)(input);
+                    return new LitJson.ImporterFunc<System.String, System.Single>((input) =>
+                    {
+                        return ((Func<System.String, System.Single>) act)(input);
+                    });
                 });
-            });
             appdomain.DelegateManager.RegisterDelegateConvertor<Comparison<KeyValuePair<int, int>>>((act) =>
             {
                 return new Comparison<KeyValuePair<int, int>>((x, y) =>
                 {
-                    return ((Func<KeyValuePair<int, int>, KeyValuePair<int, int>, int>)act)(x, y);
+                    return ((Func<KeyValuePair<int, int>, KeyValuePair<int, int>, int>) act)(x, y);
                 });
             });
+
+            #region FGUI
+
+            appdomain.DelegateManager.RegisterDelegateConvertor<FairyGUI.UIPackage.LoadResourceAsync>((act) =>
+            {
+                return new FairyGUI.UIPackage.LoadResourceAsync((name, extension, type, item) =>
+                {
+                    ((Action<System.String, System.String, System.Type, FairyGUI.PackageItem>) act)(name,
+                        extension, type, item);
+                });
+            });
+            appdomain.DelegateManager.RegisterDelegateConvertor<FairyGUI.UIPackage.CreateObjectCallback>((act) =>
+            {
+                return new FairyGUI.UIPackage.CreateObjectCallback((result) =>
+                {
+                    ((Action<FairyGUI.GObject>) act)(result);
+                });
+            });
+
+            appdomain.DelegateManager.RegisterDelegateConvertor<FairyGUI.EventCallback0>((act) =>
+            {
+                return new FairyGUI.EventCallback0(() => { ((Action) act)(); });
+            });
+
+            appdomain.DelegateManager.RegisterDelegateConvertor<FairyGUI.EventCallback1>((act) =>
+            {
+                return new FairyGUI.EventCallback1((context) =>
+                {
+                    ((Action<FairyGUI.EventContext>) act)(context);
+                });
+            });
+
+            #endregion
         }
 
         /// <summary>

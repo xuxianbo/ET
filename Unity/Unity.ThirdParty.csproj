@@ -546,12 +546,12 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\DbiHeader.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\UI\Gears\GearAnimation.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\UI\EMRenderSupport.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\DataStream.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\CLRBinding\BindingCodeGenerator.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ProtoIgnoreAttribute.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\ByteBufferEqualityComparer.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\ParameterReference.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Tween\TweenValue.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\DataStream.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DoubleSerializer.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ProtoConverterAttribute.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\CvInfo.cs" />

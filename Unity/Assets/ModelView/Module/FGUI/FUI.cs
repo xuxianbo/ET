@@ -3,6 +3,7 @@ using FairyGUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace ET
 {
@@ -147,7 +148,7 @@ namespace ET
                 Log.Warning($"注意，ui.Name({ui.Name}) already exist");
                 return;
             }
-
+            
             children.Add(ui.Name, ui);
 
             if (IsComponent && asChildGObject)
@@ -182,8 +183,7 @@ namespace ET
                     {
                         GObject.asCom.RemoveChild(ui.GObject, false);
                     }
-
-                    ui.Parent = null;
+                    
                     ui.Dispose();
                 }
             }
