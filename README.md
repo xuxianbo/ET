@@ -33,7 +33,7 @@ ET是一个开源的游戏客户端（基于unity3d）服务端双端框架，�
 - [x] 接入 [ILRuntime](https://github.com/Ourpalm/ILRuntime)
 - [x] 接入 [xAsset](https://github.com/xasset/xasset) 作为资源管理方案（必要，因为当前非热更层直接从Resources目录加载的Hotfix Dll和配置数据，而这些数据理应是热更的）
 - [x] 更新 [ET 6.0学习笔记](https://www.lfzxb.top/et6.0-study/)
-- [ ] 更新 [FGUI](https://www.fairygui.com/) 代码生成插件
+- [x] 更新 [FGUI](https://www.fairygui.com/) 代码生成插件
 - [ ] 更新 [ET使用FGUI开发的工作流程](https://www.lfzxb.top/et-fguilearn/)
 - [ ] 新增 [FGUI基于Lua的插件开发指南]
 - [ ] 以ET 6.0为底层框架，更新 [状态帧同步Moba，包含基于双端行为树技能系统](https://gitee.com/NKG_admin/NKGMobaBasedOnET)
