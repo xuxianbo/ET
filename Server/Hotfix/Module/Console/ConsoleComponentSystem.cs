@@ -20,18 +20,10 @@ namespace ET
         public override void Load(ConsoleComponent self)
         {
             self.Load();
-        }
-    }
-    
-    [ObjectSystem]
-    public class ConsoleComponentStartSystem: StartSystem<ConsoleComponent>
-    {
-        public override void Start(ConsoleComponent self)
-        {
             self.Start().Coroutine();
         }
     }
-
+    
     public static class ConsoleComponentSystem
     {
         public static void Load(this ConsoleComponent self)

@@ -141,7 +141,7 @@ namespace ET
 
             assemblyBuilder.compilerOptions.CodeOptimization = CodeOptimization.Release;
 
-            assemblyBuilder.flags = AssemblyBuilderFlags.EditorAssembly;
+            assemblyBuilder.flags = AssemblyBuilderFlags.DevelopmentBuild;
             //AssemblyBuilderFlags.None                 正常发布
             //AssemblyBuilderFlags.DevelopmentBuild     开发模式打包
             //AssemblyBuilderFlags.EditorAssembly       编辑器状态
