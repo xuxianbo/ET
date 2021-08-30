@@ -28,9 +28,15 @@ __讨论QQ群 : 474643097__
 
 ET是一个开源的游戏客户端（基于unity3d）服务端双端框架，服务端是使用C# .net core开发的分布式游戏服务端，其特点是开发效率高，性能强，双端共享逻辑代码，客户端服务端热更机制完善，同时支持可靠udp tcp websocket协议，支持服务端3D recast寻路等等
 
-## 致命BUG
+# 致命BUG
 
-ILRuntime模式下，ETTask.SetException会导致崩溃！
+ILRuntime模式下，如果往一个async ETVoid/ETTask函数中传递Scene参数，并且这个函数最终产生了异常（ETTask.SetException）就会引发崩溃，目前原因仍然未知，请务必避免这种情况的出现！
+
+参见这个Commit：[https://github.com/wqaetly/ET/commit/ee5483de2c4f8b9bf053f23ae62eaf504035a306](https://github.com/wqaetly/ET/commit/ee5483de2c4f8b9bf053f23ae62eaf504035a306)
+
+因为测试用例过于特殊，如果传递除Scene以外的任何值，都不会由于ETTask.SetException崩溃，所以我连issue都不知道要怎么提，只能一直跟进ET和ILRuntime的更新，说不定哪天机缘一到这个致命BUG就好了
+
+其实我是猜测因为ETTask把ILRT的运行堆栈给搞烂了，但是代码翻来覆去也没找到什么缘由，只好作罢（顺带一提，如果开启了ILRuntime的调试服务，即Appdomain.DebugService.StartDebugService(56000); 就不会崩溃了，会卡一下，然后程序继续进行）
 
 # TODO && Features
 
