@@ -21,12 +21,16 @@ __讨论QQ群 : 474643097__
  - IDE：Rider 2020.2
  - ET：commit 1532
  - FGUI：2021.3.1
- - ILRuntime：commit 1227
+ - ILRuntime：commit 1231
  - xAsset 4.0
 
 # ET的介绍：
 
 ET是一个开源的游戏客户端（基于unity3d）服务端双端框架，服务端是使用C# .net core开发的分布式游戏服务端，其特点是开发效率高，性能强，双端共享逻辑代码，客户端服务端热更机制完善，同时支持可靠udp tcp websocket协议，支持服务端3D recast寻路等等
+
+## 致命BUG
+
+ILRuntime模式下，ETTask.SetException会导致崩溃！
 
 # TODO && Features
 

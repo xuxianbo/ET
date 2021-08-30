@@ -94,6 +94,7 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\CompiledSerializer.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DecimalSerializer.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ProtoReader.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.Utils.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Other\UncheckedList.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ReflectedUriDecorator.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\Mesh\CompositeMesh.cs" />
@@ -118,8 +119,9 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\ElementType.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DefaultValueDecorator.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\PdbHeap.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\Image.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.FCP.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TypeSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\Image.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Debugger\VariableInfo.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Reflection\ILRuntimeWrapperType.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\Text\DynamicFont.cs" />
@@ -130,6 +132,7 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\Meta\RuntimeTypeModel.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\NAudioClip.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\TypeSpecification.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\ILRuntimeJITAttribute.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono\Disposable.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\NativeType.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\MetadataToken.cs" />
@@ -164,6 +167,7 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\CLR\Method\ILMethod.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\Text\SelectionShape.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Reflection\ILRuntimeType.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\JITCompiler.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\CodedIndex.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\Mesh\RectMesh.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\PdbFile.cs" />
@@ -200,10 +204,12 @@
      <Compile Include="Assets\ThirdParty\FGUISDK\Event\EventListener.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\Text\Emoji.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\UpdateContext.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.BCP.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\DisplayObject.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\CLR\TypeSystem\CLRType.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\UI\GGraph.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\DataFormat.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.InlineMethod.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\UI\GList.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\DbiDbgHdr.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\StringSerializer.cs" />
@@ -225,6 +231,7 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Enviorment\AppDomain.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Meta\ValueMember.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\CLRBinding\CommonBindingGenerator.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\AsyncJITCompileWorker.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\GuidHeap.cs" />
      <Compile Include="Assets\ThirdParty\LitJson\JsonException.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\PdbException.cs" />
@@ -273,6 +280,7 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\Section.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Utils\Html\HtmlParseOptions.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Utils\Html\HtmlButton.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Stack\StackObjectAllocator.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Debugger\Protocol\SCThreadStarted.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Cil\VariableDefinition.cs" />
      <Compile Include="Assets\ThirdParty\LitJson\Extensions.cs" />
@@ -308,6 +316,7 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Extensions.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\HitTest\IHitTest.cs" />
      <Compile Include="Assets\ThirdParty\LitJson\JsonMockWrapper.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.ELDC.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Enviorment\CrossBindingMethodInfo.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\MethodSemanticsAttributes.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\MapDecorator.cs" />
@@ -343,6 +352,7 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Debugger\StackFrameInfo.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\UI\Gears\IAnimationGear.cs" />
      <Compile Include="Assets\ThirdParty\LitJson\Lexer.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\ILIntepreter.Register.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Compiler\Local.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\MetadataSystem.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\UI\GComboBox.cs" />
@@ -408,6 +418,7 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Other\DelegateExportAttribute.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\ProtoEndpointBehavior.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\AssemblyHashAlgorithm.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\OpCodes\OpCodeREnum.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\PdbLines.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\LinkedResource.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TimeSpanSerializer.cs" />
@@ -415,6 +426,7 @@
      <Compile Include="Assets\ThirdParty\FGUISDK\UI\GRoot.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Other\NeedAdaptorAttribute.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\UI\GMovieClip.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.RegisterCleanup.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Meta\ProtoSyntax.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\IProtoSerializer.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\Mesh\LineMesh.cs" />
@@ -498,6 +510,7 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Mono.Cecil.Pdb\PdbHelper.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Tween\GTween.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Extensible.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\CodeBasicBlock.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\Mesh\EllipseMesh.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\UI\Action\PlayTransitionAction.cs" />
      <Compile Include="Assets\ThirdParty\FGUISDK\Core\ShaderConfig.cs" />
@@ -557,19 +570,6 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\IMethodSignature.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ProtoDecoratorBase.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\IExtension.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\AsyncJITCompileWorker.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.InlineMethod.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\CodeBasicBlock.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.FCP.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Stack\StackObjectAllocator.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.ELDC.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\JITCompiler.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.Utils.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\ILRuntimeJITAttribute.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\OpCodes\OpCodeREnum.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\ILIntepreter.Register.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.BCP.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.RegisterCleanup.cs" />
      <None Include="Assets\ThirdParty\FGUISDK\Shaders\FairyGUI-Text.shader" />
      <None Include="Assets\ThirdParty\FGUISDK\Shaders\FairyGUI-Image.shader" />
      <None Include="Assets\ThirdParty\FGUISDK\Shaders\AddOn\FairyGUI-BlurFilter.shader" />
