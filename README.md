@@ -19,7 +19,7 @@ __讨论QQ群 : 474643097__
  - 服务端：.Net 5.0
  - 客户端：.Net Framework 4.7.2
  - IDE：Rider 2020.2
- - ET：commit 1532
+ - ET：commit 1535
  - FGUI：2021.3.1
  - ILRuntime：commit 1231
  - xAsset 4.0
