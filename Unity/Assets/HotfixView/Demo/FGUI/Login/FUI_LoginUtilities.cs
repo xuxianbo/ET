@@ -11,7 +11,7 @@ namespace ET
         public static void OnLogin(FUI_LoginComponent self)
         {
             FUI_Login fuiLogin = self.FUILogin;
-            LoginHelper.Login(self.DomainScene(), ConstValue.LoginAddress, fuiLogin.m_accountText.text,
+            LoginHelper.Login(self, ConstValue.LoginAddress, fuiLogin.m_accountText.text,
                 fuiLogin.m_passwordText.text).Coroutine();
         }
     }

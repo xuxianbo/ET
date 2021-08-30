@@ -1,16 +1,18 @@
 using System;
+using UnityEngine;
 
 
 namespace ET
 {
     public static class LoginHelper
     {
-        public static async ETTask Login(Scene zoneScene, string address, string account, string password)
+        public static async ETTask Login(Entity fuiComponent, string address, string account, string password)
         {
             try
             {
                 // 创建一个ETModel层的Session
                 R2C_Login r2CLogin;
+                Scene zoneScene = fuiComponent.DomainScene();
                 Session session = zoneScene.GetComponent<NetKcpComponent>().Create(NetworkHelper.ToIPEndPoint(address));
                 {
                     r2CLogin = (R2C_Login) await session.Call(new C2R_Login() { Account = account, Password = password });
