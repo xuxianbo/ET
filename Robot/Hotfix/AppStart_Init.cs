@@ -19,13 +19,13 @@ namespace ET
             Game.Scene.AddComponent<RobotCaseDispatcherComponent>();
             Game.Scene.AddComponent<RobotCaseComponent>();
             
-            var processScenes = StartSceneConfigCategory.Instance.GetByProcess(GloabDefine.Options.Process);
+            var processScenes = StartSceneConfigCategory.Instance.GetByProcess(GlobalDefine.Options.Process);
             foreach (StartSceneConfig startConfig in processScenes)
             {
                 await RobotSceneFactory.Create(Game.Scene, startConfig.Id, startConfig.InstanceId, startConfig.Zone, startConfig.Name, startConfig.Type, startConfig);
             }
             
-            if (GloabDefine.Options.Console == 1)
+            if (GlobalDefine.Options.Console == 1)
             {
                 Game.Scene.AddComponent<ConsoleComponent>();
             }

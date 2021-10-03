@@ -16,7 +16,7 @@ namespace ET
 
             //读取StartProcessConfig中id为Game.Options.Process（这里值为1）的整行配置
             //ET6.0由于使用了protobuffer作为导表工具，所以请去Excel文件夹查看原数据
-            StartProcessConfig processConfig = StartProcessConfigCategory.Instance.Get(GloabDefine.Options.Process);
+            StartProcessConfig processConfig = StartProcessConfigCategory.Instance.Get(GlobalDefine.Options.Process);
             
             Game.Scene.AddComponent<TimerComponent>();
             Game.Scene.AddComponent<OpcodeTypeComponent>();
@@ -35,7 +35,7 @@ namespace ET
             Game.Scene.AddComponent<NetThreadComponent>();
 
             //根据自身的类型来决定要添加的组件
-            switch (GloabDefine.Options.AppType)
+            switch (GlobalDefine.Options.AppType)
             {
                 case AppType.Server:
                 {
@@ -44,7 +44,7 @@ namespace ET
 
                     //以GloabDefine.Options.Process为凭证获取自己要添加的Scene
                     //注意在StartSceneConfig.xlsx中有两份配置，第一份是给Server用的，第二份是给Robot用的
-                    List<StartSceneConfig> processScenes = StartSceneConfigCategory.Instance.GetByProcess(GloabDefine.Options.Process);
+                    List<StartSceneConfig> processScenes = StartSceneConfigCategory.Instance.GetByProcess(GlobalDefine.Options.Process);
                     foreach (StartSceneConfig startConfig in processScenes)
                     {
                         await SceneFactory.Create(Game.Scene, startConfig.Id, startConfig.InstanceId, startConfig.Zone, startConfig.Name,
@@ -58,7 +58,7 @@ namespace ET
                     //是一个守护进程就额外添加一个WatcherComponent，守护进程可以用来负责拉起和管理全部的进程
                     StartMachineConfig startMachineConfig = WatcherHelper.GetThisMachineConfig();
                     WatcherComponent watcherComponent = Game.Scene.AddComponent<WatcherComponent>();
-                    watcherComponent.Start(GloabDefine.Options.CreateScenes);
+                    watcherComponent.Start(GlobalDefine.Options.CreateScenes);
                     Game.Scene.AddComponent<NetInnerComponent, IPEndPoint>(NetworkHelper.ToIPEndPoint($"{startMachineConfig.InnerIP}:{startMachineConfig.WatcherPort}"));
                     break;
                 }
@@ -66,7 +66,7 @@ namespace ET
                     break;
             }
 
-            if (GloabDefine.Options.Console == 1)
+            if (GlobalDefine.Options.Console == 1)
             {
                 Game.Scene.AddComponent<ConsoleComponent>();
             }

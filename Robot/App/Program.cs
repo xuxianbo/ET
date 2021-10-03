@@ -40,11 +40,11 @@ namespace ET
                         .WithNotParsed(error => throw new Exception($"命令行格式错误!"))
                         .WithParsed(o => { options = o; });
 
-                GloabDefine.Options = options;
+                GlobalDefine.Options = options;
 
-                GloabDefine.ILog = new NLogger(GloabDefine.Options.AppType.ToString());
+                GlobalDefine.ILog = new NLogger(GlobalDefine.Options.AppType.ToString());
                 
-                LogManager.Configuration.Variables["appIdFormat"] = $"{GloabDefine.Options.Process:000000}";
+                LogManager.Configuration.Variables["appIdFormat"] = $"{GlobalDefine.Options.Process:000000}";
 				
                 Log.Info($"server start........................ {Game.Scene.Id}");
 

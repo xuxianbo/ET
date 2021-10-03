@@ -44,9 +44,9 @@ namespace ET
             string arguments = $"{startProcessConfig.AppName}.dll" + 
                     $" --Process={startProcessConfig.Id}" +
                     $" --AppType={startProcessConfig.AppName}" +  
-                    $" --Develop={GloabDefine.Options.Develop}" +
+                    $" --Develop={GlobalDefine.Options.Develop}" +
                     $" --CreateScenes={createScenes}" +
-                    $" --LogLevel={GloabDefine.Options.LogLevel}";
+                    $" --LogLevel={GlobalDefine.Options.LogLevel}";
             Log.Debug($"{exe} {arguments}");
             Process process = ProcessHelper.Run(exe, arguments);
             return process;

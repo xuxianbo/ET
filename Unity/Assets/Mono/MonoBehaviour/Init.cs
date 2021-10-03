@@ -31,9 +31,9 @@ namespace ET
             try
             {
                 // 设置全局模式
-                GloabDefine.ILRuntimeMode = this.ILRuntimeMode;
-                GloabDefine.DevelopMode = this.DevelopMode;
-                GloabDefine.SetLoginAddress(LoginAddress);
+                GlobalDefine.ILRuntimeMode = this.ILRuntimeMode;
+                GlobalDefine.DevelopMode = this.DevelopMode;
+                GlobalDefine.SetLoginAddress(LoginAddress);
                 
                 // 限制帧率，尽量避免手机发烫
                 QualitySettings.vSyncCount = 0;

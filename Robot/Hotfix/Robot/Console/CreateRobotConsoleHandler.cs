@@ -27,7 +27,7 @@ namespace ET
                         List<StartSceneConfig> robotSceneConfigs = StartSceneConfigCategory.Instance.Robots;
                         foreach (StartSceneConfig robotSceneConfig in robotSceneConfigs)
                         {
-                            if (robotSceneConfig.Process != GloabDefine.Options.Process)
+                            if (robotSceneConfig.Process != GlobalDefine.Options.Process)
                             {
                                 continue;
                             }
@@ -41,7 +41,7 @@ namespace ET
                             StartSceneConfig robotSceneConfig = thisProcessRobotScenes.List[index];
                             Scene robotScene = Game.Scene.Get(robotSceneConfig.Id);
                             RobotManagerComponent robotManagerComponent = robotScene.GetComponent<RobotManagerComponent>();
-                            Scene robot = await robotManagerComponent.NewRobot(GloabDefine.Options.Process * 10000 + i);
+                            Scene robot = await robotManagerComponent.NewRobot(GlobalDefine.Options.Process * 10000 + i);
                             Log.Console($"create robot {robot.Zone}");
                             await TimerComponent.Instance.WaitAsync(2000);
                         }

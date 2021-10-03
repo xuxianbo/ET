@@ -24,7 +24,7 @@ namespace ET
 					List<Type> types = new List<Type>();
 					types.AddRange( HotfixHelper.GetAssemblyTypes());
 					Game.EventSystem.AddRangeType(types);
-					if (GloabDefine.ILRuntimeMode)
+					if (GlobalDefine.ILRuntimeMode)
 					{
 						Game.EventSystem.TypeIlrInit();
 					}
@@ -36,7 +36,7 @@ namespace ET
 				}
 				ProtobufHelper.Init();
 
-				GloabDefine.Options = new Options();
+				GlobalDefine.Options = new Options();
 				
 				Game.EventSystem.Publish(new EventType.AppStart()).Coroutine();
 			}

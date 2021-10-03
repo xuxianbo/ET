@@ -21,7 +21,7 @@ namespace ET
                 if (OpcodeTypeComponent.Instance.IsOutrActorMessage(opcode))
                 {
                     InstanceIdStruct instanceIdStruct = new InstanceIdStruct(actorId);
-                    instanceIdStruct.Process = GloabDefine.Options.Process;
+                    instanceIdStruct.Process = GlobalDefine.Options.Process;
                     long realActorId = instanceIdStruct.ToLong();
                     
                     
@@ -63,7 +63,7 @@ namespace ET
                     {
                         InstanceIdStruct instanceIdStruct = new InstanceIdStruct(actorId);
                         int fromProcess = instanceIdStruct.Process;
-                        instanceIdStruct.Process = GloabDefine.Options.Process;
+                        instanceIdStruct.Process = GlobalDefine.Options.Process;
                         long realActorId = instanceIdStruct.ToLong();
                         
                         void Reply(IActorResponse response)
@@ -79,7 +79,7 @@ namespace ET
                     case IActorResponse iActorResponse:
                     {
                         InstanceIdStruct instanceIdStruct = new InstanceIdStruct(actorId);
-                        instanceIdStruct.Process = GloabDefine.Options.Process;
+                        instanceIdStruct.Process = GlobalDefine.Options.Process;
                         long realActorId = instanceIdStruct.ToLong();
                         InnerMessageDispatcherHelper.HandleIActorResponse(opcode, realActorId, iActorResponse);
                         return;
@@ -87,7 +87,7 @@ namespace ET
                     case IActorMessage iactorMessage:
                     {
                         InstanceIdStruct instanceIdStruct = new InstanceIdStruct(actorId);
-                        instanceIdStruct.Process = GloabDefine.Options.Process;
+                        instanceIdStruct.Process = GlobalDefine.Options.Process;
                         long realActorId = instanceIdStruct.ToLong();
                         InnerMessageDispatcherHelper.HandleIActorMessage(opcode, realActorId, iactorMessage);
                         return;

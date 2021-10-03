@@ -107,6 +107,23 @@ namespace ET
                 return this.outerIPPort;
             }
         }
+        
+        private IPEndPoint outerIPPortForClient;
+
+        // 外网地址外网端口(专门给客户端准备)
+        public IPEndPoint OuterIPPortForClient
+        {
+            get
+            {
+                if (this.outerIPPortForClient == null)
+                {
+                    this.outerIPPortForClient =
+                        NetworkHelper.ToIPEndPoint($"{this.StartProcessConfig.OuterIPForClient}:{this.OuterPort}");
+                }
+
+                return this.outerIPPortForClient;
+            }
+        }
 
         public override void BeginInit()
         {

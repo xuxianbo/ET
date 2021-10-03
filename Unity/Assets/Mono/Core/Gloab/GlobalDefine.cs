@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ET
 {
-    public static class GloabDefine
+    public static class GlobalDefine
     {
         public static bool ILRuntimeMode = true;
 
@@ -18,7 +18,7 @@ namespace ET
         
         public static string GetLoginAddress()
         {
-            if (GloabDefine.DevelopMode)
+            if (GlobalDefine.DevelopMode)
             {
                 return "127.0.0.1:10002";
             }

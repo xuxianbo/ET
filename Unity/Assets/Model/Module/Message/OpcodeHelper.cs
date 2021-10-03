@@ -37,7 +37,7 @@ namespace ET
                 return;
             }
             
-            GloabDefine.ILog.Debug("zone: {0} {1}", zone, message);
+            GlobalDefine.ILog.Debug("zone: {0} {1}", zone, message);
         }
         
         public static void LogMsg(ushort opcode, long actorId, object message)
@@ -47,7 +47,7 @@ namespace ET
                 return;
             }
             
-            GloabDefine.ILog.Debug("actorId: {0} {1}", actorId, message);
+            GlobalDefine.ILog.Debug("actorId: {0} {1}", actorId, message);
         }
     }
 }

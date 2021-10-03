@@ -226,7 +226,7 @@ namespace ET
                 }
             }
 
-            InstanceIdStruct instanceIdStruct = new InstanceIdStruct(this.lastInstanceIdTime, GloabDefine.Options.Process, this.instanceIdValue);
+            InstanceIdStruct instanceIdStruct = new InstanceIdStruct(this.lastInstanceIdTime, GlobalDefine.Options.Process, this.instanceIdValue);
             return instanceIdStruct.ToLong();
         }
 
@@ -251,7 +251,7 @@ namespace ET
                 }
             }
             
-            IdStruct idStruct = new IdStruct(this.lastIdTime, GloabDefine.Options.Process, value);
+            IdStruct idStruct = new IdStruct(this.lastIdTime, GlobalDefine.Options.Process, value);
             return idStruct.ToLong();
         }
         
@@ -280,7 +280,7 @@ namespace ET
                 }
             }
 
-            UnitIdStruct unitIdStruct = new UnitIdStruct(zone, GloabDefine.Options.Process, this.lastUnitIdTime, this.unitIdValue);
+            UnitIdStruct unitIdStruct = new UnitIdStruct(zone, GlobalDefine.Options.Process, this.lastUnitIdTime, this.unitIdValue);
             return unitIdStruct.ToLong();
         }
     }

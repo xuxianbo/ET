@@ -19,18 +19,18 @@ namespace ET
         static Log()
         {
 #if !SERVER
-            GloabDefine.ILog = new UnityLogger();
+            GlobalDefine.ILog = new UnityLogger();
 #endif
         }
 
         public static bool CheckLogLevel(int level)
         {
-            if (GloabDefine.Options == null)
+            if (GlobalDefine.Options == null)
             {
                 return true;
             }
             
-            return GloabDefine.Options.LogLevel <= level;
+            return GlobalDefine.Options.LogLevel <= level;
         }
         
         public static void Trace(string msg)
@@ -40,7 +40,7 @@ namespace ET
                 return;
             }
             StackTrace st = new StackTrace(1, true);
-            GloabDefine.ILog.Trace($"{msg}\n{st}");
+            GlobalDefine.ILog.Trace($"{msg}\n{st}");
         }
 
         public static void Debug(string msg)
@@ -49,7 +49,7 @@ namespace ET
             {
                 return;
             }
-            GloabDefine.ILog.Debug(msg);
+            GlobalDefine.ILog.Debug(msg);
         }
 
         public static void Info(string msg)
@@ -59,7 +59,7 @@ namespace ET
                 return;
             }
             System.Console.WriteLine(msg);
-            GloabDefine.ILog.Info(msg);
+            GlobalDefine.ILog.Info(msg);
         }
 
         public static void TraceInfo(string msg)
@@ -69,7 +69,7 @@ namespace ET
                 return;
             }
             StackTrace st = new StackTrace(1, true);
-            GloabDefine.ILog.Trace($"{msg}\n{st}");
+            GlobalDefine.ILog.Trace($"{msg}\n{st}");
         }
 
         public static void Warning(string msg)
@@ -79,19 +79,19 @@ namespace ET
                 return;
             }
 
-            GloabDefine.ILog.Warning(msg);
+            GlobalDefine.ILog.Warning(msg);
         }
 
         public static void Error(string msg)
         {
             StackTrace st = new StackTrace(1, true);
-            GloabDefine.ILog.Error($"{msg}\n{st}");
+            GlobalDefine.ILog.Error($"{msg}\n{st}");
         }
 
         public static void Error(Exception e)
         {
             string str = e.ToString();
-            GloabDefine.ILog.Error(str);
+            GlobalDefine.ILog.Error(str);
         }
 
         public static void Trace(string message, params object[] args)
@@ -101,7 +101,7 @@ namespace ET
                 return;
             }
             StackTrace st = new StackTrace(1, true);
-            GloabDefine.ILog.Trace($"{string.Format(message, args)}\n{st}");
+            GlobalDefine.ILog.Trace($"{string.Format(message, args)}\n{st}");
         }
 
         public static void Warning(string message, params object[] args)
@@ -110,7 +110,7 @@ namespace ET
             {
                 return;
             }
-            GloabDefine.ILog.Warning(string.Format(message, args));
+            GlobalDefine.ILog.Warning(string.Format(message, args));
         }
 
         public static void Info(string message, params object[] args)
@@ -119,7 +119,7 @@ namespace ET
             {
                 return;
             }
-            GloabDefine.ILog.Info(string.Format(message, args));
+            GlobalDefine.ILog.Info(string.Format(message, args));
         }
 
         public static void Debug(string message, params object[] args)
@@ -128,7 +128,7 @@ namespace ET
             {
                 return;
             }
-            GloabDefine.ILog.Debug(string.Format(message, args));
+            GlobalDefine.ILog.Debug(string.Format(message, args));
 
         }
 
@@ -136,26 +136,26 @@ namespace ET
         {
             StackTrace st = new StackTrace(1, true);
             string s = string.Format(message, args) + '\n' + st;
-            GloabDefine.ILog.Error(s);
+            GlobalDefine.ILog.Error(s);
         }
         
         public static void Console(string message)
         {
-            if (GloabDefine.Options.Console == 1)
+            if (GlobalDefine.Options.Console == 1)
             {
                 System.Console.WriteLine(message);
             }
-            GloabDefine.ILog.Debug(message);
+            GlobalDefine.ILog.Debug(message);
         }
         
         public static void Console(string message, params object[] args)
         {
             string s = string.Format(message, args);
-            if (GloabDefine.Options.Console == 1)
+            if (GlobalDefine.Options.Console == 1)
             {
                 System.Console.WriteLine(s);
             }
-            GloabDefine.ILog.Debug(s);
+            GlobalDefine.ILog.Debug(s);
         }
     }
 }

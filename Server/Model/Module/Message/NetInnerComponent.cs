@@ -13,7 +13,7 @@ namespace ET
         {
             InstanceIdStruct instanceIdStruct = new InstanceIdStruct(actorId);
             this.Process = instanceIdStruct.Process;
-            instanceIdStruct.Process = GloabDefine.Options.Process;
+            instanceIdStruct.Process = GlobalDefine.Options.Process;
             this.ActorId = instanceIdStruct.ToLong();
         }
     }

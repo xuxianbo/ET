@@ -26,7 +26,7 @@ namespace ET
         /// </summary>
         public static void GoToHotfix(byte[] dllByte, byte[] pdbByte)
         {
-            if (GloabDefine.ILRuntimeMode)
+            if (GlobalDefine.ILRuntimeMode)
             {
                 _appDomain = new ILRuntime.Runtime.Enviorment.AppDomain();
                 s_hotfixDllStream = new MemoryStream(dllByte);
@@ -50,7 +50,7 @@ namespace ET
         public static Type[] GetAssemblyTypes()
         {
             Type[] types;
-            if (GloabDefine.ILRuntimeMode)
+            if (GlobalDefine.ILRuntimeMode)
             {
                 types = _appDomain.LoadedTypes.Values.Select(t => t.ReflectionType).ToArray();
             }
