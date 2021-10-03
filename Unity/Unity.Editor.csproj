@@ -58,6 +58,7 @@
      <Compile Include="Assets\Editor\FGUI\EditorToolSet.cs" />
      <Compile Include="Assets\Editor\FGUI\StageCameraEditor.cs" />
      <Compile Include="Assets\Editor\BuildEditor\WebFileHelper.cs" />
+     <Compile Include="Assets\Editor\ExcelExport\ExcelExport.cs" />
      <Compile Include="Assets\Editor\ReferenceCollectorEditor\ReferenceCollectorEditor.cs" />
      <Compile Include="Assets\Editor\RsyncEditor\RsyncEditor.cs" />
      <Compile Include="Assets\Editor\Helper\MongoHelper.cs" />
@@ -73,9 +74,8 @@
      <Compile Include="Assets\Editor\Helper\EditorResHelper.cs" />
      <Compile Include="Assets\Editor\FGUI\UIPainterEditor.cs" />
      <Compile Include="Assets\Editor\RsyncEditor\RsyncConfig.cs" />
-     <Compile Include="Assets\Editor\FGUI\PackagesWindow.cs" />
-     <Compile Include="Assets\Editor\ExcelExport\ExcelExport.cs" />
      <Compile Include="Assets\Editor\Proto2CS\Proto2CS.cs" />
+     <Compile Include="Assets\Editor\FGUI\PackagesWindow.cs" />
      <None Include="Assets\Editor\Unity.Editor.asmdef" />
      <None Include="Assets\Editor\csc.rsp" />
  <Reference Include="UnityEngine">

@@ -180,9 +180,9 @@ namespace libx
 			#endregion
 
 			// 如果执行打包，就强行替换为非本地调试模式，进行AB加载与云端服务器连接
-			Init init = Object.FindObjectOfType<Init>();
-			bool isDevelopMode = init.DevelopMode;
-			init.DevelopMode = false;
+			Updater updater = Object.FindObjectOfType<Updater>();
+			bool isDevelopMode = updater.DevelopmentMode;
+			updater.DevelopmentMode = false;
 			
 			var targetName = GetBuildTargetName (EditorUserBuildSettings.activeBuildTarget);
 			if (targetName == null)
@@ -200,7 +200,7 @@ namespace libx
 			};
 			BuildPipeline.BuildPlayer (buildPlayerOptions);
 #endif
-			init.DevelopMode = isDevelopMode;
+			updater.DevelopmentMode = isDevelopMode;
 		}
 
 		public static string CreateAssetBundleDirectory ()
