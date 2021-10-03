@@ -42,8 +42,18 @@ namespace ET
 						.WithParsed(o => { options = o; });
 
 				GlobalDefine.Options = options;
-
-				GlobalDefine.ILog = new NLogger(GlobalDefine.Options.AppType.ToString());
+				
+				// 如果是正式模式，就重新配置下模式和NLog
+				if (options.Develop == 0)
+				{
+					GlobalDefine.DevelopMode = false;
+					GlobalDefine.ILog = new NLogger(GlobalDefine.Options.AppType.ToString());
+				}
+				else
+				{
+					GlobalDefine.ILog = new NLogger("ServerDevelop");
+				}
+				
 				LogManager.Configuration.Variables["appIdFormat"] = $"{GlobalDefine.Options.Process:000000}";
 				
 				Log.Info($"server start........................ {Game.Scene.Id}");

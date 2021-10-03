@@ -58,7 +58,6 @@ namespace ET
             {
                 return;
             }
-            System.Console.WriteLine(msg);
             GlobalDefine.ILog.Info(msg);
         }
 
