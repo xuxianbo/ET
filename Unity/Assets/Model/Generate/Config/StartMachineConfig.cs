@@ -79,6 +79,8 @@ namespace ET
 		[ProtoMember(3, IsRequired  = true)]
 		public string OuterIP { get; set; }
 		[ProtoMember(4, IsRequired  = true)]
+		public string OuterIPForClient { get; set; }
+		[ProtoMember(5, IsRequired  = true)]
 		public string WatcherPort { get; set; }
 
 

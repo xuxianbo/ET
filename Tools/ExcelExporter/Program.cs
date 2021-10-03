@@ -7,6 +7,7 @@ using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Emit;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Attributes;
 using OfficeOpenXml;
@@ -48,7 +49,7 @@ namespace ET
         
         private const string jsonDir = "./{0}/Json";
         
-        private const string clientProtoDir = "../../../Unity/Assets/Resources/Config/Config";
+        private const string clientProtoDir = "../../../Unity/Assets/Res/Config";
         private const string serverProtoDir = "../../../Config";
 
         private static string GetProtoDir(ConfigType configType)
@@ -77,6 +78,10 @@ namespace ET
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                 foreach (string path in Directory.GetFiles(excelDir, "*.xlsx"))
                 {
+                    if (path.Contains("~$"))
+                    {
+                        continue;
+                    }
                     using Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                     using ExcelPackage p = new ExcelPackage(stream);
                     string name = Path.GetFileNameWithoutExtension(path);
@@ -92,6 +97,8 @@ namespace ET
                 ExportExcelProtobuf(ConfigType.Server);
                 
                 Console.WriteLine("导表成功!");
+                if ( args.Length > 0 && args[0] == "cmdline")
+                    return;
                 Console.ReadKey();
             }
             catch (Exception e)
@@ -155,6 +162,10 @@ namespace ET
                     continue;
                 }
                 sb.Append($"\t\t[ProtoMember({i + 1}, IsRequired  = true)]\n");
+                if (headInfo.FieldType == "float")
+                {
+                    sb.Append($"\t\t[BsonRepresentation(BsonType.Double, AllowTruncation = true)]\n");
+                }
                 sb.Append($"\t\tpublic {headInfo.FieldType} {headInfo.FieldName} {{ get; set; }}\n");
             }
             string content = template.Replace("(ConfigName)", protoName).Replace(("(Fields)"), sb.ToString());
@@ -265,6 +276,10 @@ namespace ET
                     return value;
                 case "string":
                     return $"\"{value}\"";
+                case "String":
+                    return $"\"{value}\"";
+                case "bool":
+                    return $"{value.ToLower()}";
                 default:
                     throw new Exception($"不支持此类型: {type}");
             }
@@ -297,6 +312,7 @@ namespace ET
             references.Add(AssemblyMetadata.CreateFromFile(Path.Combine(assemblyPath, "System.Runtime.dll")).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(Path.Combine(assemblyPath, "netstandard.dll")).GetReference());
             references.Add(AssemblyMetadata.CreateFromFile(typeof(ISupportInitialize).Assembly.Location).GetReference());
+            references.Add(AssemblyMetadata.CreateFromFile(typeof(BsonType).Assembly.Location).GetReference());
            
             
             CSharpCompilation compilation = CSharpCompilation.Create(

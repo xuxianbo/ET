@@ -13,12 +13,15 @@ namespace ET
 
     public static class Program
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
             // InnerMessage.proto生成cs代码
             InnerProto2CS.Proto2CS();
 
             Console.WriteLine("proto2cs succeed!");
+            if ( args.Length > 0 &&args[0] == "cmdline")
+                return;
+            Console.ReadKey();
         }
     }
 
