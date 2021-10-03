@@ -91,7 +91,7 @@ namespace ET
        
         public static FUI_Lobby CreateInstance(Entity domain)
         {			
-            return EntityFactory.Create<FUI_Lobby, GObject>(domain, CreateGObject());
+            return Entity.Create<FUI_Lobby, GObject>(domain, CreateGObject());
         }
         
        
@@ -101,7 +101,7 @@ namespace ET
     
             CreateGObjectAsync((go) =>
             {
-                tcs.SetResult(EntityFactory.Create<FUI_Lobby, GObject>(domain, go));
+                tcs.SetResult(Entity.Create<FUI_Lobby, GObject>(domain, go));
             });
     
             return tcs;
@@ -116,7 +116,7 @@ namespace ET
         /// <returns></returns>
         public static FUI_Lobby Create(Entity domain, GObject go)
         {
-            return EntityFactory.Create<FUI_Lobby, GObject>(domain, go);
+            return Entity.Create<FUI_Lobby, GObject>(domain, go);
         }
             
        

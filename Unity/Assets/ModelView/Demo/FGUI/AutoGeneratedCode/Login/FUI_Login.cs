@@ -54,7 +54,7 @@ namespace ET
        
         public static FUI_Login CreateInstance(Entity domain)
         {			
-            return EntityFactory.Create<FUI_Login, GObject>(domain, CreateGObject());
+            return Entity.Create<FUI_Login, GObject>(domain, CreateGObject());
         }
         
        
@@ -64,7 +64,7 @@ namespace ET
     
             CreateGObjectAsync((go) =>
             {
-                tcs.SetResult(EntityFactory.Create<FUI_Login, GObject>(domain, go));
+                tcs.SetResult(Entity.Create<FUI_Login, GObject>(domain, go));
             });
     
             return tcs;
@@ -79,7 +79,7 @@ namespace ET
         /// <returns></returns>
         public static FUI_Login Create(Entity domain, GObject go)
         {
-            return EntityFactory.Create<FUI_Login, GObject>(domain, go);
+            return Entity.Create<FUI_Login, GObject>(domain, go);
         }
             
        

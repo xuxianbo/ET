@@ -10,7 +10,7 @@ namespace ET
         public override void Awake(FUIManagerComponent self)
         {
             GRoot.inst.SetContentScaleFactor(1280, 720, UIContentScaler.ScreenMatchMode.MatchWidthOrHeight);
-            self.Root = EntityFactory.Create<FUI, GObject>(self.Domain, GRoot.inst);
+            self.Root = Entity.Create<FUI, GObject>(self.Domain, GRoot.inst);
         }
     }
 

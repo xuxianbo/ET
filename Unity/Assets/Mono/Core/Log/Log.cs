@@ -58,6 +58,7 @@ namespace ET
             {
                 return;
             }
+            System.Console.WriteLine(msg);
             GloabDefine.ILog.Info(msg);
         }
 

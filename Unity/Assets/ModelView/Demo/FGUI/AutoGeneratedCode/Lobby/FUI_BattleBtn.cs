@@ -43,7 +43,7 @@ namespace ET
        
         public static FUI_BattleBtn CreateInstance(Entity domain)
         {			
-            return EntityFactory.Create<FUI_BattleBtn, GObject>(domain, CreateGObject());
+            return Entity.Create<FUI_BattleBtn, GObject>(domain, CreateGObject());
         }
         
        
@@ -53,7 +53,7 @@ namespace ET
     
             CreateGObjectAsync((go) =>
             {
-                tcs.SetResult(EntityFactory.Create<FUI_BattleBtn, GObject>(domain, go));
+                tcs.SetResult(Entity.Create<FUI_BattleBtn, GObject>(domain, go));
             });
     
             return tcs;
@@ -68,7 +68,7 @@ namespace ET
         /// <returns></returns>
         public static FUI_BattleBtn Create(Entity domain, GObject go)
         {
-            return EntityFactory.Create<FUI_BattleBtn, GObject>(domain, go);
+            return Entity.Create<FUI_BattleBtn, GObject>(domain, go);
         }
             
        

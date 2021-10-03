@@ -10,7 +10,7 @@
             FUI_Lobby fuiLobby = await FUI_Lobby.CreateInstanceAsync(args.ZoneScene);
 
             FUIManagerComponent fuiManagerComponent = scene.GetComponent<FUIManagerComponent>();
-            EntityFactory.CreateWithParent<FUI_LobbyComponent, FUI_Lobby>(fuiManagerComponent, fuiLobby, true);
+            Entity.Create<FUI_LobbyComponent, FUI_Lobby>(fuiManagerComponent, fuiLobby, true);
 
             scene.GetComponent<FUIManagerComponent>().Add(FUIPackage.Lobby, fuiLobby);
         }

@@ -10,7 +10,7 @@
             FUI_Login fuiLogin = await FUI_Login.CreateInstanceAsync(args.ZoneScene);
 
             FUIManagerComponent fuiManagerComponent = scene.GetComponent<FUIManagerComponent>();
-            EntityFactory.CreateWithParent<FUI_LoginComponent, FUI_Login>(fuiManagerComponent, fuiLogin, true);
+            Entity.Create<FUI_LoginComponent, FUI_Login>(fuiManagerComponent, fuiLogin, true);
 
             scene.GetComponent<FUIManagerComponent>().Add(FUIPackage.Login, fuiLogin);
         }
