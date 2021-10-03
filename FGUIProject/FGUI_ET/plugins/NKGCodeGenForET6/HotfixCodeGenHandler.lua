@@ -115,7 +115,7 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         writer:writeln([[   
         public static %s CreateInstance(Entity domain)
         {			
-            return EntityFactory.Create<%s, GObject>(domain, CreateGObject());
+            return Entity.Create<%s, GObject>(domain, CreateGObject());
         }
         ]], className, className)
 
@@ -126,7 +126,7 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
     
             CreateGObjectAsync((go) =>
             {
-                tcs.SetResult(EntityFactory.Create<%s, GObject>(domain, go));
+                tcs.SetResult(Entity.Create<%s, GObject>(domain, go));
             });
     
             return tcs;
@@ -142,7 +142,7 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         /// <returns></returns>
         public static %s Create(Entity domain, GObject go)
         {
-            return EntityFactory.Create<%s, GObject>(domain, go);
+            return Entity.Create<%s, GObject>(domain, go);
         }
             ]], className, className)
 
