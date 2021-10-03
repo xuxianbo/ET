@@ -47,8 +47,6 @@ namespace ET
                 FUIEntry.Init();
                 
                 Updater updater = this.GetComponent<Updater>();
-                updater.DevelopmentMode = DevelopMode;
-
                 m_XAssetUpdater = new XAssetUpdater(updater);
 
                 FUI_CheckForResUpdateComponent.Init(m_XAssetUpdater.Updater);

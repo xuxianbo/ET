@@ -52,8 +52,7 @@ namespace libx
         public Action ResPreparedCompleted;
 
         public float UpdateProgress;
-
-        [HideInInspector]
+        
         public bool DevelopmentMode;
 
         public bool EnableVFS = true;
