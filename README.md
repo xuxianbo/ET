@@ -36,7 +36,11 @@ ILRuntime模式下，如果往一个async ETVoid/ETTask函数中传递Scene参�
 
 因为测试用例过于特殊，如果传递除Scene以外的任何值，都不会由于ETTask.SetException崩溃，所以我连issue都不知道要怎么提，只能一直跟进ET和ILRuntime的更新，说不定哪天机缘一到这个致命BUG就好了
 
-其实我是猜测因为ETTask把ILRT的运行堆栈给搞烂了，但是代码翻来覆去也没找到什么缘由，只好作罢（顺带一提，如果开启了ILRuntime的调试服务，即Appdomain.DebugService.StartDebugService(56000); 就不会崩溃了，会卡一下，然后程序继续进行）
+~~其实我是猜测因为ETTask把ILRT的运行堆栈给搞烂了，但是代码翻来覆去也没找到什么缘由，只好作罢（顺带一提，如果开启了ILRuntime的调试服务，即Appdomain.DebugService.StartDebugService(56000); 就不会崩溃了，会卡一下，然后程序继续进行）~~
+
+2022.1.12
+
+破案了，是因为Scene内容太多，在打印异常的时候会用LitJson序列化，LitJson不支持这么大的对象序列化，所以就崩掉了
 
 # TODO && Features
 
