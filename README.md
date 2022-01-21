@@ -50,7 +50,7 @@ ILRuntime模式下，如果往一个async ETVoid/ETTask函数中传递Scene参�
 - [x] 更新 [FGUI](https://www.fairygui.com/) 代码生成插件
 - [x] 更新 [ET使用FGUI开发的工作流程](https://www.lfzxb.top/et-fguilearn/)
 - [x] 新增 [FGUI基于Lua的插件开发指南](https://www.lfzxb.top/fgui-plugin-develop-guide)
-- [ ] 以ET 6.0为底层框架，更新 [状态帧同步Moba，包含基于双端行为树技能系统](https://gitee.com/NKG_admin/NKGMobaBasedOnET)
+- [x] 以ET 6.0为底层框架，更新 [状态帧同步Moba，包含基于双端行为树技能系统](https://gitee.com/NKG_admin/NKGMobaBasedOnET)
 
 # 项目截图
 
