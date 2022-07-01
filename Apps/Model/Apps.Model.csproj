@@ -27,15 +27,15 @@
             <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
 
-        <Compile Include="..\..\Unity\Codes\Model\Module\**\*.cs">
+        <Compile Include="..\..\Unity\Packages\Codes\Model\Module\**\*.cs">
             <Link>Module\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
 
-        <Compile Include="..\..\Unity\Codes\Model\Client\**\*.cs"> 
+        <Compile Include="..\..\Unity\Packages\Codes\Model\Client\**\*.cs"> 
             <Link>Client\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
         
-        <Compile Include="..\..\Unity\Codes\Model\Share\**\*.cs">
+        <Compile Include="..\..\Unity\Packages\Codes\Model\Share\**\*.cs">
             <Link>Share\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
     </ItemGroup>

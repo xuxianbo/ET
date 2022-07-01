@@ -21,15 +21,15 @@
     </PropertyGroup>
     <ItemGroup>
 
-        <Compile Include="..\..\Unity\Codes\Hotfix\Module\**\*.cs">
+        <Compile Include="..\..\Unity\Packages\Codes\Hotfix\Module\**\*.cs">
             <Link>Module\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
 
-        <Compile Include="..\..\Unity\Codes\Hotfix\Client\**\*.cs">
+        <Compile Include="..\..\Unity\Packages\Codes\Hotfix\Client\**\*.cs">
             <Link>Client\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
 
-        <Compile Include="..\..\Unity\Codes\Hotfix\Share\**\*.cs">
+        <Compile Include="..\..\Unity\Packages\Codes\Hotfix\Share\**\*.cs">
             <Link>Share\%(RecursiveDir)%(FileName)%(Extension)</Link> 
         </Compile>
     </ItemGroup>
