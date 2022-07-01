@@ -1,4 +1,6 @@
-# 本项目是ET7.0接入huatuo代码热更新，YooAsset资源热更新，luban配置表方案，FairyGUI跨平台UI的示例，后续将保持维护状态，与ET同步更新。
+# 本项目包含多个解决方案
+
+ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba，并提供常用的编辑器工具。
 
 # 环境 && 版本
 
@@ -9,6 +11,7 @@
 
 # TODO && Features
 
+- [x] 接入 [ET 7.0](https://github.com/egametang/ET)
 - [x] 接入 [huatuo C#代码热更方案](https://github.com/focus-creative-games/huatuo)
 - [x] 接入 [YooAssset 资源热更方案](https://github.com/tuyoogame/YooAsset)
 - [ ] 接入 [FGUI UI方案](https://www.fairygui.com/) ，并提供MVVM UI框架
