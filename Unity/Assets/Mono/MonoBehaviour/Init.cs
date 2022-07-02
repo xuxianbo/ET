@@ -51,26 +51,25 @@ namespace ET
 
         private void LoadCode()
         {
-            List<ETTask<byte[]>> tasks = new List<ETTask<byte[]>>();
+            List<ETTask<RawFileOperation>> tasks = new List<ETTask<RawFileOperation>>();
 
             foreach (var aotDll in AOTDllList)
             {
                 Debug.Log($"添加{aotDll}");
-
                 tasks.Add(YooAssetProxy.GetRawFileAsync(aotDll));
             }
 
             InternalLoadCode(tasks).Coroutine();
         }
 
-        async ETTask InternalLoadCode(List<ETTask<byte[]>> tasks)
+        async ETTask InternalLoadCode(List<ETTask<RawFileOperation>> tasks)
         {
             await ETTaskHelper.WaitAll(tasks);
 
             foreach (var task in tasks)
             {
                 Debug.Log("准备加载AOT补充元数据");
-                LoadMetadataForAOTAssembly(task.GetResult());
+                LoadMetadataForAOTAssembly(task.GetResult().GetRawBytes());
             }
 
             await CodeLoader.Instance.Start();

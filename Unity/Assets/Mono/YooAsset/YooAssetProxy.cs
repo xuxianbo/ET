@@ -61,11 +61,11 @@ namespace ET
             return result;
         }
 
-        public static ETTask<byte[]> GetRawFileAsync(string path)
+        public static ETTask<RawFileOperation> GetRawFileAsync(string path)
         {
-            ETTask<byte[]> result = ETTask<byte[]>.Create();
+            ETTask<RawFileOperation> result = ETTask<RawFileOperation>.Create();
             RawFileOperation rawFileOperation = YooAssets.GetRawFileAsync(path);
-            rawFileOperation.Completed += handle => { result.SetResult(rawFileOperation.LoadFileData()); };
+            rawFileOperation.Completed += handle => { result.SetResult(rawFileOperation); };
             return result;
         }
 

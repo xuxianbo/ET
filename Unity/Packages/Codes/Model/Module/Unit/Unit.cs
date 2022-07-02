@@ -1,4 +1,10 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿#if UNITY
+
+using ET.cfg.LuBanSample;
+
+#endif
+
+using MongoDB.Bson.Serialization.Attributes;
 using UnityEngine;
 
 namespace ET
@@ -7,10 +13,15 @@ namespace ET
     {
         public int ConfigId { get; set; } //配置表id
 
-        [BsonIgnore]
+#if NOT_UNITY
         public UnitConfig Config => UnitConfigCategory.Instance.Get(this.ConfigId);
-
         public UnitType Type => (UnitType)UnitConfigCategory.Instance.Get(this.ConfigId).Type;
+#else
+        [BsonIgnore]
+        public LuBanSampleConfig Config;
+        
+        public UnitType Type;
+#endif
 
         [BsonElement]
         private Vector3 position; //坐标
@@ -33,10 +44,10 @@ namespace ET
             get => this.Rotation * Vector3.forward;
             set => this.Rotation = Quaternion.LookRotation(value, Vector3.up);
         }
-        
+
         [BsonElement]
         private Quaternion rotation;
-        
+
         [BsonIgnore]
         public Quaternion Rotation
         {

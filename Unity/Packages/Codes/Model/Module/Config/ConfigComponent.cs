@@ -6,11 +6,15 @@ namespace ET
     /// <summary>
     /// Config组件会扫描所有的有ConfigAttribute标签的配置,加载进来
     /// </summary>
-    [ComponentOf(typeof(Scene))]
+    [ComponentOf(typeof (Scene))]
     public class ConfigComponent: Entity, IAwake, IDestroy
     {
         public static ConfigComponent Instance;
-		
+
+#if NOT_UNITY
         public Dictionary<Type, object> AllConfig = new Dictionary<Type, object>();
+#else
+                public cfg.Tables AllConfigTables;
+#endif
     }
 }

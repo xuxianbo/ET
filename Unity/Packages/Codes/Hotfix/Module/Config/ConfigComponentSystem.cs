@@ -5,11 +5,11 @@ using ET.EventType;
 
 namespace ET
 {
-    [FriendOf(typeof(ConfigComponent))]
+    [FriendOf(typeof (ConfigComponent))]
     public static class ConfigComponentSystem
     {
         [ObjectSystem]
-        public class ConfigAwakeSystem : AwakeSystem<ConfigComponent>
+        public class ConfigAwakeSystem: AwakeSystem<ConfigComponent>
         {
             public override void Awake(ConfigComponent self)
             {
@@ -18,7 +18,7 @@ namespace ET
         }
 
         [ObjectSystem]
-        public class ConfigDestroySystem : DestroySystem<ConfigComponent>
+        public class ConfigDestroySystem: DestroySystem<ConfigComponent>
         {
             public override void Destroy(ConfigComponent self)
             {
@@ -26,10 +26,11 @@ namespace ET
             }
         }
 
+#if NOT_UNITY
         public static void LoadOneConfig(this ConfigComponent self, Type configType)
         {
             byte[] oneConfigBytes =
-                Game.EventSystem.Callback<string, byte[]>(CallbackType.GetOneConfigBytes, configType.FullName);
+                    Game.EventSystem.Callback<string, byte[]>(CallbackType.GetOneConfigBytes, configType.FullName);
 
             object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
 
@@ -39,7 +40,7 @@ namespace ET
         public static async ETTask Load(this ConfigComponent self)
         {
             self.AllConfig.Clear();
-            HashSet<Type> types = Game.EventSystem.GetTypes(typeof(ConfigAttribute));
+            HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
 
             Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
 
@@ -54,7 +55,7 @@ namespace ET
         public static async ETTask LoadAsync(this ConfigComponent self)
         {
             self.AllConfig.Clear();
-            HashSet<Type> types = Game.EventSystem.GetTypes(typeof(ConfigAttribute));
+            HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
 
             Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
             Game.EventSystem.Callback(CallbackType.GetAllConfigBytes, configBytes);
@@ -72,7 +73,7 @@ namespace ET
         }
 
         private static void LoadOneInThread(this ConfigComponent self, Type configType,
-            Dictionary<string, byte[]> configBytes)
+        Dictionary<string, byte[]> configBytes)
         {
             byte[] oneConfigBytes = configBytes[configType.Name];
 
@@ -82,6 +83,14 @@ namespace ET
             {
                 self.AllConfig[configType] = category;
             }
+
+            Game.EventSystem.PublishAsync(Game.Scene, new LoadConfig()).Coroutine();
         }
+#else
+        public static async ETTask LoadAsync(this ConfigComponent self)
+        {
+            await Game.EventSystem.PublishAsync(Game.Scene, new LoadConfig());
+        }
+#endif
     }
 }
