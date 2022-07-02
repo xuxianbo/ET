@@ -35,9 +35,9 @@ MonoBehaviour:
     - CollectPath: Assets/Res/Config
       CollectorType: 0
       AddressRuleName: AddressByGroupAndFileName
-      PackRuleName: PackDirectory
+      PackRuleName: PackRawFile
       FilterRuleName: CollectAll
-      AssetTags: ConfigList
+      AssetTags: 
   - GroupName: UI
     GroupDesc: "UI\u76F8\u5173"
     AssetTags: 

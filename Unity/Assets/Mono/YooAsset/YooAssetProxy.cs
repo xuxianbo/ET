@@ -117,7 +117,7 @@ namespace ET
                 string GetHostServerURL()
                 {
                     string hostServerIP = "http://127.0.0.1:8088";
-                    string gameVersion = "1";
+                    string gameVersion = "2";
                     return $"{hostServerIP}/StandaloneWindows64/{gameVersion}";
                 }
 

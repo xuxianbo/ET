@@ -12,7 +12,7 @@ namespace ET.Client
             ConfigComponent configComponent = Game.Scene.GetComponent<ConfigComponent>();
 
             configComponent.AllConfigTables = new cfg.Tables();
-            await configComponent.AllConfigTables.LoadAsync(LuBanEntry.LoadJsonBuf);
+            await configComponent.AllConfigTables.LoadAsync(LuBanEntry.LoadBytesBuf);
         }
     }
 }

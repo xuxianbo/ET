@@ -352,11 +352,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CodeMode: 1
   PlayMode: 2
-  AOTDllList:
-  - Code_Unity.Core.dll
-  - Code_Unity.ThirdParty.dll
-  - Code_mscorlib.dll
-  - Code_System.dll
 --- !u!4 &575235020
 Transform:
   m_ObjectHideFlags: 0
@@ -974,6 +969,10 @@ PrefabInstance:
     - target: {fileID: 132536, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
       propertyPath: m_Name
       value: IngameDebugConsole
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490438, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 823
       objectReference: {fileID: 0}
     - target: {fileID: 22426080, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
       propertyPath: m_AnchorMax.x

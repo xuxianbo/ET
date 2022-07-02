@@ -20,7 +20,7 @@ MonoBehaviour:
   job: cfg --
   define_xml: ../Excel/ProjectS/Defines/__root__.xml
   input_data_dir: ../Excel/ProjectS/Datas
-  gen_types: 1028
+  gen_types: 257
   service: client
   output_data_dir: Assets/Res/Config
   output_code_dir: Packages/Codes/Model/Generate/Config

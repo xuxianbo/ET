@@ -9,7 +9,7 @@ namespace ET.Client
             Game.Scene.AddComponent<CoroutineLockComponent>();
             
             Game.Scene.AddComponent<ConfigComponent>();
-            ConfigComponent.Instance.LoadAsync().Coroutine();
+            await ConfigComponent.Instance.LoadAsync();
 
             Game.Scene.AddComponent<OpcodeTypeComponent>();
             Game.Scene.AddComponent<MessageDispatcherComponent>();

@@ -20,10 +20,10 @@ public partial class {{name}}
     /// {{table.escape_comment}}
     /// </summary>
 {{~end~}}
-    public {{table.full_name}} {{table.name}} {get; }
+    public {{table.full_name}} {{table.name}} {get; private set; }
     {{~end~}}
 
-    public async ETTask LoadAsync(System.Func<string, ByteBuf> loader)
+    public async ETTask LoadAsync(System.Func<string, ETTask<ByteBuf>> loader)
     {
         var tables = new System.Collections.Generic.Dictionary<string, object>();
         {{~for table in tables ~}}

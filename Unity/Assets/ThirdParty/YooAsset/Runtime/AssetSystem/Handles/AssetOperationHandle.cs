@@ -51,6 +51,17 @@ namespace YooAsset
 		}
 
 		/// <summary>
+		/// 获取资源对象
+		/// </summary>
+		/// <typeparam name="TAsset">资源类型</typeparam>
+		public TAsset GetAssetObject<TAsset>() where TAsset : UnityEngine.Object
+		{
+			if (IsValid == false)
+				return null;
+			return Provider.AssetObject as TAsset;
+		}
+
+		/// <summary>
 		/// 等待异步执行完毕
 		/// </summary>
 		public void WaitForAsyncComplete()

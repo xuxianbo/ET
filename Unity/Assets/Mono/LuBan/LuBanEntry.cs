@@ -6,6 +6,7 @@
 
 using Bright.Serialization;
 using SimpleJSON;
+using YooAsset;
 
 namespace ET
 {
@@ -13,12 +14,14 @@ namespace ET
     {
         public static async ETTask<JSONNode> LoadJsonBuf(string fileName)
         {
-            return JSON.Parse((await YooAssetProxy.GetRawFileAsync($"Config_{fileName}")).LoadFileText());
+            RawFileOperation result = await YooAssetProxy.GetRawFileAsync($"Config_{fileName}");
+            return JSON.Parse(result.LoadFileText());
         }
 
         public static async ETTask<ByteBuf> LoadBytesBuf(string fileName)
         {
-            return new ByteBuf((await YooAssetProxy.GetRawFileAsync($"Config_{fileName}")).LoadFileData());
+            RawFileOperation result = await YooAssetProxy.GetRawFileAsync($"Config_{fileName}");
+            return new ByteBuf(result.LoadFileData());
         }
     }
 }

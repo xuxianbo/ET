@@ -6,25 +6,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using Bright.Serialization;
+
+
+
 using ET;
-using SimpleJSON;
 
 namespace ET.cfg
 {
    
-public sealed partial class Tables
+public partial class Tables
 {
     public LuBanSample.TbLuBanSample TbLuBanSample {get; private set; }
-	
-    public Tables() { }
 
-    public async ETTask LoadAsync(System.Func<string, ETTask<JSONNode>> loader)
+    public async ETTask LoadAsync(System.Func<string, ETTask<ByteBuf>> loader)
     {
         var tables = new System.Collections.Generic.Dictionary<string, object>();
         TbLuBanSample = new LuBanSample.TbLuBanSample(await loader("lubansample_tblubansample")); 
         tables.Add("LuBanSample.TbLuBanSample", TbLuBanSample);
-        PostInit();
 
+        PostInit();
         TbLuBanSample.Resolve(tables); 
         PostResolve();
     }

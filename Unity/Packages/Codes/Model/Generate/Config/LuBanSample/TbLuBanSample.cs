@@ -7,26 +7,24 @@
 //------------------------------------------------------------------------------
 using Bright.Serialization;
 using System.Collections.Generic;
-using SimpleJSON;
-
-
 
 namespace ET.cfg.LuBanSample
 {
-
-public sealed partial class TbLuBanSample
+   
+public partial class TbLuBanSample
 {
     private readonly Dictionary<int, LuBanSample.LuBanSampleConfig> _dataMap;
     private readonly List<LuBanSample.LuBanSampleConfig> _dataList;
     
-    public TbLuBanSample(JSONNode _json)
+    public TbLuBanSample(ByteBuf _buf)
     {
         _dataMap = new Dictionary<int, LuBanSample.LuBanSampleConfig>();
         _dataList = new List<LuBanSample.LuBanSampleConfig>();
         
-        foreach(JSONNode _row in _json.Children)
+        for(int n = _buf.ReadSize() ; n > 0 ; --n)
         {
-            var _v = LuBanSample.LuBanSampleConfig.DeserializeLuBanSampleConfig(_row);
+            LuBanSample.LuBanSampleConfig _v;
+            _v = LuBanSample.LuBanSampleConfig.DeserializeLuBanSampleConfig(_buf);
             _dataList.Add(_v);
             _dataMap.Add(_v.Id, _v);
         }
@@ -56,7 +54,6 @@ public sealed partial class TbLuBanSample
             v.TranslateText(translator);
         }
     }
-    
     
     partial void PostInit();
     partial void PostResolve();
