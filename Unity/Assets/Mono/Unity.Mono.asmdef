@@ -4,7 +4,8 @@
     "references": [
         "Unity.ThirdParty",
         "Unity.Core",
-        "YooAsset"
+        "YooAsset",
+        "FGUI.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

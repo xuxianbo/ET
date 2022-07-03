@@ -20,19 +20,24 @@ public static class PatchUpdater
 	public static int ResourceVersion { set; get; }
 
 	private static readonly EventGroup _eventGroup = new EventGroup();
+	
+	public static Action<PatchEventMessageDefine.PatchStatesChange> OnStateUpdate;
+	public static Action<PatchEventMessageDefine.DownloadProgressUpdate> OnDownLoadProgressUpdate;
 
-	private static Action s_PatchUpdateCompleted;
+	public static void InitCallback(Action<PatchEventMessageDefine.PatchStatesChange> onStateUpdate, Action<PatchEventMessageDefine.DownloadProgressUpdate> onDownLoadProgressUpdate)
+	{
+		OnStateUpdate += onStateUpdate;
+		OnDownLoadProgressUpdate += onDownLoadProgressUpdate;
+	}
 	
 	/// <summary>
 	/// 开启初始化流程
 	/// </summary>
-	public static void Run(Action patchUpdateCompleted)
+	public static void Run()
 	{
 		if (_isRun == false)
 		{
 			_isRun = true;
-			
-			s_PatchUpdateCompleted = patchUpdateCompleted;
 			
 			_eventGroup.AddListener<PatchEventMessageDefine.PatchStatesChange>(OnHandleEvent);
 			_eventGroup.AddListener<PatchEventMessageDefine.FoundUpdateFiles>(OnHandleEvent);
@@ -89,23 +94,24 @@ public static class PatchUpdater
     /// </summary>
     private static void OnHandleEvent(IEventMessage msg)
     {
-        if (msg is PatchEventMessageDefine.PatchStatesChange)
+        if (msg is PatchEventMessageDefine.PatchStatesChange patchStatesChange)
         {
-            var message = msg as PatchEventMessageDefine.PatchStatesChange;
-            if (message.CurrentStates == EPatchStates.UpdateStaticVersion)
+	        if (patchStatesChange.CurrentStates == EPatchStates.UpdateStaticVersion)
                 Log.Info("Update static version.");
-            else if (message.CurrentStates == EPatchStates.UpdateManifest)
+            else if (patchStatesChange.CurrentStates == EPatchStates.UpdateManifest)
                 Log.Info("Update patch manifest.");
-            else if (message.CurrentStates == EPatchStates.CreateDownloader)
+            else if (patchStatesChange.CurrentStates == EPatchStates.CreateDownloader)
                 Log.Info("Check download contents.");
-            else if (message.CurrentStates == EPatchStates.DownloadWebFiles)
+            else if (patchStatesChange.CurrentStates == EPatchStates.DownloadWebFiles)
                 Log.Info("Downloading patch files.");
-            else if (message.CurrentStates == EPatchStates.PatchDone)
+            else if (patchStatesChange.CurrentStates == EPatchStates.PatchDone)
             {
-	            s_PatchUpdateCompleted?.Invoke();
+	            Log.Info("PatchDone. ");
             }
             else
-                throw new NotImplementedException(message.CurrentStates.ToString());
+                throw new NotImplementedException(patchStatesChange.CurrentStates.ToString());
+            
+            OnStateUpdate?.Invoke(patchStatesChange);
         }
         else if (msg is PatchEventMessageDefine.FoundUpdateFiles)
         {
@@ -118,13 +124,9 @@ public static class PatchUpdater
             
             PatchUpdater.HandleOperation(EPatchOperation.BeginDownloadWebFiles); 
         }
-        else if (msg is PatchEventMessageDefine.DownloadProgressUpdate)
+        else if (msg is PatchEventMessageDefine.DownloadProgressUpdate downloadProgressUpdate)
         {
-            var message = msg as PatchEventMessageDefine.DownloadProgressUpdate;
-            string currentSizeMB = (message.CurrentDownloadSizeBytes / 1048576f).ToString("f1");
-            string totalSizeMB = (message.TotalDownloadSizeBytes / 1048576f).ToString("f1");
-            string text =
-                $"{message.CurrentDownloadCount}/{message.TotalDownloadCount} {currentSizeMB}MB/{totalSizeMB}MB";
+	        OnDownLoadProgressUpdate?.Invoke(downloadProgressUpdate);
         }
         else if (msg is PatchEventMessageDefine.StaticVersionUpdateFailed)
         {

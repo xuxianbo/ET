@@ -9,6 +9,5 @@ namespace ET.Client
         
         public Transform Global;
         public Transform Unit { get; set; }
-        public Transform UI;
     }
 }

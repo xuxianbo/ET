@@ -45,6 +45,13 @@ namespace ET
             Options.Instance.Develop = 1;
             Options.Instance.LogLevel = 0;
 
+            FUIEntry.Init();
+
+            if (PlayMode == YooAssets.EPlayMode.HostPlayMode)
+            {
+                FUI_CheckForResUpdateComponent.Init();
+            }
+
             // 启动YooAsset引擎
             YooAssetProxy.StartYooAssetEngine(PlayMode, LoadCode);
         }

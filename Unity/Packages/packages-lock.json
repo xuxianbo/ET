@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.nkg.fgui": {
+      "version": "file:FairyGUI",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.nkg.yy": {
       "version": "file:Codes",
       "depth": 0,

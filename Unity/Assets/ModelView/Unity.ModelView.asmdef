@@ -5,7 +5,8 @@
         "Unity.Model",
         "Unity.Mono",
         "Unity.ThirdParty",
-        "YooAsset"
+        "YooAsset",
+        "FGUI.Runtime"
     ],
     "includePlatforms": [
         "Editor"

@@ -86,6 +86,12 @@ namespace ET
             return result;
         }
 
+        public static void InitHostCallbacks(Action<PatchEventMessageDefine.PatchStatesChange> onStateUpdate,
+            Action<PatchEventMessageDefine.DownloadProgressUpdate> onDownLoadProgressUpdate)
+        {
+            PatchUpdater.InitCallback(onStateUpdate, onDownLoadProgressUpdate);
+        }
+
         public static void StartYooAssetEngine(YooAssets.EPlayMode playMode, Action initCompletedCallback)
         {
             // 编辑器下的模拟模式
@@ -125,7 +131,7 @@ namespace ET
                 YooAssets.InitializeAsync(createParameters).Completed += _ =>
                 {
                     // 运行补丁流程
-                    PatchUpdater.Run(initCompletedCallback);
+                    PatchUpdater.Run();
                 };
             }
         }
