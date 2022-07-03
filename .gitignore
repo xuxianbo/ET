@@ -38,6 +38,7 @@ _ReSharper.CSharp/
 /Excel/md5.txt
 /Release
 .idea/
+!FGUIProject/
 /Unity/Logs
 /Unity/Assets/Plugins/Sirenix
 /Unity/Sandbox
