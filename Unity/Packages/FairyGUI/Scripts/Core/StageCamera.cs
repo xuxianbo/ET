@@ -194,7 +194,7 @@ namespace FairyGUI
             
             UniversalAdditionalCameraData universalAdditionalCameraData = camera.GetUniversalAdditionalCameraData();
             universalAdditionalCameraData.renderType = CameraRenderType.Overlay;
-            universalAdditionalCameraData.SetRenderer(1);
+            universalAdditionalCameraData.SetRenderer(0);
             Camera.main.GetUniversalAdditionalCameraData().cameraStack.Add(camera);
             DontDestroyOnLoad(cameraObject);
             
