@@ -39,6 +39,7 @@ _ReSharper.CSharp/
 /Release
 .idea/
 /Unity/Logs
+/Unity/Assets/Plugins/Sirenix
 /Unity/Sandbox
 /Unity/Bundles/
 /Unity/HuatuoData/AssembliesPostIl2CppStrip/
