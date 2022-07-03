@@ -67,31 +67,31 @@ namespace ET
             }
 
             InternalLoadCode(tasks).Coroutine();
-        }
-
-        async ETTask InternalLoadCode(List<ETTask<RawFileOperation>> tasks)
-        {
-            await ETTaskHelper.WaitAll(tasks);
-
-            foreach (var task in tasks)
+            
+            async ETTask InternalLoadCode(List<ETTask<RawFileOperation>> tasks)
             {
-                Debug.Log("准备加载AOT补充元数据");
-                LoadMetadataForAOTAssembly(task.GetResult().GetRawBytes());
+                await ETTaskHelper.WaitAll(tasks);
+
+                foreach (var task in tasks)
+                {
+                    Debug.Log("准备加载AOT补充元数据");
+                    LoadMetadataForAOTAssembly(task.GetResult().GetRawBytes());
+                }
+
+                await CodeLoader.Instance.Start();
+                Log.Info("Dll加载完毕，正式进入游戏流程");
             }
-
-            await CodeLoader.Instance.Start();
-            Log.Info("Dll加载完毕，正式进入游戏流程");
-        }
-
-        public static unsafe void LoadMetadataForAOTAssembly(byte[] dllBytes)
-        {
-            fixed (byte* ptr = dllBytes)
+            
+            static unsafe void LoadMetadataForAOTAssembly(byte[] dllBytes)
             {
+                fixed (byte* ptr = dllBytes)
+                {
 #if !UNITY_EDITOR
                 // 加载assembly对应的dll，会自动为它hook。一旦aot泛型函数的native函数不存在，用解释器版本代码
                 int err = Huatuo.HuatuoApi.LoadMetadataForAOTAssembly((IntPtr)ptr, dllBytes.Length);
                 Debug.Log("LoadMetadataForAOTAssembly. ret:" + err);
 #endif
+                }
             }
         }
 

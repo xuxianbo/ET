@@ -131,6 +131,7 @@ namespace ET
                 YooAssets.InitializeAsync(createParameters).Completed += _ =>
                 {
                     // 运行补丁流程
+                    PatchUpdater.AddPatchDoneCallback(initCompletedCallback);
                     PatchUpdater.Run();
                 };
             }

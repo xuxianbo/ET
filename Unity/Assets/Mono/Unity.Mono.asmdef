@@ -5,7 +5,7 @@
         "Unity.ThirdParty",
         "Unity.Core",
         "YooAsset",
-        "FGUI.Runtime"
+        "FairyGUI.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

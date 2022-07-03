@@ -676,9 +676,9 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="FGUI.Runtime.csproj">
-      <Project>{d2f2b743-5d56-091d-4deb-9453169a63d2}</Project>
-      <Name>FGUI.Runtime</Name>
+    <ProjectReference Include="FairyGUI.Runtime.csproj">
+      <Project>{b702acff-57fc-18d8-c1a4-f9d7a8336aaf}</Project>
+      <Name>FairyGUI.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

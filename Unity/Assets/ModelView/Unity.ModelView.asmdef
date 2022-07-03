@@ -6,7 +6,7 @@
         "Unity.Mono",
         "Unity.ThirdParty",
         "YooAsset",
-        "FGUI.Runtime"
+        "FairyGUI.Runtime"
     ],
     "includePlatforms": [
         "Editor"
