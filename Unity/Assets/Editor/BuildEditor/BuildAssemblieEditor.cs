@@ -93,46 +93,9 @@ namespace ET
             BuildAssemblieEditor.BuildMuteAssembly();
         }
 
-
         private static void BuildMuteAssembly()
         {
             s_CompileHotfixCompleted = false;
-
-            string[] backDefineSymbolsForGroup =
-                PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup)
-                    .Split(';');
-            List<string> buildTempDefineSymbolsForGroup = new List<string>();
-
-            m_IsContainsNkgEditorOnlySymbolDefine = false;
-            foreach (var defineSymbol in backDefineSymbolsForGroup)
-            {
-                if (defineSymbol == "NKGEditorOnly")
-                {
-                    m_IsContainsNkgEditorOnlySymbolDefine = true;
-                    continue;
-                }
-
-                buildTempDefineSymbolsForGroup.Add(defineSymbol);
-            }
-
-            if (m_IsContainsNkgEditorOnlySymbolDefine)
-            {
-                backSymbolDefines = backDefineSymbolsForGroup;
-                PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup,
-                    buildTempDefineSymbolsForGroup.ToArray());
-
-                CompilationPipeline.RequestScriptCompilation();
-                CompilationPipeline.compilationFinished += OnSymbolHandleCompleted;
-            }
-            else
-            {
-                OnSymbolHandleCompleted(null);
-            }
-        }
-
-        private static void OnSymbolHandleCompleted(object s)
-        {
-            CompilationPipeline.compilationFinished -= OnSymbolHandleCompleted;
 
             List<string> scripts = new List<string>();
             for (int i = 0; i < includeAssemblies.Length; i++)
@@ -180,7 +143,10 @@ namespace ET
 
             assemblyBuilder.buildTargetGroup = buildTargetGroup;
 
-            assemblyBuilder.excludeReferences = new string[] { "Library/ScriptAssemblies/Unity.Editor.dll" };
+            assemblyBuilder.excludeReferences = new string[]
+            {
+                "Library/ScriptAssemblies/Unity.Editor.dll", "Library/ScriptAssemblies/HotfixCodes.dll"
+            };
 
             assemblyBuilder.buildStarted += delegate(string assemblyPath)
             {
@@ -229,7 +195,7 @@ namespace ET
                 Debug.LogErrorFormat("build fail：" + assemblyBuilder.assemblyPath);
             }
         }
-
+        
         private static void CheckCompileHotfixCompleted()
         {
             if (!s_CompileHotfixCompleted)
@@ -237,7 +203,7 @@ namespace ET
                 EditorUtility.DisplayProgressBar("正在编译热更程序集，请稍等。。。", "Wait...", 1.0f);
                 return;
             }
-            
+
             EditorUtility.ClearProgressBar();
 
             EditorApplication.update -= CheckCompileHotfixCompleted;
