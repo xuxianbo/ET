@@ -41,6 +41,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\AOT\Sirenix.Serialization.AOTGenerated.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEditor\Sirenix.Utilities.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEmitAndNoEditor\Sirenix.Utilities.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEditor\Sirenix.Serialization.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEmitAndNoEditor\Sirenix.Serialization.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll" />
+  </ItemGroup>
+  <ItemGroup>
      <Compile Include="Assets\ThirdParty\YooAsset\Runtime\Services\ILocationServices.cs" />
      <Compile Include="Assets\ThirdParty\YooAsset\Runtime\DownloadSystem\Downloader\DownloaderBase.cs" />
      <Compile Include="Assets\ThirdParty\YooAsset\Runtime\Debugger\RemoteCommand.cs" />
@@ -357,14 +370,14 @@
      <Reference Include="MonKey Commander">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\MonKey Commander\Editor\Libs\MonKey Commander.dll</HintPath>
      </Reference>
-     <Reference Include="ICSharpCode.NRefactory">
-     <HintPath>D:\Study\GameProjects\MyET\Unity\Library\PackageCache\com.unity.render-pipelines.core@10.9.0\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
-     </Reference>
      <Reference Include="Sirenix.Utilities">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
      </Reference>
      <Reference Include="ICSharpCode.SharpZipLib">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+     </Reference>
+     <Reference Include="ICSharpCode.NRefactory">
+     <HintPath>D:\Study\GameProjects\MyET\Unity\Library\PackageCache\com.unity.render-pipelines.core@10.9.0\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
      </Reference>
      <Reference Include="Sirenix.Serialization">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll</HintPath>

@@ -62,5 +62,12 @@ namespace ET
         {
             public Dictionary<string, byte[]> configBytes;
         }
+        
+        public struct NumericChange
+        {
+            public NumericComponent NumericComponent;
+            public NumericType NumericType;
+            public float Result;
+        }
     }
 }

@@ -19,6 +19,16 @@ namespace ET.Client
 			return new Vector3(pos.x, 0, pos.z);
 		}
 
+		public static Quaternion GetAngleToQuaternion(float angle)
+		{
+			return Quaternion.AngleAxis(-angle, Vector3.up) * Quaternion.AngleAxis(90, Vector3.up);
+		}
+		
+		public static Quaternion AngleToQuaternion(int angle)
+		{
+			return Quaternion.AngleAxis(-angle, Vector3.up) * Quaternion.AngleAxis(90, Vector3.up);
+		}
+		
 		public static Quaternion GetVector3ToQuaternion(Vector3 source, Vector3 dire)
 		{
 			Vector3 nowPos = source;

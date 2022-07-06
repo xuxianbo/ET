@@ -34,10 +34,10 @@ namespace ET
             assemblyName = "ProjectS_Hotfix";
             includeAssemblies = new[]
             {
-                "Packages/Codes/Model/",
-                "Packages/Codes/ModelView/",
-                "Packages/Codes/Hotfix/",
-                "Packages/Codes/HotfixView/"
+                "Packages/ProjectS_Hotfix/Model/",
+                "Packages/ProjectS_Hotfix/ModelView/",
+                "Packages/ProjectS_Hotfix/Hotfix/",
+                "Packages/ProjectS_Hotfix/HotfixView/"
             };
             additionalReferences = Array.Empty<string>();
             codeOptimization = CodeOptimization.Debug;
@@ -51,10 +51,10 @@ namespace ET
             assemblyName = "ProjectS_Hotfix";
             includeAssemblies = new[]
             {
-                "Packages/Codes/Model/",
-                "Packages/Codes/ModelView/",
-                "Packages/Codes/Hotfix/",
-                "Packages/Codes/HotfixView/"
+                "Packages/ProjectS_Hotfix/Model/",
+                "Packages/ProjectS_Hotfix/ModelView/",
+                "Packages/ProjectS_Hotfix/Hotfix/",
+                "Packages/ProjectS_Hotfix/HotfixView/"
             };
             additionalReferences = Array.Empty<string>();
             codeOptimization = CodeOptimization.Release;
@@ -68,8 +68,8 @@ namespace ET
             assemblyName = "ProjectS_Hotfix_Data";
             includeAssemblies = new[]
             {
-                "Packages/Codes/Model/",
-                "Packages/Codes/ModelView/",
+                "Packages/ProjectS_Hotfix/Model/",
+                "Packages/ProjectS_Hotfix/ModelView/",
             };
             additionalReferences = Array.Empty<string>();
             codeOptimization = CodeOptimization.Debug;
@@ -84,8 +84,8 @@ namespace ET
             assemblyName = "ProjectS_Hotfix_Logic";
             includeAssemblies = new[]
             {
-                "Packages/Codes/Hotfix/",
-                "Packages/Codes/HotfixView/"
+                "Packages/ProjectS_Hotfix/Hotfix/",
+                "Packages/ProjectS_Hotfix/HotfixView/"
             };
             additionalReferences = Array.Empty<string>();
             codeOptimization = CodeOptimization.Debug;

@@ -41,6 +41,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\AOT\Sirenix.Serialization.AOTGenerated.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEditor\Sirenix.Utilities.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEmitAndNoEditor\Sirenix.Utilities.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEditor\Sirenix.Serialization.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEmitAndNoEditor\Sirenix.Serialization.dll" />
+    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll" />
+  </ItemGroup>
+  <ItemGroup>
      <Compile Include="Assets\Plugins\MonKey Commander\Editor\Init\MonKeyInitialization.cs" />
      <Compile Include="Assets\Plugins\MonKey Commander\Editor\Menu Items\MonkeyMenuItems.cs" />
      <Compile Include="Assets\Plugins\MonKey Commander\Editor\Settings\MonKeySettings.cs" />
@@ -300,14 +313,14 @@
      <Reference Include="MonKey Commander">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\MonKey Commander\Editor\Libs\MonKey Commander.dll</HintPath>
      </Reference>
-     <Reference Include="ICSharpCode.NRefactory">
-     <HintPath>D:\Study\GameProjects\MyET\Unity\Library\PackageCache\com.unity.render-pipelines.core@10.9.0\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
-     </Reference>
      <Reference Include="Sirenix.Utilities">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
      </Reference>
      <Reference Include="ICSharpCode.SharpZipLib">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+     </Reference>
+     <Reference Include="ICSharpCode.NRefactory">
+     <HintPath>D:\Study\GameProjects\MyET\Unity\Library\PackageCache\com.unity.render-pipelines.core@10.9.0\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
      </Reference>
      <Reference Include="Sirenix.Serialization">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll</HintPath>
@@ -726,17 +739,17 @@
      <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Library\ScriptAssemblies\Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-     <HintPath>D:\Study\GameProjects\MyET\Unity\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-     <HintPath>D:\Study\GameProjects\MyET\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+     <HintPath>D:\Study\GameProjects\MyET\Unity\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Mathematics.Editor">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+     <HintPath>D:\Study\GameProjects\MyET\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Editor">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
@@ -746,6 +759,10 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{09b46226-3263-561e-d797-c9025c53bdd6}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="FGUI.Editor.csproj">
       <Project>{24c541d1-5315-9346-8ebf-8c856c989ddb}</Project>
       <Name>FGUI.Editor</Name>
@@ -774,13 +791,17 @@
       <Project>{e0456168-1ba5-5e68-ef99-a1034c8b63ab}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Animancer.FSM.csproj">
+      <Project>{774b51b6-b901-b97e-d593-35721140fea6}</Project>
+      <Name>Animancer.FSM</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Hotfix.csproj">
       <Project>{52f66610-896a-c4d1-9881-1a19df7ab80e}</Project>
       <Name>Unity.Hotfix</Name>
     </ProjectReference>
-    <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityMathematics.csproj">
-      <Project>{56df1de4-7636-2075-3b3d-021f8dba6bfa}</Project>
-      <Name>Sirenix.OdinInspector.Modules.UnityMathematics</Name>
+    <ProjectReference Include="com.alelievr.NodeGraphProcessor.Runtime.csproj">
+      <Project>{2c5a86f7-1354-6e9b-6019-90c0890a7359}</Project>
+      <Name>com.alelievr.NodeGraphProcessor.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.HotfixView.csproj">
       <Project>{de4513d3-889b-5c52-8e9c-744c99ae7509}</Project>
@@ -789,6 +810,14 @@
     <ProjectReference Include="ProjectS_Hotfix.csproj">
       <Project>{66be2ee0-6ccf-a09b-506c-a57a19ded19f}</Project>
       <Name>ProjectS_Hotfix</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.alelievr.NodeGraphProcessor.Editor.csproj">
+      <Project>{27a20443-6d8f-cd44-e004-04d9c7340939}</Project>
+      <Name>com.alelievr.NodeGraphProcessor.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="StatusIndiactors.csproj">
+      <Project>{4f122565-a36b-ff5b-2ac8-b05afd48dd60}</Project>
+      <Name>StatusIndiactors</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Model.csproj">
       <Project>{9498bfb4-d9f5-c441-13e3-3f26f7700e29}</Project>
@@ -801,6 +830,18 @@
     <ProjectReference Include="Unity.Mono.csproj">
       <Project>{5910fa29-5797-199c-985b-fc9fc473328e}</Project>
       <Name>Unity.Mono</Name>
+    </ProjectReference>
+    <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityMathematics.csproj">
+      <Project>{56df1de4-7636-2075-3b3d-021f8dba6bfa}</Project>
+      <Name>Sirenix.OdinInspector.Modules.UnityMathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="NodeGraphProcessor.Examples.csproj">
+      <Project>{4fa9d2d7-792f-abe3-350a-36ce3f256551}</Project>
+      <Name>NodeGraphProcessor.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.csproj">
+      <Project>{159e65f6-d363-1a6d-ec57-6db30da1b98f}</Project>
+      <Name>Animancer</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ModelView.csproj">
       <Project>{c109842f-01da-64d4-dbf2-00c6449e459e}</Project>

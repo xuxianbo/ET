@@ -6,7 +6,9 @@
         "GUID:1aa3e8589868c80499255710874679c0",
         "GUID:e34a5702dd353724aa315fb8011f08c3",
         "GUID:c95cdb94fe45ef246b08d71c6b096504",
-        "GUID:9ef2053bcf13a254ab3940a767f7b1a5"
+        "GUID:9ef2053bcf13a254ab3940a767f7b1a5",
+        "GUID:4c25c05f410a3a447a75c3b0909152ef",
+        "GUID:76b57511f4debaa41a76cc7b4aa6981e"
     ],
     "includePlatforms": [
         "Editor"
@@ -14,9 +16,14 @@
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "Sirenix.OdinInspector.Attributes.dll",
+        "Sirenix.OdinInspector.Editor.dll"
+    ],
     "autoReferenced": true,
-    "defineConstraints": [],
+    "defineConstraints": [
+        "NKGEditorOnly"
+    ],
     "versionDefines": [],
     "noEngineReferences": false
 }

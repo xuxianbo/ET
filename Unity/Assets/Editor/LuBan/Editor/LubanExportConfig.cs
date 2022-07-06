@@ -21,7 +21,7 @@ namespace Luban.Editor
         [ValueDropdown(nameof(_before_gen_dropdowns))]
         [BoxGroup("生命周期")]
         public string before_gen;
-
+        
         private ValueDropdownList<string> _before_gen_dropdowns => TypeConvert.BEFORE_GENS;
 
         [LabelText("生成后")]

@@ -23,6 +23,8 @@ namespace ET
         public UnitType Type;
 #endif
 
+        public Room BelongToRoom;
+
         [BsonElement]
         private Vector3 position; //坐标
 
