@@ -1,22 +1,29 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 using FairyGUI;
-using System.Threading.Tasks;
 
 namespace ET
 {
-    public class FUI_Btn_GMItemAwakeSystem : AwakeSystem<FUI_Btn_GMItem, GObject>
+    public class FUI_Btn_RegisteAwakeSystem : AwakeSystem<FUI_Btn_Registe, GObject>
     {
-        public override void Awake(FUI_Btn_GMItem self, GObject go)
+        public override void Awake(FUI_Btn_Registe self, GObject go)
         {
             self.Awake(go);
         }
     }
         
-    public sealed class FUI_Btn_GMItem : FUI
+    public class FUI_Btn_RegisteDestroySystem : DestroySystem<FUI_Btn_Registe>
+    {
+        public override void Destroy(FUI_Btn_Registe self)
+        {
+            self.Destroy();
+        }
+    }
+        
+    public sealed class FUI_Btn_Registe : FUI
     {	
-        public const string UIPackageName = "BattleMain";
-        public const string UIResName = "Btn_GMItem";
+        public const string UIPackageName = "Login";
+        public const string UIResName = "Btn_Registe";
         
         /// <summary>
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
@@ -26,7 +33,8 @@ namespace ET
     	public Controller m_button;
     	public GImage m_n0;
     	public GImage m_n1;
-    	public const string URL = "ui://9sdz56q4t2lq87";
+    	public GTextField m_title;
+    	public const string URL = "ui://2jxt4hn8pdjla";
 
        
         private static GObject CreateGObject()
@@ -40,19 +48,19 @@ namespace ET
         }
         
        
-        public static FUI_Btn_GMItem CreateInstance(Entity parent)
+        public static FUI_Btn_Registe CreateInstance(Entity parent)
         {			
-            return parent.AddChild<FUI_Btn_GMItem, GObject>(CreateGObject());
+            return parent.AddChild<FUI_Btn_Registe, GObject>(CreateGObject());
         }
         
        
-        public static ETTask<FUI_Btn_GMItem> CreateInstanceAsync(Entity parent)
+        public static ETTask<FUI_Btn_Registe> CreateInstanceAsync(Entity parent)
         {
-            ETTask<FUI_Btn_GMItem> tcs = ETTask<FUI_Btn_GMItem>.Create(true);
+            ETTask<FUI_Btn_Registe> tcs = ETTask<FUI_Btn_Registe>.Create(true);
     
             CreateGObjectAsync((go) =>
             {
-                tcs.SetResult(parent.AddChild<FUI_Btn_GMItem, GObject>(go));
+                tcs.SetResult(parent.AddChild<FUI_Btn_Registe, GObject>(go));
             });
     
             return tcs;
@@ -65,18 +73,18 @@ namespace ET
         /// <param name="domain"></param>
         /// <param name="go"></param>
         /// <returns></returns>
-        public static FUI_Btn_GMItem Create(Entity parent, GObject go)
+        public static FUI_Btn_Registe Create(Entity parent, GObject go)
         {
-            return parent.AddChild<FUI_Btn_GMItem, GObject>(go);
+            return parent.AddChild<FUI_Btn_Registe, GObject>(go);
         }
             
        
         /// <summary>
         /// 通过此方法获取的FUI，在Dispose时不会释放GObject，需要自行管理（一般在配合FGUI的Pool机制时使用）。
         /// </summary>
-        public static FUI_Btn_GMItem GetFormPool(Entity domain, GObject go)
+        public static FUI_Btn_Registe GetFormPool(Entity domain, GObject go)
         {
-            var fui = go.Get<FUI_Btn_GMItem>();
+            var fui = go.Get<FUI_Btn_Registe>();
         
             if(fui == null)
             {
@@ -114,17 +122,13 @@ namespace ET
     			m_button = com.GetControllerAt(0);
     			m_n0 = (GImage)com.GetChildAt(0);
     			m_n1 = (GImage)com.GetChildAt(1);
+    			m_title = (GTextField)com.GetChildAt(2);
     		}
     	}
            
-        public override void Dispose()
-        {
-            if(IsDisposed)
-            {
-                return;
-            }
-            
-            base.Dispose();
+        public override void Destroy()
+        {            
+            base.Destroy();
             
             self.Remove();
             self = null;
@@ -132,6 +136,7 @@ namespace ET
     		m_button = null;
     		m_n0 = null;
     		m_n1 = null;
+    		m_title = null;
     	}
     }
 }

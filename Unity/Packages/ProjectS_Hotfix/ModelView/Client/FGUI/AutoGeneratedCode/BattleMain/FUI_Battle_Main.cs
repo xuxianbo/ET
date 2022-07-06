@@ -1,7 +1,6 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 using FairyGUI;
-using System.Threading.Tasks;
 
 namespace ET
 {
@@ -10,6 +9,14 @@ namespace ET
         public override void Awake(FUI_Battle_Main self, GObject go)
         {
             self.Awake(go);
+        }
+    }
+        
+    public class FUI_Battle_MainDestroySystem : DestroySystem<FUI_Battle_Main>
+    {
+        public override void Destroy(FUI_Battle_Main self)
+        {
+            self.Destroy();
         }
     }
         
@@ -333,14 +340,9 @@ namespace ET
     		}
     	}
            
-        public override void Dispose()
-        {
-            if(IsDisposed)
-            {
-                return;
-            }
-            
-            base.Dispose();
+        public override void Destroy()
+        {            
+            base.Destroy();
             
             self.Remove();
             self = null;

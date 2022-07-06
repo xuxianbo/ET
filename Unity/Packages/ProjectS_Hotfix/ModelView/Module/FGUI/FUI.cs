@@ -15,8 +15,17 @@ namespace ET
             self.GObject = gObject;
         }
     }
+    
+    [ObjectSystem]
+    public class FUIDestroySystem: DestroySystem<FUI>
+    {
+        public override void Destroy(FUI self)
+        {
+            self.Destroy();
+        }
+    }
 
-    public class FUI: Entity, IAwake<GObject>
+    public class FUI: Entity, IAwake<GObject>, IDestroy
     {
         public GObject GObject;
 
@@ -101,17 +110,10 @@ namespace ET
 
         protected bool isFromFGUIPool = false;
 
-        public override void Dispose()
+        public virtual void Destroy()
         {
-            if (IsDisposed)
-            {
-                return;
-            }
-
-            base.Dispose();
-
             // 从父亲中删除自己
-            GetParent<FUI>()?.RemoveNoDispose(Name);
+            GetParent<FUI>()?.RemoveWithoutDestroy(Name);
 
             // 删除所有的孩子
             foreach (FUI ui in children.Values.ToArray())
@@ -166,11 +168,6 @@ namespace ET
 
         public void Remove(string name)
         {
-            if (IsDisposed)
-            {
-                return;
-            }
-
             FUI ui;
 
             if (children.TryGetValue(name, out ui))
@@ -184,7 +181,7 @@ namespace ET
                         GObject.asCom.RemoveChild(ui.GObject, false);
                     }
                     
-                    ui.Dispose();
+                    ui.Destroy();
                 }
             }
         }
@@ -192,7 +189,7 @@ namespace ET
         /// <summary>
         /// 一般情况不要使用此方法，如需使用，需要自行管理返回值的FUI的释放。
         /// </summary>
-        public FUI RemoveNoDispose(string name)
+        public FUI RemoveWithoutDestroy(string name)
         {
             if (IsDisposed)
             {
@@ -223,7 +220,7 @@ namespace ET
         {
             foreach (var child in children.Values.ToArray())
             {
-                child.Dispose();
+                child.Destroy();
             }
 
             children.Clear();

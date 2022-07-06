@@ -1,4 +1,3 @@
-using Sirenix.Serialization;
 using UnityEngine;
 
 namespace ET.Client

@@ -1,33 +1,38 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 using FairyGUI;
-using System.Threading.Tasks;
 
 namespace ET
 {
-    public class FUI_Btn_LoginAwakeSystem : AwakeSystem<FUI_Btn_Login, GObject>
+    public class FUI_BuffProBarAwakeSystem : AwakeSystem<FUI_BuffProBar, GObject>
     {
-        public override void Awake(FUI_Btn_Login self, GObject go)
+        public override void Awake(FUI_BuffProBar self, GObject go)
         {
             self.Awake(go);
         }
     }
         
-    public sealed class FUI_Btn_Login : FUI
+    public class FUI_BuffProBarDestroySystem : DestroySystem<FUI_BuffProBar>
+    {
+        public override void Destroy(FUI_BuffProBar self)
+        {
+            self.Destroy();
+        }
+    }
+        
+    public sealed class FUI_BuffProBar : FUI
     {	
-        public const string UIPackageName = "Login";
-        public const string UIResName = "Btn_Login";
+        public const string UIPackageName = "BattleMain";
+        public const string UIResName = "BuffProBar";
         
         /// <summary>
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
-        public GButton self;
+        public GProgressBar self;
             
-    	public Controller m_button;
-    	public GImage m_n0;
-    	public GImage m_n1;
-    	public GTextField m_title;
-    	public const string URL = "ui://2jxt4hn8pdjlb";
+    	public GImage m_n2;
+    	public GImage m_bar;
+    	public const string URL = "ui://9sdz56q4qraf6c";
 
        
         private static GObject CreateGObject()
@@ -41,19 +46,19 @@ namespace ET
         }
         
        
-        public static FUI_Btn_Login CreateInstance(Entity parent)
+        public static FUI_BuffProBar CreateInstance(Entity parent)
         {			
-            return parent.AddChild<FUI_Btn_Login, GObject>(CreateGObject());
+            return parent.AddChild<FUI_BuffProBar, GObject>(CreateGObject());
         }
         
        
-        public static ETTask<FUI_Btn_Login> CreateInstanceAsync(Entity parent)
+        public static ETTask<FUI_BuffProBar> CreateInstanceAsync(Entity parent)
         {
-            ETTask<FUI_Btn_Login> tcs = ETTask<FUI_Btn_Login>.Create(true);
+            ETTask<FUI_BuffProBar> tcs = ETTask<FUI_BuffProBar>.Create(true);
     
             CreateGObjectAsync((go) =>
             {
-                tcs.SetResult(parent.AddChild<FUI_Btn_Login, GObject>(go));
+                tcs.SetResult(parent.AddChild<FUI_BuffProBar, GObject>(go));
             });
     
             return tcs;
@@ -66,18 +71,18 @@ namespace ET
         /// <param name="domain"></param>
         /// <param name="go"></param>
         /// <returns></returns>
-        public static FUI_Btn_Login Create(Entity parent, GObject go)
+        public static FUI_BuffProBar Create(Entity parent, GObject go)
         {
-            return parent.AddChild<FUI_Btn_Login, GObject>(go);
+            return parent.AddChild<FUI_BuffProBar, GObject>(go);
         }
             
        
         /// <summary>
         /// 通过此方法获取的FUI，在Dispose时不会释放GObject，需要自行管理（一般在配合FGUI的Pool机制时使用）。
         /// </summary>
-        public static FUI_Btn_Login GetFormPool(Entity domain, GObject go)
+        public static FUI_BuffProBar GetFormPool(Entity domain, GObject go)
         {
-            var fui = go.Get<FUI_Btn_Login>();
+            var fui = go.Get<FUI_BuffProBar>();
         
             if(fui == null)
             {
@@ -103,7 +108,7 @@ namespace ET
                 Name = Id.ToString();
             }
             
-            self = (GButton)go;
+            self = (GProgressBar)go;
             
             self.Add(this);
             
@@ -112,29 +117,20 @@ namespace ET
             if(com != null)
             {	
                 
-    			m_button = com.GetControllerAt(0);
-    			m_n0 = (GImage)com.GetChildAt(0);
-    			m_n1 = (GImage)com.GetChildAt(1);
-    			m_title = (GTextField)com.GetChildAt(2);
+    			m_n2 = (GImage)com.GetChildAt(0);
+    			m_bar = (GImage)com.GetChildAt(1);
     		}
     	}
            
-        public override void Dispose()
-        {
-            if(IsDisposed)
-            {
-                return;
-            }
-            
-            base.Dispose();
+        public override void Destroy()
+        {            
+            base.Destroy();
             
             self.Remove();
             self = null;
             
-    		m_button = null;
-    		m_n0 = null;
-    		m_n1 = null;
-    		m_title = null;
+    		m_n2 = null;
+    		m_bar = null;
     	}
     }
 }

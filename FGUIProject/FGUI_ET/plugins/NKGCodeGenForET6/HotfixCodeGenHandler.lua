@@ -34,7 +34,6 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         writer:reset()
 
         writer:writeln('using FairyGUI;')
-        writer:writeln('using System.Threading.Tasks;')
         writer:writeln()
         writer:writeln('namespace %s', namespaceName)
         writer:startBlock()
@@ -47,6 +46,15 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         public override void Awake(%s self, GObject go)
         {
             self.Awake(go);
+        }
+    }
+        ]], className, className, className)
+		
+        writer:writeln([[public class %sDestroySystem : DestroySystem<%s>
+    {
+        public override void Destroy(%s self)
+        {
+            self.Destroy();
         }
     }
         ]], className, className, className)
@@ -246,14 +254,9 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         writer:writeln('\t}')
 
         writer:writeln([[       
-        public override void Dispose()
-        {
-            if(IsDisposed)
-            {
-                return;
-            }
-            
-            base.Dispose();
+        public override void Destroy()
+        {            
+            base.Destroy();
             
             self.Remove();
             self = null;

@@ -1,22 +1,29 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 using FairyGUI;
-using System.Threading.Tasks;
 
 namespace ET
 {
-    public class FUI_HpProcessBarAwakeSystem : AwakeSystem<FUI_HpProcessBar, GObject>
+    public class FUI_ProgressBar1AwakeSystem : AwakeSystem<FUI_ProgressBar1, GObject>
     {
-        public override void Awake(FUI_HpProcessBar self, GObject go)
+        public override void Awake(FUI_ProgressBar1 self, GObject go)
         {
             self.Awake(go);
         }
     }
         
-    public sealed class FUI_HpProcessBar : FUI
+    public class FUI_ProgressBar1DestroySystem : DestroySystem<FUI_ProgressBar1>
+    {
+        public override void Destroy(FUI_ProgressBar1 self)
+        {
+            self.Destroy();
+        }
+    }
+        
+    public sealed class FUI_ProgressBar1 : FUI
     {	
         public const string UIPackageName = "BattleMain";
-        public const string UIResName = "HpProcessBar";
+        public const string UIResName = "ProgressBar1";
         
         /// <summary>
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
@@ -25,7 +32,7 @@ namespace ET
             
     	public GGraph m_n0;
     	public GImage m_bar;
-    	public const string URL = "ui://9sdz56q4clst5j";
+    	public const string URL = "ui://9sdz56q4qraf6y";
 
        
         private static GObject CreateGObject()
@@ -39,19 +46,19 @@ namespace ET
         }
         
        
-        public static FUI_HpProcessBar CreateInstance(Entity parent)
+        public static FUI_ProgressBar1 CreateInstance(Entity parent)
         {			
-            return parent.AddChild<FUI_HpProcessBar, GObject>(CreateGObject());
+            return parent.AddChild<FUI_ProgressBar1, GObject>(CreateGObject());
         }
         
        
-        public static ETTask<FUI_HpProcessBar> CreateInstanceAsync(Entity parent)
+        public static ETTask<FUI_ProgressBar1> CreateInstanceAsync(Entity parent)
         {
-            ETTask<FUI_HpProcessBar> tcs = ETTask<FUI_HpProcessBar>.Create(true);
+            ETTask<FUI_ProgressBar1> tcs = ETTask<FUI_ProgressBar1>.Create(true);
     
             CreateGObjectAsync((go) =>
             {
-                tcs.SetResult(parent.AddChild<FUI_HpProcessBar, GObject>(go));
+                tcs.SetResult(parent.AddChild<FUI_ProgressBar1, GObject>(go));
             });
     
             return tcs;
@@ -64,18 +71,18 @@ namespace ET
         /// <param name="domain"></param>
         /// <param name="go"></param>
         /// <returns></returns>
-        public static FUI_HpProcessBar Create(Entity parent, GObject go)
+        public static FUI_ProgressBar1 Create(Entity parent, GObject go)
         {
-            return parent.AddChild<FUI_HpProcessBar, GObject>(go);
+            return parent.AddChild<FUI_ProgressBar1, GObject>(go);
         }
             
        
         /// <summary>
         /// 通过此方法获取的FUI，在Dispose时不会释放GObject，需要自行管理（一般在配合FGUI的Pool机制时使用）。
         /// </summary>
-        public static FUI_HpProcessBar GetFormPool(Entity domain, GObject go)
+        public static FUI_ProgressBar1 GetFormPool(Entity domain, GObject go)
         {
-            var fui = go.Get<FUI_HpProcessBar>();
+            var fui = go.Get<FUI_ProgressBar1>();
         
             if(fui == null)
             {
@@ -115,14 +122,9 @@ namespace ET
     		}
     	}
            
-        public override void Dispose()
-        {
-            if(IsDisposed)
-            {
-                return;
-            }
-            
-            base.Dispose();
+        public override void Destroy()
+        {            
+            base.Destroy();
             
             self.Remove();
             self = null;
