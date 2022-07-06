@@ -7,6 +7,15 @@ using Debug = UnityEngine.Debug;
 
 namespace Luban.Editor
 {
+    public static class GenEntry
+    {
+        [MonKey.Command("Gen Config", "Luban Config Gen", Category = "Config")]
+        public static void GenAuto()
+        {
+            AssetDatabase.LoadAssetAtPath<LubanExportConfig>("Assets/Editor/Luban/Editor/Luban.asset").Gen();
+        }
+    }
+    
     internal static class GenUtils
     {
         public static void Gen(string dotnet_path,
@@ -93,7 +102,7 @@ namespace Luban.Editor
                     throw new Exception($"{process.StandardOutput.ReadToEnd()} {process.StandardError.ReadToEnd()}");
                 }
             }
-
+            
             return process;
         }
     }

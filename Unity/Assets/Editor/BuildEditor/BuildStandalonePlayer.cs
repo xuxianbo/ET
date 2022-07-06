@@ -19,8 +19,8 @@ namespace ET
     {
         private const string c_RelativeDirPrefix = "../Release/";
         private const string c_InitScenePath = "Assets/Init.unity";
-
-        [MonKey.Command("打包EXE", "打出EXE文件，并刷新用于AOT元数据补充的DLL", Category = "Build")]
+        
+        [MonKey.Command("Build EXE", "打出EXE文件，并刷新用于AOT元数据补充的DLL", Category = "Build")]
         public static void Build()
         {
             var outputPath =
