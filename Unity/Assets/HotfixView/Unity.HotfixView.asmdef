@@ -7,7 +7,10 @@
         "Unity.Model",
         "Unity.Hotfix",
         "Unity.ModelView",
-        "YooAsset"
+        "YooAsset",
+        "Unity.Core",
+        "Animancer",
+        "StatusIndiactors"
     ],
     "includePlatforms": [
         "Editor"
@@ -15,7 +18,9 @@
     "excludePlatforms": [],
     "allowUnsafeCode": true,
     "overrideReferences": true,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "Sirenix.OdinInspector.Attributes.dll"
+    ],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],

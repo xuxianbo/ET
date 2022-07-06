@@ -3,10 +3,7 @@
 using System;
 using Sirenix.OdinInspector;
 
-#if !SERVER
 using Werewolf.StatusIndicators.Components;
-#endif
-
 
 namespace ET
 {

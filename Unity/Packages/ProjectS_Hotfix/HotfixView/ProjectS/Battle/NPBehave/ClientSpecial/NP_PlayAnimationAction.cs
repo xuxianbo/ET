@@ -6,9 +6,7 @@
 
 using System;
 using System.Collections.Generic;
-#if !SERVER
 using Animancer;
-#endif
 using Sirenix.OdinInspector;
 
 namespace ET
