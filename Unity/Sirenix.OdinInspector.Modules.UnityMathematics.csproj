@@ -41,19 +41,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\AOT\Sirenix.Serialization.AOTGenerated.dll" />
-    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll" />
-    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll" />
-    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEditor\Sirenix.Utilities.dll" />
-    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll" />
-    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEmitAndNoEditor\Sirenix.Utilities.dll" />
-    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.dll" />
-    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll" />
-    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEditor\Sirenix.Serialization.dll" />
-    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\NoEmitAndNoEditor\Sirenix.Serialization.dll" />
-    <Analyzer Include="D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll" />
-  </ItemGroup>
-  <ItemGroup>
      <Compile Include="Assets\Plugins\Sirenix\Odin Inspector\Modules\Unity.Mathematics\MathematicsDrawers.cs" />
      <None Include="Assets\Plugins\Sirenix\Odin Inspector\Modules\Unity.Mathematics\manifest.txt" />
      <None Include="Assets\Plugins\Sirenix\Odin Inspector\Modules\Unity.Mathematics\Sirenix.OdinInspector.Modules.UnityMathematics.asmdef" />

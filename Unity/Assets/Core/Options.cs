@@ -15,7 +15,8 @@ namespace ET
     
     public class Options
     {
-        public static Options Instance { get; set; }
+        public static Options _instance = new Options();
+        public static Options Instance => _instance;
         
         [Option("AppType", Required = false, Default = AppType.Server, HelpText = "AppType enum")]
         public AppType AppType { get; set; }
