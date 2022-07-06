@@ -1,3 +1,6 @@
+using Sirenix.Serialization;
+using UnityEngine;
+
 namespace ET.Client
 {
     [Event(SceneType.Process)]

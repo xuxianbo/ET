@@ -5,6 +5,10 @@
 // --------------------------
 
 using System;
+using System.Collections.Generic;
+using System.IO;
+using SimpleJSON;
+using Sirenix.Serialization;
 using UnityEditor;
 using UnityEngine;
 using YooAsset;
@@ -16,7 +20,7 @@ namespace ET
         private const string c_RelativeDirPrefix = "../Release/";
         private const string c_InitScenePath = "Assets/Init.unity";
 
-        [MenuItem("Tools/打包")]
+        [MonKey.Command("打包EXE", "打出EXE文件，并刷新用于AOT元数据补充的DLL", Category = "Build")]
         public static void Build()
         {
             var outputPath =
@@ -33,7 +37,7 @@ namespace ET
             #endregion
 
             // 如果执行打包，就强行替换为非本地调试模式，进行AB加载
-            Init updater =UnityEngine.Object.FindObjectOfType<Init>();
+            Init updater = UnityEngine.Object.FindObjectOfType<Init>();
             YooAssets.EPlayMode backPlayMode = updater.PlayMode;
             updater.PlayMode = YooAssets.EPlayMode.HostPlayMode;
 
@@ -51,19 +55,38 @@ namespace ET
 
             updater.PlayMode = backPlayMode;
             EditorBuildSettings.scenes = backScenes;
+
+            // 将AOT热更元数据补充dll复制到项目中
+            var projDir = Path.GetDirectoryName(Application.dataPath);
+            var dstPath = $"{projDir}/HuatuoData/AssembliesPostIl2CppStrip/{EditorUserBuildSettings.activeBuildTarget}";
+
+            DLLNameListForAOT dllNameListForAOT = SerializationUtility.DeserializeValue<DLLNameListForAOT>( AssetDatabase
+                .LoadAssetAtPath<TextAsset>("Assets/Res/OtherNativeRes/DLLNameListForAOT.json").bytes, DataFormat.JSON);
+            
+            foreach (var dllName in dllNameListForAOT.DLLNameList_Raw)
+            {
+                string targetDllFullName = $"{dstPath}/{dllName}";
+                if (File.Exists(targetDllFullName))
+                {
+                    File.Copy($"{targetDllFullName}", $"Assets/Res/Code/{dllName}.bytes", true);
+                }
+            }
+            
+            AssetDatabase.Refresh();
         }
-        
-        private static string GetBuildTargetName (BuildTarget target)
+
+        private static string GetBuildTargetName(BuildTarget target)
         {
-            var time = DateTime.Now.ToString ("yyyyMMdd-HHmmss");
+            var time = DateTime.Now.ToString("yyyyMMdd-HHmmss");
             var name = PlayerSettings.productName + "-v" + PlayerSettings.bundleVersion + ".";
-            switch (target) {
+            switch (target)
+            {
                 case BuildTarget.Android:
-                    return string.Format ("/{0}{1}-{2}.apk", name, 1, time);
+                    return string.Format("/{0}{1}-{2}.apk", name, 1, time);
 
                 case BuildTarget.StandaloneWindows:
                 case BuildTarget.StandaloneWindows64:
-                    return string.Format ("/{0}{1}-{2}.exe", name, 1, time);
+                    return string.Format("/{0}{1}-{2}.exe", name, 1, time);
 
 #if UNITY_2017_3_OR_NEWER
                 case BuildTarget.StandaloneOSX:
@@ -82,7 +105,7 @@ namespace ET
                     return "";
                 // Add more build targets for your own.
                 default:
-                    Debug.Log ("Target not implemented.");
+                    Debug.Log("Target not implemented.");
                     return null;
             }
         }

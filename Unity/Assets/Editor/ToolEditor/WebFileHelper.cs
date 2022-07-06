@@ -5,7 +5,7 @@ namespace ET
 {
     public static class WebFileHelper
     {
-        [MenuItem("Tools/ETEditor_WebFileServer")]
+        [MonKey.Command("WebFileServer", "本地资源服务器", Category = "Build")]
         public static void OpenFileServer()
         {
             ProcessHelper.Run("dotnet", "FileServer.dll", "../FileServer/");

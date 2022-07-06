@@ -6,7 +6,8 @@
         "Unity.ThirdParty",
         "Unity.Core",
         "YooAsset",
-        "Unity.EditorCoroutines.Editor"
+        "Unity.EditorCoroutines.Editor",
+        "ProjectS_Hotfix"
     ],
     "includePlatforms": [
         "Editor"

@@ -285,6 +285,12 @@
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>D:\Study\Unity\UnityEditor\2020.3.33f1c2\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="Sirenix.Serialization.AOTGenerated">
+     <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\AOT\Sirenix.Serialization.AOTGenerated.dll</HintPath>
+     </Reference>
+     <Reference Include="MonKey Core">
+     <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\MonKey Commander\MonKey Core.dll</HintPath>
+     </Reference>
      <Reference Include="Sirenix.OdinInspector.Editor">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
      </Reference>
@@ -297,11 +303,14 @@
      <Reference Include="Sirenix.Serialization.Config">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll</HintPath>
      </Reference>
-     <Reference Include="Sirenix.Utilities">
-     <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
+     <Reference Include="MonKey Commander">
+     <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\MonKey Commander\Editor\Libs\MonKey Commander.dll</HintPath>
      </Reference>
      <Reference Include="ICSharpCode.NRefactory">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Library\PackageCache\com.unity.render-pipelines.core@10.9.0\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
+     </Reference>
+     <Reference Include="Sirenix.Utilities">
+     <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
      </Reference>
      <Reference Include="ICSharpCode.SharpZipLib">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>

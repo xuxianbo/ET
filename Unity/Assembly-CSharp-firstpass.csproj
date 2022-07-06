@@ -45,9 +45,12 @@
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.xml" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.xml" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.xml" />
+     <None Include="Assets\Plugins\MonKey Commander\MonKey Core.xml" />
      <None Include="Assets\Plugins\Sirenix\Readme.txt" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\link.xml" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.xml" />
+     <None Include="Assets\Plugins\Sirenix\Assemblies\AOT\link.xml" />
+     <None Include="Assets\Plugins\MonKey Commander\MonKey Readme!.txt" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.xml" />
      <Reference Include="UnityEngine">
      <HintPath>D:\Study\Unity\UnityEditor\2020.3.33f1c2\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

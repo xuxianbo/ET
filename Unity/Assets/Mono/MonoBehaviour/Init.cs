@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Huatuo;
+using Sirenix.Serialization;
 using UnityEditor;
 using UnityEngine;
 using YooAsset;
@@ -20,13 +21,7 @@ namespace ET
     {
         public CodeMode CodeMode = CodeMode.Mono;
         public YooAssets.EPlayMode PlayMode = YooAssets.EPlayMode.EditorSimulateMode;
-
-        private List<string> AOTDllList = new List<string>()
-        {
-            "Code_System.dll", "Code_Unity.Core.dll", "Code_Unity.ThirdParty.dll", "Code_mscorlib.dll",
-            "Code_System.Core.dll"
-        };
-
+        
         private void Awake()
         {
             AppDomain.CurrentDomain.UnhandledException += (sender, e) => { Log.Error(e.ExceptionObject.ToString()); };
@@ -58,20 +53,23 @@ namespace ET
 
         private void LoadCode()
         {
-            List<ETTask<RawFileOperation>> tasks = new List<ETTask<RawFileOperation>>();
-
-            foreach (var aotDll in AOTDllList)
-            {
-                Debug.Log($"添加{aotDll}");
-                tasks.Add(YooAssetProxy.GetRawFileAsync(aotDll));
-            }
-
-            InternalLoadCode(tasks).Coroutine();
+            InternalLoadCode().Coroutine();
             
-            async ETTask InternalLoadCode(List<ETTask<RawFileOperation>> tasks)
+            async ETTask InternalLoadCode()
             {
+                byte[] config = (await YooAssetProxy.GetRawFileAsync("Config_DLLNameListForAOT")).LoadFileData();
+                DLLNameListForAOT dllNameListForAOT = SerializationUtility.DeserializeValue<DLLNameListForAOT>(config, DataFormat.JSON);
+                
+                List<ETTask<RawFileOperation>> tasks = new List<ETTask<RawFileOperation>>();
+                
+                foreach (var aotDll in dllNameListForAOT.DLLNameList_ForABLoad)
+                {
+                    Debug.Log($"添加{aotDll}");
+                    tasks.Add(YooAssetProxy.GetRawFileAsync(aotDll));
+                }
+                
                 await ETTaskHelper.WaitAll(tasks);
-
+                
                 foreach (var task in tasks)
                 {
                     Debug.Log("准备加载AOT补充元数据");

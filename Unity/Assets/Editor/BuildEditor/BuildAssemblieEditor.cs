@@ -28,10 +28,10 @@ namespace ET
         private static CodeOptimization codeOptimization;
         private static string[] backSymbolDefines;
 
-        [MenuItem("Tools/BuildCodeDebug _F5")]
+        [MonKey.Command("Build Hotfix Debug Dll", "编译热更DLL（Debug）", Category = "Build")]
         public static void BuildCodeDebug()
         {
-            assemblyName = "Code";
+            assemblyName = "ProjectS_Hotfix";
             includeAssemblies = new[]
             {
                 "Packages/Codes/Model/",
@@ -45,10 +45,10 @@ namespace ET
             BuildAssemblieEditor.BuildMuteAssembly();
         }
 
-        [MenuItem("Tools/BuildCodeRelease _F6")]
+        [MonKey.Command("Build Hotfix Release Dll", "编译热更DLL（Release）", Category = "Build")]
         public static void BuildCodeRelease()
         {
-            assemblyName = "Code";
+            assemblyName = "ProjectS_Hotfix";
             includeAssemblies = new[]
             {
                 "Packages/Codes/Model/",
@@ -62,10 +62,10 @@ namespace ET
             BuildAssemblieEditor.BuildMuteAssembly();
         }
 
-        [MenuItem("Tools/BuildData _F7")]
+        [MonKey.Command("Build Hotfix Data Dll", "编译热更DLL（Debug）", Category = "Build")]
         public static void BuildData()
         {
-            assemblyName = "Data";
+            assemblyName = "ProjectS_Hotfix_Data";
             includeAssemblies = new[]
             {
                 "Packages/Codes/Model/",
@@ -78,10 +78,10 @@ namespace ET
         }
 
 
-        [MenuItem("Tools/BuildLogic _F8")]
+        [MonKey.Command("Build Hotfix Logic Dll", "编译热更DLL（Debug）", Category = "Build")]
         public static void BuildLogic()
         {
-            assemblyName = "Logic";
+            assemblyName = "ProjectS_Hotfix_Logic";
             includeAssemblies = new[]
             {
                 "Packages/Codes/Hotfix/",
@@ -145,7 +145,7 @@ namespace ET
 
             assemblyBuilder.excludeReferences = new string[]
             {
-                "Library/ScriptAssemblies/Unity.Editor.dll", "Library/ScriptAssemblies/HotfixCodes.dll"
+                "Library/ScriptAssemblies/Unity.Editor.dll", "Library/ScriptAssemblies/ProjectS_Hotfix.dll"
             };
 
             assemblyBuilder.buildStarted += delegate(string assemblyPath)
@@ -213,8 +213,8 @@ namespace ET
 
             Directory.CreateDirectory(CodeDir);
 
-            File.Copy(Path.Combine(Define.BuildOutputDir, "Code.dll"), Path.Combine(CodeDir, "Code.dll.bytes"), true);
-            File.Copy(Path.Combine(Define.BuildOutputDir, "Code.pdb"), Path.Combine(CodeDir, "Code.pdb.bytes"), true);
+            File.Copy(Path.Combine(Define.BuildOutputDir, "ProjectS_Hotfix.dll"), Path.Combine(CodeDir, "ProjectS_Hotfix.dll.bytes"), true);
+            File.Copy(Path.Combine(Define.BuildOutputDir, "ProjectS_Hotfix.pdb"), Path.Combine(CodeDir, "ProjectS_Hotfix.pdb.bytes"), true);
 
             AssetDatabase.Refresh();
             Debug.Log("copy Code.dll to Bundles/Code success!");

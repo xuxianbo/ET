@@ -33,8 +33,8 @@ namespace ET
             {
                 case CodeMode.Mono:
                 {
-                    byte[] assBytes = (await YooAssetProxy.GetRawFileAsync("Code_Code.dll")).GetRawBytes();
-                    byte[] pdbBytes = (await YooAssetProxy.GetRawFileAsync("Code_Code.pdb")).GetRawBytes();
+                    byte[] assBytes = (await YooAssetProxy.GetRawFileAsync("Code_ProjectS_Hotfix.dll")).GetRawBytes();
+                    byte[] pdbBytes = (await YooAssetProxy.GetRawFileAsync("Code_ProjectS_Hotfix.pdb")).GetRawBytes();
 
                     assembly = Assembly.Load(assBytes, pdbBytes);
 
