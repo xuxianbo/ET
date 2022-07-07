@@ -1,10 +1,24 @@
+@echo off
+rem git clone https://github.com/focus-creative-games/hybridclr
+git clone https://gitee.com/focus-creative-games/hybridclr huatuo_repo
 
+rem git clone https://github.com/focus-creative-games/il2cpp_huatuo
+git clone https://gitee.com/focus-creative-games/il2cpp_plus il2cpp_huatuo_repo
+
+
+rem set default branch
+set IL2CPP_BRANCH=2020.3.33
+cd il2cpp_huatuo_repo
+
+git switch %IL2CPP_BRANCH%
+
+cd ..
 
 rem replace with right Unity Editor Install path
 set IL2CPP_PATH=D:\Study\Unity\UnityEditor\2020.3.33f1c2\Editor\Data\il2cpp
 
 if not exist "%IL2CPP_PATH%" (
-    echo "please set correct %IL2CPP_PATH% value"
+    echo "please set correct IL2CPP_PATH value"
     goto EXIT
 )
 
@@ -30,13 +44,13 @@ if not exist %IL2CPP% (
 set HUATUO_REPO=huatuo_repo
 
 if not exist %HUATUO_REPO% (
-    echo not install huatuo https://gitee.com/focus-creative-games/huatuo, please run init_huatuo_repos.bat or init_huatuo_repos.sh
+    echo not install hybridclr https://gitee.com/focus-creative-games/hybridclr, please run init_huatuo_repos.bat or init_huatuo_repos.sh
     goto EXIT 
 )
 
 set IL2CPP_HUATUO_REPO=il2cpp_huatuo_repo
 if not exist %IL2CPP_HUATUO_REPO% (
-    echo not install il2cpp_huatuo https://gitee.com/juvenior/il2cpp_huatuo , please run init_huatuo_repos.bat or init_huatuo_repos.sh
+    echo not install il2cpp_plus https://gitee.com/focus-creative-games/il2cpp_plus , please run init_huatuo_repos.bat or init_huatuo_repos.sh
     goto EXIT 
 )
 
