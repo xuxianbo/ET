@@ -18,7 +18,9 @@
     "overrideReferences": true,
     "precompiledReferences": [
         "Sirenix.OdinInspector.Attributes.dll",
-        "Sirenix.OdinInspector.Editor.dll"
+        "Sirenix.OdinInspector.Editor.dll",
+        "Sirenix.Serialization.dll",
+        "Sirenix.Serialization.Config.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [

@@ -32,7 +32,7 @@ MonoBehaviour:
     AssetTags: 
     ActiveRuleName: EnableGroup
     Collectors:
-    - CollectPath: Assets/Res/Config
+    - CollectPath: Assets/Res/Config/DataConfig
       CollectorType: 0
       AddressRuleName: AddressByGroupAndFileName
       PackRuleName: PackDirectory
@@ -42,6 +42,12 @@ MonoBehaviour:
       CollectorType: 0
       AddressRuleName: AddressByGroupAndFileName
       PackRuleName: PackRawFile
+      FilterRuleName: CollectAll
+      AssetTags: 
+    - CollectPath: Assets/Res/Config/SkillConfig
+      CollectorType: 0
+      AddressRuleName: AddressByGroupAndFileName
+      PackRuleName: PackDirectory
       FilterRuleName: CollectAll
       AssetTags: 
   - GroupName: Unit

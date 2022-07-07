@@ -691,6 +691,12 @@
      <Reference Include="Sirenix.OdinInspector.Editor">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Sirenix.Serialization">
+     <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll</HintPath>
+     </Reference>
+     <Reference Include="Sirenix.Serialization.Config">
+     <HintPath>D:\Study\GameProjects\MyET\Unity\Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll</HintPath>
+     </Reference>
      <Reference Include="nunit.framework">
      <HintPath>D:\Study\GameProjects\MyET\Unity\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
      </Reference>

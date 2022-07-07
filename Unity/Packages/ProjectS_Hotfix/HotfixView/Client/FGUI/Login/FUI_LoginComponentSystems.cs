@@ -20,7 +20,12 @@ namespace ET
                 fuiLogin.m_passwordText.text = recordPassWord;
             }
             
-            fuiLogin.m_Btn_Login.self.onClick.Add(() => { FUI_LoginUtilities.OnLogin(self); });
+            fuiLogin.m_Btn_Login.self.onClick.Add(() =>
+            {
+                
+                
+                FUI_LoginUtilities.OnLogin(self);
+            });
             fuiLogin.m_Btn_Registe.self.onClick.Add(() => { FUI_LoginUtilities.OnRegister(self); });
             
             self.FuiUIPanelLogin = fuiLogin;

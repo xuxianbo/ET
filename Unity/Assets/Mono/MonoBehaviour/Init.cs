@@ -3,8 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Huatuo;
-using Sirenix.Serialization;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+using Sirenix.Serialization;
+
 using UnityEngine;
 using YooAsset;
 
@@ -16,6 +20,19 @@ namespace ET
         Mono = 1,
         Reload = 3,
     }
+
+#if UNITY_EDITOR
+    [InitializeOnLoad]
+    public class EditorRegisteLog
+    {
+        static EditorRegisteLog()
+        {
+            Game.ILog = new UnityLogger();
+        }
+    }
+#endif
+    
+
 
     public class Init : MonoBehaviour
     {
