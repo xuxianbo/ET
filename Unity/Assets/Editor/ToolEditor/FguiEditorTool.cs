@@ -68,7 +68,7 @@ namespace ET
         [MenuItem("Tools/打开FGUI编辑器 %#_e",false,0)]
         public static void OpenUiEditor()
         {
-            DoBat("../../FGUIProject/FairyGUI-Editor/FairyGUI-Editor.exe", "../../FGUIProject/REGame/REGame.fairy");
+            DoBat("../../FGUIProject/FairyGUI-Editor/FairyGUI-Editor.exe", "../../FGUIProject/FGUI_ET/FGUI_ET.fairy");
         }
         
     }
