@@ -17,21 +17,26 @@ namespace ET.cfg
 public partial class Tables
 {
     public LuBanSample.TbLuBanSample TbLuBanSample {get; private set; }
+    public SkillConfig.TbSkillCanvas TbSkillCanvas {get; private set; }
 
     public async ETTask LoadAsync(System.Func<string, ETTask<ByteBuf>> loader)
     {
         var tables = new System.Collections.Generic.Dictionary<string, object>();
         TbLuBanSample = new LuBanSample.TbLuBanSample(await loader("lubansample_tblubansample")); 
         tables.Add("LuBanSample.TbLuBanSample", TbLuBanSample);
+        TbSkillCanvas = new SkillConfig.TbSkillCanvas(await loader("skillconfig_tbskillcanvas")); 
+        tables.Add("SkillConfig.TbSkillCanvas", TbSkillCanvas);
 
         PostInit();
         TbLuBanSample.Resolve(tables); 
+        TbSkillCanvas.Resolve(tables); 
         PostResolve();
     }
 
     public void TranslateText(System.Func<string, string, string> translator)
     {
         TbLuBanSample.TranslateText(translator); 
+        TbSkillCanvas.TranslateText(translator); 
     }
     
     partial void PostInit();

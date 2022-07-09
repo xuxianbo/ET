@@ -9,9 +9,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ET;
+using ET.Editor.SkillConfig;
 using GraphProcessor;
+using SimpleJSON;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using UnityEditor;
 using UnityEngine;
 
 namespace Plugins.NodeEditor
@@ -162,6 +165,10 @@ namespace Plugins.NodeEditor
                     m_ValidNodes.Add(mNode);
                 }
             }
+
+            ET.Editor.SkillConfig.SkillCanvasConfig skillConfig =
+                LubanGenerateConfigEditorOnlyHelper.GetSkillCanvasConfig(this.IdInConfig);
+            this.NpDataSupportor_Client.NPBehaveTreeDataId = skillConfig.NPBehaveId;
 
             if (npDataSupportorBase.NPBehaveTreeDataId == 0)
             {
