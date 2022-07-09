@@ -1,5 +1,6 @@
 //此文件格式由工具自动生成
 
+using ET.cfg.LuBanSample;
 using UnityEngine;
 
 namespace ET

@@ -6,6 +6,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.nkg.lubangenerateconfig.editor": {
+      "version": "file:LubanGenerateEditor",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.nkg.yy": {
       "version": "file:ProjectS_Hotfix",
       "depth": 0,

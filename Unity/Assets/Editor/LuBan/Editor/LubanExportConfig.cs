@@ -13,7 +13,7 @@ using UnityEngine;
 namespace Luban.Editor
 {
     [CreateAssetMenu(fileName = "Luban", menuName = "Luban/ExportConfig")]
-    public class LubanExportConfig : ScriptableObject
+    public class LubanExportConfig : SerializedScriptableObject
     {
         #region 生命周期
 
@@ -69,10 +69,16 @@ namespace Luban.Editor
 
         [Required]
         [Category("--input_data_dir")]
-        [LabelText("数据文件夹")]
+        [LabelText("Excel文件夹")]
         [FolderPath]
         [BoxGroup("必要参数")]
         public string input_data_dir;
+        
+        [Category("--input:convert:data_dir")]
+        [LabelText("数据源转换文件夹")]
+        [FolderPath]
+        [BoxGroup("必要参数")]
+        public string input_convert_data_dir;
 
         [Required]
         [Category("--gen_types")]
@@ -272,6 +278,35 @@ namespace Luban.Editor
         [LabelText("外部选择器")]
         [FoldoutGroup("其他配置")]
         public string external_selectors;
+
+        #endregion
+
+        #region 通用配置
+        
+        public struct GenTypePathConfig
+        {
+            [FolderPath]
+            [LabelText("数据源转换路径（数据输入目录）")]
+            public string InputConvertDataDir;
+            
+            [FolderPath]
+            [LabelText("Excel表路径")]
+            public string DataInputPath;
+            
+            [FolderPath]
+            [LabelText("输出代码路径")]
+            public string CodeOutputPath;
+            
+            [FolderPath]
+            [LabelText("输出数据路径")]
+            public string DataOutputPath;
+        }
+
+        // 目前项目仅导出Client，所以根节点就从GenTypes开始了，如果还有Server的需求，就从c,s,all开始
+        [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.OneLine)]
+        [FoldoutGroup("导出配置集合")]
+        [LabelText("导出配置集合")]
+        public Dictionary<GenTypes, GenTypePathConfig> GenTypeConfig = new Dictionary<GenTypes, GenTypePathConfig>();
 
         #endregion
 
