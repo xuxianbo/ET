@@ -18,4 +18,6 @@
 	<service name="server" manager="Tables" group="s"/>
 	<service name="client" manager="Tables" group="c"/>
 	<service name="all" manager="Tables" group="c,s,e"/>
+	
+	<option name="editor.topmodule" value="ET.Editor"/>
 </root>
