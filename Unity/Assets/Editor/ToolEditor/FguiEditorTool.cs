@@ -1,7 +1,9 @@
 using System;
 using System.Diagnostics;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace ET
 {
@@ -33,13 +35,13 @@ namespace ET
 
             return Application.dataPath + relativePath;
         }
-        
+
         private static void OpenFileOrFolder(string path)
         {
             Process.Start("explorer.exe", path.Replace("/", "\\"));
         }
-        
-        
+
+
         private static void DoBat(string path, string param = null, string openFolder = null)
         {
             try
@@ -64,12 +66,11 @@ namespace ET
             }
         }
 
-        
-        [MenuItem("Tools/打开FGUI编辑器 %#_e",false,0)]
+
+        [MenuItem("Tools/打开FGUI编辑器 %#_e", false, 0)]
         public static void OpenUiEditor()
         {
-            DoBat("../../FGUIProject/FairyGUI-Editor/FairyGUI-Editor.exe", "../../FGUIProject/FGUI_ET/FGUI_ET.fairy");
+            DoBat("../../FGUIProject/FairyGUI-Editor/FairyGUI-Editor.exe");
         }
-        
     }
 }
