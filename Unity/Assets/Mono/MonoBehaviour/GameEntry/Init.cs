@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using Huatuo;
 
@@ -10,7 +11,10 @@ using UnityEditor;
 using Sirenix.Serialization;
 
 using UnityEngine;
+using UnityEngine.Experimental.Rendering;
+using UnityEngine.Profiling;
 using YooAsset;
+using Debug = UnityEngine.Debug;
 
 namespace ET
 {
@@ -68,6 +72,20 @@ namespace ET
         {
             // 启动YooAsset引擎，并在初始化完毕后进行热更代码加载
             await YooAssetProxy.StartYooAssetEngine(PlayMode);
+
+            // Shader Warm Up
+            ShaderVariantCollection shaderVariantCollection = (await YooAssetProxy.LoadAssetAsync<ShaderVariantCollection>("Shader_ProjectSShaderVariant")).GetAssetObject<ShaderVariantCollection>();
+            
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            
+            Log.Info($"开始Shader Warm Up, shaderCount: {shaderVariantCollection.shaderCount} variantCount: {shaderVariantCollection.variantCount}");
+            
+            shaderVariantCollection.WarmUp();
+            
+            stopwatch.Stop();
+            
+            Log.Info($"Shader Warm Up完成, 耗时: {stopwatch.ElapsedMilliseconds}ms");
+
             await LoadCode();
             
             if (PlayMode == YooAssets.EPlayMode.HostPlayMode)

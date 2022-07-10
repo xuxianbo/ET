@@ -10,6 +10,7 @@ using System.IO;
 using SimpleJSON;
 using Sirenix.Serialization;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using YooAsset;
 
@@ -36,6 +37,8 @@ namespace ET
 
             #endregion
 
+            EditorSceneManager.OpenScene(c_InitScenePath);
+            
             // 如果执行打包，就强行替换为非本地调试模式，进行AB加载
             Init updater = UnityEngine.Object.FindObjectOfType<Init>();
             YooAssets.EPlayMode backPlayMode = updater.PlayMode;

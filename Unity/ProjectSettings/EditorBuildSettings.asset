@@ -5,10 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Init.unity
     guid: e0d691ac8c1d0454ba07089ea820e18a
-  - enabled: 0
-    path: Assets/Plugins/ShaderControl/Demo/Demo.unity
-    guid: 707eafb6470bd4703bb1d1a0f56e6d46
   m_configObjects: {}

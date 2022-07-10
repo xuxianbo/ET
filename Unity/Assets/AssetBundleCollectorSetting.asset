@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnableAddressable: 1
   AutoCollectShaders: 1
-  ShadersBundleName: myshaders
+  ShadersBundleName: projects_shaders
   Groups:
   - GroupName: Code
     GroupDesc: "\u4EE3\u7801\u70ED\u66F4\u65B0dll"
@@ -107,7 +107,7 @@ MonoBehaviour:
     Collectors:
     - CollectPath: Assets/Res/Shader
       CollectorType: 0
-      AddressRuleName: AddressByFileName
+      AddressRuleName: AddressByCollectorAndFileName
       PackRuleName: PackDirectory
       FilterRuleName: CollectAll
       AssetTags: 

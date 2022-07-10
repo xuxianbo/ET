@@ -41,10 +41,6 @@ MonoBehaviour:
     m_importFrom: Assets/Res/Material
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: efc753875ae21a240b2eecd999ad5830
-    m_importFrom: Assets/Res/Material/New Material.mat
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: 9e29dfcff4eb8c541a012f93f8388cbc
     m_importFrom: Assets/AssetBundleCollectorSetting.asset
     m_exportTo: 
@@ -53,16 +49,124 @@ MonoBehaviour:
     m_importFrom: Assets/ShaderVariantCollectorSetting.asset
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 2b6a1f28d4a5d1847b46e8d4f52a5d00
-    m_importFrom: Assets/MyShaderVariants.json
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: 70401cc80b9807e46bd8283e01b4302f
     m_importFrom: Assets/ThirdParty/YooAsset/Editor/ShaderVariantCollector/ShaderVariantCollectorWindow.cs
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: c082f17b9203ee7479287f4ca26626ca
-    m_importFrom: Assets/MyShaderVariants.shadervariants
+  - m_assetDatabaseId: dbfeb139bd4ade949b7f9b6b9ca97efe
+    m_importFrom: Assets/StreamingAssets/YooAssets/fce34f4c86969cf818bb7004c08171a1
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0d9a1f56a69ec424d89f8f5a0a8f03e2
+    m_importFrom: Assets/StreamingAssets/YooAssets/a72daa86ee0471c395cca08fd1d9d1f0
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1ae17aaf7ace5244dadcda19759fe897
+    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_2.hash
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 87f6ac00cf532124d8ee04d6577e026f
+    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_2.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e19cc7300dc906d4a8ae22c7c42bdc84
+    m_importFrom: Assets/StreamingAssets/YooAssets/4ecf76c94c41e95e8e73e92c6f2c7867
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dfbf8b891211bfe449bf9526445f486e
+    m_importFrom: Assets/StreamingAssets/YooAssets/dbabe6926d61af1f817888c8e5ffa8e3
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 58a4e52da28071149ae20398956434e9
+    m_importFrom: Assets/StreamingAssets/YooAssets/4d4a7321b95964ceb3582586935f28da
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d5faf12d3df02ed49aa24c71d286300b
+    m_importFrom: Assets/StreamingAssets/YooAssets/2b5f7980b12afcd0f5ef3d2afdf4b974
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c5e5fd50645ef344db2d10de5ae7855e
+    m_importFrom: Assets/StreamingAssets/YooAssets/5de5713b13b3285e1e7d79624bca4d35
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1322b0fe15e83e64c9a3997bb8466a0e
+    m_importFrom: Assets/StreamingAssets/YooAssets/StaticVersion.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d0f2f96197b13ce419f13268075aa3fb
+    m_importFrom: Assets/StreamingAssets/YooAssets/9dafded85518e34e6316d2a23116bbbc
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 587beb7635b7e114bb90cbc0bced60d8
+    m_importFrom: Assets/StreamingAssets/YooAssets/ca9117b5c0f3b5177fd2b458c413be8e
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8ec3025a37f90ce4595dd5df40d507c3
+    m_importFrom: Assets/StreamingAssets/YooAssets/059412438d66b9563f5ef6369cf29574
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4c35c785f7b076e4b937d48333ecc135
+    m_importFrom: Assets/StreamingAssets/YooAssets/8dba91a51222307a244f437f441f5380
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bd296c0c58671cb4db533c1f8a471d4c
+    m_importFrom: Assets/StreamingAssets/YooAssets/a79a68eed920c0e943256ecd44d58b3e
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 969f3053696cf734194a6355d22161ef
+    m_importFrom: Assets/StreamingAssets/YooAssets/1da5195aba4309c5840e71cad54596a8
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 86a0c9f68d1efcd429cdbdde2dca77e4
+    m_importFrom: Assets/AssetBundleBuilderSetting.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ff906ecbbd0163f4094f8fa4e305d39f
+    m_importFrom: Assets/Mono/MonoBehaviour/GameEntry/Init.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 964e49ad3f4fe0a4eb1485037f9a41d5
+    m_importFrom: Assets/Res/Code/ProjectS_Hotfix.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ede3d2f74956aa04abba9d8e608b9592
+    m_importFrom: Assets/StreamingAssets/YooAssets/5c7ce4cfba90465b4a20e2511e24cb06
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0a45e7b86eeb4fa4787b8590951a5995
+    m_importFrom: Assets/StreamingAssets/YooAssets/09501af0876ec55a2caf565b12d36342
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3a570a9e0724b474a916fc685897785b
+    m_importFrom: Assets/Res/Material/New Material 1.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1480c3075325b6c44bd40a9833113719
+    m_importFrom: Assets/Res/Material/New Material 2.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a43f8b4d202c3e44e89e995d9496f971
+    m_importFrom: Assets/StreamingAssets/YooAssets/7a5f6e743cd279df9d02e5925980d4c5
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bedcfdc16c11ae342992042ed67442ac
+    m_importFrom: Assets/StreamingAssets/YooAssets/05217ba2fbd7ecad6b17beecca50c586
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4e3a7afb771086042bb9d2336028cbe8
+    m_importFrom: Assets/Res/Shader/ProjectSShaderVariant.shadervariants
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 82dce4373573c8544b29dcc533b76797
+    m_importFrom: Assets/StreamingAssets/YooAssets/b8055531341343296504de76a5766e34
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f43c5f9947036d74c9912065f5993b27
+    m_importFrom: Assets/StreamingAssets/YooAssets/bcf68c0f7ad72bcfe73a219f277a7b64
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b20c9f1da71f43a6a0320f246e2980ef
+    m_importFrom: Assets/Editor/BuildEditor/BuildStandalonePlayer.cs
     m_exportTo: 
     m_variantName: 
   m_version: 2
