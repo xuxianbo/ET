@@ -5,7 +5,7 @@
       <relation target="" sidePair="width-width,height-height"/>
     </image>
     <component id="n12_8ibs" name="Btn_Login" src="pdjlb" fileName="Btn_StartGame.xml" xy="1429,420" size="274,64" group="n16_8ibs">
-      <Button titleColor="#ffffff" titleFontSize="30"/>
+      <Button titleColor="#ffffff" titleFontSize="40"/>
     </component>
     <component id="n22_brol" name="n22" src="brolsg" fileName="Btn_ContinueGame.xml" xy="1430,541" size="274,64" group="n16_8ibs">
       <Button titleFontSize="30"/>
