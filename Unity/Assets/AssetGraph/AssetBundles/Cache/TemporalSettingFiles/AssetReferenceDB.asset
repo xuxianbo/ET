@@ -21,4 +21,12 @@ MonoBehaviour:
     m_importFrom: Assets/Resources/Fonts/SourceHanSansCN-Regular.otf
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: e78efb7f0c1c323459e5d3cf8783226c
+    m_importFrom: Assets/Resources/Fonts/SourceHanSansCN-Regular.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9e29dfcff4eb8c541a012f93f8388cbc
+    m_importFrom: Assets/AssetBundleCollectorSetting.asset
+    m_exportTo: 
+    m_variantName: 
   m_version: 2
