@@ -14,7 +14,8 @@ namespace YooAsset.Editor
 	public static class ShaderVariantCollector
 	{
 		private const float WaitMilliseconds = 1000f;
-		private static string _saveFilePath;
+		private static string _svcSaveFilePath;
+		private static string _svcJsonSaveFilePath = "Assets/SVCDebug.json";
 		private static bool _isStarted = false;
 		private static readonly Stopwatch _elapsedTime = new Stopwatch();
 
@@ -41,12 +42,13 @@ namespace YooAsset.Editor
 		{
 			AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
 
-			ShaderVariantCollection svc = AssetDatabase.LoadAssetAtPath<ShaderVariantCollection>(_saveFilePath);
+			ShaderVariantCollection svc = AssetDatabase.LoadAssetAtPath<ShaderVariantCollection>(_svcSaveFilePath);
 			if(svc != null)
 			{
 				var wrapper = ShaderVariantCollectionHelper.Extract(svc);
 				string jsonContents = JsonUtility.ToJson(wrapper, true);
-				string savePath = _saveFilePath.Replace(".shadervariants", ".json");
+				string savePath = _svcJsonSaveFilePath;
+				
 				File.WriteAllText(savePath, jsonContents);
 			}
 
@@ -68,7 +70,7 @@ namespace YooAsset.Editor
 			if (Path.GetExtension(saveFilePath) != ".shadervariants")
 				throw new System.Exception("Shader variant file extension is invalid.");
 			EditorTools.CreateFileDirectory(saveFilePath);
-			_saveFilePath = saveFilePath;
+			_svcSaveFilePath = saveFilePath;
 
 			// 聚焦到游戏窗口
 			EditorTools.FocusUnityGameWindow();
@@ -202,7 +204,7 @@ namespace YooAsset.Editor
 		}
 		private static void SaveCurrentShaderVariantCollection()
 		{
-			EditorTools.InvokeNonPublicStaticMethod(typeof(ShaderUtil), "SaveCurrentShaderVariantCollection", _saveFilePath);
+			EditorTools.InvokeNonPublicStaticMethod(typeof(ShaderUtil), "SaveCurrentShaderVariantCollection", _svcSaveFilePath);
 		}
 		public static int GetCurrentShaderVariantCollectionShaderCount()
 		{
