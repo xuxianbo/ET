@@ -23,7 +23,7 @@ public static class PatchUpdater
 
     public static Action<PatchEventMessageDefine.PatchStatesChange> OnStateUpdate;
     public static Action<PatchEventMessageDefine.DownloadProgressUpdate> OnDownLoadProgressUpdate;
-    private static Action OnPatchDoneCallback;
+    private static ETTask s_ETTask;
 
     public static void InitCallback(Action<PatchEventMessageDefine.PatchStatesChange> onStateUpdate,
         Action<PatchEventMessageDefine.DownloadProgressUpdate> onDownLoadProgressUpdate)
@@ -31,17 +31,13 @@ public static class PatchUpdater
         OnStateUpdate += onStateUpdate;
         OnDownLoadProgressUpdate += onDownLoadProgressUpdate;
     }
-
-    public static void AddPatchDoneCallback(Action onPatchDoneCallback)
-    {
-        OnPatchDoneCallback += onPatchDoneCallback;
-    }
-
+    
     /// <summary>
     /// 开启初始化流程
     /// </summary>
-    public static void Run()
+    public static void Run(ETTask etTask)
     {
+        s_ETTask = etTask;
         if (_isRun == false)
         {
             _isRun = true;
@@ -113,7 +109,7 @@ public static class PatchUpdater
                 Log.Info("Downloading patch files.");
             else if (patchStatesChange.CurrentStates == EPatchStates.PatchDone)
             {
-                OnPatchDoneCallback?.Invoke();
+                s_ETTask?.SetResult();
                 Log.Info("PatchDone. ");
             }
             else

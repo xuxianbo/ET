@@ -15,7 +15,7 @@ namespace ET
             FUI_CheckForResUpdateBinder.BindAll();
             FUI_CheckForResUpdate forResUpdate = FUI_CheckForResUpdate.CreateInstance();
             forResUpdate.MakeFullScreen();
-            forResUpdate.m_processbar.max = 100;
+            forResUpdate.m_processbar.max = 1;
             forResUpdate.m_processbar.value = 0;
 
             FUIManager_MonoOnly.AddUI(nameof(FUI_CheckForResUpdate), forResUpdate);
@@ -26,20 +26,25 @@ namespace ET
 
                 if (onStateChanged.CurrentStates == EPatchStates.PatchDone)
                 {
-                    FUIManager_MonoOnly.RemoveUI(nameof(FUI_CheckForResUpdate));
-                    FUIEntry.RemovePackage_MonoOnly("CheckForResUpdate");
+                    forResUpdate.m_updateInfo.text = "资源下载完毕，正在加载核心逻辑。。。";
                 }
             }, (onProcessUpdated) =>
             {
                 string currentSizeMB = (onProcessUpdated.CurrentDownloadSizeBytes / 1048576f).ToString("f1");
                 string totalSizeMB = (onProcessUpdated.TotalDownloadSizeBytes / 1048576f).ToString("f1");
                 string text =
-                    $"{onProcessUpdated.CurrentDownloadCount}/{onProcessUpdated.TotalDownloadCount} {currentSizeMB}MB/{totalSizeMB}MB";
+                    $"资源下载中：{onProcessUpdated.CurrentDownloadCount}/{onProcessUpdated.TotalDownloadCount} {currentSizeMB}MB/{totalSizeMB}MB";
 
                 forResUpdate.m_updateInfo.text = text;
                 forResUpdate.m_processbar.value = onProcessUpdated.CurrentDownloadSizeBytes * 1.0f /
                     onProcessUpdated.TotalDownloadSizeBytes * 100;
             });
+        }
+
+        public static void Release()
+        {
+            FUIManager_MonoOnly.RemoveUI(nameof(FUI_CheckForResUpdate));
+            FUIEntry.RemovePackage_MonoOnly("CheckForResUpdate");
         }
     }
 }

@@ -9,6 +9,7 @@ namespace ET.Client
 			try
 			{
 				CodeLoader.Instance.Update = Game.Update;
+				CodeLoader.Instance.FixedUpdate = Game.FixedUpdate;
 				CodeLoader.Instance.LateUpdate = Game.LateUpdate;
 				CodeLoader.Instance.OnApplicationQuit = Game.Close;
 				

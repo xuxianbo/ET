@@ -92,14 +92,16 @@ namespace ET
             PatchUpdater.InitCallback(onStateUpdate, onDownLoadProgressUpdate);
         }
 
-        public static void StartYooAssetEngine(YooAssets.EPlayMode playMode, Action initCompletedCallback)
+        public static ETTask StartYooAssetEngine(YooAssets.EPlayMode playMode)
         {
+            ETTask etTask = ETTask.Create();
+            
             // 编辑器下的模拟模式
             if (playMode == YooAssets.EPlayMode.EditorSimulateMode)
             {
                 var createParameters = new YooAssets.EditorSimulateModeParameters();
                 createParameters.LocationServices = new AddressLocationServices();
-                YooAssets.InitializeAsync(createParameters).Completed += _ => { initCompletedCallback?.Invoke(); };
+                YooAssets.InitializeAsync(createParameters).Completed += _ => { etTask.SetResult(); };
             }
 
             // 单机运行模式
@@ -107,7 +109,7 @@ namespace ET
             {
                 var createParameters = new YooAssets.OfflinePlayModeParameters();
                 createParameters.LocationServices = new AddressLocationServices();
-                YooAssets.InitializeAsync(createParameters).Completed += _ => { initCompletedCallback?.Invoke(); };
+                YooAssets.InitializeAsync(createParameters).Completed += _ => { etTask.SetResult(); };
             }
 
             // 联机运行模式
@@ -131,11 +133,14 @@ namespace ET
                 YooAssets.InitializeAsync(createParameters).Completed += _ =>
                 {
                     // 运行补丁流程
-                    PatchUpdater.AddPatchDoneCallback(initCompletedCallback);
-                    PatchUpdater.Run();
+                    PatchUpdater.Run(etTask);
                 };
             }
+
+            return etTask;
         }
+        
+        
 
         #endregion
     }

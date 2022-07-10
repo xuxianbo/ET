@@ -42,6 +42,11 @@ namespace ET
             EventSystem.Update();
         }
         
+        public static void FixedUpdate()
+        {
+            EventSystem.FixedUpdate();
+        }
+        
         public static void LateUpdate()
         {
             EventSystem.LateUpdate();
