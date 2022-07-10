@@ -18,6 +18,13 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.unity.assetgraph": {
+      "version": "1.7.2-preview",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
     "com.unity.editorcoroutines": {
       "version": "1.0.0",
       "depth": 0,

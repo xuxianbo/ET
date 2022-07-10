@@ -1,0 +1,1 @@
+"D:\Study\Unity\UnityEditor\2020.3.33f1c2\Editor\Unity.exe" -batchmode -quit -projectPath "D:\Study\GameProjects\MyET\Unity/" -logFile abbuild.log -executeMethod UnityEngine.AssetGraph.CUIUtility.BuildFromCommandline %1 %2 %3 %4 %5 %6 %7 %8 %9
