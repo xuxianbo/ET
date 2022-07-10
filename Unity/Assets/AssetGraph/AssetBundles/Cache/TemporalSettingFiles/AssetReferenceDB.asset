@@ -12,5 +12,1350 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4bc21567f434b598a3c96ba4946372, type: 3}
   m_Name: AssetReferenceDB
   m_EditorClassIdentifier: 
-  m_assets: []
+  m_assets:
+  - m_assetDatabaseId: b45f3a3a83b48ae47bdda1095de9fc77
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2f3a95d539a36bf4eb98f5e6809d7b9b
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: db89b2c083708ea42a112e914824ee03
+    m_importFrom: Assets/Res/FGUI/BattleMain_atlas0.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3121399ef9320c54587982807f186819
+    m_importFrom: Assets/Res/FGUI/BattleMain_fui.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 706665d0bf038de45aedf25edafec880
+    m_importFrom: Assets/Res/FGUI/HeadBar_atlas0.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8e847a2b972f184409355d04615ccd6a
+    m_importFrom: Assets/Res/FGUI/HeadBar_fui.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 90cc1f09486efb6408d05d89885ea27c
+    m_importFrom: Assets/Res/FGUI/Login_atlas0.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c89e2fcf400670345b476bf0fe84ac4e
+    m_importFrom: Assets/Res/FGUI/Login_fui.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4a4a1e2355817c94ba6403a15b773b01
+    m_importFrom: Assets/Editor/AssetGraph/FGUI_Altas.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a76336cff04cf1a4081a0912aa6d6750
+    m_importFrom: Assets/AssetGraph/Cache/AssetBundleBuildMap.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1336676b36136aa4b8ff14007149b595
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetProcessEventRecord.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 86a0c9f68d1efcd429cdbdde2dca77e4
+    m_importFrom: Assets/AssetBundleBuilderSetting.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9e29dfcff4eb8c541a012f93f8388cbc
+    m_importFrom: Assets/AssetBundleCollectorSetting.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 206c69b0aefa0d446a38e9220e59aae6
+    m_importFrom: Assets/AssetGraph/AssetBundles/SavedSettings/ImportSettings/0d619020-b200-41ae-bcf8-b331958526af/setting.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9ef2053bcf13a254ab3940a767f7b1a5
+    m_importFrom: Assets/Core/Unity.Core.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: eaba7ce2bbb8544748d7136ff679d5a2
+    m_importFrom: Assets/Editor/csc.rsp
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8e43d054b3b6907419c47f3bc95bd29c
+    m_importFrom: Assets/Editor/HuaTuo/Templates/MethodBridge_arm64.cpp
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 141d3806c48a50f4da2b064b6cf3d011
+    m_importFrom: Assets/Editor/HuaTuo/Templates/MethodBridge_x64.cpp
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ff3a619eee1df40f193e25e4033673ff
+    m_importFrom: Assets/Editor/LuBan/Editor/Luban.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 87a4dc14ad8f845cba7b40e32f4b4ee6
+    m_importFrom: Assets/Editor/LuBan/Editor/Luban.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 000a53018e5e7c14aa75273e1f7be8e2
+    m_importFrom: Assets/Editor/Unity.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9ec50bf31d06109448da7642c7beba09
+    m_importFrom: Assets/Editor/YooAsset/AssetBundleCollectorConfig.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dd49a6aee98625147b438c1f3cc12621
+    m_importFrom: Assets/Hotfix/Unity.Hotfix.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 98144a3fda0534746a737325b7935c1d
+    m_importFrom: Assets/HotfixView/Unity.HotfixView.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e0d691ac8c1d0454ba07089ea820e18a
+    m_importFrom: Assets/Init.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8a2f5b990568dc64583685ce952a3370
+    m_importFrom: Assets/link.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 61be00357cd206e42a4338fff3f5d273
+    m_importFrom: Assets/Model/Unity.Model.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1c9695a401c816a4f8fa3550926b6cfc
+    m_importFrom: Assets/ModelView/Unity.ModelView.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6e17cd4649ea94c0cb18f30a60b9b4b4
+    m_importFrom: Assets/Mono/Unity.Mono.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6f1e0f90e50bf4b11b78844232036468
+    m_importFrom: Assets/Plugins/Android/libs/arm64-v8a/libkcp.so
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8e03e31ef66b1d340bfd9de539878633
+    m_importFrom: Assets/Plugins/Android/libs/armeabi-v7a/libkcp.so
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3869fe202d9b7494cbf94cbd4c9ae4c5
+    m_importFrom: Assets/Plugins/Android/libs/x86/libkcp.so
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4c25c05f410a3a447a75c3b0909152ef
+    m_importFrom: Assets/Plugins/Animancer/Animancer.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f930d3de443bbeb41a6e84b706c9a2b1
+    m_importFrom: Assets/Plugins/Animancer/Internal/Animancer.Lite.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c8f836b9e2ef7eb41ad944e21ec66ce4
+    m_importFrom: Assets/Plugins/Animancer/Internal/Core/Animancer.Lite.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4bf92cc1f409c88418660c79554fcb48
+    m_importFrom: Assets/Plugins/Animancer/Internal/Core/Animancer.Lite.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d4e06a71fc03595429cac47cd385c4c1
+    m_importFrom: Assets/Plugins/Animancer/Internal/Editor/Animancer Icon.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: beb58242558438443ab34beb21ce27f7
+    m_importFrom: Assets/Plugins/Animancer/License.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bb32a8dd5372952438a8a8216732c8bf
+    m_importFrom: Assets/Plugins/Animancer/Read Me v6.0.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b2665e54e4314ae429d34fdeafc9f3e0
+    m_importFrom: Assets/Plugins/Animancer/Utilities/FSM/Animancer.FSM.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0aa4c688b8e1a42e7a39d70ab27f8f27
+    m_importFrom: Assets/Plugins/CommandLine.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: de67d260a82e87742b9c3c297379ffb3
+    m_importFrom: Assets/Plugins/ICSharpCode.SharpZipLib.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bf909fab1c14af446b0a854de42289b2
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Android/IngameDebugConsole.aar
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 466e67dabd1db22468246c39eddb6c3f
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Editor/IngameDebugConsole.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 67117722a812a2e46ab8cb8eafbf5f5e
+    m_importFrom: Assets/Plugins/IngameDebugConsole/IngameDebugConsole.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3de88c88fbbb8f944b9210d496af9762
+    m_importFrom: Assets/Plugins/IngameDebugConsole/IngameDebugConsole.Runtime.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4b53767ec4f910e4a9876cbe77d57968
+    m_importFrom: Assets/Plugins/IngameDebugConsole/iOS/IngameDebugConsole.mm
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5e66896448428cf46a1854dbdc014914
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Prefabs/CommandSuggestion.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 391be5df5ef62f345bb76a1051c04da7
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Prefabs/DebugLogItem.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: edf2ac73f7bc3064c96d53009106dc53
+    m_importFrom: Assets/Plugins/IngameDebugConsole/README.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7a9e374666ad6cc47807bb001844f3d8
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/IconClear.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d1546f8db185caf4dafcfa58efa3ba2c
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/IconCollapse.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 66305a19e3614694f868c75a982e6b68
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/IconError.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b3905a73a6672d9449647aaf036e23fc
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/IconHide.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5a97d5afa6254804f81b7ba956296996
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/IconInfo.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a9fd8f6b461461f4a92eafc60921ee78
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/IconResize.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 066c0b04be98cd348abb79add91d42bf
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/IconSnapToBottom.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b902f763d0e47364dae25207b7e47800
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/IconSnapToBottomBg.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 05c7216c78d4dd34ebe2bac9c1e274d7
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/IconWarning.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e04e6c970b950d946a782ea08e5f971d
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/SearchIcon.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 066d3840badf4d24dba1d42b4c59b888
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/SlicedBackground.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 98e8e1cf8dc7dbf469617c2e40c8a944
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/SlicedBackground2.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b3f0d976f6d6802479d6465d11b3aa68
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/SlicedBackground3.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a97ca0b99ece2d94aaaf59653feb45dd
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/Unused/IconErrorHighRes.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 33b115bf5efdfa04d8e2e0b70a6643cd
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/Unused/IconInfoHighRes.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: af17f91b4376d6a41a793c056c02dadc
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/Unused/IconWarningHighRes.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1772665981fac4a9dbb4b27048f61792
+    m_importFrom: Assets/Plugins/iOS/libkcp.a
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 33a2929f9ae7aa946adfa13476e5c5d6
+    m_importFrom: Assets/Plugins/iOS/libRecastDll.a
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 72d4765473bae4943959aeab49daa948
+    m_importFrom: Assets/Plugins/MacOS/libkcp.dylib
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8e7dc169c786249d88671b522f0bc9fe
+    m_importFrom: Assets/Plugins/MacOS/libRecastDll.dylib
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b173b77613ea4b0b98f7b929960e12f0
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Libs/MonKey Commander.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0e3b67ee9a801e44a91fbbc86f99dbe9
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Settings/MonKey Settings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: efedb90cb6bd8cc42ad5c28a83e9159b
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyBanner.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 43c7faca325a69a468cfdd020eae12ae
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-AlertIcon.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 106aa22b3c2523c4faab473fb10ac728
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-ListIcon.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fb4093d544c8a65419851077c0371cd9
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-Logo.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6549db202774073499c90b1ab18cf550
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-MonkeyHead.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8fbdafe4dec3c85479ccefc09139e881
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-MonkeyLogo.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0a79c6df127c3634bb38628c038b26c8
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-MonkeyLogoHappy.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2123a6f7e39187b438d4cd336a3c7582
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-MonkeyLogoSmiling.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 653f1930f360aa04aadea090d513375a
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-MonkeySleeping.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 09964cd0e9d5dd648aca94575617746f
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-MonkeySleepingPro.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ef1acd33df59cd847b4ed73b36790c6d
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-NonParam.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bcb18b65876dddd43b61dd7c85445c54
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-NonParamSelected.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ffeef01be5fb8de40a3599a943ac4156
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-NonParamTip.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8faf0730efe09144c8f04f6d5316188d
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-Param.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9247bb0d9ebc4a24c9bcf8aa3ab50288
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-ParamSelected.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 888070be3eac475488d115dbe49b00a3
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-ParamTip.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a9c883fd83fcfad43966890961d9a6a7
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Style/MonKeyCommander-SearchIcon.PNG
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5817b1da3767aab439039e033ea9e4c6
+    m_importFrom: Assets/Plugins/MonKey Commander/MonKey Core.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 887625947869cd245841897825e9b0fb
+    m_importFrom: Assets/Plugins/MonKey Commander/MonKey Core.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ce83e16c34f7674489f521658194084a
+    m_importFrom: Assets/Plugins/MonKey Commander/MonKey Readme!.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 213f13f6a2367494bbded79885e67e1c
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/NodeGraphProcessor.Examples.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f78111bdbdeaf6644806fc49fcaf1d30
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Resources/Cube.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 850ed96f5a80f42689017b108fcd3295
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Resources/PortViewTypes.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4b8544e277509f945b7a95d04bc07470
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Resources/TestType.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9f9b7374b0b0bf447b7a1be8333f2bbd
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/BasicExample.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0f1decc1c3e014bf7933055fcb120a53
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/ConditionalGraph.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f121bfc73353340e3aa4e44d933152ae
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/CustomOutputExample.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 81499d43bd7dc4abcb46c5fdb4a10fd9
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/CustomPushExample.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a40fbb06726694545a440bad13f6df76
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/CycleTest.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2fc1bcdc62a5745a1bd6f48f20e0390f
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/ExposedGetProperties.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0717f60ed9d9a44a69be47fdb2044b74
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/ExposedPropertiesExample.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a1cb1cb8d39512c47bcdf28650cfcc6d
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/GraphProcessor 1.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5cbbb36aeebd84f0a9c382c539919483
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/GraphProcessor.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a5d608b3c298e4d07b05802356fcf46f
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/Multi-Port.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9bd02e8fc2f584722870fe641f03d8f6
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/MultiPort2.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 928ac805c9b54b54e83ee30e56b2afc1
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/Performances/BigComputeOrder.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f361fca66d80df043b07ae8839122c2f
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/Performances/LotsOfNode.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 32bb368cd5ab3a5489eaff718426b90d
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/Relay test.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0956871d8100bac45b259c69f84ace3f
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/RelayTest.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e639da6f40d0646e5b0d4a0646950e0c
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/Simple.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 65efd394d989bc244a9d105d7cce3bcb
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_AI.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0c5374433746a45458afa11e71d57996
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_E.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 86ff0308b3ab400469a9fa0bf93aa1f0
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_E_Collider.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a2f05799025f3bb4995a3bc9703fe4e5
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_Hemorrhage.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f3c266d603db5c44cb6bf4f5be9abefd
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_Q.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f42a19904ec00de44bd783a1ceb02c08
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_Q_Collider.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6783674ae1e0d1e45987629498af3629
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_W.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6a07e4d912591964da59157ccf6da836
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Graph.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b27b20699d216b64796914c75f07e124
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/LSF_TestGraph.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 482c260eecf1d2e46b83b47e4256652c
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/UnitAttributesDataGraph/AllHeroAttributesData.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0a56a237fbc80b74e817c77687160963
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/Vertical.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 014fc22dc9b8942eaae8dc3c28eb3215
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/Wait-Test.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 34b1e1a7b64e66649b2182f525e90d4b
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Scenes/Conditional Graph.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ed5391e944516114c8b378a19dacec74
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Scenes/EmbeddedGraph.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 99c9720ab356a0642a771bea13969a05
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Scenes/RuntimeGraph.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bf2d3b9de24fce845bf6eca807af29ba
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Blackboard.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a432eb0a70c5c4a37ab50d59671586f8
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/com.alelievr.NodeGraphProcessor.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 00c010af4c266dd4ba19a62f2f4165d7
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/CreateNew.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d2b7cc40ae1f48c4a9735975403fb0f3
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/GotoFile.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f9dd47c1537c5794e885c404a4b2e654
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Icon_Dark.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d497098a35e27364ba23a9a588b84765
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/MiniMap.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4be6c4ce25d64ad4a961723d50e7dc42
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/node.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c1b2aa444c6cc43cfb7733e69843f135
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorElements/PinnedElement.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2769cf0fb82ce4c2691edb49469f5f17
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/BaseGraphView.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7aed4ab0823d4432996ae4614575bc7c
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/BaseNodeView.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9e82320a8ee0b6a4aacdf90809f51e49
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/BaseStackNodeView.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 28f83445e912a4e25aa30a4f0cd22636
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/EdgeView.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1592461e6c084c64a5da575a952112b2
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/ExposedParameterView.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b1de357c1a591f54e973322441879dda
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/GroupView.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d797fcc71504e734eaea6cac7b3c1abe
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/InspectorView.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c20503bfb0f533b43b99bb8fb74a4ed8
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/NodeSettings.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2fdbf4d830a3942a18aafb8fd7a5fa53
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/PinnedElementView.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7f9f1707b6119456581ab1a100d96aaa
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/PortView.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6de9c535e929b1546b5b960bfcb97f51
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/RelayNode.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 539563ded4f36e44b8a09b36f2e220c1
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/2DTexture@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2ca528028c645f340a2628321e0f285c
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Advanced@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 26a1f13eaa9a2c745b7796d4a8314fce
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Array@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e435479f756e86648830e61eae8c2ccc
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Boolean@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d016d99390140c34487e582e89608964
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Color@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e375cf1c312553648a9d74457a2705c9
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Component@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3861b4609ec883c49ac3fe10bf02b9ff
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Condition@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 91503868acd2d3e45b504783e5d2c96b
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Dots_i@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b255485cb01ff804393f09dfdb1487c0
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Dots_item@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 47b744e38d750404db900f23ec348dd1
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Dots_n@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 57201562fa70dfc47821cf2247b9570f
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Double@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1dd575af952455049ac21413a26cc9d7
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/EventFunction@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 674b045e18287e04181ca055dd627a9f
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Favorite@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5875a2269e28ffa4b857f6559cd2e7b0
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/ForEachLoop@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1131026d5a9d5734f8c8a9b0d27c9d22
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Function@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1b6b432a8a307404395bf2178886feb8
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/GameObject@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d605fb7c01adfd94e981b7638b4f09f4
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/GraphicScript@X3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fbe07b9e783904e489db267366c85023
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/GraphScript@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2a7db3bcd35add747943256f562be411
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/IfCondition@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2b0ca373885e9d240afec02e5782ab09
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Integer1@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7d9ef0a27592e9f4299519662bba0c77
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Integer32@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fbe0e91ba919a924baba5ad56a9c2bc4
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Integer64@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fd6bbcea8924927439f9db9a112fe26c
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Keycode@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9ef683acce7299349a373e2999e4ac67
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Macro@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e3e8a400c9dc66e4d8d52c8bba106bc5
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Material@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e9757cfcf1e262d498a8cc47aa766603
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Matrix@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1a089d32b93db2d41b6bf7fb05736e5e
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Quaternion@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c76fe0038b8ede94dab3185c492fcf49
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/RaycastHit@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cd5265f3d87c5794a84c33eaaad7b80f
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/RigidBody@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fe4c4a68a37394b66b53171f5bba57de
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/SettingsIcons.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 90bf761bf25605a42b7b4a9a2e900bc1
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/SetVariable@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ff232caca3a22ba42bfca2722f808eed
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/String@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8a92f692a2c807a4e859d06bb6e0452a
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Text@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 47bf2571d4da3014aa0e64ffe50a2801
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Transform@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a57e7c69145458a42b019698ad9ad040
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Vector2@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bfb0cfd17ccd6c143bb915faa63d0e76
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Vector3@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cdd9b3fc50e25f244ae7e8560080ff22
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/Vector4@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: de84beceec1978d489bdfcb4d9e53859
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Icons/WhileLoop@x3.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a9cbafe2f8c9a0042ad9fcc60c538f05
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/NodeTemplate.cs.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1cff9adb4a6bd6b4aac3a5472648a524
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/NodeViewTemplate.cs.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 156b3a6ab5ab5244996859d8e4319643
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Settings_Flyout_9slice.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d2e0fcf84de9f4848a63a051d67e3742
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/Settings_Flyout_9slice@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e6374cb49cbf8694c8d98c127f27fee5
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/UXML/NodeSettings.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 65e9c86904ec0724a9663bac77c4ef27
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Run.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8ce74150f31477141ba18fd35cbd6adc
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Save.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 806ee5ae2c3070d47b0830b81b139c74
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/untitled (1).png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1de7c5d50e3baa24fa9efe7858412d41
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/untitled.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ca937d03ee5dd4d699091438dc0f3ae6
+    m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Runtime/com.alelievr.NodeGraphProcessor.Runtime.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2e78b594875530041a961fb08491e336
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/AOT/link.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c5738032b3f447049b2ae5da5c94e8ca
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/AOT/Sirenix.Serialization.AOTGenerated.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1bec01331befdea4d9ed9033eabd68f8
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/link.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5651992cdad94894a3af7dc3f1da9170
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5651992cdad94894a3af7dc3f1da086f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.mdb
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5978f8f3dd274e848fbb7a123bde1fb9
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5978f8f3dd274e848fbb7a123bde086f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.mdb
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d2a8f0021d6b47c5923d8972dfb81ef1
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d2a8f0021d6b47c5923d8972dfb8086f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.mdb
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1e0a9643dc0d4b46bf2321f72c4e503e
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1e0a9643dc0d4b46bf2321f72c4e086f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.mdb
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 47a84ebde4ec47fabb620b30cc7a3e5c
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 47a84ebde4ec47fabb620b30cc7a086f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll.mdb
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 47a84ebde4ec47fabb620b30cc7a096f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a4865f1ab4504ed8a368670db22f409c
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a4865f1ab4504ed8a368670db22f086f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll.mdb
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a4865f1ab4504ed8a368670db22f096f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 74721b9f0af448f5ae2e91102a1a5edd
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 74721b9f0af448f5ae2e91102a1a086f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll.mdb
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 74721b9f0af448f5ae2e91102a1a096f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5f3147f7af4c49739579b966c458f5e4
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5f3147f7af4c49739579b966c458086f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll.mdb
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5f3147f7af4c49739579b966c458096f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4873f2a8bdae42baa0406e8a61366ca1
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4873f2a8bdae42baa0406e8a6136086f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll.mdb
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5c65184932ff4fd48a343e2360256baf
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5c65184932ff4fd48a343e236025086f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll.mdb
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5c65184932ff4fd48a343e236025096f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4873f2a8bdae42baa0406e8a6136096f
+    m_importFrom: Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f597f19f656ba56eae4f6a3a7cc528f4
+    m_importFrom: Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 48e08dc33330d11e9d4a1b246c52e4f6
+    m_importFrom: Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ed09910c0094cb27be8f3ca264680da3
+    m_importFrom: Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cc355dd4cf1e6173beaeb22c2858cbe1
+    m_importFrom: Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 90eaa0dc28c1934408dc1c02e13a507f
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Assets/Editor/ConfigData.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a78bffbeb81b48ae9ec71ad7969613e5
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Assets/Editor/Odin Inspector
+      Logo.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 08379ccefc05200459f90a1c0711a340
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Assets/Editor/OdinPathLookup.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: af13b5ba0291fe44e994c6a1837775b5
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/AOTGenerationConfig.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f7578965b29aef54298e8bcd6707ee8d
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/ColorPaletteManager.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 03d63bc67ab2ecb4abacf6655d957e8a
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/GeneralDrawerConfig.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 66f7d06434f53f44a8ace674d407128c
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/ImportSettingsConfig.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ba49fb9c40425224caa98afdd8d13991
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/InspectorConfig.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 95e2f31f5116f3340a97df5530f25975
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/OdinModuleConfig.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6a233444298b3044891e4fdbe2b0e110
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix/GlobalSerializationConfig.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 728df0e3465c1a148b83053a3f31d489
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Entities.data
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5a1693d73a4f6e34d955789129c71e11
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization.data
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7698bf460ae9bd14dbaab96a586bf820
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Mathematics/manifest.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ad968d605628d06499b62cdc30f11cf8
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Mathematics/Sirenix.OdinInspector.Modules.UnityMathematics.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4866e740a22eb1e49b1603b051e4d92c
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Mathematics.data
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4db1229c02f3f629bdd928353859c2b3
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/Sirenix.OdinInspector.CompatibilityLayer.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e048eeec9bdb9d30448017b829deb3f6
+    m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Scripts/Sirenix.OdinInspector.CompatibilityLayer.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e957a9e8b4f4bce4b8a34e504a8c39d7
+    m_importFrom: Assets/Plugins/Sirenix/Readme.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cc0a481e814b82c4ab62f6e0f3cf34ba
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Demos/ExampleUsage/1.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 030069ca949026e4fb35e18a60e3a888
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Demos/SpellIndicators/Materials/CapsuleMaterial.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ab567e467f606514382fd522752b457b
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Demos/SpellIndicators/Materials/PlaneMaterial.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a84867296fb7f7c4aa0ec3de914192b4
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Developers_Guide.pdf
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2ea0d066a0188b34f90b461a8e3282a7
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorBasic.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c376f0326e973764e98d5060a34695f7
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorConeDistort.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b39187c4cdfb387478c66cbadfda518c
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorFillCone.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e3b829a0ccaed0d4083a62e66ddb12d5
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorFillLinear.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2f3a255de5843884e8ccb4c66cb6ddca
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorFillRadial.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b6536f1fef052d94a91b8c550a704d81
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorFillRadialDistort.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: db2caf5abde51a7498704ee94a797058
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorHoloCone.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c0b3ae4855eca4d459ec1da719cc75c3
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorHoloLinear.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b3a90e9cefb770f4290abba235d26e12
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorHoloRadial.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 30a2ab5e990fcb5449fc2334274b7f34
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorLinearDistortColor.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dfa849b2c60f9534ca9f8b03797951b7
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorRadialDistortColor.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e48fcb45bc6f40baae0c459b7453d6ed
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/SSD.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 76b57511f4debaa41a76cc7b4aa6981e
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/StatusIndiactors.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5163e0119c1604a43adbc28ec6fb277e
+    m_importFrom: Assets/Plugins/x86/kcp.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 803f7857fdb47b34fbe04eda49b8aa85
+    m_importFrom: Assets/Plugins/x86_64/kcp.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: de9329d47deb3b34ba85f39aeb8d4da1
+    m_importFrom: Assets/Plugins/x86_64/libkcp.so
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e3bdfcbf9ac795b49b376e78a3b584f5
+    m_importFrom: Assets/Plugins/x86_64/RecastDll.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c45c620637a3e7b4ca2440b800d1665d
+    m_importFrom: Assets/Res/Code/mscorlib.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 964e49ad3f4fe0a4eb1485037f9a41d5
+    m_importFrom: Assets/Res/Code/ProjectS_Hotfix.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9acccb10aedcfd14e9ec238cf61a52c1
+    m_importFrom: Assets/Res/Code/ProjectS_Hotfix.pdb.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 23b09f5610be4e744b5abf3f5c35bb4a
+    m_importFrom: Assets/Res/Code/Sirenix.Serialization.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3ad5e38b27c210c4d9d67f67496cf41f
+    m_importFrom: Assets/Res/Code/System.Core.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0a59ccd83b6418e4382121a1a22e40a6
+    m_importFrom: Assets/Res/Code/System.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a8abff4a5c6889e4381fa7a96637a28f
+    m_importFrom: Assets/Res/Code/Unity.Core.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 35dae95a1a7d6cf409c69fd05ae4f926
+    m_importFrom: Assets/Res/Code/Unity.ThirdParty.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: eabc89905bf8d654cb7526defcfd0b08
+    m_importFrom: Assets/Res/Config/DataConfig/lubansample_tblubansample.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 62fbda52cdd131546b9b4c09af9af993
+    m_importFrom: Assets/Res/Config/DataConfig/skillconfig_tbskillcanvas.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1b8ed1adf8801f3478cd27dacf9718ec
+    m_importFrom: Assets/Res/Config/SkillConfig/Darius_Q.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 26bac230443201146ae743f7a2f3a7ac
+    m_importFrom: Assets/Res/OtherNativeRes/DLLNameListForAOT.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1ba6771e5d8abc6449e944314b0c77df
+    m_importFrom: Assets/Res/Scene/Map1/LightingData.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: eeeb8730251ee1b469b9b070c7efb1cf
+    m_importFrom: Assets/Res/Scene/Map1/Lightmap-0_comp_dir.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ab3027117b6819848bae7b1746588d06
+    m_importFrom: Assets/Res/Scene/Map1/Lightmap-0_comp_light.exr
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 02bc6af578f699249a101b704d189b5a
+    m_importFrom: Assets/Res/Scene/Map1/ReflectionProbe-0.exr
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a5294483f20f40d449699101bb428cda
+    m_importFrom: Assets/Res/Scene/Map1.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4836a445dcf1a044d90ff116828a0704
+    m_importFrom: Assets/Res/Scene/Map1Settings.lighting
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e7b86a45dc154ae40a2f51144799b7bf
+    m_importFrom: Assets/Res/Scene/Map2/LightingData.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 62a71c4ca03e7434ca6ff4bba65ffb45
+    m_importFrom: Assets/Res/Scene/Map2/Lightmap-0_comp_dir.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0d7da8dd669b0d8488a81fcb41451b21
+    m_importFrom: Assets/Res/Scene/Map2/Lightmap-0_comp_light.exr
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1f1694b2c0d992047b551ad028dd5347
+    m_importFrom: Assets/Res/Scene/Map2/ReflectionProbe-0.exr
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 064123f1e5067b249a9fd8967ddbde09
+    m_importFrom: Assets/Res/Scene/Map2.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c78b5af2c87902e4aba73014819bd1a7
+    m_importFrom: Assets/Res/Scene/Map2Settings.lighting
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 313955cd6271f5c4985cba4adc30fc8e
+    m_importFrom: Assets/Res/UniversalRenderPipelineAsset.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 254392dcb48c57643972335fc1a510eb
+    m_importFrom: Assets/Res/UniversalRenderPipelineAsset_Renderer.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9aaa1a53f046012469b8601cc85583c4
+    m_importFrom: Assets/Resources/FGUI/CheckForResUpdate_atlas0.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 030d5387cc9483a42ae4240ea6feb1ea
+    m_importFrom: Assets/Resources/FGUI/CheckForResUpdate_fui.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dbdf4debff6f7774aa934cdcce915a66
+    m_importFrom: Assets/Resources/YooAssetSettings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 969f3053696cf734194a6355d22161ef
+    m_importFrom: Assets/StreamingAssets/YooAssets/1da5195aba4309c5840e71cad54596a8
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d5faf12d3df02ed49aa24c71d286300b
+    m_importFrom: Assets/StreamingAssets/YooAssets/2b5f7980b12afcd0f5ef3d2afdf4b974
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 58a4e52da28071149ae20398956434e9
+    m_importFrom: Assets/StreamingAssets/YooAssets/4d4a7321b95964ceb3582586935f28da
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 311d452ef04e970469d1a9a64be98597
+    m_importFrom: Assets/StreamingAssets/YooAssets/4ecf76c94c41e95e8e73e92c6f2c7867
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c5e5fd50645ef344db2d10de5ae7855e
+    m_importFrom: Assets/StreamingAssets/YooAssets/5de5713b13b3285e1e7d79624bca4d35
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9ab1e99470a1d65479df1057e24a3260
+    m_importFrom: Assets/StreamingAssets/YooAssets/7b729120dc5241cf706d7159ec59d088
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 433323c6a8f538c43bfa05f303bf5879
+    m_importFrom: Assets/StreamingAssets/YooAssets/8c3595b023e1923d842a3b42ea29eebd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4c35c785f7b076e4b937d48333ecc135
+    m_importFrom: Assets/StreamingAssets/YooAssets/8dba91a51222307a244f437f441f5380
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3484a077a7b8d1d4a8ab8c10895f07e0
+    m_importFrom: Assets/StreamingAssets/YooAssets/77f150db5bd61bd3f15942957a44e754
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8ec3025a37f90ce4595dd5df40d507c3
+    m_importFrom: Assets/StreamingAssets/YooAssets/059412438d66b9563f5ef6369cf29574
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cd93361a21e40f14f8391bde00edd90d
+    m_importFrom: Assets/StreamingAssets/YooAssets/a5b24adf5ec55732bbfc521bf2fe3e22
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 193ac07d091bab14a8571b4c84b8b80d
+    m_importFrom: Assets/StreamingAssets/YooAssets/a024cd27a545cb6263eb82c5b3784d25
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bd296c0c58671cb4db533c1f8a471d4c
+    m_importFrom: Assets/StreamingAssets/YooAssets/a79a68eed920c0e943256ecd44d58b3e
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d3b9f704a6428be4296ddba868872a3b
+    m_importFrom: Assets/StreamingAssets/YooAssets/bb283a5386b1b0fa6f495edc090e9c30
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 587beb7635b7e114bb90cbc0bced60d8
+    m_importFrom: Assets/StreamingAssets/YooAssets/ca9117b5c0f3b5177fd2b458c413be8e
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5bbfe34374631994c86ba1d0fe239298
+    m_importFrom: Assets/StreamingAssets/YooAssets/cd214c3e3169643ee76aa8d04af89093
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dbfeb139bd4ade949b7f9b6b9ca97efe
+    m_importFrom: Assets/StreamingAssets/YooAssets/fce34f4c86969cf818bb7004c08171a1
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 87f6ac00cf532124d8ee04d6577e026f
+    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_2.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1ae17aaf7ace5244dadcda19759fe897
+    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_2.hash
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1322b0fe15e83e64c9a3997bb8466a0e
+    m_importFrom: Assets/StreamingAssets/YooAssets/StaticVersion.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cce956f8dcc4d184f8e6221af9d526a5
+    m_importFrom: Assets/TestSeri.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 35336dcb5aad4cf45b523dbf1482a514
+    m_importFrom: Assets/ThirdParty/LuBan/LubanLib/SimpleJSON/Changelog.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4615d3ebbd0d7ae4fa8c107f727bbab4
+    m_importFrom: Assets/ThirdParty/LuBan/LubanLib/SimpleJSON/LICENSE
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0b3e755f11799b5458a47d6b897a9393
+    m_importFrom: Assets/ThirdParty/LuBan/LubanLib/SimpleJSON/README
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3b9128b665b538746a11489aee369030
+    m_importFrom: Assets/ThirdParty/protobuf-net/protobuf-net.csproj
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1aa3e8589868c80499255710874679c0
+    m_importFrom: Assets/ThirdParty/Unity.ThirdParty.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: db680274cf006c548abff57b7e1894b4
+    m_importFrom: Assets/ThirdParty/YooAsset/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 28ba29adb4949284e8c48893218b0d9a
+    m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleBuilder/AssetBundleBuilderWindow.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 355c4ac5cdebddc4c8362bed6f17a79e
+    m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleCollector/AssetBundleCollectorWindow.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 790db12999afd334e8fb6ba70ef0a947
+    m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleDebugger/AssetBundleDebuggerWindow.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 31c6096c1cb29b4469096b7b4942a322
+    m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleDebugger/VisualViewers/DebuggerAssetListViewer.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 932a25ffd05c13c47994d66e9d73bc37
+    m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleDebugger/VisualViewers/DebuggerBundleListViewer.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9052b72c383e95043a0c7e7f369b1ad7
+    m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleReporter/AssetBundleReporterWindow.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5f81bc15a55ee0a49a266f9d71e2372b
+    m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleReporter/VisualViewers/ReporterAssetListViewer.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 56d6dbe0d65ce334a8996beb19612989
+    m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleReporter/VisualViewers/ReporterBundleListViewer.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f8929271050855e42a1ccc6b14993a04
+    m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleReporter/VisualViewers/ReporterSummaryViewer.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4d1926c9df5b052469a1c63448b7609a
+    m_importFrom: Assets/ThirdParty/YooAsset/Editor/YooAsset.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3fec07d458534d34ea14d1b1a0a5100b
+    m_importFrom: Assets/ThirdParty/YooAsset/LICENSE.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 552d612838977104b9bb3c91df401915
+    m_importFrom: Assets/ThirdParty/YooAsset/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cf18b110959e74849b675ca29f77c7dd
+    m_importFrom: Assets/ThirdParty/YooAsset/README.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e34a5702dd353724aa315fb8011f08c3
+    m_importFrom: Assets/ThirdParty/YooAsset/Runtime/YooAsset.asmdef
+    m_exportTo: 
+    m_variantName: 
   m_version: 2

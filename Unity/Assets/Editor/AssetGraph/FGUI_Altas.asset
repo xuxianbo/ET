@@ -45,8 +45,8 @@ MonoBehaviour:
         height: 23
   - m_name: Load From Directory
     m_id: b3e7994d-92b9-4be4-82eb-111346e6f92a
-    m_x: 228
-    m_y: 252
+    m_x: 204
+    m_y: 168
     m_nodeInstance:
       m_className: UnityEngine.AssetGraph.Loader, Unity.AssetGraph.Editor, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -63,6 +63,26 @@ MonoBehaviour:
         y: 33.5
         width: 10
         height: 23
+  - m_name: Load From Directory
+    m_id: 4e4da0af-99e0-4e0a-9dee-5895b9a13c5f
+    m_x: 192
+    m_y: 324
+    m_nodeInstance:
+      m_className: UnityEngine.AssetGraph.Loader, Unity.AssetGraph.Editor, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_instanceData: B64|eyJtX2xvYWRQYXRoIjp7Im1fdmFsdWVzIjpbeyJ0YXJnZXRHcm91cCI6MCwidmFsdWUiOiJSZXNvdXJjZXMvRkdVSSJ9XX0sIm1fbG9hZFBhdGhHdWlkIjp7Im1fdmFsdWVzIjpbeyJ0YXJnZXRHcm91cCI6MCwidmFsdWUiOiJjZjQ0ZWNhNGU0YzZmNmM0NThmYWE4YmI0Y2ZlMjU4YyJ9XX0sIm1faWdub3JlUGF0dGVybnMiOlt7Im1fZmlsZVR5cGVNYXNrIjoxLCJtX2lnbm9yZVBhdHRlcm4iOiIoPzouYnl0ZXMpIn1dLCJtX3Jlc3BvbmRUb0Fzc2V0Q2hhbmdlIjpmYWxzZX0=
+    m_inputPoints: []
+    m_outputPoints:
+    - id: 21e87620-e35a-45e5-88c9-62414003e9d8
+      label: +
+      parentId: 4e4da0af-99e0-4e0a-9dee-5895b9a13c5f
+      isInput: 0
+      buttonRect:
+        serializedVersion: 2
+        x: 157
+        y: 33.5
+        width: 10
+        height: 23
   m_allConnections:
   - m_id: 02cc0bd9-f5fc-47eb-a9e6-036284547122
     m_fromNodeId: b3e7994d-92b9-4be4-82eb-111346e6f92a
@@ -70,8 +90,14 @@ MonoBehaviour:
     m_toNodeId: 0d619020-b200-41ae-bcf8-b331958526af
     m_toNodeConnectionPoiontId: e959df05-ff8f-41e6-9362-73a7d6bd6abe
     m_label: +
-  m_lastModified: 133018971766614224
+  - m_id: be322da7-d0f9-4fa3-86c7-a23f23b9fc2f
+    m_fromNodeId: 4e4da0af-99e0-4e0a-9dee-5895b9a13c5f
+    m_fromNodeConnectionPointId: 21e87620-e35a-45e5-88c9-62414003e9d8
+    m_toNodeId: 0d619020-b200-41ae-bcf8-b331958526af
+    m_toNodeConnectionPoiontId: e959df05-ff8f-41e6-9362-73a7d6bd6abe
+    m_label: +
+  m_lastModified: 133018979740541072
   m_version: 2
   m_graphDescription: 
-  m_useAsAssetPostprocessor: 0
+  m_useAsAssetPostprocessor: 1
   m_graphExecOrderPriority: 0
