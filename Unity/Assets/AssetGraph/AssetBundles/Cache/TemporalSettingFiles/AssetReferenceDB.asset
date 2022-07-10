@@ -13,20 +13,144 @@ MonoBehaviour:
   m_Name: AssetReferenceDB
   m_EditorClassIdentifier: 
   m_assets:
+  - m_assetDatabaseId: 41d04874c5b221e4cbca512bbfe55cc6
+    m_importFrom: Assets/Res/Model/Darius.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 602fb3f14002aed40ad3db29256bc1fa
+    m_importFrom: Assets/Res/Texture
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 11fe7f5fdf6447d46a906801dee6cbf7
+    m_importFrom: Assets/Res/Texture/Darius
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1326a8d8187bef545a1fabd18240f753
+    m_importFrom: Assets/Res/Texture/Darius/Darius_Skin08_TX_CM.dds
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e05aa7d1b443ecc4da911ad903990412
+    m_importFrom: Assets/Res/Texture/Darius/Darius_Skin08_dds.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 16edb31504d7a3e49a7becff61e766ec
+    m_importFrom: Assets/Res/Animation
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 605da1ed16e283c4081ad5639141d3d2
+    m_importFrom: Assets/Res/Animation/Darius
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 20d5afd4702a242449395a60e33b3bb2
+    m_importFrom: Assets/Res/Animation/Darius/Darius_DownOnly.mask
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cf2f7dc3cccc11549af92c6960c6c78f
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_spell1_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3a8dfc560c19b49488acdf0647df26ad
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_channel_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4d7ef5f13880fe34a8a4b4e153333b72
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_channelwindup_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a77874e5412442f4b854988b5bd6550e
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_recall_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 59e06cbe9848ca34c83bb433bd8cc356
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_taunt_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 90467582e4daa004c95831b9bd6f952e
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_run_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a5e09ab385f83ba44a8fc5c5137ba29e
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_spell2_run_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 27f7a5eec09a99b41b5729bf4e822aba
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_death_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3194c6b6bc1659e45b4069e83732764f
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_dance_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ed2d11f864ce3f848b9fb33f9f7b7e0c
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_spell3_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 26154bd7c9b82684e81caedf8bc26bcf
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_attack1_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6a5c6dc88632b8a4eb758fdb7009756e
+    m_importFrom: Assets/Res/Animation/Darius/Darius_UpOnly.mask
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 19c9c480e869e9e4bbfb8afb797d33fd
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_laugh_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2bd44614acf32d748af615c1942be3b7
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_attack1_model.001.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: edbdf0ec1d84819488ee89a07c156534
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_idle1_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d39b354dc753cdb47af163cf9e70c144
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_spell2_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 96173488b3bb2334889bb60bdf9d501c
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_crit_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 871e2c4d08a8d8043b149e8069d41d9a
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_spell2_idle_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f6b2f191795d9844d91a828ec64869de
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_idle2_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3d4afa26870a68446a27b9c2b88714d5
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_spell4_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b294cec32f1672c45865a0ddf4455f61
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_attack2_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 56fac66489c0a214880da0c62abe2fb6
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_spell1_in_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 029804e019035294b92cb8bc28830f96
+    m_importFrom: Assets/Res/Animation/Darius/model_darius_joke_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 221aae555ae663048b4fd1ad496cafdd
+    m_importFrom: Assets/Res/Unit/Darius.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 35ce3f8ca2662a349a91ad46d2fb92e9
+    m_importFrom: Assets/Editor/ReferenceCollectorEditor/ReferenceCollectorEditor.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 502d8cafd6a5a0447ab1db9a24cdcb10
+    m_importFrom: Assets/Mono/MonoBehaviour/ReferenceCollector.cs
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 2f3a95d539a36bf4eb98f5e6809d7b9b
     m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 5af09499d99f87d478592faacc33cf41
-    m_importFrom: Assets/Resources/Fonts/SourceHanSansCN-Regular.otf
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: e78efb7f0c1c323459e5d3cf8783226c
-    m_importFrom: Assets/Resources/Fonts/SourceHanSansCN-Regular.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 9e29dfcff4eb8c541a012f93f8388cbc
-    m_importFrom: Assets/AssetBundleCollectorSetting.asset
     m_exportTo: 
     m_variantName: 
   m_version: 2
