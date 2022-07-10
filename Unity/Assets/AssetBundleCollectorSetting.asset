@@ -111,3 +111,14 @@ MonoBehaviour:
       PackRuleName: PackDirectory
       FilterRuleName: CollectAll
       AssetTags: 
+  - GroupName: Material
+    GroupDesc: "\u6750\u8D28\u7403"
+    AssetTags: 
+    ActiveRuleName: EnableGroup
+    Collectors:
+    - CollectPath: Assets/Res/Material
+      CollectorType: 0
+      AddressRuleName: AddressByFileName
+      PackRuleName: PackDirectory
+      FilterRuleName: CollectAll
+      AssetTags: 

@@ -6,6 +6,7 @@ using System.IO;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 namespace YooAsset.Editor
 {
@@ -49,6 +50,8 @@ namespace YooAsset.Editor
 				File.WriteAllText(savePath, jsonContents);
 			}
 
+			EditorUtility.SetDirty(svc);
+			
 			AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
 		}
 
