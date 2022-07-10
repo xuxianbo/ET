@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4bc21567f434b598a3c96ba4946372, type: 3}
   m_Name: AssetReferenceDB
   m_EditorClassIdentifier: 
-  m_assets: []
+  m_assets:
+  - m_assetDatabaseId: 2f3a95d539a36bf4eb98f5e6809d7b9b
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5af09499d99f87d478592faacc33cf41
+    m_importFrom: Assets/Resources/Fonts/SourceHanSansCN-Regular.otf
+    m_exportTo: 
+    m_variantName: 
   m_version: 2

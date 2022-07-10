@@ -100,9 +100,3 @@ MonoBehaviour:
       PackRuleName: PackDirectory
       FilterRuleName: CollectAll
       AssetTags: 
-    - CollectPath: Assets/Res/TMPFont
-      CollectorType: 0
-      AddressRuleName: AddressByCollectorAndFileName
-      PackRuleName: PackDirectory
-      FilterRuleName: CollectAll
-      AssetTags: 
