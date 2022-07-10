@@ -12,8 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9a5f17c54584a67b7fe58665965f15, type: 3}
   m_Name: AssetProcessEventRecord
   m_EditorClassIdentifier: 
-  m_events: []
+  m_events:
+  - m_kind: 0
+    m_timestampUtc: 133018979935761937
+    m_assetName: CheckForResUpdate_atlas0.png
+    m_assetGuid: 9aaa1a53f046012469b8601cc85583c4
+    m_graphGuid: 4a4a1e2355817c94ba6403a15b773b01
+    m_nodeId: 0d619020-b200-41ae-bcf8-b331958526af
+    m_nodeName: Overwrite Import Settings
+    m_description: 
+    m_howToFix: 
+  - m_kind: 0
+    m_timestampUtc: 133019053410186290
+    m_assetName: BattleMain_atlas0.png
+    m_assetGuid: db89b2c083708ea42a112e914824ee03
+    m_graphGuid: 4a4a1e2355817c94ba6403a15b773b01
+    m_nodeId: 0d619020-b200-41ae-bcf8-b331958526af
+    m_nodeName: Overwrite Import Settings
+    m_description: 
+    m_howToFix: 
+  - m_kind: 0
+    m_timestampUtc: 133019053425927764
+    m_assetName: HeadBar_atlas0.png
+    m_assetGuid: 706665d0bf038de45aedf25edafec880
+    m_graphGuid: 4a4a1e2355817c94ba6403a15b773b01
+    m_nodeId: 0d619020-b200-41ae-bcf8-b331958526af
+    m_nodeName: Overwrite Import Settings
+    m_description: 
+    m_howToFix: 
+  - m_kind: 0
+    m_timestampUtc: 133019053426903697
+    m_assetName: CheckForResUpdate_atlas0.png
+    m_assetGuid: 9aaa1a53f046012469b8601cc85583c4
+    m_graphGuid: 4a4a1e2355817c94ba6403a15b773b01
+    m_nodeId: 0d619020-b200-41ae-bcf8-b331958526af
+    m_nodeName: Overwrite Import Settings
+    m_description: 
+    m_howToFix: 
   m_errorEventCount: 0
-  m_infoEventCount: 0
+  m_infoEventCount: 4
   m_version: 1
   m_processStartIndex: 0

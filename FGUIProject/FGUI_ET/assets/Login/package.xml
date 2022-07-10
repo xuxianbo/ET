@@ -6,12 +6,10 @@
     <image id="pdjl7" name="UI_LoginBtn_ONpressed.png" path="/"/>
     <image id="pdjl8" name="UI_LoginInput.PNG" path="/"/>
     <component id="pdjl9" name="Login.xml" path="/" exported="true"/>
-    <component id="pdjla" name="Btn_Registe.xml" path="/"/>
-    <component id="pdjlb" name="Btn_Login.xml" path="/"/>
+    <component id="pdjlb" name="Btn_StartGame.xml" path="/"/>
     <image id="pdjlc" name="banzi_da.png" path="/"/>
-    <component id="10qrsd" name="Btn_ToTestScene.xml" path="/"/>
     <image id="r0zzse" name="VersionInfo_Icon.png" path="/"/>
-    <component id="r0zzsf" name="Btn_VersionInfo.xml" path="/"/>
+    <component id="brolsg" name="Btn_ContinueGame.xml" path="/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

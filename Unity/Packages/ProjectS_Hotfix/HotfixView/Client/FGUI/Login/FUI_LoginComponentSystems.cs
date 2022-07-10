@@ -14,20 +14,14 @@ namespace ET
         {
             string recordAccount = PlayerPrefs.GetString("LoginAccount");
             string recordPassWord = PlayerPrefs.GetString("LoginPassWord");
-            if (!string.IsNullOrEmpty(recordAccount) && !string.IsNullOrEmpty(recordPassWord))
-            {
-                fuiLogin.m_accountText.text = recordAccount;
-                fuiLogin.m_passwordText.text = recordPassWord;
-            }
+
             
             fuiLogin.m_Btn_Login.self.onClick.Add(() =>
             {
                 FUI_LoginUtilities.OnLogin(self);
             });
-            fuiLogin.m_Btn_Registe.self.onClick.Add(() => { FUI_LoginUtilities.OnRegister(self); });
-            
+
             self.FuiUIPanelLogin = fuiLogin;
-            self.FuiUIPanelLogin.m_Tex_LoginInfo.visible = false;
             self.FuiUIPanelLogin.m_Tween_LoginPanelFlyIn.Play();
         }
     }

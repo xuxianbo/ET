@@ -16,9 +16,6 @@ namespace ET
         public static void OnLogin(FUI_LoginComponent self)
         {
             TestHotfixSkillDes().Coroutine();
-            FUI_Login fuiLogin = self.FuiUIPanelLogin;
-            LoginHelper.Login(self.ClientScene(), fuiLogin.m_accountText.text,
-                fuiLogin.m_passwordText.text).Coroutine();
         }
 
         private static async ETTask TestHotfixSkillDes()
