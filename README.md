@@ -8,7 +8,13 @@ ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba，并提供常用的编辑�
  - 服务端：.Net 6.0
  - 客户端：.Net Framework 4.7.2
  - IDE：Rider 2022.1.2
- - 必要：[Odin插件](https://odininspector.com/) 请自行购买导入
+ - 必要：项目使用了多个第三方插件，请自行购买导入：
+   - /Unity/Assets/Plugins/Sirenix
+   - /Unity/Assets/Plugins/AstarPathfindingProject
+   - /Unity/Assets/Plugins/Animancer
+   - /Unity/Assets/Plugins/MonKey Commander
+   - /Unity/Assets/Plugins/Werewolf
+   - /Unity/Assets/Plugins/ShaderControl
 
 # TODO && Features
 
