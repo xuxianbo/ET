@@ -2,7 +2,6 @@
 <packageDescription id="9ta7gv7k">
   <resources>
     <component id="rfuv0" name="Lobby.xml" path="/" exported="true"/>
-    <image id="rfuv4" name="LobbyBck.png" path="/Res/"/>
     <image id="rfuv6" name="Bottom.PNG" path="/Res/"/>
     <image id="rfuv9" name="activity.PNG" path="/Res/"/>
     <image id="rfuva" name="BottomNormal.PNG" path="/Res/"/>

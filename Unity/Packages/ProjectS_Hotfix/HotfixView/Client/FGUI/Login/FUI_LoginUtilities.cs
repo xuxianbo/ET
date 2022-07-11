@@ -16,6 +16,8 @@ namespace ET
         public static void OnLogin(FUI_LoginComponent self)
         {
             TestHotfixSkillDes().Coroutine();
+            
+            Game.EventSystem.Publish(self.DomainScene(), new EventType.LoadingBegin());
         }
 
         private static async ETTask TestHotfixSkillDes()

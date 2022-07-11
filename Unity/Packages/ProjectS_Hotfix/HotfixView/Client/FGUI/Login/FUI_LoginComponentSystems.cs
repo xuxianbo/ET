@@ -14,7 +14,6 @@ namespace ET
         {
             string recordAccount = PlayerPrefs.GetString("LoginAccount");
             string recordPassWord = PlayerPrefs.GetString("LoginPassWord");
-
             
             fuiLogin.m_Btn_Login.self.onClick.Add(() =>
             {
