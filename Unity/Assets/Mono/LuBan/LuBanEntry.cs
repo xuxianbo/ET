@@ -5,6 +5,7 @@
 // --------------------------
 
 using Bright.Serialization;
+using Cysharp.Threading.Tasks;
 using SimpleJSON;
 using UnityEngine;
 using YooAsset;
@@ -13,13 +14,13 @@ namespace ET
 {
     public static class LuBanEntry
     {
-        public static async ETTask<JSONNode> LoadJsonBuf(string fileName)
+        public static async UniTask<JSONNode> LoadJsonBuf(string fileName)
         {
             AssetOperationHandle result = await YooAssetProxy.LoadAssetAsync<TextAsset>($"Config_{fileName}");
             return JSON.Parse(result.GetAssetObject<TextAsset>().text);
         }
 
-        public static async ETTask<ByteBuf> LoadBytesBuf(string fileName)
+        public static async UniTask<ByteBuf> LoadBytesBuf(string fileName)
         {
             AssetOperationHandle result = await YooAssetProxy.LoadAssetAsync<TextAsset>($"Config_{fileName}");
             return new ByteBuf(result.GetAssetObject<TextAsset>().bytes);

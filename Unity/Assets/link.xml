@@ -1,6 +1,7 @@
 <linker>
     <assembly fullname="Unity.Mono" preserve="all"/>
     <assembly fullname="Unity.Core" preserve="all"/>
+    <assembly fullname="UniTask" preserve="all"/>
     <assembly fullname="Unity.ThirdParty" preserve="all"/>
     <assembly fullname="FairyGUI.Runtime" preserve="all"/>
     <assembly fullname="UnityEngine" preserve="all"/>

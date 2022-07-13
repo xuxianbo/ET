@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace ET.Client
 {
     [Event(SceneType.Current)]
     public class AfterUnitCreate_CreateUnitView: AEvent<Unit, EventType.AfterUnitCreate>
     {
-        protected override async ETTask Run(Unit unit, EventType.AfterUnitCreate args)
+        protected override async UniTask Run(Unit unit, EventType.AfterUnitCreate args)
         {
             // Unit View层
             // 这里可以改成异步加载，demo就不搞了

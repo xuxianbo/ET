@@ -49,7 +49,25 @@ MonoBehaviour:
     m_nodeName: Overwrite Import Settings
     m_description: 
     m_howToFix: 
+  - m_kind: 0
+    m_timestampUtc: 133020290244294266
+    m_assetName: Loading_atlas0.png
+    m_assetGuid: b9491f479eb089f48aa234f12b31f9a7
+    m_graphGuid: 4a4a1e2355817c94ba6403a15b773b01
+    m_nodeId: 0d619020-b200-41ae-bcf8-b331958526af
+    m_nodeName: Overwrite Import Settings
+    m_description: 
+    m_howToFix: 
+  - m_kind: 0
+    m_timestampUtc: 133020290260284773
+    m_assetName: Shared_atlas0.png
+    m_assetGuid: 45f917a806d3c424f90df17216d52b68
+    m_graphGuid: 4a4a1e2355817c94ba6403a15b773b01
+    m_nodeId: 0d619020-b200-41ae-bcf8-b331958526af
+    m_nodeName: Overwrite Import Settings
+    m_description: 
+    m_howToFix: 
   m_errorEventCount: 0
-  m_infoEventCount: 4
+  m_infoEventCount: 6
   m_version: 1
   m_processStartIndex: 0

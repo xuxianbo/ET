@@ -1,4 +1,5 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 
 namespace ET
 {
@@ -14,9 +15,9 @@ namespace ET
 			return typeof (A);
 		}
 
-		protected abstract ETTask Run(E entity, A a);
+		protected abstract UniTask Run(E entity, A a);
 
-		public async ETTask Handle(E entity, A a)
+		public async UniTask Handle(E entity, A a)
 		{
 			try
 			{

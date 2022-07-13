@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using YooAsset;
 
@@ -28,7 +29,7 @@ namespace ET
         {
         }
 
-        public async ETTask Start()
+        public async UniTask Start()
         {
             switch (this.CodeMode)
             {

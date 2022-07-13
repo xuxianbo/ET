@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using YooAsset;
 
@@ -12,7 +13,7 @@ namespace ET
         public static T GetAsset<T>(this AssetOperationHandle assetOperationHandle)
             where T : UnityEngine.Object
         {
-            return assetOperationHandle.AssetObject as T;
+            return assetOperationHandle.GetAssetObject<T>();
         }
 
         public static T GetSubAsset<T>(this SubAssetsOperationHandle assetOperationHandle, string subAssetName)
@@ -35,38 +36,34 @@ namespace ET
 
         #region API
 
-        public static ETTask<AssetOperationHandle> LoadAssetAsync<T>(string path) where T : UnityEngine.Object
+        public static async UniTask<AssetOperationHandle> LoadAssetAsync<T>(string path) where T : UnityEngine.Object
         {
-            ETTask<AssetOperationHandle> result = ETTask<AssetOperationHandle>.Create();
             AssetOperationHandle assetOperationHandle = YooAssets.LoadAssetAsync<T>(path);
-            assetOperationHandle.Completed += handle => { result.SetResult(handle); };
-            return result;
+            await assetOperationHandle.ToUniTask();
+            return assetOperationHandle;
         }
 
-        public static ETTask<SubAssetsOperationHandle> LoadSubAssetsAsync<T>(string mainAssetPath, string subAssetName)
+        public static async UniTask<SubAssetsOperationHandle> LoadSubAssetsAsync<T>(string mainAssetPath, string subAssetName)
             where T : UnityEngine.Object
         {
-            ETTask<SubAssetsOperationHandle> result = ETTask<SubAssetsOperationHandle>.Create();
             SubAssetsOperationHandle subAssetsOperationHandle = YooAssets.LoadSubAssetsAsync<T>(mainAssetPath);
-            subAssetsOperationHandle.Completed += handle => { result.SetResult(handle); };
-            return result;
+            await subAssetsOperationHandle.ToUniTask();
+            return subAssetsOperationHandle;
         }
 
-        public static ETTask<SceneOperationHandle> LoadSceneAsync(string scenePath,
+        public static async UniTask<SceneOperationHandle> LoadSceneAsync(string scenePath,
             LoadSceneMode loadSceneMode = LoadSceneMode.Single)
         {
-            ETTask<SceneOperationHandle> result = ETTask<SceneOperationHandle>.Create();
             SceneOperationHandle sceneOperationHandle = YooAssets.LoadSceneAsync(scenePath, loadSceneMode, true);
-            sceneOperationHandle.Completed += handle => { result.SetResult(sceneOperationHandle); };
-            return result;
+            await sceneOperationHandle.ToUniTask();
+            return sceneOperationHandle;
         }
 
-        public static ETTask<RawFileOperation> GetRawFileAsync(string path)
+        public static async UniTask<RawFileOperation> GetRawFileAsync(string path)
         {
-            ETTask<RawFileOperation> result = ETTask<RawFileOperation>.Create();
             RawFileOperation rawFileOperation = YooAssets.GetRawFileAsync(path);
-            rawFileOperation.Completed += handle => { result.SetResult(rawFileOperation); };
-            return result;
+            await rawFileOperation.ToUniTask();
+            return rawFileOperation;
         }
 
         public static void UnloadUnusedAssets()
@@ -92,16 +89,16 @@ namespace ET
             PatchUpdater.InitCallback(onStateUpdate, onDownLoadProgressUpdate);
         }
 
-        public static ETTask StartYooAssetEngine(YooAssets.EPlayMode playMode)
+        public static UniTask StartYooAssetEngine(YooAssets.EPlayMode playMode)
         {
-            ETTask etTask = ETTask.Create();
-            
+            UniTaskCompletionSource uniTaskCompletionSource = new UniTaskCompletionSource();
+
             // 编辑器下的模拟模式
             if (playMode == YooAssets.EPlayMode.EditorSimulateMode)
             {
                 var createParameters = new YooAssets.EditorSimulateModeParameters();
                 createParameters.LocationServices = new AddressLocationServices();
-                YooAssets.InitializeAsync(createParameters).Completed += _ => { etTask.SetResult(); };
+                YooAssets.InitializeAsync(createParameters).Completed += _ => { uniTaskCompletionSource.TrySetResult(); };
             }
 
             // 单机运行模式
@@ -109,7 +106,7 @@ namespace ET
             {
                 var createParameters = new YooAssets.OfflinePlayModeParameters();
                 createParameters.LocationServices = new AddressLocationServices();
-                YooAssets.InitializeAsync(createParameters).Completed += _ => { etTask.SetResult(); };
+                YooAssets.InitializeAsync(createParameters).Completed += _ => { uniTaskCompletionSource.TrySetResult(); };
             }
 
             // 联机运行模式
@@ -133,11 +130,11 @@ namespace ET
                 YooAssets.InitializeAsync(createParameters).Completed += _ =>
                 {
                     // 运行补丁流程
-                    PatchUpdater.Run(etTask);
+                    PatchUpdater.Run(uniTaskCompletionSource);
                 };
             }
 
-            return etTask;
+            return uniTaskCompletionSource.Task;
         }
         
         

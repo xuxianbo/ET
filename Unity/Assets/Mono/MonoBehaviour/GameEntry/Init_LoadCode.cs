@@ -12,6 +12,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Cysharp.Threading.Tasks;
 using Huatuo;
 
 namespace ET
@@ -19,13 +20,13 @@ namespace ET
     public partial class Init
     {
         // 加载热更层代码
-        private async ETTask LoadCode()
+        private async UniTask LoadCode()
         {
             byte[] config = (await YooAssetProxy.GetRawFileAsync("Config_DLLNameListForAOT")).LoadFileData();
             DLLNameListForAOT dllNameListForAOT =
                 SerializationUtility.DeserializeValue<DLLNameListForAOT>(config, DataFormat.JSON);
 
-            List<ETTask<RawFileOperation>> tasks = new List<ETTask<RawFileOperation>>();
+            List<UniTask<RawFileOperation>> tasks = new List<UniTask<RawFileOperation>>();
 
             foreach (var aotDll in dllNameListForAOT.DLLNameList_ForABLoad)
             {
@@ -33,12 +34,12 @@ namespace ET
                 tasks.Add(YooAssetProxy.GetRawFileAsync(aotDll));
             }
 
-            await ETTaskHelper.WaitAll(tasks);
+            RawFileOperation[] rawFileOperations = await UniTask.WhenAll(tasks);
 
-            foreach (var task in tasks)
+            foreach (var task in rawFileOperations)
             {
                 Debug.Log("准备加载AOT补充元数据");
-                LoadMetadataForAOTAssembly(task.GetResult().GetRawBytes());
+                LoadMetadataForAOTAssembly(task.GetRawBytes());
             }
 
             await CodeLoader.Instance.Start();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using FairyGUI;
 using UnityEngine;
 using YooAsset;
@@ -9,29 +10,17 @@ namespace ET
     /// <summary>
     /// 管理所有UI Package
     /// </summary>
-    public class FUIPackageManagerComponent : Entity, IAwake
+    public class FUIPackageManagerComponent : Entity, IAwake, IDestroy
     {
-        private Dictionary<string, List<AssetOperationHandle>> s_Packages =
-            new Dictionary<string, List<AssetOperationHandle>>();
-
-        public async ETTask AddPackageAsync(string type)
+        public YooAssetComponent UsedYooAssetComponent;
+        
+        public async UniTask AddPackageAsync(string type)
         {
-            if (s_Packages.ContainsKey(type))
-            {
-                return;
-            }
-
-            s_Packages[type] = new List<AssetOperationHandle>();
-
             // 先加载UI描述文件
-            AssetOperationHandle defineAssetOperationHandle =
-                await YooAssetProxy.LoadAssetAsync<TextAsset>($"FGUI_{type}_fui");
-            TextAsset desTextAsset = defineAssetOperationHandle.GetAssetObject<TextAsset>();
+            TextAsset desTextAsset = await UsedYooAssetComponent.LoadAssetAsync<TextAsset>($"FGUI_{type}_fui");
 
             // 再加载UI图集文件
             UIPackage.AddPackage(desTextAsset.bytes, type, LoadPackageInternalAsync);
-
-            s_Packages[type].Add(defineAssetOperationHandle);
         }
 
         /// <summary>
@@ -43,35 +32,7 @@ namespace ET
         /// <param name="item"></param>
         private async void LoadPackageInternalAsync(string name, string extension, System.Type type, PackageItem item)
         {
-            AssetOperationHandle altasAssetOperationHandle =
-                await YooAssetProxy.LoadAssetAsync<Texture>($"FGUI_{name}");
-            item.owner.SetItemAsset(item, altasAssetOperationHandle.GetAssetObject<Texture>(), DestroyMethod.Unload);
-            
-            s_Packages[name.Replace($"_{item.id}", String.Empty)].Add(altasAssetOperationHandle);
-        }
-
-        /// <summary>
-        /// 移除一个包，并清理其asset
-        /// </summary>
-        /// <param name="type"></param>
-        public void RemovePackage(string type)
-        {
-            if (s_Packages.TryGetValue(type, out var operationList))
-            {
-                var p = UIPackage.GetByName(type);
-                
-                if (p != null)
-                {
-                    UIPackage.RemovePackage(p.name);
-
-                    foreach (var operationHandle in operationList)
-                    {
-                        operationHandle.Release();
-                    }
-                }
-
-                s_Packages.Remove(type);
-            }
+            item.owner.SetItemAsset(item, await UsedYooAssetComponent.LoadAssetAsync<Texture>($"FGUI_{name}"), DestroyMethod.Unload);
         }
     }
 }

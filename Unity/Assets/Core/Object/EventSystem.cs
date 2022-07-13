@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using Cysharp.Threading.Tasks;
 
 namespace ET
 {
@@ -706,7 +707,7 @@ namespace ET
                 return;
             }
 
-            using (ListComponent<ETTask> list = ListComponent<ETTask>.Create())
+            using (ListComponent<UniTask> list = ListComponent<UniTask>.Create())
             {
                 foreach (EventInfo eventInfo in iEvents)
                 {
@@ -726,7 +727,7 @@ namespace ET
 
                 try
                 {
-                    await ETTaskHelper.WaitAll(list);
+                    await UniTask.WhenAll(list);
                 }
                 catch (Exception e)
                 {
@@ -758,7 +759,7 @@ namespace ET
                     continue;
                 }
                 
-                aEvent.Handle(entity, a).Coroutine();
+                aEvent.Handle(entity, a).ToCoroutine();
             }
         }
         

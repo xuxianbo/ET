@@ -1,0 +1,23 @@
+﻿// --------------------------
+// 作者：烟雨迷离半世殇
+// 邮箱：1778139321@qq.com
+// 日期：2022年7月13日, 星期三
+// --------------------------
+
+using Cysharp.Threading.Tasks;
+
+namespace ET
+{
+    [Event(SceneType.SingleGame)]
+    public class AfterCreateSingleGameScene_AddComponent : AEvent<Scene, EventType.AfterCreateSingleGameScene>
+    {
+        protected override async UniTask Run(Scene scene, EventType.AfterCreateSingleGameScene args)
+        {
+            scene.AddComponent<YooAssetComponent>();
+            scene.AddComponent<FUIPackageManagerComponent>();
+            scene.AddComponent<FUIManagerComponent>();
+
+            await ETTask.CompletedTask;
+        }
+    }
+}

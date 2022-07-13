@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using YooAsset;
 
@@ -7,7 +8,7 @@ namespace ET.Client
     [Event(SceneType.Process)]
     public class LoadConfig : AEvent<Scene, EventType.LoadConfig>
     {
-        protected override async ETTask Run(Scene entity, EventType.LoadConfig a)
+        protected override async UniTask Run(Scene entity, EventType.LoadConfig a)
         {
             ConfigComponent configComponent = Game.Scene.GetComponent<ConfigComponent>();
 

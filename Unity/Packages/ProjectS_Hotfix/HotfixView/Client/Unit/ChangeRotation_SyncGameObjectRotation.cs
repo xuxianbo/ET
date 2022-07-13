@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace ET.Client
@@ -5,7 +6,7 @@ namespace ET.Client
     [Event(SceneType.Current)]
     public class ChangeRotation_SyncGameObjectRotation: AEvent<Unit, EventType.ChangeRotation>
     {
-        protected override async ETTask Run(Unit unit, EventType.ChangeRotation args)
+        protected override async UniTask Run(Unit unit, EventType.ChangeRotation args)
         {
             GameObjectComponent gameObjectComponent = unit.GetComponent<GameObjectComponent>();
             if (gameObjectComponent == null)

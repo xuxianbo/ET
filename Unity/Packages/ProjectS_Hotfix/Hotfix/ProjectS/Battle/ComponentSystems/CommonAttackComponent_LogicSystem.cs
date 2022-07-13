@@ -5,6 +5,7 @@
 //------------------------------------------------------------
 
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using ET.EventType;
 using NPBehave;
 using UnityEngine;
@@ -50,7 +51,7 @@ namespace ET
 
     public class CancelAttackFromFsm_Event : AEvent<Unit,EventType.CancelAttackFromFSM>
     {
-        protected override async ETTask Run(Unit unit, CancelAttackFromFSM a)
+        protected override async UniTask Run(Unit unit, CancelAttackFromFSM a)
         {
             if (a.ResetAttackTarget)
             {

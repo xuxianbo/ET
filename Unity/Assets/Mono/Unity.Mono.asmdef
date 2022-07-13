@@ -6,7 +6,9 @@
         "Unity.Core",
         "YooAsset",
         "FairyGUI.Runtime",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "UniTask",
+        "UniTask.YooAsset"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

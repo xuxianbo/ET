@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using YooAsset;
 using ET;
@@ -23,7 +24,7 @@ public static class PatchUpdater
 
     public static Action<PatchEventMessageDefine.PatchStatesChange> OnStateUpdate;
     public static Action<PatchEventMessageDefine.DownloadProgressUpdate> OnDownLoadProgressUpdate;
-    private static ETTask s_ETTask;
+    private static UniTaskCompletionSource s_UniTaskCompletionSource;
 
     public static void InitCallback(Action<PatchEventMessageDefine.PatchStatesChange> onStateUpdate,
         Action<PatchEventMessageDefine.DownloadProgressUpdate> onDownLoadProgressUpdate)
@@ -35,9 +36,9 @@ public static class PatchUpdater
     /// <summary>
     /// 开启初始化流程
     /// </summary>
-    public static void Run(ETTask etTask)
+    public static void Run(UniTaskCompletionSource uniTaskCompletionSource)
     {
-        s_ETTask = etTask;
+        s_UniTaskCompletionSource = uniTaskCompletionSource;
         if (_isRun == false)
         {
             _isRun = true;
@@ -109,7 +110,7 @@ public static class PatchUpdater
                 Log.Info("Downloading patch files.");
             else if (patchStatesChange.CurrentStates == EPatchStates.PatchDone)
             {
-                s_ETTask?.SetResult();
+                s_UniTaskCompletionSource?.TrySetResult();
                 Log.Info("PatchDone. ");
             }
             else

@@ -6,6 +6,7 @@ namespace ET.Client
     public class ClientSceneManagerComponent: Entity, IAwake, IDestroy
     {
         public static ClientSceneManagerComponent Instance;
+        public int CurrentSingleGameSceneZone;
         public Dictionary<int, Scene> ClientScenes = new Dictionary<int, Scene>();
     }
 }

@@ -6,9 +6,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using Bright.Serialization;
-
-
-
+using Cysharp.Threading.Tasks;
 using ET;
 
 namespace ET.cfg
@@ -19,7 +17,7 @@ public partial class Tables
     public LuBanSample.TbLuBanSample TbLuBanSample {get; private set; }
     public SkillConfig.TbSkillCanvas TbSkillCanvas {get; private set; }
 
-    public async ETTask LoadAsync(System.Func<string, ETTask<ByteBuf>> loader)
+    public async UniTask LoadAsync(System.Func<string, UniTask<ByteBuf>> loader)
     {
         var tables = new System.Collections.Generic.Dictionary<string, object>();
         TbLuBanSample = new LuBanSample.TbLuBanSample(await loader("lubansample_tblubansample")); 

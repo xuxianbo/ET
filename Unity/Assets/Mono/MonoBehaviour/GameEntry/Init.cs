@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
+using Cysharp.Threading.Tasks;
 using Huatuo;
 
 #if UNITY_EDITOR
@@ -65,10 +66,10 @@ namespace ET
                 FUI_CheckForResUpdateComponent.Init();
             }
 
-            LoadAssetsAndHotfix().Coroutine();
+            LoadAssetsAndHotfix().Forget();
         }
 
-        private async ETTask LoadAssetsAndHotfix()
+        private async UniTaskVoid LoadAssetsAndHotfix()
         {
             // 启动YooAsset引擎，并在初始化完毕后进行热更代码加载
             await YooAssetProxy.StartYooAssetEngine(PlayMode);

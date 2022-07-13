@@ -1,4 +1,5 @@
 ﻿using Animancer;
+using Cysharp.Threading.Tasks;
 using ET.EventType;
 
 namespace ET
@@ -47,7 +48,7 @@ namespace ET
 
     public class CancelAttackFromFsm : AEvent<Unit,EventType.CancelAttackFromFSM>
     {
-        protected override async ETTask Run(Unit unit,CancelAttackFromFSM a)
+        protected override async UniTask Run(Unit unit,CancelAttackFromFSM a)
         {
             unit.GetComponent<CommonAttackComponent_View>().CancelCommonAttack();
             await ETTask.CompletedTask;
@@ -56,7 +57,7 @@ namespace ET
     
     public class WaitForAttack_View : AEvent<Unit, EventType.WaitForAttack>
     {
-        protected override async ETTask Run(Unit unit, WaitForAttack a)
+        protected override async UniTask Run(Unit unit, WaitForAttack a)
         {
             a.CastUnit.GetComponent<TurnComponent>().Turn(a.TargetUnit.Position);
             a.CastUnit.GetComponent<AnimationComponent>().PlayIdel();

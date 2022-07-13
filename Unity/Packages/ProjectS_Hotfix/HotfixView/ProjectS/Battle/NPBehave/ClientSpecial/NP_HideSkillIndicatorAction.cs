@@ -23,7 +23,6 @@ namespace ET
 
         public void HideSkillIndicatorAction()
         {
-#if !SERVER
             Unit unit = BelongToUnit;
             if (unit.GetComponent<SkillIndicatorComponent>() == null)
             {
@@ -41,7 +40,6 @@ namespace ET
                     unit.GetComponent<SkillIndicatorComponent>().RemoveSplate(skillIndicatorName);
                     break;
             }
-#endif
         }
     }
 }

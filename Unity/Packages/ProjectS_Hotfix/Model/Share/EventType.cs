@@ -25,6 +25,11 @@ namespace ET
         public struct AfterCreateClientScene
         {
         }
+        
+        public struct AfterCreateSingleGameScene
+        {
+        }
+
 
         public struct AfterCreateCurrentScene
         {
@@ -44,6 +49,8 @@ namespace ET
 
         public struct LoadingBegin
         {
+            public string SceneName;
+            public List<string> ResList;
         }
 
         public struct LoadingFinish

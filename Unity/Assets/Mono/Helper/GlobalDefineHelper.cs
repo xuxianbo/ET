@@ -18,5 +18,7 @@ namespace ET
         public const float FixedUpdateTargetDTTime_Float = 1f / FixedUpdateTargetFPS;
 
         public const long FixedUpdateTargetDTTime_Long = (long)(FixedUpdateTargetDTTime_Float * 1000);
+
+        public static int SingleGameSceneIndex = 30;
     }
 }

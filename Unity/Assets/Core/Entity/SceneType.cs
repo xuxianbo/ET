@@ -16,5 +16,9 @@
 		// 客户端Model层
 		Client = 31,
 		Current = 34,
+		/// <summary>
+		/// 单局游戏Scene
+		/// </summary>
+		SingleGame = 35
 	}
 }
