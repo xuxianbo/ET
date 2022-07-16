@@ -16,20 +16,23 @@ namespace ET
     public static class FUI_LoginUtilities
     {
         // 选择进入游戏，则单局游戏Scene创建，为ClientScene的子物体，所有资源OperationHandle都挂在这个单局游戏的Scene上面，Scene销毁时统一进行释放
-        public static void OnLogin(FUI_LoginComponent self)
+        public static async UniTaskVoid OnLogin(FUI_LoginComponent self)
         {
             Scene singleGameScene = SceneFactory.CreateSingleGameScene(++GlobalDefine.SingleGameSceneIndex, "SingleGameScene", self.Domain);
 
-            Game.EventSystem.Publish(singleGameScene, new EventType.LoadingBegin()
+            await Game.EventSystem.PublishAsync(singleGameScene, new EventType.LoadingBegin()
             {
-                SceneName = "Scene_Map1",
+                SceneName = YooAssetProxy.GetYooAssetFormatResPath("Map1", YooAssetProxy.YooAssetResType.Scene),
                 ResList = new List<string>()
                 {
-                    "Unit_Darius"
+                    // 测试用，这个资源列表只应该是场景中的动态物件
+                    //YooAssetProxy.GetYooAssetFormatResPath("Darius", YooAssetProxy.YooAssetResType.Unit)
                 }
             });
 
             ClientSceneManagerComponent.Instance.Get(1).GetComponent<FUIManagerComponent>().Remove(FUIPackage.Login);
+            
+            await Game.EventSystem.PublishAsync(singleGameScene, new EventType.LoadingFinish());
         }
 
         private static async UniTask TestHotfixSkillDes()

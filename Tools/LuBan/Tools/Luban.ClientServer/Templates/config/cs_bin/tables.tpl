@@ -1,4 +1,5 @@
 using Bright.Serialization;
+using Cysharp.Threading.Tasks;
 
 {{
     name = x.name
@@ -23,7 +24,7 @@ public partial class {{name}}
     public {{table.full_name}} {{table.name}} {get; private set; }
     {{~end~}}
 
-    public async ETTask LoadAsync(System.Func<string, ETTask<ByteBuf>> loader)
+    public async UniTask LoadAsync(System.Func<string, UniTask<ByteBuf>> loader)
     {
         var tables = new System.Collections.Generic.Dictionary<string, object>();
         {{~for table in tables ~}}

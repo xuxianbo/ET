@@ -7,6 +7,9 @@
 //------------------------------------------------------------------------------
 using Bright.Serialization;
 using Cysharp.Threading.Tasks;
+
+
+
 using ET;
 
 namespace ET.cfg
@@ -16,6 +19,7 @@ public partial class Tables
 {
     public LuBanSample.TbLuBanSample TbLuBanSample {get; private set; }
     public SkillConfig.TbSkillCanvas TbSkillCanvas {get; private set; }
+    public UnitConfig.TbUnitRes TbUnitRes {get; private set; }
 
     public async UniTask LoadAsync(System.Func<string, UniTask<ByteBuf>> loader)
     {
@@ -24,10 +28,13 @@ public partial class Tables
         tables.Add("LuBanSample.TbLuBanSample", TbLuBanSample);
         TbSkillCanvas = new SkillConfig.TbSkillCanvas(await loader("skillconfig_tbskillcanvas")); 
         tables.Add("SkillConfig.TbSkillCanvas", TbSkillCanvas);
+        TbUnitRes = new UnitConfig.TbUnitRes(await loader("unitconfig_tbunitres")); 
+        tables.Add("UnitConfig.TbUnitRes", TbUnitRes);
 
         PostInit();
         TbLuBanSample.Resolve(tables); 
         TbSkillCanvas.Resolve(tables); 
+        TbUnitRes.Resolve(tables); 
         PostResolve();
     }
 
@@ -35,6 +42,7 @@ public partial class Tables
     {
         TbLuBanSample.TranslateText(translator); 
         TbSkillCanvas.TranslateText(translator); 
+        TbUnitRes.TranslateText(translator); 
     }
     
     partial void PostInit();

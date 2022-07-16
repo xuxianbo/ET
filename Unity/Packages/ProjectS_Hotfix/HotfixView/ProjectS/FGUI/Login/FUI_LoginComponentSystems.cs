@@ -17,7 +17,7 @@ namespace ET
             
             fuiLogin.m_Btn_Login.self.onClick.Add(() =>
             {
-                FUI_LoginUtilities.OnLogin(self);
+                FUI_LoginUtilities.OnLogin(self).Forget();
             });
 
             self.FuiUIPanelLogin = fuiLogin;

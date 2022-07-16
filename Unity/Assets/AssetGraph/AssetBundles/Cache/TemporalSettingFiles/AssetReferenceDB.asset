@@ -1974,10 +1974,6 @@ MonoBehaviour:
     m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/FGUI/Login/AppStartInitFinish_CreateLoginUI.cs
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 2088c5db2611839478dc2600684b52ae
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/Tables.cs
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: f27e42a4de54d1b438ffdcb7f4674a68
     m_importFrom: Packages/com.nkg.yy/HotfixView/AppStart_Init.cs
     m_exportTo: 
@@ -2054,24 +2050,12 @@ MonoBehaviour:
     m_importFrom: Assets/Res/Code/Unity.ThirdParty.dll.bytes
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 70b2aef66897ba04497a8841e52757b0
-    m_importFrom: Assets/StreamingAssets/YooAssets/fc35735dbe3865321b9edede3dbf1bb0
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 7ffa2dd3e401656458d6f1d3fb306341
-    m_importFrom: Assets/StreamingAssets/YooAssets/961f2d48f85657189c0ed5bdd9db7d83
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: 8a2f5b990568dc64583685ce952a3370
     m_importFrom: Assets/link.xml
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: e37c3cc6b95ea2147966bb03de35becd
     m_importFrom: Assets/Res/Code/UniTask.dll.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: bc6073af6ce589f46943c24e23ba2fd2
-    m_importFrom: Assets/StreamingAssets/YooAssets/f8cd5d0a27e13aa333c78c752b152a07
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 9be31bdcc9aa47c4ca16e62a9f5a7d54
@@ -2104,6 +2088,102 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: cffcb84c96d371744ba2f09a4740a3d2
     m_importFrom: Assets/StreamingAssets/YooAssets/c3bdc2fd20183792c4bf3e9ff05b1bf9
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0574682553dcf354f821ecdc8f71c1d6
+    m_importFrom: Assets/StreamingAssets/YooAssets/160cf2a76c56b6a03d0c8adb3c2e627e
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0944f489d5ddc5f4b916724da5ceac74
+    m_importFrom: Assets/StreamingAssets/YooAssets/a557aabafd045b39dfb51a6a09bd8239
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4fb15fb6182ffa14eb2fa860f07dbb6f
+    m_importFrom: Assets/StreamingAssets/YooAssets/a38cffc409bf1f92b76323fcd895b14e
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e05aa7d1b443ecc4da911ad903990412
+    m_importFrom: Assets/Res/Texture/Darius/Darius_Skin08_dds.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e0d691ac8c1d0454ba07089ea820e18a
+    m_importFrom: Assets/Init.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0e3b67ee9a801e44a91fbbc86f99dbe9
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Settings/MonKey Settings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bb5d2e6ed9d4c7d458c5e3e485d4f981
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/item/ItemExchange.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 133c4028affc7c244ab032ea5848016e
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/LuBanSample/TbLuBanSample.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 497b52caada93504b88b606a807526b9
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Tables.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e32052ec55ae9f248a3f62afed2b2915
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/SkillConfig/SkillCanvasConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4dcc55f1d89d3eb4eb936e8fbd61f601
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/LuBanSample/LuBanSampleConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8515816bdff48724a90715d77d07e122
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/UnitConfig
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2943434b1e4ed96458818e0a9e800248
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/SkillConfig
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0ebfec22fcc855046a1e0c357c957875
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/LuBanSample
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b81259cc66ce3ad4f95b675f6e69b8f4
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/SkillConfig/TbSkillCanvas.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a86fc578ae1ab06419a35a929f84a7ac
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/UnitConfig/TbUnitRes.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d644cd0e3f1702b408952e03c0d91641
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/item
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 85ce604ea8003b3498aa9935d97c5a27
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/UnitConfig/UnitResConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d82184c68080aed4fad1a330027720fe
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/test/AccessFlag.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 474e08a78967f7941a1567b5b18f0007
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/item/EQuality.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 368ca236f0b085749ba86d1c2da46af5
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/test
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b25e42f0770d9da44836760110d60864
+    m_importFrom: Assets/Res/Config/DataConfig/Bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ff3a619eee1df40f193e25e4033673ff
+    m_importFrom: Assets/Editor/LuBan/Editor/Luban.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 65347e641e73af74b87844936cf6447c
+    m_importFrom: Assets/Res/Config/DataConfig/unitconfig_tbunitres.bytes
     m_exportTo: 
     m_variantName: 
   m_version: 2

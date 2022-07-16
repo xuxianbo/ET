@@ -51,7 +51,7 @@ namespace ET
 
     public static class FUI_LoadingComponentUtitlites
     {
-        public static void BeginLoadRes(this FUI_LoadingComponent self, string sceneName,List<string> resList)
+        public static async UniTask LoadRes(this FUI_LoadingComponent self, string sceneName,List<string> resList)
         {
             self.ResLoadTask.Clear();
             YooAssetComponent yooAssetComponent = self.DomainScene().GetComponent<YooAssetComponent>();
@@ -68,6 +68,9 @@ namespace ET
                 self.LoadSceneTask = yooAssetComponent.LoadSceneAsync(sceneName);
                 self.TotalResCountToBeLoaded++;
             }
+
+            await UniTask.WhenAll(self.ResLoadTask);
+            await UniTask.WhenAll(self.LoadSceneTask);
         }
 
         public static void Reset(this FUI_LoadingComponent self)

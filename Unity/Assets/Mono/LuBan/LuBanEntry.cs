@@ -16,13 +16,15 @@ namespace ET
     {
         public static async UniTask<JSONNode> LoadJsonBuf(string fileName)
         {
-            AssetOperationHandle result = await YooAssetProxy.LoadAssetAsync<TextAsset>($"Config_{fileName}");
+            AssetOperationHandle result = await YooAssetProxy.LoadAssetAsync<TextAsset>(
+                YooAssetProxy.GetYooAssetFormatResPath(fileName, YooAssetProxy.YooAssetResType.Config));
             return JSON.Parse(result.GetAssetObject<TextAsset>().text);
         }
 
         public static async UniTask<ByteBuf> LoadBytesBuf(string fileName)
         {
-            AssetOperationHandle result = await YooAssetProxy.LoadAssetAsync<TextAsset>($"Config_{fileName}");
+            AssetOperationHandle result = await YooAssetProxy.LoadAssetAsync<TextAsset>(
+                YooAssetProxy.GetYooAssetFormatResPath(fileName, YooAssetProxy.YooAssetResType.Config));
             return new ByteBuf(result.GetAssetObject<TextAsset>().bytes);
         }
     }

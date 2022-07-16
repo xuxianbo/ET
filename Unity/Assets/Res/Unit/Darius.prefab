@@ -159,6 +159,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Darius
       objectReference: {fileID: 0}
+    - target: {fileID: 2664098864995057252, guid: 41d04874c5b221e4cbca512bbfe55cc6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e05aa7d1b443ecc4da911ad903990412, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41d04874c5b221e4cbca512bbfe55cc6, type: 3}
 --- !u!4 &286505095627880662 stripped

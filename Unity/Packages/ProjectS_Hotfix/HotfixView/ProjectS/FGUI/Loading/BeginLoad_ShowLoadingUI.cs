@@ -20,6 +20,7 @@ namespace ET
 
             FUI_LoadingComponent fuiLoadingComponent =
                 fuiManagerComponent.GetFUIComponent<FUI_LoadingComponent>(FUIPackage.Loading);
+            
             if (fuiLoadingComponent == null)
             {
                 // 别忘了自己处理依赖关系包
@@ -36,7 +37,7 @@ namespace ET
             fuiLoadingComponent.Reset();
             fuiLoadingComponent.Show();
 
-            fuiLoadingComponent.BeginLoadRes(a.SceneName, a.ResList);
+            await fuiLoadingComponent.LoadRes(a.SceneName, a.ResList);
         }
     }
 }

@@ -8,6 +8,30 @@ namespace ET
 {
     public static class YooAssetProxy
     {
+        public enum YooAssetResType
+        {
+            Unit,
+            Config,
+            Scene,
+            Code,
+            Effect,
+            Shader,
+            Material,
+        }
+        
+        #region 路径相关
+
+        /// <summary>
+        /// 获取YooAsset能识别的资源名
+        /// </summary>
+        /// <returns></returns>
+        public static string GetYooAssetFormatResPath(string rawResName, YooAssetResType yooAssetResType)
+        {
+            return $"{yooAssetResType}_{rawResName}";
+        }
+
+        #endregion
+        
         #region Extension
 
         public static T GetAsset<T>(this AssetOperationHandle assetOperationHandle)

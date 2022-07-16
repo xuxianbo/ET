@@ -1,4 +1,5 @@
 using Bright.Serialization;
+using Cysharp.Threading.Tasks;
 using ET;
 using SimpleJSON;
 {{
@@ -22,7 +23,7 @@ public sealed partial class {{name}}
 	
     public {{name}}() { }
 
-    public async ETTask LoadAsync(System.Func<string, ETTask<JSONNode>> loader)
+    public async UniTask LoadAsync(System.Func<string, UniTask<JSONNode>> loader)
     {
         var tables = new System.Collections.Generic.Dictionary<string, object>();
         {{~for table in tables ~}}
