@@ -12,21 +12,6 @@ namespace ET.Client
             // 加载场景资源
             await YooAssetProxy.LoadSceneAsync($"Scene_{currentScene.Name}");
             // 切换到map场景
-
-            SceneChangeComponent sceneChangeComponent = null;
-            try
-            {
-                sceneChangeComponent = Game.Scene.AddComponent<SceneChangeComponent>();
-                {
-                    await sceneChangeComponent.ChangeSceneAsync(currentScene.Name);
-                }
-            }
-            finally
-            {
-                sceneChangeComponent?.Dispose();
-            }
-			
-
             currentScene.AddComponent<OperaComponent>();
         }
     }

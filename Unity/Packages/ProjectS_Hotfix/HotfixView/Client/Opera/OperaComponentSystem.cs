@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace ET.Client
@@ -50,7 +51,7 @@ namespace ET.Client
             if (Input.GetKeyDown(KeyCode.T))
             {
                 C2M_TransferMap c2MTransferMap = new C2M_TransferMap();
-                self.ClientScene().GetComponent<SessionComponent>().Session.Call(c2MTransferMap).Coroutine();
+                self.ClientScene().GetComponent<SessionComponent>().Session.Call(c2MTransferMap).Forget();
             }
         }
     }

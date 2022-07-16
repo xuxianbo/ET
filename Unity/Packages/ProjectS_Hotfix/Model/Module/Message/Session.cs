@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 
 namespace ET
 {
     public readonly struct RpcInfo
     {
         public readonly IRequest Request;
-        public readonly ETTask<IResponse> Tcs;
+        public readonly UniTaskCompletionSource<IResponse> Tcs;
 
         public RpcInfo(IRequest request)
         {
             this.Request = request;
-            this.Tcs = ETTask<IResponse>.Create(true);
+            this.Tcs = new UniTaskCompletionSource<IResponse>();
         }
     }
     
@@ -46,7 +48,7 @@ namespace ET
             
                 foreach (RpcInfo responseCallback in self.requestCallbacks.Values.ToArray())
                 {
-                    responseCallback.Tcs.SetException(new RpcException(self.Error, $"session dispose: {self.Id} {self.RemoteAddress}"));
+                    responseCallback.Tcs.TrySetException((new RpcException(self.Error, $"session dispose: {self.Id} {self.RemoteAddress}")));
                 }
 
                 Log.Info($"session dispose: {self.RemoteAddress} id: {self.Id} ErrorCode: {self.Error}, please see ErrorCode.cs! {TimeHelper.ClientNow()}");
@@ -67,13 +69,13 @@ namespace ET
             self.requestCallbacks.Remove(response.RpcId);
             if (ErrorCore.IsRpcNeedThrowException(response.Error))
             {
-                action.Tcs.SetException(new Exception($"Rpc error, request: {action.Request} response: {response}"));
+                action.Tcs.TrySetException(new Exception($"Rpc error, request: {action.Request} response: {response}"));
                 return;
             }
-            action.Tcs.SetResult(response);
+            action.Tcs.TrySetResult(response);
         }
         
-        public static async ETTask<IResponse> Call(this Session self, IRequest request, ETCancellationToken cancellationToken)
+        public static async UniTask<IResponse> Call(this Session self, IRequest request, CancellationToken cancellationToken)
         {
             int rpcId = ++Session.RpcId;
             RpcInfo rpcInfo = new RpcInfo(request);
@@ -93,30 +95,25 @@ namespace ET
                 Type responseType = OpcodeTypeComponent.Instance.GetResponseType(action.Request.GetType());
                 IResponse response = (IResponse) Activator.CreateInstance(responseType);
                 response.Error = ErrorCore.ERR_Cancel;
-                action.Tcs.SetResult(response);
+                action.Tcs.TrySetResult(response);
             }
 
             IResponse ret;
-            try
-            {
-                cancellationToken?.Add(CancelAction);
-                ret = await rpcInfo.Tcs;
-            }
-            finally
-            {
-                cancellationToken?.Remove(CancelAction);
-            }
+
+            cancellationToken.Register(CancelAction);
+            ret = await rpcInfo.Tcs.Task;
+
             return ret;
         }
 
-        public static async ETTask<IResponse> Call(this Session self, IRequest request)
+        public static async UniTask<IResponse> Call(this Session self, IRequest request)
         {
             int rpcId = ++Session.RpcId;
             RpcInfo rpcInfo = new RpcInfo(request);
             self.requestCallbacks[rpcId] = rpcInfo;
             request.RpcId = rpcId;
             self.Send(request);
-            return await rpcInfo.Tcs;
+            return await rpcInfo.Tcs.Task;
         }
 
         public static void Reply(this Session self, IResponse message)

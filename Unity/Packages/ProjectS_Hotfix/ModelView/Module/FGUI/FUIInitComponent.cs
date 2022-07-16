@@ -1,13 +1,14 @@
-﻿using ET;
+﻿using Cysharp.Threading.Tasks;
+using ET;
 using FairyGUI;
 
 namespace ET
 {
     public class FUIInitComponent: Entity
     {
-        public async ETTask Init()
+        public async UniTask Init()
         {
-            await ETTask.CompletedTask;
+            await UniTask.CompletedTask;
         }
 
         public override void Dispose()

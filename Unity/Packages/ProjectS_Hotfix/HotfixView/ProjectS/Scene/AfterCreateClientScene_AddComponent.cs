@@ -10,7 +10,7 @@ namespace ET.Client
             scene.AddComponent<FUIPackageManagerComponent>();
             scene.AddComponent<FUIManagerComponent>();
 
-            await ETTask.CompletedTask;
+            await UniTask.CompletedTask;
         }
     }
 }

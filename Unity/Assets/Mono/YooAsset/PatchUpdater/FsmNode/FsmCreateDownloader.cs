@@ -22,7 +22,6 @@ public class FsmCreateDownloader : IFsmNode
 
 	void CreateDownloader()
 	{
-		ETTask etTask = ETTask.Create();
 		Debug.Log("创建补丁下载器.");
 		int downloadingMaxNum = 10;
 		int failedTryAgain = 3;

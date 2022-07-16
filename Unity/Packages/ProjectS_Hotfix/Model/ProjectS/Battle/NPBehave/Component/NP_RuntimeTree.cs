@@ -4,6 +4,7 @@
 // Data: 2019年8月23日 14:58:54
 //------------------------------------------------------------
 
+using Cysharp.Threading.Tasks;
 using NPBehave;
 
 namespace ET
@@ -69,7 +70,7 @@ namespace ET
         /// <summary>
         /// 终止行为树
         /// </summary>
-        public async ETTask Finish()
+        public async UniTaskVoid Finish()
         {
             await BelongToUnit.BelongToRoom.GetComponent<LSF_TimerComponent>().WaitFrameAsync();
 

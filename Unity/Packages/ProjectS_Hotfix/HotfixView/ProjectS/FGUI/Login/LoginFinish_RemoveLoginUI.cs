@@ -11,9 +11,9 @@ namespace ET
 	{
 		protected override async UniTask Run(Scene entity, LoginFinish a)
 		{
-			EnterMapHelper.EnterMapAsync(entity).Coroutine();
+			EnterMapHelper.EnterMapAsync(entity).Forget();
 			entity.GetComponent<FUIManagerComponent>().Remove(FUIPackage.Login);
-			await ETTask.CompletedTask;
+			await UniTask.CompletedTask;
 		}
 	}
 }

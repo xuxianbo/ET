@@ -34,6 +34,7 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         writer:reset()
 
         writer:writeln('using FairyGUI;')
+		writer:writeln('using Cysharp.Threading.Tasks;')
         writer:writeln()
         writer:writeln('namespace %s', namespaceName)
         writer:startBlock()
@@ -128,16 +129,16 @@ function HotfixCodeGenHandler.Do(handler, codeGenConfig)
         ]], className, className)
 
         writer:writeln([[   
-        public static ETTask<%s> CreateInstanceAsync(Entity parent)
+        public static UniTask<%s> CreateInstanceAsync(Entity parent)
         {
-            ETTask<%s> tcs = ETTask<%s>.Create(true);
+            UniTaskCompletionSource<%s> tcs = new UniTaskCompletionSource<%s>();
     
             CreateGObjectAsync((go) =>
             {
-                tcs.SetResult(parent.AddChild<%s, GObject>(go));
+                tcs.TrySetResult(parent.AddChild<%s, GObject>(go));
             });
     
-            return tcs;
+            return tcs.Task;
         }
         ]], className, className, className, className)
 

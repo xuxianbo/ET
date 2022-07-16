@@ -1,5 +1,6 @@
 using System;
 using System.Net;
+using Cysharp.Threading.Tasks;
 
 namespace ET.Client
 {
@@ -8,10 +9,10 @@ namespace ET.Client
     {
         public override void Awake(RouterCheckComponent self)
         {
-            CheckAsync(self).Coroutine();
+            CheckAsync(self).Forget();
         }
 
-        private static async ETTask CheckAsync(RouterCheckComponent self)
+        private static async UniTask CheckAsync(RouterCheckComponent self)
         {
             Session session = self.GetParent<Session>();
             long instanceId = self.InstanceId;

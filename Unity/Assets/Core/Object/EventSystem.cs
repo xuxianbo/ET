@@ -699,7 +699,7 @@ namespace ET
             ObjectHelper.Swap(ref this.lateUpdates, ref this.lateUpdates2);
         }
 
-        public async ETTask PublishAsync<E, T>(E entity, T a) where E: Entity where T : struct
+        public async UniTask PublishAsync<E, T>(E entity, T a) where E: Entity where T : struct
         {
             List<EventInfo> iEvents;
             if (!this.allEvents.TryGetValue(typeof(T), out iEvents))

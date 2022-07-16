@@ -93,7 +93,7 @@ namespace ET
 		/// </summary>
 		/// <param name="stream"></param>
 		/// <returns></returns>
-		//public async ETTask ReadAsync(Stream stream)
+		//public async UniTask ReadAsync(Stream stream)
 	    //{
 		//    long buffLength = this.Length;
 		//	int sendSize = this.ChunkSize - this.FirstIndex;
@@ -176,7 +176,7 @@ namespace ET
 		/// </summary>
 		/// <param name="stream"></param>
 		/// <returns></returns>
-		//public async ETTask<int> WriteAsync(Stream stream)
+		//public async UniTask<int> WriteAsync(Stream stream)
 	    //{
 		//    int size = this.ChunkSize - this.LastIndex;
 		//    

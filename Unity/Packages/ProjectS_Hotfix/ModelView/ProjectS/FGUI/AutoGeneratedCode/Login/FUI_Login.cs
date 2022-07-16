@@ -1,6 +1,7 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 using FairyGUI;
+using Cysharp.Threading.Tasks;
 
 namespace ET
 {
@@ -55,16 +56,16 @@ namespace ET
         }
         
        
-        public static ETTask<FUI_Login> CreateInstanceAsync(Entity parent)
+        public static UniTask<FUI_Login> CreateInstanceAsync(Entity parent)
         {
-            ETTask<FUI_Login> tcs = ETTask<FUI_Login>.Create(true);
+            UniTaskCompletionSource<FUI_Login> tcs = new UniTaskCompletionSource<FUI_Login>();
     
             CreateGObjectAsync((go) =>
             {
-                tcs.SetResult(parent.AddChild<FUI_Login, GObject>(go));
+                tcs.TrySetResult(parent.AddChild<FUI_Login, GObject>(go));
             });
     
-            return tcs;
+            return tcs.Task;
         }
         
        

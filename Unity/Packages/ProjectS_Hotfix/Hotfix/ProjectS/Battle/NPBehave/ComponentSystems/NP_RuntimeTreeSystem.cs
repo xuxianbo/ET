@@ -17,7 +17,7 @@ namespace ET
     {
         public override void Destroy(NP_RuntimeTree self)
         {
-            self.Finish().Coroutine();
+            self.Finish().Forget();
         }
     }
 }

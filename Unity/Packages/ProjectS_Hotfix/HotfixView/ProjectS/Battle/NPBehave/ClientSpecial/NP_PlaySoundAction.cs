@@ -19,7 +19,7 @@ namespace ET
 
         public void PlaySoundAction()
         {
-            //Game.Scene.GetComponent<SoundComponent>().PlayClip(this.SoundName, 0.4f).Coroutine();
+            //Game.Scene.GetComponent<SoundComponent>().PlayClip(this.SoundName, 0.4f).Forget();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Cysharp.Threading.Tasks;
 using ET;
 using YooAsset;
 
@@ -9,7 +10,7 @@ public class FsmDownloadWebFiles : IFsmNode
     void IFsmNode.OnEnter()
     {
         PatchEventDispatcher.SendPatchStepsChangeMsg(EPatchStates.DownloadWebFiles);
-        BeginDownload().Coroutine();
+        BeginDownload().Forget();
     }
 
     void IFsmNode.OnUpdate()
@@ -20,20 +21,20 @@ public class FsmDownloadWebFiles : IFsmNode
     {
     }
 
-    private async ETTask BeginDownload()
+    private async UniTaskVoid BeginDownload()
     {
         var downloader = PatchUpdater.Downloader;
 
-        ETTask etTask = ETTask.Create();
+        UniTaskCompletionSource uniTaskCompletionSource = new UniTaskCompletionSource();
 
         // 注册下载回调
         downloader.OnDownloadErrorCallback = PatchEventDispatcher.SendWebFileDownloadFailedMsg;
         downloader.OnDownloadProgressCallback = PatchEventDispatcher.SendDownloadProgressUpdateMsg;
         downloader.BeginDownload();
         
-        downloader.Completed += _ => { etTask.SetResult(); };
+        downloader.Completed += _ => { uniTaskCompletionSource.TrySetResult(); };
         
-        await etTask;
+        await uniTaskCompletionSource.Task;
 
         // 检测下载结果
         if (downloader.Status != EOperationStatus.Succeed)

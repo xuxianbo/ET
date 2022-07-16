@@ -5,7 +5,7 @@ namespace ET
 {
     // public class PlayEffectBuffSystemEvent : AEvent<EventType.PlayEffectBuffSystemExcuteEvent>
     // {
-    //     protected override async ETTask Run(PlayEffectBuffSystemExcuteEvent a)
+    //     protected override async UniTask Run(PlayEffectBuffSystemExcuteEvent a)
     //     {
     //         PlayEffectBuffData playEffectBuffData = a.PlayEffectBuffData;
     //         string targetEffectName = playEffectBuffData.EffectName;
@@ -32,13 +32,13 @@ namespace ET
     //
     //         a.Target.GetComponent<EffectComponent>().Play(targetEffectName, effectUnit);
     //
-    //         await ETTask.CompletedTask;
+    //         await UniTask.CompletedTask;
     //     }
     // }
     //
     // public class PlayEffectBuffSystemEvent1 : AEvent<EventType.PlayEffectBuffSystemFinishEvent>
     // {
-    //     protected override async ETTask Run(PlayEffectBuffSystemFinishEvent a)
+    //     protected override async UniTask Run(PlayEffectBuffSystemFinishEvent a)
     //     {
     //         PlayEffectBuffData playEffectBuffData = a.PlayEffectBuffData;
     //         string targetEffectName = playEffectBuffData.EffectName;
@@ -50,7 +50,7 @@ namespace ET
     //         a.Target.GetComponent<EffectComponent>()
     //             .Remove(targetEffectName);
     //
-    //         await ETTask.CompletedTask;
+    //         await UniTask.CompletedTask;
     //     }
     // }
 }

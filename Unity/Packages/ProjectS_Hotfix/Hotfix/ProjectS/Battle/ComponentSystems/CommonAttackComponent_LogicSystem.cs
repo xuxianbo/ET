@@ -5,6 +5,7 @@
 //------------------------------------------------------------
 
 using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using ET.EventType;
 using NPBehave;
@@ -20,7 +21,7 @@ namespace ET
 
             //此处填写Awake逻辑
             self.StackFsmComponent = unit.GetComponent<StackFsmComponent>();
-            self.CancellationTokenSource = new ETCancellationToken();
+            self.CancellationTokenSource = new CancellationTokenSource();
 
             CDInfo attackCDInfo = ReferencePool.Acquire<CDInfo>();
             attackCDInfo.Name = "CommonAttack";
@@ -41,7 +42,7 @@ namespace ET
         {
             //此处填写释放逻辑,但涉及Entity的操作，请放在Destroy中
             self.CancellationTokenSource?.Cancel();
-            self.CancellationTokenSource = null;
+            self.CancellationTokenSource?.Dispose();
 
             self.ReSetAttackReplaceInfo();
             self.ReSetCancelAttackReplaceInfo();
@@ -62,7 +63,7 @@ namespace ET
                 unit.GetComponent<CommonAttackComponent_Logic>().CancelCommonAttackWithOutResetTarget();
             }
 
-            await ETTask.CompletedTask;
+            await UniTask.CompletedTask;
         }
     }
 
@@ -90,10 +91,10 @@ namespace ET
             }
         }
 
-        private static async ETTask StartCommonAttack(this CommonAttackComponent_Logic self)
+        private static async UniTask StartCommonAttack(this CommonAttackComponent_Logic self)
         {
             self.CancellationTokenSource?.Cancel();
-            self.CancellationTokenSource = new ETCancellationToken();
+            self.CancellationTokenSource?.Dispose();
             //如果有要执行攻击流程替换的内容，就执行替换流程
             if (self.HasAttackReplaceInfo())
             {
@@ -110,7 +111,7 @@ namespace ET
 
                 CDInfo commonAttackCDInfo = CDComponent.Instance.GetCDData(unit.Id, "CommonAttack");
                 await self.GetParent<Unit>().BelongToRoom.GetComponent<LSF_TimerComponent>()
-                    .WaitAsync(commonAttackCDInfo.Interval, self.CancellationTokenSource);
+                    .WaitAsync(commonAttackCDInfo.Interval, self.CancellationTokenSource.Token);
             }
             else
             {
@@ -121,7 +122,7 @@ namespace ET
             self.CancellationTokenSource = null;
         }
 
-        private static async ETTask CommonAttack_Internal(this CommonAttackComponent_Logic self)
+        private static async UniTask CommonAttack_Internal(this CommonAttackComponent_Logic self)
         {
             Unit unit = self.GetParent<Unit>();
             UnitAttributesDataComponent heroDataComponent = unit.GetComponent<UnitAttributesDataComponent>();
@@ -138,7 +139,7 @@ namespace ET
 
             //播放动画，如果动画播放完成还不能进行下一次普攻，则播放空闲动画
             if (!await self.GetParent<Unit>().BelongToRoom.GetComponent<LSF_TimerComponent>()
-                .WaitAsync((long) (attackPre * 1000), self.CancellationTokenSource))
+                .WaitAsync((long) (attackPre * 1000), self.CancellationTokenSource.Token))
             {
                 return;
             }
@@ -183,7 +184,7 @@ namespace ET
 
 #endif
             await self.GetParent<Unit>().BelongToRoom.GetComponent<LSF_TimerComponent>()
-                .WaitAsync(commonAttackCDInfo.Interval, self.CancellationTokenSource);
+                .WaitAsync(commonAttackCDInfo.Interval, self.CancellationTokenSource.Token);
         }
 
         public static void FixedUpdate(this CommonAttackComponent_Logic self)
@@ -208,15 +209,15 @@ namespace ET
                         CommonAttackState commonAttackState = ReferencePool.Acquire<CommonAttackState>();
                         commonAttackState.SetData(StateTypes.CommonAttack, "CommonAttack", 1);
                         // unit.NavigateTodoSomething(self.CachedUnitForAttack.Position, 1.75f, commonAttackState)
-                        //     .Coroutine();
+                        //     .Forget();
                     }
                     else
                     {
                         //目标不为空，且处于攻击状态，且上次攻击已完成或取消
-                        if ((self.CancellationTokenSource == null || self.CancellationTokenSource.IsCancel()))
+                        if ((self.CancellationTokenSource == null || self.CancellationTokenSource.IsCancellationRequested))
                         {
                             if (CDComponent.Instance.GetCDResult(unit.Id, "CommonAttack"))
-                                self.StartCommonAttack().Coroutine();
+                                self.StartCommonAttack().Forget();
                             else // 说明还不能进行下一次普攻，就罚站
                             {
 #if !SERVER
@@ -236,7 +237,7 @@ namespace ET
         /// </summary>
         public static void CancelCommonAttackWithOutResetTarget(this CommonAttackComponent_Logic self)
         {
-            ETCancellationToken token = self.CancellationTokenSource;
+            CancellationTokenSource token = self.CancellationTokenSource;
             self.CancellationTokenSource = null;
             token?.Cancel();
 

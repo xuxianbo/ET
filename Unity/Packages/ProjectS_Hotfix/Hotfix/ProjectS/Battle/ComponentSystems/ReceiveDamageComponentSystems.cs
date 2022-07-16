@@ -49,7 +49,7 @@ namespace ET
             //     MessageHelper.BroadcastToRoom(unit.BelongToRoom,
             //         new M2C_ReceiveDamage() {FinalValue = damageData.DamageValue, UnitId = unit.Id});
             //     Game.EventSystem.Publish(new EventType.SpriteDead()
-            //         {KillerSprite = damageData.OperateCaster, DeadSprite = damageData.OperateTaker}).Coroutine();
+            //         {KillerSprite = damageData.OperateCaster, DeadSprite = damageData.OperateTaker}).Forget();
             // }
             // else
             // {

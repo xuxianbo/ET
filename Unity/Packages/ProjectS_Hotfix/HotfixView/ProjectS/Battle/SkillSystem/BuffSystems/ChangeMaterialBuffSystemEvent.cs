@@ -5,7 +5,7 @@ namespace ET
 {
     // public class ChangeMaterialBuffSystemExcuteEvent : AEvent<EventType.ChangeMaterialBuffSystemExcuteEvent>
     // {
-    //     protected override async ETTask Run(EventType.ChangeMaterialBuffSystemExcuteEvent a)
+    //     protected override async UniTask Run(EventType.ChangeMaterialBuffSystemExcuteEvent a)
     //     {
     //         SkinnedMeshRenderer skinnedMeshRenderer = a.Target.GetComponent<GameObjectComponent>().GameObject
     //             .Get<GameObject>("Materials").GetComponent<SkinnedMeshRenderer>();
@@ -21,13 +21,13 @@ namespace ET
     //
     //         skinnedMeshRenderer.sharedMaterials = currentMats.ToArray();
     //
-    //         await ETTask.CompletedTask;
+    //         await UniTask.CompletedTask;
     //     }
     // }
     //
     // public class ChangeMaterialBuffSystemFinishEvent : AEvent<EventType.ChangeMaterialBuffSystemFinishEvent>
     // {
-    //     protected override async ETTask Run(EventType.ChangeMaterialBuffSystemFinishEvent a)
+    //     protected override async UniTask Run(EventType.ChangeMaterialBuffSystemFinishEvent a)
     //     {
     //         SkinnedMeshRenderer skinnedMeshRenderer = a.Target.GetComponent<GameObjectComponent>().GameObject
     //             .Get<GameObject>("Materials").GetComponent<SkinnedMeshRenderer>();
@@ -47,7 +47,7 @@ namespace ET
     //         }
     //
     //         skinnedMeshRenderer.sharedMaterials = currentMats.ToArray();
-    //         await ETTask.CompletedTask;
+    //         await UniTask.CompletedTask;
     //     }
     // }
 }

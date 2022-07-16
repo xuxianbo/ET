@@ -31,13 +31,9 @@ namespace ET.Client
 				        {
 					        list.Add(new Vector3(unitInfo.MoveInfo.X[i], unitInfo.MoveInfo.Y[i], unitInfo.MoveInfo.Z[i]));
 				        }
-
-				        unit.MoveToAsync(list).Coroutine();
 			        }
 		        }
 	        }
-
-	        unit.AddComponent<ObjectWait>();
 
 	        Game.EventSystem.Publish(unit, new EventType.AfterUnitCreate());
             return unit;

@@ -4,7 +4,7 @@ namespace ET
 {
     // public class ReplaceAnimBuffSystem_1: AEvent<EventType.ReplaceAnimBuffSystemExcuteEvent>
     // {
-    //     protected override async ETTask Run(ReplaceAnimBuffSystemExcuteEvent a)
+    //     protected override async UniTask Run(ReplaceAnimBuffSystemExcuteEvent a)
     //     {
     //         ReplaceAnimBuffData replaceAnimBuffData = a.ReplaceAnimBuffData;
     //         AnimationComponent animationComponent = a.Target.GetComponent<AnimationComponent>();
@@ -15,13 +15,13 @@ namespace ET
     //         }
     //
     //         animationComponent.PlayAnimByStackFsmCurrent();
-    //         await ETTask.CompletedTask;
+    //         await UniTask.CompletedTask;
     //     }
     // }
     //
     // public class ReplaceAnimBuffSystem_11: AEvent<EventType.RepalceAnimBuffSystemFinishEvent>
     // {
-    //     protected override async ETTask Run(RepalceAnimBuffSystemFinishEvent a)
+    //     protected override async UniTask Run(RepalceAnimBuffSystemFinishEvent a)
     //     {
     //         ReplaceAnimBuffData replaceAnimBuffData = a.ReplaceAnimBuffData;
     //         AnimationComponent animationComponent = a.Target.GetComponent<AnimationComponent>();
@@ -32,7 +32,7 @@ namespace ET
     //
     //         animationComponent.PlayAnimByStackFsmCurrent();
     //         a.ReplacedAnimData.Clear();
-    //         await ETTask.CompletedTask;
+    //         await UniTask.CompletedTask;
     //     }
     // }
 }

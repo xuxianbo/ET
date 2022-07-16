@@ -51,7 +51,7 @@ namespace ET
         protected override async UniTask Run(Unit unit,CancelAttackFromFSM a)
         {
             unit.GetComponent<CommonAttackComponent_View>().CancelCommonAttack();
-            await ETTask.CompletedTask;
+            await UniTask.CompletedTask;
         }
     }
     
@@ -61,7 +61,7 @@ namespace ET
         {
             a.CastUnit.GetComponent<TurnComponent>().Turn(a.TargetUnit.Position);
             a.CastUnit.GetComponent<AnimationComponent>().PlayIdel();
-            await ETTask.CompletedTask;
+            await UniTask.CompletedTask;
         }
     }
 
@@ -85,7 +85,7 @@ namespace ET
             self.m_AnimationComponent.PlayAnimAndReturnIdelFromStart(StateTypes.CommonAttack, speed: animationSpeed,
                 fadeMode: FadeMode.FromStart);
 
-            //Game.Scene.GetComponent<SoundComponent>().PlayClip("Darius/Sound_Darius_NormalAttack", 0.4f).Coroutine();
+            //Game.Scene.GetComponent<SoundComponent>().PlayClip("Darius/Sound_Darius_NormalAttack", 0.4f).Forget();
         }
 
 

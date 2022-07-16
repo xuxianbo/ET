@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 
 namespace ET
 {
@@ -131,7 +132,7 @@ namespace ET
             }
         }
 
-        public static async ETTask<CoroutineLock> Wait(this CoroutineLockComponent self, int coroutineLockType, long key, int time = 60000)
+        public static async UniTask<CoroutineLock> Wait(this CoroutineLockComponent self, int coroutineLockType, long key, int time = 60000)
         {
             CoroutineLockQueueType coroutineLockQueueType = self.list[coroutineLockType];
 
@@ -142,9 +143,9 @@ namespace ET
                 CoroutineLockQueue coroutineLockQueue = coroutineLockQueueType.AddChildWithId<CoroutineLockQueue>(key, true);
                 return self.CreateCoroutineLock(coroutineLockQueue, coroutineLockType, key, time, 1);
             }
-            ETTask<CoroutineLock> tcs = ETTask<CoroutineLock>.Create(true);
+            UniTaskCompletionSource<CoroutineLock> tcs = new UniTaskCompletionSource<CoroutineLock>();
             queue.Add(tcs, time);
-            return await tcs;
+            return await tcs.Task;
         }
 
         private static CoroutineLock CreateCoroutineLock(this CoroutineLockComponent self, CoroutineLockQueue coroutineLockQueue, int coroutineLockType, long key, int time, int level)
@@ -174,7 +175,7 @@ namespace ET
             }
 
             CoroutineLockInfo coroutineLockInfo = queue.Dequeue();
-            coroutineLockInfo.Tcs.SetResult(self.CreateCoroutineLock(queue, coroutineLockType, key, coroutineLockInfo.Time, level));
+            coroutineLockInfo.Tcs.TrySetResult(self.CreateCoroutineLock(queue, coroutineLockType, key, coroutineLockInfo.Time, level));
         }
     }
 

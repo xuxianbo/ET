@@ -54,7 +54,7 @@ namespace ET
             //
             // IdleState idleState = ReferencePool.Acquire<IdleState>();
             // idleState.SetData(StateTypes.Idle, "Idle", 1);
-            // this.BelongToUnit.NavigateTodoSomething(target, 0, idleState).Coroutine();
+            // this.BelongToUnit.NavigateTodoSomething(target, 0, idleState).Forget();
             //
             // this.BelongToUnit.GetComponent<MoveComponent>().HistroyMoveStates[lsfComponent.CurrentFrame] =
             //     lsfPathFindCmd;

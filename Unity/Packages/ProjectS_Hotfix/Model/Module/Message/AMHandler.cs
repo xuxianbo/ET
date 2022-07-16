@@ -1,10 +1,11 @@
 using System;
+using Cysharp.Threading.Tasks;
 
 namespace ET
 {
     public abstract class AMHandler<Message>: IMHandler where Message : class
     {
-        protected abstract ETTask Run(Session session, Message message);
+        protected abstract UniTask Run(Session session, Message message);
 
         public void Handle(Session session, object msg)
         {
@@ -21,7 +22,7 @@ namespace ET
                 return;
             }
 
-            this.Run(session, message).Coroutine();
+            this.Run(session, message).Forget();
         }
 
         public Type GetMessageType()

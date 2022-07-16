@@ -4,6 +4,7 @@
 // Data: 2019年6月29日 18:21:36
 //------------------------------------------------------------
 
+using Cysharp.Threading.Tasks;
 using ET;
 using FairyGUI;
 using UnityEngine;
@@ -20,10 +21,10 @@ namespace ET
         
         protected override void LoadExternal()
         {
-            LoadSprite().Coroutine();
+            LoadSprite().Forget();
         }
 
-        private async ETTask LoadSprite()
+        private async UniTaskVoid LoadSprite()
         {
             _assetOperationHandle = await YooAssetProxy.LoadAssetAsync<Sprite>(this.url);
             Sprite sprite =_assetOperationHandle.GetAssetObject<Sprite>();

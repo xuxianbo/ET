@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 
 namespace ET
 {
     public struct CoroutineLockInfo
     {
-        public ETTask<CoroutineLock> Tcs;
+        public UniTaskCompletionSource<CoroutineLock> Tcs;
         public int Time;
     }
 
@@ -29,7 +30,7 @@ namespace ET
             }
         }
         
-        public static void Add(this CoroutineLockQueue self, ETTask<CoroutineLock> tcs, int time)
+        public static void Add(this CoroutineLockQueue self, UniTaskCompletionSource<CoroutineLock> tcs, int time)
         {
             self.queue.Enqueue(new CoroutineLockInfo(){Tcs = tcs, Time = time});
         }

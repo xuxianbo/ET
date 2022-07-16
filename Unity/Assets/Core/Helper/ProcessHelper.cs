@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using Path = System.IO.Path;
 
 namespace ET
@@ -47,7 +48,7 @@ namespace ET
 
                 if (waitExit)
                 {
-                    WaitExitAsync(process).Coroutine();
+                    WaitExitAsync(process).Forget();
                 }
 
                 return process;
@@ -58,7 +59,7 @@ namespace ET
             }
         }
         
-        private static async ETTask WaitExitAsync(Process process)
+        private static async UniTask WaitExitAsync(Process process)
         {
             await process.WaitForExitAsync();
 #if UNITY

@@ -6,6 +6,7 @@
 
 using System.Collections.Generic;
 using System.IO;
+using Cysharp.Threading.Tasks;
 using ET.Client;
 using Sirenix.Serialization;
 using UnityEngine;
@@ -31,7 +32,7 @@ namespace ET
             ClientSceneManagerComponent.Instance.Get(1).GetComponent<FUIManagerComponent>().Remove(FUIPackage.Login);
         }
 
-        private static async ETTask TestHotfixSkillDes()
+        private static async UniTask TestHotfixSkillDes()
         {
             var SkillDataSupportor_Client_Des = SerializationUtility.DeserializeValue<NP_DataSupportor>(
                 (await YooAssetProxy.LoadAssetAsync<TextAsset>("Config_Darius_Q")).GetAssetObject<TextAsset>().bytes,
@@ -75,7 +76,7 @@ namespace ET
         {
             // FUI_Login fuiLogin = self.FuiUIPanelLogin;
             // RegisteHelper.Register(self, GlobalDefine.GetLoginAddress(), fuiLogin.m_accountText.text,
-            //     fuiLogin.m_passwordText.text).Coroutine();
+            //     fuiLogin.m_passwordText.text).Forget();
         }
     }
 }

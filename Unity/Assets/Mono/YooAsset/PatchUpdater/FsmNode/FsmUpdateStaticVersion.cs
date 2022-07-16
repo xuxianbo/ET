@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using ET;
 using UnityEngine;
 using YooAsset;
@@ -11,7 +12,7 @@ internal class FsmUpdateStaticVersion : IFsmNode
     void IFsmNode.OnEnter()
     {
         PatchEventDispatcher.SendPatchStepsChangeMsg(EPatchStates.UpdateStaticVersion);
-        GetStaticVersion().Coroutine();
+        GetStaticVersion().Forget();
     }
 
     void IFsmNode.OnUpdate()
@@ -22,14 +23,15 @@ internal class FsmUpdateStaticVersion : IFsmNode
     {
     }
 
-    private async ETTask GetStaticVersion()
+    private async UniTaskVoid GetStaticVersion()
     {
-        ETTask etTask = ETTask.Create();
+        UniTaskCompletionSource uniTaskCompletionSource = new UniTaskCompletionSource();
+        
         // 更新资源版本号
         var operation = YooAssets.UpdateStaticVersionAsync(30);
-        operation.Completed += _ => { etTask.SetResult(); };
+        operation.Completed += _ => { uniTaskCompletionSource.TrySetResult(); };
 
-        await etTask;
+        await uniTaskCompletionSource.Task;
 
         if (operation.Status == EOperationStatus.Succeed)
         {

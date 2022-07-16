@@ -50,9 +50,7 @@ namespace ET
             SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
 
             DontDestroyOnLoad(gameObject);
-
-            ETTask.ExceptionHandler += Log.Error;
-
+            
             Game.ILog = new UnityLogger();
 
             CodeLoader.Instance.CodeMode = this.CodeMode;

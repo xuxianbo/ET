@@ -7,7 +7,6 @@ namespace ET.Client
             Scene clientScene = EntitySceneFactory.CreateScene(zone, SceneType.Client, name, parent);
             clientScene.AddComponent<ClientSceneFlagComponent>();
             clientScene.AddComponent<CurrentScenesComponent>();
-            clientScene.AddComponent<ObjectWait>();
             clientScene.AddComponent<PlayerComponent>();
             clientScene.AddComponent<YooAssetComponent>();
             

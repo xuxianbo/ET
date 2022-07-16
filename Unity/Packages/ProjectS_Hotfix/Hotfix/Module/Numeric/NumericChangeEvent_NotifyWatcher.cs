@@ -10,7 +10,7 @@ namespace ET
 		protected override async UniTask Run(Unit unit, EventType.NumericChange args)
 		{
 			NumericWatcherComponent.Instance.Run(unit, args);
-			await ETTask.CompletedTask;
+			await UniTask.CompletedTask;
 		}
 	}
 }

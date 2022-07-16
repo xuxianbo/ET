@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using ET;
 using UnityEngine;
 using YooAsset;
@@ -11,7 +12,7 @@ public class FsmUpdateManifest : IFsmNode
     void IFsmNode.OnEnter()
     {
         PatchEventDispatcher.SendPatchStepsChangeMsg(EPatchStates.UpdateManifest);
-        UpdateManifest().Coroutine();
+        UpdateManifest().Forget();
     }
 
     void IFsmNode.OnUpdate()
@@ -22,14 +23,15 @@ public class FsmUpdateManifest : IFsmNode
     {
     }
 
-    private async ETTask UpdateManifest()
+    private async UniTaskVoid UpdateManifest()
     {
         // 更新补丁清单
-        ETTask etTask = ETTask.Create();
+        UniTaskCompletionSource uniTaskCompletionSource = new UniTaskCompletionSource();
+
         var operation = YooAssets.UpdateManifestAsync(PatchUpdater.ResourceVersion, 30);
-        operation.Completed += _ => { etTask.SetResult(); };
+        operation.Completed += _ => { uniTaskCompletionSource.TrySetResult(); };
         
-        await etTask;
+        await uniTaskCompletionSource.Task;
 
         if (operation.Status == EOperationStatus.Succeed)
         {

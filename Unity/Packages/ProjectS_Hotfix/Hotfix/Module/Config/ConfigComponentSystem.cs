@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using ET.EventType;
 
 namespace ET
@@ -37,7 +38,7 @@ namespace ET
             self.AllConfig[configType] = category;
         }
 
-        public static async ETTask Load(this ConfigComponent self)
+        public static async UniTask Load(this ConfigComponent self)
         {
             self.AllConfig.Clear();
             HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
@@ -52,7 +53,7 @@ namespace ET
             }
         }
 
-        public static async ETTask LoadAsync(this ConfigComponent self)
+        public static async UniTask LoadAsync(this ConfigComponent self)
         {
             self.AllConfig.Clear();
             HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
@@ -84,10 +85,10 @@ namespace ET
                 self.AllConfig[configType] = category;
             }
 
-            Game.EventSystem.PublishAsync(Game.Scene, new LoadConfig()).Coroutine();
+            Game.EventSystem.PublishAsync(Game.Scene, new LoadConfig()).Forget();
         }
 #else
-        public static async ETTask LoadAsync(this ConfigComponent self)
+        public static async UniTask LoadAsync(this ConfigComponent self)
         {
             await Game.EventSystem.PublishAsync(Game.Scene, new LoadConfig());
         }

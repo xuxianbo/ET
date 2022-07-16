@@ -1,10 +1,11 @@
 using System;
+using Cysharp.Threading.Tasks;
 
 namespace ET.Client
 {
     public static class LoginHelper
     {
-        public static async ETTask Login(Scene clientScene, string account, string password)
+        public static async UniTaskVoid Login(Scene clientScene, string account, string password)
         {
             try
             {

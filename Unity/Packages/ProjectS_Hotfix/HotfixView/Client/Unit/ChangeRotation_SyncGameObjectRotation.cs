@@ -15,7 +15,7 @@ namespace ET.Client
             }
             Transform transform = gameObjectComponent.GameObject.transform;
             transform.rotation = unit.Rotation;
-            await ETTask.CompletedTask;
+            await UniTask.CompletedTask;
         }
     }
 }

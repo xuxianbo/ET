@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 
 namespace ET
 {
@@ -140,13 +142,6 @@ namespace ET
         {
             switch (timerAction.TimerClass)
             {
-                case TimerClass.OnceWaitTimer:
-                {
-                    ETTask<bool> tcs = timerAction.Callback as ETTask<bool>;
-                    this.Remove(timerAction.Id);
-                    tcs.SetResult(true);
-                    break;
-                }
                 case TimerClass.OnceTimer:
                 {
                     Action action = timerAction.Callback as Action;
@@ -174,7 +169,7 @@ namespace ET
             }
         }
 
-        public async ETTask<bool> WaitFrameAsync(ETCancellationToken cancellationToken = null)
+        public async UniTask<bool> WaitFrameAsync(CancellationToken cancellationToken = default)
         {
             return await WaitAsync(1, cancellationToken);
         }
@@ -185,7 +180,7 @@ namespace ET
         /// <param name="time"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async ETTask<bool> WaitAsync(long time, ETCancellationToken cancellationToken = null)
+        public async UniTask<bool> WaitAsync(long time, CancellationToken cancellationToken = default)
         {
             if (time == 0)
             {
@@ -194,7 +189,7 @@ namespace ET
 
             uint tillFrame = LsfComponent.CurrentFrame + TimeAndFrameConverter.Frame_Long2Frame(time);
 
-            ETTask<bool> tcs = ETTask<bool>.Create(true);
+            UniTaskCompletionSource<bool> tcs = new UniTaskCompletionSource<bool>();
 
             LSF_TimerAction timer =
                 this.AddChild<LSF_TimerAction, TimerClass, uint, object>(TimerClass.OnceWaitTimer, 0, tcs, true);
@@ -205,20 +200,14 @@ namespace ET
             {
                 if (this.Remove(timerId))
                 {
-                    tcs.SetResult(false);
+                    tcs.TrySetCanceled();
                 }
             }
 
             bool ret;
-            try
-            {
-                cancellationToken?.Add(CancelAction);
-                ret = await tcs;
-            }
-            finally
-            {
-                cancellationToken?.Remove(CancelAction);
-            }
+
+            cancellationToken.Register(CancelAction);
+            ret = await tcs.Task;
 
             return ret;
         }

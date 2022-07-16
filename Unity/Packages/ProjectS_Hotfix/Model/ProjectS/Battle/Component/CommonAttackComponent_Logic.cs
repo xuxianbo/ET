@@ -1,5 +1,7 @@
 ﻿//此文件格式由工具自动生成
 
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 
 namespace ET
@@ -42,7 +44,7 @@ namespace ET
         /// 用于替换取消攻击流程的黑板键值
         /// </summary>
         public NP_BlackBoardRelationData CancelAttackReplaceBB;
-        public ETCancellationToken CancellationTokenSource;
+        public CancellationTokenSource CancellationTokenSource;
         
         /// <summary>
         /// 视图层链接，用于控制视图层表现

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
+using Cysharp.Threading.Tasks;
 
 namespace ET.Client
 {
     public static class RouterHelper
     {
         // 注册router
-        public static async ETTask<Session> CreateRouterSession(Scene clientScene, string address)
+        public static async UniTask<Session> CreateRouterSession(Scene clientScene, string address)
         {
             (uint recvLocalConn, string routerAddress) = await GetRouterAddress(clientScene, address, 0, 0);
 
@@ -25,7 +26,7 @@ namespace ET.Client
             return routerSession;
         }
         
-        public static async ETTask<(uint, string)> GetRouterAddress(Scene clientScene, string address, uint localConn, uint remoteConn)
+        public static async UniTask<(uint, string)> GetRouterAddress(Scene clientScene, string address, uint localConn, uint remoteConn)
         {
             Log.Info($"start get router address: {clientScene.Id} {address} {localConn} {remoteConn}");
             //return (RandomHelper.RandUInt32(), address);
@@ -39,7 +40,7 @@ namespace ET.Client
         }
 
         // 向router申请
-        private static async ETTask<uint> Connect(IPEndPoint routerAddress, string realAddress, uint localConn, uint remoteConn)
+        private static async UniTask<uint> Connect(IPEndPoint routerAddress, string realAddress, uint localConn, uint remoteConn)
         {
             uint connectId = RandomHelper.RandUInt32();
             
