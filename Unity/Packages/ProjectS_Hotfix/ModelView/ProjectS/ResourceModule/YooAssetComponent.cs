@@ -15,9 +15,10 @@ namespace ET
     /// </summary>
     public class YooAssetComponent : Entity, IAwake, IDestroy
     {
-        public List<SceneOperationHandle> SceneOperationHandles = new List<SceneOperationHandle>();
-        public List<AssetOperationHandle> AssetsOperationHandles = new List<AssetOperationHandle>();
-        public List<SubAssetsOperationHandle> SubAssetsOperationHandles = new List<SubAssetsOperationHandle>();
-        public List<RawFileOperation> RawFileOperationHandles = new List<RawFileOperation>();
+        public Dictionary<string, SceneOperationHandle> SceneOperationHandles = new Dictionary<string, SceneOperationHandle>();
+        public Dictionary<string, AssetOperationHandle> AssetsOperationHandles = new Dictionary<string, AssetOperationHandle>();
+        public Dictionary<string, SubAssetsOperationHandle> SubAssetsOperationHandles = new Dictionary<string, SubAssetsOperationHandle>();
+        
+        public Dictionary<string, RawFileOperation> RawFileOperationHandles = new Dictionary<string, RawFileOperation>();
     }
 }
