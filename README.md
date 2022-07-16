@@ -1,6 +1,6 @@
 # 本项目包含多个解决方案
 
-ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba，并提供常用的编辑器工具。
+ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba + UniTask，并提供常用的编辑器工具。
 
 # 环境 && 版本
 
@@ -23,6 +23,7 @@ ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba，并提供常用的编辑�
 - [x] 接入 [YooAssset 资源热更方案](https://github.com/tuyoogame/YooAsset)
 - [x] 接入 [FGUI UI方案](https://www.fairygui.com/) ，并提供MVVM UI框架
 - [x] 接入 [luban 配置表方案](https://github.com/focus-creative-games/luban)，并提供周边工具链
+- [x] 接入 [UniTask 异步方案](https://github.com/Cysharp/UniTask), 并基于UniTask对所有异步模块进行改造
 - [ ] 全面移植 [NKGMoba技能系统](https://gitee.com/NKG_admin/NKGMobaBasedOnET)，及其周边工具链
 
 # 引用
