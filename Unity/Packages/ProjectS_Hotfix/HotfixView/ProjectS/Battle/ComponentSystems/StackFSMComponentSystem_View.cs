@@ -1,18 +1,15 @@
-﻿using ET.EventType;
+﻿using Cysharp.Threading.Tasks;
+using ET.EventType;
 
 namespace ET
 {
-    // public class StackFSMComponentSystem_StateChanged_View_PlayAnim: AEvent<EventType.FSMStateChanged_PlayAnim>
-    // {
-    //     protected override async UniTask Run(FSMStateChanged_PlayAnim a)
-    //     {
-    //         a.Unit.GetComponent<AnimationComponent>().PlayAnimByStackFsmCurrent();
-    //         await UniTask.CompletedTask;
-    //     }
-    // }
-    //
-    // public class StackFSMComponentSystem_View
-    // {
-    //     
-    // }
+    [Event(SceneType.SingleGame)]
+    public class StackFSMComponentSystem_StateChanged_View_PlayAnim: AEvent<Unit,EventType.FSMStateChanged_PlayAnim>
+    {
+        protected override UniTask Run(Unit entity, FSMStateChanged_PlayAnim a)
+        {
+            entity.GetComponent<AnimationComponent>().PlayAnimByStackFsmCurrent();
+            return UniTask.CompletedTask;
+        }
+    }
 }

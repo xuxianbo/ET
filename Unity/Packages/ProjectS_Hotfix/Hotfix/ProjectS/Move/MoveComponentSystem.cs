@@ -117,6 +117,7 @@ namespace ET
             if (moveRet)
             {
                 Game.EventSystem.Publish(self.GetParent<Unit>(), new EventType.MoveStop());
+                Game.EventSystem.Publish(self.GetParent<Unit>(), new EventType.FSMStateChanged_PlayAnim());
             }
 
             return moveRet;

@@ -51,8 +51,7 @@ namespace ET
         public static async UniTaskVoid MapPathFinder(this MapClickCompoent self, Vector3 ClickPoint)
         {
             Unit unit = self.GetParent<Unit>();
-            
-            await unit.FindPathMoveToAsync(ClickPoint);
+            unit.FindPathMoveToAsync(ClickPoint).Forget();
         }
     }
 }

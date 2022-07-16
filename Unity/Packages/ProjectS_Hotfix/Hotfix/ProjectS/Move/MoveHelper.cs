@@ -25,10 +25,6 @@ namespace ET
                 return true;
             }
 
-            GameObject.CreatePrimitive(PrimitiveType.Cube).transform.position = target;
-            GameObject.CreatePrimitive(PrimitiveType.Sphere).transform.position =
-                abPath.vectorPath[abPath.vectorPath.Count - 1];
-
             bool ret = await unit.GetComponent<MoveComponent>()
                 .MoveToAsync(abPath.vectorPath, speed, 100, targetRange, unitaskCancellationToken);
 
