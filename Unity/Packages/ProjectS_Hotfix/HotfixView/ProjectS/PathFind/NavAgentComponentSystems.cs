@@ -26,8 +26,13 @@ namespace ET
             
             ABPath abPath = ABPath.Construct(start, end, self.OnPathFindFinish);
             AstarPath.StartPath(abPath);
+
+            abPath = await self.PathFindResultTcs.Task;
             
-            return await self.PathFindResultTcs.Task;
+            PathModifyHelper.StartEndModify(abPath);
+            PathModifyHelper.FunnelModify(abPath);
+            
+            return abPath;
         }
     }
 }

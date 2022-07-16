@@ -19,7 +19,6 @@ namespace ET
             }
             
             ABPath abPath = await unit.GetComponent<NavAgentComponent>().FindPathBetweenA_B(unit.Position, target);
-            abPath.
 
             if (abPath.vectorPath.Count < 1)
             {
