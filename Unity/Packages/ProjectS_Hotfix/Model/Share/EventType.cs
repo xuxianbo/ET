@@ -57,12 +57,14 @@ namespace ET
         {
         }
 
-        public struct EnterMapFinish
+        public struct EnterGameMapFinish
         {
         }
 
-        public struct AfterUnitCreate
+        public struct AfterUnitCreate_Logic
         {
+            public int UnitConfigId;
+            public string UnitName;
         }
 
         public struct LoadConfig

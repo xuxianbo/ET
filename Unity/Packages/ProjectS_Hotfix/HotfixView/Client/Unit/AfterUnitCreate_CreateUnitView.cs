@@ -1,23 +1,28 @@
 ﻿using Cysharp.Threading.Tasks;
+using ET.cfg.UnitConfig;
 using UnityEngine;
 
 namespace ET.Client
 {
-    [Event(SceneType.Current)]
-    public class AfterUnitCreate_CreateUnitView: AEvent<Unit, EventType.AfterUnitCreate>
+    [Event(SceneType.SingleGame)]
+    public class AfterUnitCreate_CreateUnitView : AEvent<Unit, EventType.AfterUnitCreate_Logic>
     {
-        protected override async UniTask Run(Unit unit, EventType.AfterUnitCreate args)
+        protected override async UniTask Run(Unit unit, EventType.AfterUnitCreate_Logic args)
         {
-            // Unit View层
-            // 这里可以改成异步加载，demo就不搞了
-            GameObject bundleGameObject = (await YooAssetProxy.LoadAssetAsync<GameObject>($"Unit_Unit")).GetAsset<GameObject>();
-            
-            GameObject prefab = bundleGameObject.Get<GameObject>("Skeleton");
-	        
-            GameObject go = UnityEngine.Object.Instantiate(prefab, GlobalComponent.Instance.Unit, true);
+            UnitResConfig unitResConfig = ConfigComponent.Instance.AllConfigTables.TbUnitRes[args.UnitConfigId];
+
+            GameObject go =
+                    await GameObjectPoolComponent.Instance.FetchGameObject(unitResConfig.PrefabName,
+                        GameObjectType.Unit);
+
             go.transform.position = unit.Position;
+            go.transform.rotation = unit.Rotation;
+            go.name = args.UnitName;
+            
             unit.AddComponent<GameObjectComponent>().GameObject = go;
-            unit.AddComponent<AnimatorComponent>();
+            unit.AddComponent<AnimationComponent>();
+            unit.AddComponent<UnitTransformComponent>();
+
             await UniTask.CompletedTask;
         }
     }

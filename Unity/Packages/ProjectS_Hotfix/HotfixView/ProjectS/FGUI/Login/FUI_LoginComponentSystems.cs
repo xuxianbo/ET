@@ -12,9 +12,6 @@ namespace ET
     {
         public override void Awake(FUI_LoginComponent self, FUI_Login fuiLogin)
         {
-            string recordAccount = PlayerPrefs.GetString("LoginAccount");
-            string recordPassWord = PlayerPrefs.GetString("LoginPassWord");
-            
             fuiLogin.m_Btn_Login.self.onClick.Add(() =>
             {
                 FUI_LoginUtilities.OnLogin(self).Forget();

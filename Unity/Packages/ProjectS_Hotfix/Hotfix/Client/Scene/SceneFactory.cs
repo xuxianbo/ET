@@ -26,6 +26,7 @@ namespace ET.Client
             Scene singleGameScene = EntitySceneFactory.CreateScene(zone, SceneType.SingleGame, name, parent);
             
             singleGameScene.AddComponent<ClientSceneFlagComponent>();
+            singleGameScene.AddComponent<UnitComponent>();
 
             ClientSceneManagerComponent.Instance.SetCurrentSingleGameScene(singleGameScene);
             

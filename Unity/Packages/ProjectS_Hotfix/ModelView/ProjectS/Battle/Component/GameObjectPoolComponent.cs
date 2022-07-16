@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using ET.Client;
 using UnityEngine;
 
@@ -28,7 +29,7 @@ namespace ET
         /// 特效
         /// </summary>
         Effect,
-        
+
         /// <summary>
         /// 技能指示器
         /// </summary>
@@ -46,12 +47,8 @@ namespace ET
 
         public Dictionary<string, Queue<GameObject>> AllCachedGos = new Dictionary<string, Queue<GameObject>>();
 
-        /// <summary>
-        /// 处理起来比较麻烦，先不做异步了
-        /// </summary>
-        /// <param name="resName"></param>
-        /// <returns></returns>
-        public GameObject FetchGameObject(string resName, GameObjectType gameObjectType)
+
+        public async UniTask<GameObject> FetchGameObject(string resName, GameObjectType gameObjectType)
         {
             GameObject gameObject;
             if (AllCachedGos.TryGetValue(resName, out var gameObjects))
@@ -76,24 +73,25 @@ namespace ET
                 else
                 {
                     targetprefab = null;
+                    YooAssetComponent yooAssetComponent = this.DomainScene().GetComponent<YooAssetComponent>();
                     switch (gameObjectType)
                     {
-                        // TODO 
-                        // case GameObjectType.Unit:
-                        //     targetprefab = XAssetLoader.LoadAsset<GameObject>(XAssetPathUtilities.GetUnitPath(resName));
-                        //     break;
-                        // case GameObjectType.Sound:
-                        //     targetprefab =
-                        //         XAssetLoader.LoadAsset<GameObject>(XAssetPathUtilities.GetSoundPath(resName));
-                        //     break;
-                        // case GameObjectType.Effect:
-                        //     targetprefab =
-                        //         XAssetLoader.LoadAsset<GameObject>(XAssetPathUtilities.GetEffectPath(resName));
-                        //     break;
-                        // case GameObjectType.SkillIndictor:
-                        //     targetprefab =
-                        //         XAssetLoader.LoadAsset<GameObject>(XAssetPathUtilities.GetSkillIndicatorPath(resName));
-                        //     break;
+                        case GameObjectType.Unit:
+                            targetprefab = await yooAssetComponent.LoadAssetAsync<GameObject>(
+                                YooAssetProxy.GetYooAssetFormatResPath(resName, YooAssetProxy.YooAssetResType.Unit));
+                            break;
+                        case GameObjectType.Sound:
+                            targetprefab = await yooAssetComponent.LoadAssetAsync<GameObject>(
+                                YooAssetProxy.GetYooAssetFormatResPath(resName, YooAssetProxy.YooAssetResType.Sound));
+                            break;
+                        case GameObjectType.Effect:
+                            targetprefab = await yooAssetComponent.LoadAssetAsync<GameObject>(
+                                YooAssetProxy.GetYooAssetFormatResPath(resName, YooAssetProxy.YooAssetResType.Effect));
+                            break;
+                        case GameObjectType.SkillIndictor:
+                            targetprefab = await yooAssetComponent.LoadAssetAsync<GameObject>(
+                                YooAssetProxy.GetYooAssetFormatResPath(resName, YooAssetProxy.YooAssetResType.Effect));
+                            break;
                     }
 
                     if (targetprefab == null)
@@ -107,6 +105,7 @@ namespace ET
 
                 gameObject = UnityEngine.Object.Instantiate(targetprefab, GlobalComponent.Instance.Unit, true);
                 gameObject.transform.position = targetprefab.transform.position;
+                gameObject.name = "Need To Be Renamed";
             }
 
             gameObject.SetActive(true);

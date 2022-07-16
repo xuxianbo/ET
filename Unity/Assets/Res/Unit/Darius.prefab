@@ -75,8 +75,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-  - key: Animancer
-    gameObject: {fileID: -2737603719490355227}
+  - key: Anim_Idle1
+    gameObject: {fileID: 7400000, guid: edbdf0ec1d84819488ee89a07c156534, type: 2}
+  - key: Anim_Walk1
+    gameObject: {fileID: 7400000, guid: 90467582e4daa004c95831b9bd6f952e, type: 2}
+  - key: Anim_Attack1
+    gameObject: {fileID: 7400000, guid: 26154bd7c9b82684e81caedf8bc26bcf, type: 2}
 --- !u!1001 &320713938276736829
 PrefabInstance:
   m_ObjectHideFlags: 0

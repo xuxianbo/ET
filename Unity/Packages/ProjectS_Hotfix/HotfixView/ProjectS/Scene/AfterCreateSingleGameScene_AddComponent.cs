@@ -13,6 +13,7 @@ namespace ET
     {
         protected override async UniTask Run(Scene scene, EventType.AfterCreateSingleGameScene args)
         {
+            scene.AddComponent<GameObjectPoolComponent>();
             scene.AddComponent<YooAssetComponent>();
             scene.AddComponent<FUIPackageManagerComponent>();
             scene.AddComponent<FUIManagerComponent>();

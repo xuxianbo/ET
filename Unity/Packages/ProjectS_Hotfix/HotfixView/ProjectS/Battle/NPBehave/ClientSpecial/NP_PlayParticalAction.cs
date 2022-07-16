@@ -35,17 +35,17 @@ namespace ET
 
         public override Action GetActionToBeDone()
         {
-#if !SERVER
-            Partical = GameObjectPoolComponent.Instance.FetchGameObject($"{ParticalName}",
-                GameObjectType.Effect);
-            if (this.FollowUnit)
-            {
-                Partical.transform.SetParent(this.BelongToUnit.GetComponent<UnitTransformComponent>()
-                    .GetTranform(PosType));
-                Partical.transform.localPosition = Vector3.zero;
-            }
-            Partical.SetActive(false);
-#endif
+// #if !SERVER
+//             Partical = GameObjectPoolComponent.Instance.FetchGameObject($"{ParticalName}",
+//                 GameObjectType.Effect);
+//             if (this.FollowUnit)
+//             {
+//                 Partical.transform.SetParent(this.BelongToUnit.GetComponent<UnitTransformComponent>()
+//                     .GetTranform(PosType));
+//                 Partical.transform.localPosition = Vector3.zero;
+//             }
+//             Partical.SetActive(false);
+// #endif
             
             this.Action = this.PlayPartical;
             return this.Action;

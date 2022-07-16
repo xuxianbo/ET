@@ -36,10 +36,10 @@ namespace ET
                 }
             }
 
-            self.AnimancerComponent.Layers[(int) PlayAnimInfo.AvatarMaskType.AnimMask_UpNotAffect]
-                .SetMask(self.AvatarMasks[PlayAnimInfo.AvatarMaskType.AnimMask_UpNotAffect.ToString()]);
-            self.AnimancerComponent.Layers[(int) PlayAnimInfo.AvatarMaskType.AnimMask_DownNotAffect]
-                .SetMask(self.AvatarMasks[PlayAnimInfo.AvatarMaskType.AnimMask_DownNotAffect.ToString()]);
+            // self.AnimancerComponent.Layers[(int) PlayAnimInfo.AvatarMaskType.AnimMask_UpNotAffect]
+            //     .SetMask(self.AvatarMasks[PlayAnimInfo.AvatarMaskType.AnimMask_UpNotAffect.ToString()]);
+            // self.AnimancerComponent.Layers[(int) PlayAnimInfo.AvatarMaskType.AnimMask_DownNotAffect]
+            //     .SetMask(self.AvatarMasks[PlayAnimInfo.AvatarMaskType.AnimMask_DownNotAffect.ToString()]);
 
 
             self.PlayIdelFromStart();

@@ -17,6 +17,7 @@ namespace ET
             Effect,
             Shader,
             Material,
+            Sound,
         }
         
         #region 路径相关

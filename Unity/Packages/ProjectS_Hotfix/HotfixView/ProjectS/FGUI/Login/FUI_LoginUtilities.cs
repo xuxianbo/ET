@@ -33,6 +33,7 @@ namespace ET
             ClientSceneManagerComponent.Instance.Get(1).GetComponent<FUIManagerComponent>().Remove(FUIPackage.Login);
             
             await Game.EventSystem.PublishAsync(singleGameScene, new EventType.LoadingFinish());
+            await Game.EventSystem.PublishAsync(singleGameScene, new EventType.EnterGameMapFinish());
         }
 
         private static async UniTask TestHotfixSkillDes()

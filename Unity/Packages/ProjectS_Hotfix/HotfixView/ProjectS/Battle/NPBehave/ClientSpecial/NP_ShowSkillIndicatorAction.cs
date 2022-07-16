@@ -28,7 +28,6 @@ namespace ET
 
         public void ShowSkillIndicatorAction()
         {
-#if !SERVER
             Unit unit = BelongToUnit;
 
             if (unit.GetComponent<SkillIndicatorComponent>() == null)
@@ -48,9 +47,9 @@ namespace ET
                     {
                         var gameObject = GameObjectPoolComponent.Instance.FetchGameObject("Cone/Fire Blast",
                             GameObjectType.SkillIndictor);
-                        gameObject.transform.SetParent(unit.GetComponent<GameObjectComponent>().GameObject.transform);
-                        gameObject.transform.localPosition = new Vector3(0, 1, 0);
-                        cachedConeGo = gameObject.GetComponent<Cone>();
+                        // gameObject.transform.SetParent(unit.GetComponent<GameObjectComponent>().GameObject.transform);
+                        // gameObject.transform.localPosition = new Vector3(0, 1, 0);
+                        // cachedConeGo = gameObject.GetComponent<Cone>();
                         cachedConeGo.Angle = 40;
                         unit.GetComponent<SkillIndicatorComponent>()
                             .AddSplats(IndicatorName.GetTheBBDataValue<string>(), cachedConeGo);
@@ -58,7 +57,6 @@ namespace ET
 
                     break;
             }
-#endif
         }
     }
 }

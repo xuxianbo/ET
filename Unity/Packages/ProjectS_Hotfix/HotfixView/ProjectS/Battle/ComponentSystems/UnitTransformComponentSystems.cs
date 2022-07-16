@@ -9,16 +9,16 @@ namespace ET
             self.BelongToUnit = self.GetParent<Unit>();
             ET.Client.GameObjectComponent gameObjectComponent =
                 self.BelongToUnit.GetComponent<ET.Client.GameObjectComponent>();
-            self.headPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_HeadPos").transform;
-            self.groundPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_GroundPos").transform;
-            self.channelPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_FrontPos").transform;
-            self.centerPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_CenterPos").transform;
-            self.leftHeadPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_LeftHandPos").transform;
-            self.rightHeadPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_RightHandPos").transform;
-
-            self.weaponStartPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_WeaponStartPos").transform;
-            self.weaponCenterPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_WeaponCenterPos").transform;
-            self.weaponEndPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_WeaponEndPos").transform;
+            // self.headPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_HeadPos").transform;
+            // self.groundPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_GroundPos").transform;
+            // self.channelPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_FrontPos").transform;
+            // self.centerPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_CenterPos").transform;
+            // self.leftHeadPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_LeftHandPos").transform;
+            // self.rightHeadPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_RightHandPos").transform;
+            //
+            // self.weaponStartPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_WeaponStartPos").transform;
+            // self.weaponCenterPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_WeaponCenterPos").transform;
+            // self.weaponEndPos = gameObjectComponent.GameObject.Get<GameObject>("Trans_WeaponEndPos").transform;
         }
     }
 

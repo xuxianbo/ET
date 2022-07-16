@@ -144,47 +144,24 @@ namespace ET
 		public int TurnSpeed { get; set; }
 
 	}
-
-	[Message(OuterOpcode.UnitInfo)]
-	[ProtoContract]
-	public partial class UnitInfo: Object
+	
+	public class UnitInfo
 	{
-		[ProtoMember(1)]
-		public long UnitId { get; set; }
-
-		[ProtoMember(2)]
+		public int UnitId { get; set; }
+		
 		public int ConfigId { get; set; }
-
-		[ProtoMember(3)]
-		public int Type { get; set; }
-
-		[ProtoMember(4)]
+		
 		public float X { get; set; }
-
-		[ProtoMember(5)]
+		
 		public float Y { get; set; }
-
-		[ProtoMember(6)]
+		
 		public float Z { get; set; }
-
-		[ProtoMember(7)]
+		
 		public float ForwardX { get; set; }
-
-		[ProtoMember(8)]
+		
 		public float ForwardY { get; set; }
-
-		[ProtoMember(9)]
+		
 		public float ForwardZ { get; set; }
-
-		[ProtoMember(10)]
-		public List<int> Ks = new List<int>();
-
-		[ProtoMember(11)]
-		public List<long> Vs = new List<long>();
-
-		[ProtoMember(12)]
-		public MoveInfo MoveInfo { get; set; }
-
 	}
 
 	[Message(OuterOpcode.M2C_CreateUnits)]
