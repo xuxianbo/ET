@@ -26,7 +26,7 @@ namespace ET
 		
 		public Type SystemType()
 		{
-			return typeof(IUpdateSystem);
+			return typeof(IFixedUpdateSystem);
 		}
 
 		public abstract void FixedUpdate(T self);

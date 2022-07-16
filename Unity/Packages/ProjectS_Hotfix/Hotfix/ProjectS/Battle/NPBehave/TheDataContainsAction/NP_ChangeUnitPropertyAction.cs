@@ -29,7 +29,7 @@ namespace ET
         public void ChangeUnitProperty()
         {
             Unit unit = BelongToUnit;
-            UnitAttributesDataComponent unitAttributesDataComponent = unit.GetComponent<UnitAttributesDataComponent>();
+
             DataModifierComponent dataModifierComponent = unit.GetComponent<DataModifierComponent>();
             float oriValue, finalValue;
             

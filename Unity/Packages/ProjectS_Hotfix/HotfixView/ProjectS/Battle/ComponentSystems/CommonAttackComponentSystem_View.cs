@@ -72,10 +72,10 @@ namespace ET
             //转向目标Unit
             self.GetParent<Unit>().GetComponent<TurnComponent>().Turn(targetUnit.Position);
 
-            UnitAttributesDataComponent unitAttributesDataComponent =
-                self.GetParent<Unit>().GetComponent<UnitAttributesDataComponent>();
-            float attackPre = unitAttributesDataComponent.UnitAttributesNodeDataBase.OriAttackPre /
-                              (1 + unitAttributesDataComponent.GetAttribute(NumericType.AttackSpeedAdd));
+            NumericComponent unitAttributesDataComponent =
+                self.GetParent<Unit>().GetComponent<NumericComponent>();
+            float attackPre = unitAttributesDataComponent[NumericType.Attack] /
+                              (1 + unitAttributesDataComponent[NumericType.Attack]);
 
             //这里假设诺手原始攻击动画0.32s是动画攻击奏效点
             float animationAttackPoint = 0.32f;

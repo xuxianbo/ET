@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ET.Client
 {
-    [Event(SceneType.Current)]
+    [Event(SceneType.SingleGame)]
     public class ChangePosition_SyncGameObjectPos: AEvent<Unit, EventType.ChangePosition>
     {
         protected override async UniTask Run(Unit unit, EventType.ChangePosition args)

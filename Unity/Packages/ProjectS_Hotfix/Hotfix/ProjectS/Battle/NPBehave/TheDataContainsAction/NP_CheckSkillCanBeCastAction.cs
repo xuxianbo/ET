@@ -47,7 +47,7 @@ namespace ET
             }
             
             //给要修改的黑板节点进行赋值
-            UnitAttributesDataComponent unitAttributesDataComponent = BelongToUnit.GetComponent<UnitAttributesDataComponent>();
+            NumericComponent unitAttributesDataComponent = BelongToUnit.GetComponent<NumericComponent>();
             switch (this.SkillDesNodeData.SkillCostTypes)
             {
                 case SkillCostTypes.MagicValue:

@@ -19,5 +19,7 @@ namespace ET
 
         public int TotalResCountToBeLoaded;
         public int HasLoadCompletedResCount;
+
+        public UniTaskCompletionSource Tcs;
     }
 }

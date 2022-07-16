@@ -14,7 +14,7 @@ namespace ET
         public static float CalculateCurrentData(IBuffSystem buffSystem)
         {
             //取得来源Unit的Hero数据
-            UnitAttributesDataComponent theUnitFromUnitAttributesData = buffSystem.TheUnitFrom.GetComponent<UnitAttributesDataComponent>();
+            NumericComponent theUnitFromUnitAttributesData = buffSystem.TheUnitFrom.GetComponent<NumericComponent>();
 
             float tempData = 0;
 
@@ -24,15 +24,15 @@ namespace ET
             switch (buffData.BaseBuffBaseDataEffectTypes)
             {
                 case BuffBaseDataEffectTypes.FromHeroLevel:
-                    tempData = buffData.ValueToBeChanged[(int) theUnitFromUnitAttributesData.GetAttribute(NumericType.Level)];
+                    tempData = buffData.ValueToBeChanged[(int) theUnitFromUnitAttributesData[NumericType.Level]];
                     break;
                 case BuffBaseDataEffectTypes.FromSkillLevel:
                     tempData = buffData.ValueToBeChanged[buffSystem.TheUnitFrom.GetComponent<SkillCanvasManagerComponent>()
                             .GetSkillLevel(buffData.BelongToSkillId.Value)];
                     break;
                 case BuffBaseDataEffectTypes.FromHasLostLifeValue:
-                    tempData = buffSystem.TheUnitBelongto.GetComponent<UnitAttributesDataComponent>().GetAttribute(NumericType.MaxHp) -
-                            buffSystem.TheUnitBelongto.GetComponent<UnitAttributesDataComponent>().GetAttribute(NumericType.Hp);
+                    tempData = buffSystem.TheUnitBelongto.GetComponent<NumericComponent>()[NumericType.MaxHp] -
+                            buffSystem.TheUnitBelongto.GetComponent<NumericComponent>()[NumericType.Hp];
                     break;
                 case BuffBaseDataEffectTypes.FromCurrentOverlay:
                     tempData = buffData.ValueToBeChanged[buffSystem.CurrentOverlay];
@@ -46,11 +46,11 @@ namespace ET
                 {
                     case BuffAdditionTypes.Percentage_Physical:
                         tempData += additionValue.Value *
-                                theUnitFromUnitAttributesData.GetAttribute(NumericType.Attack);
+                                theUnitFromUnitAttributesData[NumericType.Attack];
                         break;
                     case BuffAdditionTypes.Percentage_Magic:
                         tempData += additionValue.Value *
-                                theUnitFromUnitAttributesData.GetAttribute(NumericType.MagicStrength);
+                                theUnitFromUnitAttributesData[NumericType.MagicStrength];
                         break;
                     case BuffAdditionTypes.SelfOverlay_Mul:
                         tempData *= additionValue.Value * buffSystem.CurrentOverlay;

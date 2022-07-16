@@ -72,7 +72,6 @@ namespace ET
 
         public struct CancelMoveFromFSM
         {
-            public Unit Unit;
         }
 
         public struct CancelAttackFromFSM
@@ -80,6 +79,11 @@ namespace ET
             public bool ResetAttackTarget;
         }
 
+        public struct FSMStateChanged_PlayAnim
+        {
+            
+        }
+        
         /// <summary>
         /// 等待下次普攻可以发出
         /// </summary>

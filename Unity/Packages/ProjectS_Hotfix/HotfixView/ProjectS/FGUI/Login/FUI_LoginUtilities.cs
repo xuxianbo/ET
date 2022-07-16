@@ -7,6 +7,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Cysharp.Threading.Tasks;
+using ET.cfg.SceneConfig;
 using ET.Client;
 using Sirenix.Serialization;
 using UnityEngine;
@@ -18,21 +19,30 @@ namespace ET
         // 选择进入游戏，则单局游戏Scene创建，为ClientScene的子物体，所有资源OperationHandle都挂在这个单局游戏的Scene上面，Scene销毁时统一进行释放
         public static async UniTaskVoid OnLogin(FUI_LoginComponent self)
         {
-            Scene singleGameScene = SceneFactory.CreateSingleGameScene(++GlobalDefine.SingleGameSceneIndex, "SingleGameScene", self.Domain);
+            Scene singleGameScene =
+                SceneFactory.CreateSingleGameScene(++GlobalDefine.SingleGameSceneIndex, "SingleGameScene", self.Domain);
+
+            SceneBaseConfig sceneBaseConfig = ConfigComponent.Instance.AllConfigTables.TbSceneBase[10001];
 
             await Game.EventSystem.PublishAsync(singleGameScene, new EventType.LoadingBegin()
             {
-                SceneName = YooAssetProxy.GetYooAssetFormatResPath("Map1", YooAssetProxy.YooAssetResType.Scene),
+                SceneName = YooAssetProxy.GetYooAssetFormatResPath(sceneBaseConfig.SceneName,
+                    YooAssetProxy.YooAssetResType.Scene),
                 ResList = new List<string>()
                 {
-                    // 测试用，这个资源列表只应该是场景中的动态物件
-                    //YooAssetProxy.GetYooAssetFormatResPath("Darius", YooAssetProxy.YooAssetResType.Unit)
+                    // 测试用，这个资源列表只应该是场景中的动态物件以及一些逻辑配置
+                    YooAssetProxy.GetYooAssetFormatResPath(sceneBaseConfig.SceneRecastNavDataFileName,
+                        YooAssetProxy.YooAssetResType.PathFind)
                 }
             });
 
             ClientSceneManagerComponent.Instance.Get(1).GetComponent<FUIManagerComponent>().Remove(FUIPackage.Login);
-            
+
             await Game.EventSystem.PublishAsync(singleGameScene, new EventType.LoadingFinish());
+
+            await singleGameScene.GetComponent<PathFindComponent>()
+                .LoadRecastGraphData(sceneBaseConfig.SceneRecastNavDataFileName);
+
             await Game.EventSystem.PublishAsync(singleGameScene, new EventType.EnterGameMapFinish());
         }
 

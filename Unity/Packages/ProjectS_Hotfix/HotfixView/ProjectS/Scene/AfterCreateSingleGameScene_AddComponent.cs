@@ -17,6 +17,8 @@ namespace ET
             scene.AddComponent<YooAssetComponent>();
             scene.AddComponent<FUIPackageManagerComponent>();
             scene.AddComponent<FUIManagerComponent>();
+            scene.AddComponent<PathFindComponent>();
+            scene.AddComponent<UserInputComponent>();
 
             await UniTask.CompletedTask;
         }

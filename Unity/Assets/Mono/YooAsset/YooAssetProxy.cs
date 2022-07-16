@@ -18,6 +18,7 @@ namespace ET
             Shader,
             Material,
             Sound,
+            PathFind,
         }
         
         #region 路径相关

@@ -15,7 +15,7 @@ namespace ET
     {
         protected override UniTask Run(Scene entity, EnterGameMapFinish a)
         {
-            UnitFactory.Create(entity, new UnitInfo()
+            UnitFactory.CreatePlayerHero(entity, new UnitInfo()
             {
                 X = -10,
                 Y = 0,

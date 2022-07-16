@@ -44,6 +44,8 @@ namespace ET
                     
                     self.Hide();
                     self.Reset();
+
+                    self.Tcs.TrySetResult();
                 }
             }
         }
@@ -69,8 +71,9 @@ namespace ET
                 self.TotalResCountToBeLoaded++;
             }
 
-            await UniTask.WhenAll(self.ResLoadTask);
-            await UniTask.WhenAll(self.LoadSceneTask);
+            self.Tcs = new UniTaskCompletionSource();
+
+            await self.Tcs.Task;
         }
 
         public static void Reset(this FUI_LoadingComponent self)

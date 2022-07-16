@@ -22,6 +22,11 @@ namespace ET.Client
             unit.AddComponent<GameObjectComponent>().GameObject = go;
             unit.AddComponent<AnimationComponent>();
             unit.AddComponent<UnitTransformComponent>();
+            
+            unit.AddComponent<MouseTargetSelectorComponent>();
+            unit.AddComponent<MapClickCompoent>();
+
+            unit.AddComponent<NavAgentComponent>();
 
             await UniTask.CompletedTask;
         }

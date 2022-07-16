@@ -1,6 +1,6 @@
 ﻿namespace ET
 {
-    public class MapClickCompoent : Entity, IAwake, IUpdate
+    public class MapClickCompoent : Entity, IAwake, IUpdate, IFixedUpdate
     {
         public UserInputComponent m_UserInputComponent;
 

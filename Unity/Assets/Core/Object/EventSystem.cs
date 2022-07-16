@@ -759,7 +759,7 @@ namespace ET
                     continue;
                 }
                 
-                aEvent.Handle(entity, a).ToCoroutine();
+                aEvent.Handle(entity, a).Forget();
             }
         }
         

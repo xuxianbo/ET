@@ -5,7 +5,9 @@
 //------------------------------------------------------------
 
 #if !SERVER
+using Cysharp.Threading.Tasks;
 using FairyGUI;
+using Pathfinding;
 using UnityEngine;
 
 namespace ET
@@ -14,9 +16,9 @@ namespace ET
     {
         public override void Awake(MapClickCompoent self)
         {
-            self.m_UserInputComponent = Game.Scene.GetComponent<UserInputComponent>();
+            self.m_UserInputComponent = self.DomainScene().GetComponent<UserInputComponent>();
 
-            self.m_MouseTargetSelectorComponent = self.GetParent<Room>().GetComponent<MouseTargetSelectorComponent>();
+            self.m_MouseTargetSelectorComponent = self.GetParent<Unit>().GetComponent<MouseTargetSelectorComponent>();
         }
     }
     
@@ -34,10 +36,10 @@ namespace ET
                 }
                 else //没有点在UI上
                 {
-                    if (self.m_MouseTargetSelectorComponent.TargetGameObject?.GetComponent<MonoBridge>().CustomTag ==
+                    if (self.m_MouseTargetSelectorComponent.TargetGameObject?.GetComponent<MonoBridge>()?.CustomTag ==
                         "Map")
                     {
-                        self.MapPathFinder(self.m_MouseTargetSelectorComponent.TargetHitPoint);
+                        self.MapPathFinder(self.m_MouseTargetSelectorComponent.TargetHitPoint).Forget();
                     }
                 }
             }
@@ -46,12 +48,11 @@ namespace ET
 
     public static class MapClickSystems
     {
-        public static void MapPathFinder(this MapClickCompoent self, Vector3 ClickPoint)
+        public static async UniTaskVoid MapPathFinder(this MapClickCompoent self, Vector3 ClickPoint)
         {
-            Room room = self.GetParent<Room>();
-            UnitComponent unitComponent = room.GetComponent<UnitComponent>();
-
-            // unitComponent.MyUnit.SendPathFindCmd(ClickPoint);
+            Unit unit = self.GetParent<Unit>();
+            
+            await unit.FindPathMoveToAsync(ClickPoint);
         }
     }
 }

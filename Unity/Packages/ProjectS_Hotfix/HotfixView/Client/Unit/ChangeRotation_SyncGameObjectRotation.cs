@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ET.Client
 {
-    [Event(SceneType.Current)]
+    [Event(SceneType.SingleGame)]
     public class ChangeRotation_SyncGameObjectRotation: AEvent<Unit, EventType.ChangeRotation>
     {
         protected override async UniTask Run(Unit unit, EventType.ChangeRotation args)

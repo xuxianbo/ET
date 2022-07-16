@@ -50,7 +50,7 @@ namespace ET
     }
 
 
-    public class CancelAttackFromFsm_Event : AEvent<Unit,EventType.CancelAttackFromFSM>
+    public class CancelAttackFromFsm_Event : AEvent<Unit, EventType.CancelAttackFromFSM>
     {
         protected override async UniTask Run(Unit unit, CancelAttackFromFSM a)
         {
@@ -107,7 +107,7 @@ namespace ET
                 blackboard.Set(self.AttackReplaceBB.BBKey, true);
                 blackboard.Set(self.CancelAttackReplaceBB.BBKey, false);
 
-                blackboard.Set("NormalAttackUnitIds", new List<long>() {self.CachedUnitForAttack.Id});
+                blackboard.Set("NormalAttackUnitIds", new List<long>() { self.CachedUnitForAttack.Id });
 
                 CDInfo commonAttackCDInfo = CDComponent.Instance.GetCDData(unit.Id, "CommonAttack");
                 await self.GetParent<Unit>().BelongToRoom.GetComponent<LSF_TimerComponent>()
@@ -125,13 +125,12 @@ namespace ET
         private static async UniTask CommonAttack_Internal(this CommonAttackComponent_Logic self)
         {
             Unit unit = self.GetParent<Unit>();
-            UnitAttributesDataComponent heroDataComponent = unit.GetComponent<UnitAttributesDataComponent>();
-            float attackPre = heroDataComponent.UnitAttributesNodeDataBase.OriAttackPre /
-                              (1 + heroDataComponent.GetAttribute(NumericType.AttackSpeedAdd));
-            float attackSpeed = heroDataComponent.GetAttribute(NumericType.AttackSpeed);
-            
+            NumericComponent heroDataComponent = unit.GetComponent<NumericComponent>();
+            float attackPre = heroDataComponent[NumericType.AttackAdd] / heroDataComponent[NumericType.AttackAdd];
+            float attackSpeed = heroDataComponent[NumericType.AttackSpeed];
+
             UnitComponent unitComponent = unit.BelongToRoom.GetComponent<UnitComponent>();
-            Game.EventSystem.Publish(unit,new EventType.CommonAttack()
+            Game.EventSystem.Publish(unit, new EventType.CommonAttack()
             {
                 AttackCast = unit,
                 AttackTarget = self.CachedUnitForAttack
@@ -139,7 +138,7 @@ namespace ET
 
             //播放动画，如果动画播放完成还不能进行下一次普攻，则播放空闲动画
             if (!await self.GetParent<Unit>().BelongToRoom.GetComponent<LSF_TimerComponent>()
-                .WaitAsync((long) (attackPre * 1000), self.CancellationTokenSource.Token))
+                    .WaitAsync((long)(attackPre * 1000), self.CancellationTokenSource.Token))
             {
                 return;
             }
@@ -171,7 +170,7 @@ namespace ET
 
             CDComponent.Instance.TriggerCD(unit.Id, "CommonAttack");
             CDInfo commonAttackCDInfo = CDComponent.Instance.GetCDData(unit.Id, "CommonAttack");
-            commonAttackCDInfo.Interval = (long) (1 / attackSpeed - attackPre) * 1000;
+            commonAttackCDInfo.Interval = (long)(1 / attackSpeed - attackPre) * 1000;
 
 #if SERVER
             List<NP_RuntimeTree> targetSkillCanvas =
@@ -197,8 +196,8 @@ namespace ET
                 {
                     Vector3 selfUnitPos = unit.Position;
                     double distance = Vector3.Distance(selfUnitPos, self.CachedUnitForAttack.Position);
-                    float attackRange = unit.GetComponent<UnitAttributesDataComponent>()
-                        .NumericComponent[NumericType.AttackRange] / 100;
+                    float attackRange = unit.GetComponent<NumericComponent>()
+                        [NumericType.AttackRange] / 100;
 
                     //目标距离大于当前攻击距离会先进行寻路，这里的1.75为175码
                     if (distance - attackRange >= 0.1f)
@@ -214,7 +213,8 @@ namespace ET
                     else
                     {
                         //目标不为空，且处于攻击状态，且上次攻击已完成或取消
-                        if ((self.CancellationTokenSource == null || self.CancellationTokenSource.IsCancellationRequested))
+                        if ((self.CancellationTokenSource == null ||
+                             self.CancellationTokenSource.IsCancellationRequested))
                         {
                             if (CDComponent.Instance.GetCDResult(unit.Id, "CommonAttack"))
                                 self.StartCommonAttack().Forget();
@@ -223,7 +223,7 @@ namespace ET
 #if !SERVER
                                 //TODO 可能服务端也会有同步转向的需求
                                 Game.EventSystem.Publish(unit, new WaitForAttack()
-                                    {CastUnit = unit, TargetUnit = self.CachedUnitForAttack});
+                                    { CastUnit = unit, TargetUnit = self.CachedUnitForAttack });
 #endif
                             }
                         }
