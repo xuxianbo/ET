@@ -20,6 +20,8 @@ public partial class Tables
     public LuBanSample.TbLuBanSample TbLuBanSample {get; private set; }
     public SkillConfig.TbSkillCanvas TbSkillCanvas {get; private set; }
     public UnitConfig.TbUnitRes TbUnitRes {get; private set; }
+    public UnitConfig.TbUnitBase TbUnitBase {get; private set; }
+    public UnitConfig.TbUnitAttribute TbUnitAttribute {get; private set; }
     public SceneConfig.TbSceneBase TbSceneBase {get; private set; }
 
     public async UniTask LoadAsync(System.Func<string, UniTask<ByteBuf>> loader)
@@ -31,6 +33,10 @@ public partial class Tables
         tables.Add("SkillConfig.TbSkillCanvas", TbSkillCanvas);
         TbUnitRes = new UnitConfig.TbUnitRes(await loader("unitconfig_tbunitres")); 
         tables.Add("UnitConfig.TbUnitRes", TbUnitRes);
+        TbUnitBase = new UnitConfig.TbUnitBase(await loader("unitconfig_tbunitbase")); 
+        tables.Add("UnitConfig.TbUnitBase", TbUnitBase);
+        TbUnitAttribute = new UnitConfig.TbUnitAttribute(await loader("unitconfig_tbunitattribute")); 
+        tables.Add("UnitConfig.TbUnitAttribute", TbUnitAttribute);
         TbSceneBase = new SceneConfig.TbSceneBase(await loader("sceneconfig_tbscenebase")); 
         tables.Add("SceneConfig.TbSceneBase", TbSceneBase);
 
@@ -38,6 +44,8 @@ public partial class Tables
         TbLuBanSample.Resolve(tables); 
         TbSkillCanvas.Resolve(tables); 
         TbUnitRes.Resolve(tables); 
+        TbUnitBase.Resolve(tables); 
+        TbUnitAttribute.Resolve(tables); 
         TbSceneBase.Resolve(tables); 
         PostResolve();
     }
@@ -47,6 +55,8 @@ public partial class Tables
         TbLuBanSample.TranslateText(translator); 
         TbSkillCanvas.TranslateText(translator); 
         TbUnitRes.TranslateText(translator); 
+        TbUnitBase.TranslateText(translator); 
+        TbUnitAttribute.TranslateText(translator); 
         TbSceneBase.TranslateText(translator); 
     }
     

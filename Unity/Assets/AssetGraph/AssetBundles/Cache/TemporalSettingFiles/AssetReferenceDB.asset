@@ -261,4 +261,393 @@ MonoBehaviour:
     m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_ChangeUnitPropertyAction.cs
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: 221aae555ae663048b4fd1ad496cafdd
+    m_importFrom: Assets/Res/Unit/Darius.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7f5f0167a3366824d9e79ddd1a196324
+    m_importFrom: Packages/com.nkg.yy/HotfixView/Client/Unit/ChangePosition_SyncGameObjectPos.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c3fe681baf45ae9459dbdcfd61e8505e
+    m_importFrom: Packages/com.nkg.yy/HotfixView/Client/Unit/ChangeRotation_SyncGameObjectRotation.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4eab68942e6044d4b675b38269f66822
+    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/PathFind/Helper/PathModifyHelper.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 282fb6fd4c4646c6b4e944ce603f0455
+    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/PathFind/Helper
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fd0226ffb12e4f5f944844feea0854dc
+    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Move/MoveStop_LogicHandler.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 229a8b15c0694e0ab2588e07daf4dcfd
+    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Battle/ComponentSystems/StackFSMComponentSystem_View.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f6ce33b91f6ffe54cadacbf4bb112440
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Button.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6ac6694dd977643948f7ae7305e370ba
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/navmesh.obj
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 38a07789c9e87004dad98c2909f58369
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Group.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a016f8b3635df474581c006b0384e0e8
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example14_TurnBased_Hexagon/hexagon_outline.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1c87ab2ce8b8b304d98fbe9a734b1f74
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Foldout.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f22bcc84a5f4a1944b075a2c4ac71493
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      UIntField.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f9aa892f2cc50497ca083fd4925607f4
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example14_TurnBased_Hexagon/hexagon.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 81edd0768d87a4224938f13f18200082
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example14_TurnBased_Hexagon/hexagon_cone.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 556b220813bf1451194acec5abeb55d1
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example14_TurnBased_Hexagon/hexagon_obstacle.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ae00bb75e0cd5b04b8fe7fb4ab662629
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      IntField.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cf6cbdd672089a84796e55a21fed1cbe
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Resources/DebugUI
+      Canvas.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5088d0220f0c4df439cf06c5c270eacb
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      ToggleHistory.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ce347ad101f41ee4ab5c3fbc0ea447db
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Toggle.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9920c1f1781549a46ba081a2a15a16ec
+    m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/Nature/SpeedTree8_PBRLit.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a13fed205b1fa3942abfab7ba21463ec
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@back.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f8136785e54fd1d459d2a3a0849fe770
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@right.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1a207e3bee00db44b940e6f362a8e148
+    m_importFrom: Packages/com.unity.render-pipelines.universal/Runtime/Materials/PhysicalMaterial3DsMax/PhysicalMaterial3DsMaxTransparent.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 44245ab89240f51459a5077d7145c452
+    m_importFrom: Packages/com.unity.render-pipelines.universal/Runtime/Materials/PhysicalMaterial3DsMax/PhysicalMaterial3DsMax.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 18678a28cef624aeb89c5717c46be35b
+    m_importFrom: Packages/com.unity.assetgraph/Editor/SettingTemplate/setting.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: daa46a58178a6ad41ae1ddc2dc7f856d
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Panel.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4267c4f7628024c018e8bd0acd298526
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Prefabs/DynamicObstacle.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5e66896448428cf46a1854dbdc014914
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Prefabs/CommandSuggestion.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3739e562a03fc0b4982d8aa66cc50865
+    m_importFrom: Packages/com.unity.render-pipelines.universal/Runtime/Materials/ArnoldStandardSurface/ArnoldStandardSurface.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7c78b588b2e1f7c4a86ca4a985cf6e4a
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      BitField.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 391be5df5ef62f345bb76a1051c04da7
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Prefabs/DebugLogItem.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dbf1877db1c4f4ff3930d903c0f5bb28
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example11_RVO/RVOAgent.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2d019437ff89b8d44949727731cd9357
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Row.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d47f009476100f545971a81ede14c750
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Vector4.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7fdfb9a3e0fdf4df880ebc7fa5f56398
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example6_Navmesh/example6.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 30fa68ce467463643a86b839ca0eb195
+    m_importFrom: Packages/com.unity.render-pipelines.universal/Runtime/Materials/ArnoldStandardSurface/ArnoldStandardSurfaceTransparent.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 77c185820dd1a464eac89cae3abccddf
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Color.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 94afea5f242d72547979595ba963f335
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Vector3.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 12caf2d2a8d7bc642a87ae2abc98b458
+    m_importFrom: Packages/com.unity.shadergraph/ShaderGraphLibrary/Nature/SpeedTree8ColorAlpha.shadersubgraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 988db55689193434fb0b3b89538f978f
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      EnumField.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ca3e294656861a64b8aeeb9f916da0a9
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      VBox.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0b9c68ddd67ee5b9e8aeca86ac0fbc03
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot_render.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 89c32740b629abb41bf9b65e3a64c373
+    m_importFrom: Packages/com.unity.shadergraph/ShaderGraphLibrary/Nature/SpeedTree8Billboard.shadersubgraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7e212db0aa2c00b448aa511ece336f20
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@awake.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b667956babf1f0446a76fa8b99404ab8
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@left.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: deba0a6f7ec514207b7e850591a6f942
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example3_Recast_Navmesh1/Debris.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5c81372d981403744adbdda4433c9c11
+    m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/Autodesk
+      Interactive/Autodesk Interactive Transparent.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f7f5e36797cf0c1408561665c67b179b
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      HBox.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0e9d5a909a1f7e84882a534d0d11e49f
+    m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/Autodesk
+      Interactive/Autodesk Interactive.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dc0f88987826e6e48b1fe9c7c2b53a53
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Value.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: caeffedc34d9f4161b7694ad0d84bbd3
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e9398b7940890a74eafc240b5a593541
+    m_importFrom: Packages/com.unity.shadergraph/ShaderGraphLibrary/Nature/SpeedTree8Wind.shadersubgraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1da85f72a7a82bc4eabdbd8f0683bde2
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Prefabs/MineBot/mine_bot@forward.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 67117722a812a2e46ab8cb8eafbf5f5e
+    m_importFrom: Assets/Plugins/IngameDebugConsole/IngameDebugConsole.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 326f7c58aed965d41bf7805a782d1e44
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      Vector2.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b2da6b27df236b144b3516ed8e7d36ac
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      EnumHistory.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7c600eaf3f82d413b82711b6050e8cae
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example13_Moving/ship.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 80aa867ac363ac043847b06ad71604cd
+    m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/Autodesk
+      Interactive/Autodesk Interactive Masked.shadergraph
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7d4fd3415ea7dd64bbcfe13fb48a730b
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI
+      FloatField.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 436b69414b04047fca3929c70df57c4f
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example12_Procedural/cylinder.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f6b1a0fe75d5009449cf55ae76220e2b
+    m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Resources/DebugUI
+      Persistent Canvas.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 316c7d4db27ff4f46a1722928cf1507c
+    m_importFrom: Assets/Plugins/ShaderControl/Editor/Resources/BuiltShaders.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a8abff4a5c6889e4381fa7a96637a28f
+    m_importFrom: Assets/Res/Code/Unity.Core.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dbfeb139bd4ade949b7f9b6b9ca97efe
+    m_importFrom: Assets/StreamingAssets/YooAssets/fce34f4c86969cf818bb7004c08171a1
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2021729a34ade194bacb41823f4e5eec
+    m_importFrom: Assets/StreamingAssets/YooAssets/724bc7e46562928d140ae587388c66bc
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9be31bdcc9aa47c4ca16e62a9f5a7d54
+    m_importFrom: Assets/StreamingAssets/YooAssets/d913e523d530100afc28b3ce3b7e4d09
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1ae17aaf7ace5244dadcda19759fe897
+    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_2.hash
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4fb15fb6182ffa14eb2fa860f07dbb6f
+    m_importFrom: Assets/StreamingAssets/YooAssets/a38cffc409bf1f92b76323fcd895b14e
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 87f6ac00cf532124d8ee04d6577e026f
+    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_2.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0f34a90dc7871594ebcd7470f923fb11
+    m_importFrom: Assets/StreamingAssets/YooAssets/bcf68c0f7ad72bcfe73a219f277a7b64
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0574682553dcf354f821ecdc8f71c1d6
+    m_importFrom: Assets/StreamingAssets/YooAssets/160cf2a76c56b6a03d0c8adb3c2e627e
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 368fdbc250be88d4385eb07c298ae06f
+    m_importFrom: Assets/StreamingAssets/YooAssets/bf3ff726674be501cf2d1fd29fba93f3
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f56055447e924c743863497d7bb24f38
+    m_importFrom: Assets/StreamingAssets/YooAssets/eac2faa4d2b1805246ced2bcd91b9bf0
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f2a1b736bfcb9b842868c4c3aa919032
+    m_importFrom: Assets/StreamingAssets/YooAssets/c5ec32908666e7ee05f5c53758de8d58
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d5faf12d3df02ed49aa24c71d286300b
+    m_importFrom: Assets/StreamingAssets/YooAssets/2b5f7980b12afcd0f5ef3d2afdf4b974
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: eb4d4d9d0547c9e41af5d6c7ac00b5b8
+    m_importFrom: Assets/StreamingAssets/YooAssets/9877050bcacdbbdd4f07dc017edf0fe9
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1322b0fe15e83e64c9a3997bb8466a0e
+    m_importFrom: Assets/StreamingAssets/YooAssets/StaticVersion.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ab14ae30885f22d4b9e2b18d9e1a1f18
+    m_importFrom: Assets/StreamingAssets/YooAssets/054bafc7554a9f052e3d4fb7f6f72ccf
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c5e5fd50645ef344db2d10de5ae7855e
+    m_importFrom: Assets/StreamingAssets/YooAssets/5de5713b13b3285e1e7d79624bca4d35
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6d9e14447c07cfa49b768f593c927016
+    m_importFrom: Assets/StreamingAssets/YooAssets/76d3e39fd732a5db7b8fb1ec5a328897
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 587beb7635b7e114bb90cbc0bced60d8
+    m_importFrom: Assets/StreamingAssets/YooAssets/ca9117b5c0f3b5177fd2b458c413be8e
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1e9841ce942d2094b8665f43602b56b1
+    m_importFrom: Assets/StreamingAssets/YooAssets/99ce202b2a212cfa16fdaf9384708653
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4c35c785f7b076e4b937d48333ecc135
+    m_importFrom: Assets/StreamingAssets/YooAssets/8dba91a51222307a244f437f441f5380
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: feb51c5505dde9e439c2bb668a594ce1
+    m_importFrom: Assets/StreamingAssets/YooAssets/d08c824788e4cbdc90f42e79a78b0af9
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 263bfbac8701d974daec5f97b74eeada
+    m_importFrom: Assets/StreamingAssets/YooAssets/48657b11dc12a1a6f70a5256dcbd7a64
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ec7e098638b976b44b54cea52d3ae935
+    m_importFrom: Assets/StreamingAssets/YooAssets/675c621321b486c12eec28829d757372
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bd296c0c58671cb4db533c1f8a471d4c
+    m_importFrom: Assets/StreamingAssets/YooAssets/a79a68eed920c0e943256ecd44d58b3e
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 969f3053696cf734194a6355d22161ef
+    m_importFrom: Assets/StreamingAssets/YooAssets/1da5195aba4309c5840e71cad54596a8
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 86a0c9f68d1efcd429cdbdde2dca77e4
+    m_importFrom: Assets/AssetBundleBuilderSetting.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e05aa7d1b443ecc4da911ad903990412
+    m_importFrom: Assets/Res/Material/Darius_Skin08_dds.mat
+    m_exportTo: 
+    m_variantName: 
   m_version: 2
