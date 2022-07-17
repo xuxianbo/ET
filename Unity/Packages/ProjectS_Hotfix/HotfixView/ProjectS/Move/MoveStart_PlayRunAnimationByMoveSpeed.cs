@@ -14,7 +14,7 @@ namespace ET
             }
 
             NumericComponent numericComponent = entity.GetComponent<NumericComponent>();
-            float animSpeed = numericComponent[NumericType.Speed] / numericComponent[NumericType.SpeedBase];
+            float animSpeed = numericComponent[NumericType.MoveSpeed] / numericComponent[NumericType.MoveSpeed];
             entity.GetComponent<AnimationComponent>().PlayAnimByStackFsmCurrent(0.3f, animSpeed);
             
             return UniTask.CompletedTask;

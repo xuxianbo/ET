@@ -9,7 +9,7 @@ using ET;
 
 namespace ET
 {
-    public class BuffManagerComponent : Entity
+    public class BuffManagerComponent : Entity, IAwake, IDestroy
     {
         /// <summary>
         /// Buff链表

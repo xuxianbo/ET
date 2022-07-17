@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ET
 {
-    public class LSF_Component : Entity, IAwake
+    public class LSF_Component : Entity, IAwake, IFixedUpdate, IDestroy
     {
         /// <summary>
         /// 当前帧数

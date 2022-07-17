@@ -24,18 +24,18 @@ namespace ET
 
             SceneBaseConfig sceneBaseConfig = ConfigComponent.Instance.AllConfigTables.TbSceneBase[10001];
 
+            List<string> resList = new List<string>();
+            resList.Add(YooAssetProxy.GetYooAssetFormatResPath(sceneBaseConfig.SceneRecastNavDataFileName,
+                YooAssetProxy.YooAssetResType.PathFind));
+            resList.AddRange(YooAssetProxy.GetAssetPathsByTag(YooAssetProxy.YooAssetResType.SkillConfig.ToString()));
+
             await Game.EventSystem.PublishAsync(singleGameScene, new EventType.LoadingBegin()
             {
                 SceneName = YooAssetProxy.GetYooAssetFormatResPath(sceneBaseConfig.SceneName,
                     YooAssetProxy.YooAssetResType.Scene),
-                ResList = new List<string>()
-                {
-                    // 测试用，这个资源列表只应该是场景中的动态物件以及一些逻辑配置
-                    YooAssetProxy.GetYooAssetFormatResPath(sceneBaseConfig.SceneRecastNavDataFileName,
-                        YooAssetProxy.YooAssetResType.PathFind)
-                }
+                ResList = resList
             });
-
+            
             ClientSceneManagerComponent.Instance.Get(1).GetComponent<FUIManagerComponent>().Remove(FUIPackage.Login);
 
             await Game.EventSystem.PublishAsync(singleGameScene, new EventType.LoadingFinish());

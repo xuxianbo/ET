@@ -11,7 +11,7 @@ namespace ET
             Unit unit = self.GetParent<Unit>();
             self.m_AnimationComponent = unit.GetComponent<AnimationComponent>();
             self.m_StackFsmComponent = unit.GetComponent<StackFsmComponent>();
-            self.m_MouseTargetSelectorComponent = unit.BelongToRoom.GetComponent<MouseTargetSelectorComponent>();
+            self.m_MouseTargetSelectorComponent = unit.GetComponent<MouseTargetSelectorComponent>();
             self.m_UserInputComponent = Game.Scene.GetComponent<UserInputComponent>();
         }
     }
@@ -22,7 +22,7 @@ namespace ET
         public override void Update(CommonAttackComponent_View self)
         {
             // 只有本地玩家才有选择的权力
-            if (self.GetParent<Unit>() != self.GetParent<Unit>().BelongToRoom.GetComponent<UnitComponent>().MyUnit)
+            if (self.GetParent<Unit>() != self.DomainScene().GetComponent<UnitComponent>().MyUnit)
             {
                 return;
             }

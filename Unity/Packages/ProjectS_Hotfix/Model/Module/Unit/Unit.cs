@@ -12,18 +12,10 @@ namespace ET
     public class Unit: Entity, IAwake<int>
     {
         public int ConfigId { get; set; } //配置表id
-
-#if NOT_UNITY
-        public UnitConfig Config => UnitConfigCategory.Instance.Get(this.ConfigId);
-        public UnitType Type => (UnitType)UnitConfigCategory.Instance.Get(this.ConfigId).Type;
-#else
-        [BsonIgnore]
+        
         public LuBanSampleConfig Config;
         
         public UnitType Type;
-#endif
-
-        public Room BelongToRoom;
 
         [BsonElement]
         private Vector3 position; //坐标

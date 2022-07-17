@@ -9,9 +9,9 @@ using Cysharp.Threading.Tasks;
 namespace ET
 {
     [Event(SceneType.SingleGame)]
-    public class AfterCreateSingleGameScene_AddComponent : AEvent<Scene, EventType.AfterCreateSingleGameScene>
+    public class AfterCreateSingleGameScene_AddComponent : AEvent<Scene, EventType.AfterCreateSingleGameScene_Logic>
     {
-        protected override async UniTask Run(Scene scene, EventType.AfterCreateSingleGameScene args)
+        protected override async UniTask Run(Scene scene, EventType.AfterCreateSingleGameScene_Logic args)
         {
             scene.AddComponent<GameObjectPoolComponent>();
             scene.AddComponent<YooAssetComponent>();

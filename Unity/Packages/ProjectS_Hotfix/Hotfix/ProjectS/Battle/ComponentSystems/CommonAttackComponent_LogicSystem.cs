@@ -110,7 +110,7 @@ namespace ET
                 blackboard.Set("NormalAttackUnitIds", new List<long>() { self.CachedUnitForAttack.Id });
 
                 CDInfo commonAttackCDInfo = CDComponent.Instance.GetCDData(unit.Id, "CommonAttack");
-                await self.GetParent<Unit>().BelongToRoom.GetComponent<LSF_TimerComponent>()
+                await self.GetParent<Unit>().DomainScene().GetComponent<LSF_TimerComponent>()
                     .WaitAsync(commonAttackCDInfo.Interval, self.CancellationTokenSource.Token);
             }
             else
@@ -129,7 +129,7 @@ namespace ET
             float attackPre = heroDataComponent[NumericType.AttackAdd] / heroDataComponent[NumericType.AttackAdd];
             float attackSpeed = heroDataComponent[NumericType.AttackSpeed];
 
-            UnitComponent unitComponent = unit.BelongToRoom.GetComponent<UnitComponent>();
+            UnitComponent unitComponent = unit.DomainScene().GetComponent<UnitComponent>();
             Game.EventSystem.Publish(unit, new EventType.CommonAttack()
             {
                 AttackCast = unit,
@@ -137,17 +137,16 @@ namespace ET
             });
 
             //播放动画，如果动画播放完成还不能进行下一次普攻，则播放空闲动画
-            if (!await self.GetParent<Unit>().BelongToRoom.GetComponent<LSF_TimerComponent>()
+            if (!await self.GetParent<Unit>().DomainScene().GetComponent<LSF_TimerComponent>()
                     .WaitAsync((long)(attackPre * 1000), self.CancellationTokenSource.Token))
             {
                 return;
             }
 
             // TODO 客户端不进行伤害计算，由服务端发回
-#if SERVER
             DamageData damageData = ReferencePool.Acquire<DamageData>().InitData(
-            BuffDamageTypes.PhysicalSingle | BuffDamageTypes.CommonAttack,
-            heroDataComponent.GetAttribute(NumericType.Attack), unit, self.CachedUnitForAttack);
+                BuffDamageTypes.PhysicalSingle | BuffDamageTypes.CommonAttack,
+                heroDataComponent[NumericType.Attack], unit, self.CachedUnitForAttack);
 
             unit.GetComponent<CastDamageComponent>().BaptismDamageData(damageData);
             float finalDamage = self.CachedUnitForAttack.GetComponent<ReceiveDamageComponent>()
@@ -155,34 +154,31 @@ namespace ET
 
             if (finalDamage >= 0)
             {
-                self.CachedUnitForAttack.GetComponent<UnitAttributesDataComponent>().NumericComponent
+                self.CachedUnitForAttack.GetComponent<NumericComponent>()
                     .ApplyChange(NumericType.Hp, -finalDamage);
 
                 BattleEventSystemComponent battleEventSystemComponent =
-                    unit.BelongToRoom.GetComponent<BattleEventSystemComponent>();
+                    unit.DomainScene().GetComponent<BattleEventSystemComponent>();
 
                 //抛出伤害事件，需要监听伤害的buff（比如吸血buff）需要监听此事件
                 battleEventSystemComponent.Run($"ExcuteDamage{unit.Id}", damageData);
                 //抛出受伤事件，需要监听受伤的Buff（例如反甲）需要监听此事件
                 battleEventSystemComponent.Run($"TakeDamage{self.CachedUnitForAttack.Id}", damageData);
             }
-#endif
 
             CDComponent.Instance.TriggerCD(unit.Id, "CommonAttack");
             CDInfo commonAttackCDInfo = CDComponent.Instance.GetCDData(unit.Id, "CommonAttack");
             commonAttackCDInfo.Interval = (long)(1 / attackSpeed - attackPre) * 1000;
 
-#if SERVER
             List<NP_RuntimeTree> targetSkillCanvas =
- unit.GetComponent<SkillCanvasManagerComponent>().GetSkillCanvas(10001);
+                unit.GetComponent<SkillCanvasManagerComponent>().GetSkillCanvas(10001);
             foreach (var skillCanva in targetSkillCanvas)
             {
                 skillCanva.GetBlackboard().Set("CastNormalAttack", true);
-                skillCanva.GetBlackboard().Set("NormalAttackUnitIds", new List<long>() {self.CachedUnitForAttack.Id});
+                skillCanva.GetBlackboard().Set("NormalAttackUnitIds", new List<long>() { self.CachedUnitForAttack.Id });
             }
 
-#endif
-            await self.GetParent<Unit>().BelongToRoom.GetComponent<LSF_TimerComponent>()
+            await self.GetParent<Unit>().DomainScene().GetComponent<LSF_TimerComponent>()
                 .WaitAsync(commonAttackCDInfo.Interval, self.CancellationTokenSource.Token);
         }
 

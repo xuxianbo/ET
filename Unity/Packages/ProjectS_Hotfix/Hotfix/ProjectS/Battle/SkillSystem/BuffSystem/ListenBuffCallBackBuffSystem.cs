@@ -27,12 +27,12 @@ namespace ET
                 ListenBuffEventNormal = ReferencePool.Acquire<ListenBuffEvent_Normal>();
                 ListenBuffEventNormal.BuffInfoWillBeAdded = GetBuffDataWithTType.BuffInfoWillBeAdded;
             }
-            this.GetBuffTarget().BelongToRoom.GetComponent<BattleEventSystemComponent>().RegisterEvent($"{this.GetBuffDataWithTType.EventId.Value}{this.TheUnitFrom.Id}", ListenBuffEventNormal);
+            this.GetBuffTarget().DomainScene().GetComponent<BattleEventSystemComponent>().RegisterEvent($"{this.GetBuffDataWithTType.EventId.Value}{this.TheUnitFrom.Id}", ListenBuffEventNormal);
         }
 
         public override void OnFinished(uint currentFrame)
         {
-            this.GetBuffTarget().BelongToRoom.GetComponent<BattleEventSystemComponent>().UnRegisterEvent($"{this.GetBuffDataWithTType.EventId.Value}{this.TheUnitFrom.Id}", ListenBuffEventNormal);
+            this.GetBuffTarget().DomainScene().GetComponent<BattleEventSystemComponent>().UnRegisterEvent($"{this.GetBuffDataWithTType.EventId.Value}{this.TheUnitFrom.Id}", ListenBuffEventNormal);
         }
     }
 }

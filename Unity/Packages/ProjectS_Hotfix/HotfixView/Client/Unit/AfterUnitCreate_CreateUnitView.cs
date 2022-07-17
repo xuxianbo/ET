@@ -27,6 +27,8 @@ namespace ET.Client
             unit.AddComponent<MapClickCompoent>();
 
             unit.AddComponent<NavAgentComponent>();
+            
+            unit.GetComponent<SkillCanvasManagerComponent>().InitUnitPresetSkillCanavs();
 
             await UniTask.CompletedTask;
         }

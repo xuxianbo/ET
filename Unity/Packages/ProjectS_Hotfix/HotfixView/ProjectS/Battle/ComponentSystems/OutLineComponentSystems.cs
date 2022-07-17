@@ -9,11 +9,8 @@ namespace ET
         public override void Awake(OutLineComponent self)
         {
             //此处填写Awake逻辑
-            self.PlayerUnit = self.DomainScene().GetComponent<RoomManagerComponent>().GetBattleRoom()
-                .GetComponent<UnitComponent>().MyUnit;
-
-            self.MouseTargetSelectorComponent =
-                self.PlayerUnit.BelongToRoom.GetComponent<MouseTargetSelectorComponent>();
+            self.PlayerUnit = self.DomainScene().GetComponent<UnitComponent>().MyUnit;
+            self.MouseTargetSelectorComponent = self.PlayerUnit.GetComponent<MouseTargetSelectorComponent>();
         }
     }
 

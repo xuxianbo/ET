@@ -56,7 +56,7 @@ namespace ET
             }
             else
             {
-                targetUnit = BelongToUnit.BelongToRoom.GetComponent<UnitComponent>()
+                targetUnit = BelongToUnit.DomainScene().GetComponent<UnitComponent>()
                     .Get(this.TargetUnitId.GetBlackBoardValue<long>(this.BelongtoRuntimeTree.GetBlackboard()));
             }
 

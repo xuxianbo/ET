@@ -32,12 +32,12 @@ namespace ET
             if (!HasInited)
             {
                 this.BelongtoRuntimeTree.GetBlackboard().Set<uint>(this.TheTimeToWait.BBKey,
-                    this.BelongToUnit.BelongToRoom.GetComponent<LSF_Component>().CurrentFrame +
+                    this.BelongToUnit.DomainScene().GetComponent<LSF_Component>().CurrentFrame +
                     TimeAndFrameConverter.Frame_Float2Frame(this.TheTimeToWait.GetTheBBDataValue<float>()));
                 HasInited = true;
             }
 
-            if (this.BelongToUnit.BelongToRoom.GetComponent<LSF_Component>().CurrentFrame >=
+            if (this.BelongToUnit.DomainScene().GetComponent<LSF_Component>().CurrentFrame >=
                 TimeAndFrameConverter.Frame_Float2Frame(this.BelongtoRuntimeTree.GetBlackboard()
                     .Get<float>(this.TheTimeToWait.BBKey)))
             {

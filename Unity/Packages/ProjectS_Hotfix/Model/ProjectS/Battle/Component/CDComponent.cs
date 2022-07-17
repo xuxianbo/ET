@@ -123,7 +123,7 @@ namespace ET
                 return null;
             }
 
-            LSF_Component lsfComponent = this.GetParent<Room>().GetComponent<LSF_Component>();
+            LSF_Component lsfComponent = this.DomainScene().GetComponent<LSF_Component>();
             CDInfo cdInfo = ReferencePool.Acquire<CDInfo>();
             cdInfo.Init(name, lsfComponent.CurrentFrame, cDLength, onCDChangedCallback);
             AddCDData(id, cdInfo);
@@ -161,7 +161,7 @@ namespace ET
             cdInfo.Result = false;
             cdInfo.RemainCDLength = cdLength == -1 ? cdInfo.Interval : cdLength;
 
-            LSF_Component lsfComponent = this.GetParent<Room>().GetComponent<LSF_Component>();
+            LSF_Component lsfComponent = this.DomainScene().GetComponent<LSF_Component>();
             cdInfo.TargetTriggerCDFrame = lsfComponent.CurrentFrame +
                                           TimeAndFrameConverter.Frame_Long2Frame(cdInfo.RemainCDLength);
         }
@@ -223,7 +223,7 @@ namespace ET
 
             cdInfo.Interval = cDLength;
             cdInfo.RemainCDLength = remainCDLength;
-            LSF_Component lsfComponent = this.GetParent<Room>().GetComponent<LSF_Component>();
+            LSF_Component lsfComponent = this.DomainScene().GetComponent<LSF_Component>();
             cdInfo.TargetTriggerCDFrame =
                 lsfComponent.CurrentFrame + TimeAndFrameConverter.Frame_Long2Frame(remainCDLength);
             cdInfo.Result = false;

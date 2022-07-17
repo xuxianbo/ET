@@ -27,10 +27,13 @@ namespace ET.Client
             
             singleGameScene.AddComponent<ClientSceneFlagComponent>();
             singleGameScene.AddComponent<UnitComponent>();
+            singleGameScene.AddComponent<LSF_Component>();
+            singleGameScene.AddComponent<CDComponent>();
+            singleGameScene.AddComponent<NP_TreeDataRepositoryComponent>();
 
             ClientSceneManagerComponent.Instance.SetCurrentSingleGameScene(singleGameScene);
             
-            Game.EventSystem.Publish(singleGameScene, new EventType.AfterCreateSingleGameScene());
+            Game.EventSystem.Publish(singleGameScene, new EventType.AfterCreateSingleGameScene_Logic());
             
             return singleGameScene;
         }

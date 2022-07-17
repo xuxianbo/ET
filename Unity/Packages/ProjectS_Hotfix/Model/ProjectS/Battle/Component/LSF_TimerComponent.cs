@@ -27,7 +27,7 @@ namespace ET
     {
         public override void Awake(LSF_TimerComponent self)
         {
-            self.LsfComponent = self.GetParent<Room>().GetComponent<LSF_Component>();
+            self.LsfComponent = self.DomainScene().GetComponent<LSF_Component>();
         }
     }
 

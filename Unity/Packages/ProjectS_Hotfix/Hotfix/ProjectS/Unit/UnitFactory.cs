@@ -10,12 +10,21 @@ namespace ET.Client
             Unit unit = unitComponent.AddChildWithId<Unit, int>(unitInfo.UnitId, unitInfo.ConfigId);
             unitComponent.Add(unit);
 
-            NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
-            numericComponent.SetValueWithoutBroadCast(NumericType.Speed, 700);
-            numericComponent.SetValueWithoutBroadCast(NumericType.SpeedBase, 700);
-
+            unit.AddComponent<NumericComponent>();
             unit.AddComponent<MoveComponent>();
             unit.AddComponent<StackFsmComponent>();
+
+            unit.AddComponent<NP_SyncComponent>();
+            unit.AddComponent<NP_RuntimeTreeManager>();
+            
+            //增加Buff管理组件
+            unit.AddComponent<BuffManagerComponent>();
+            unit.AddComponent<SkillCanvasManagerComponent>();
+            unit.AddComponent<B2S_RoleCastComponent, RoleCamp, RoleTag>(unitInfo.RoleCamp, RoleTag.Hero);
+            
+            unit.AddComponent<CommonAttackComponent_Logic>();
+            unit.AddComponent<CastDamageComponent>();
+            unit.AddComponent<ReceiveDamageComponent>();
 
             unit.Position = new Vector3(unitInfo.X, unitInfo.Y, unitInfo.Z);
             unit.Forward = new Vector3(unitInfo.ForwardX, unitInfo.ForwardY, unitInfo.ForwardZ);

@@ -178,7 +178,7 @@ MonoBehaviour:
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 645147ad86d2cf8428ae88fec9d696a2
-    m_importFrom: Packages/com.nkg.yy/Hotfix/Client/Unit/UnitFactory.cs
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Unit/UnitFactory.cs
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 0bbdf5888585a444e9561be83ee7a62e
@@ -648,6 +648,190 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: e05aa7d1b443ecc4da911ad903990412
     m_importFrom: Assets/Res/Material/Darius_Skin08_dds.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 313955cd6271f5c4985cba4adc30fc8e
+    m_importFrom: Assets/Res/UniversalRenderPipelineAsset.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7c9da2bbb01d60742aa412a28170f075
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/UnitConfig/TbUnitAttribute.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0b93e6b6dc56bdd458d0776853efd35d
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/UnitConfig/UnitAttributeConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e66cd83aea125cb4d922d6a7835f1b70
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/UnitConfig/TbUnitBase.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7725145a3daa2f34baefa7933cdd00b0
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/UnitConfig/UnitBaseConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7c1c4ecdf733c3a48a49c3049cdbaa3b
+    m_importFrom: Assets/Res/Config/DataConfig/unitconfig_tbunitbase.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ea532e781e923dd47a38d47cb9ffdb38
+    m_importFrom: Assets/Res/Config/DataConfig/unitconfig_tbunitattribute.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6a6e484dc9736aa4c9215581e6f69438
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Unit
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 786011a2ba862e34eb9c24ec9b2ef79d
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Numeric
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ca76075f7a604a75857e99707188bdc6
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Numeric/NumericComponentSystems.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7afe3a75d6450ab48a89f4b8f75218c0
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/Unit/AttributeType.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5025a607f97fc824f97e2b6c78ca4e65
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/Unit
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 447ffd7dd6c61f1499741297d544f224
+    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/SkillSystem/Others/SkillCanvasManagerComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d6744038221232f4489d5a2e4210ea56
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/ComponentSystems/SkillCanvasManagerComponentSystem.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 606ef955e087f3145b7b4aac464e545a
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Message/OuterMessage.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8f436906ba6f2c9439173d8753404010
+    m_importFrom: Packages/com.nkg.yy/Model/Module/Numeric/NumericComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b1778fe7978c47419d6b36cf0a6fe9bf
+    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/NPBehave/Component/NP_RuntimeTreeManager.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 053d45c05db66d34fafd100c7fc53b3e
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/SkillSystem/BuffSystem/Core/BuffManagerComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5ee3c267a457aec4c93606ad5b7273c2
+    m_importFrom: Packages/com.nkg.yy/Model/Module/Numeric/NumericType.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 41d04874c5b221e4cbca512bbfe55cc6
+    m_importFrom: Assets/Res/Model/Darius.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5d6075d61d192024192cc6ed1c6a77d3
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/UnitConfig/UnitAttributeConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3700df8b8d1724e4ab06332bc9f9988d
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitAttribute
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cec6719cd10c5844b962d219e8178c3c
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/UnitConfig/UnitResConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 53d82f6b811915c45805a60a56cb122c
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/SceneConfig
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f3a65086fb6fd724085729b880cff918
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitBase
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bf39d3c5fc2fb234a9a8ec31b3027d41
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/Unit/AttributeType.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: efaea52666afd9e47bbd4a1203df8e0d
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/Unit
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e1b73f333f3edc64581d7f511d5dd3f8
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/UnitConfig/UnitBaseConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 96e0326813e5a2a40bf218bc67574e7b
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitRes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a86826018dcec2a4eb1165309675199b
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/SceneConfig.TbSceneBase
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bf4f2bd647d6d0c478e7609246b50fe7
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/UnitConfig
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5facdbf6809c8934f9265f0619fe4714
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/SceneConfig/SceneBaseConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 04da503a76ada39429710babecd355ff
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/SceneConfig.TbSceneBase/10001.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3a075d0dbdc5e1c4bbe58df4b0db8316
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitAttribute/10001.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 28c0a239dcc480c42b0791c5ce0df754
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitRes/10001.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3b2e45fdd2e2a984db1701615c795c6f
+    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitBase/10001.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f3c266d603db5c44cb6bf4f5be9abefd
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_Q.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b27b20699d216b64796914c75f07e124
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/LSF_TestGraph.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f42a19904ec00de44bd783a1ceb02c08
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_Q_Collider.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1b8ed1adf8801f3478cd27dacf9718ec
+    m_importFrom: Assets/Res/Config/SkillConfig/Darius_Q.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6bafe7929105f1f44afb1a278db9d38c
+    m_importFrom: Assets/Res/Config/SkillConfig/Darius_TestLSF.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 936f37caf4ca8c541a697b65d0c0f9e5
+    m_importFrom: Assets/Res/Config/SkillConfig/Darius_Q_Collider.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 62fbda52cdd131546b9b4c09af9af993
+    m_importFrom: Assets/Res/Config/DataConfig/skillconfig_tbskillcanvas.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: eabc89905bf8d654cb7526defcfd0b08
+    m_importFrom: Assets/Res/Config/DataConfig/lubansample_tblubansample.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 65347e641e73af74b87844936cf6447c
+    m_importFrom: Assets/Res/Config/DataConfig/unitconfig_tbunitres.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 832e42892c0443ff88d7af3f8bc58850
+    m_importFrom: Assets/Mono/LuBan/LuBanEntry.cs
     m_exportTo: 
     m_variantName: 
   m_version: 2

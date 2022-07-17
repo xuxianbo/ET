@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace ET
 {
-    public class NP_RuntimeTreeManager: Entity
+    public class NP_RuntimeTreeManager: Entity, IAwake, IDestroy
     {
         public Dictionary<long, NP_RuntimeTree> RuntimeTrees = new Dictionary<long, NP_RuntimeTree>();
 

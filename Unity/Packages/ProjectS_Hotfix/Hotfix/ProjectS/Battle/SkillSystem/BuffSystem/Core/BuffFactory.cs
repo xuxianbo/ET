@@ -36,18 +36,18 @@ namespace ET
         /// <summary>
         /// 取得Buff,Buff流程是Acquire->OnInit(CalculateTimerAndOverlay)->AddTemp->经过筛选->AddReal
         /// </summary>
-        /// <param name="room"></param>
+        /// <param name="gameScene"></param>
         /// <param name="npsupportDataId">Buff数据归属的数据块Id</param>
         /// <param name="buffNodeId">Buff节点的Id</param>
         /// <param name="theUnitIdFrom">Buff来源者</param>
         /// <param name="theUnitIdBelongTo">Buff寄生者</param>
         /// <param name="theSkillCanvasIdBelongTo"></param>
         /// <returns></returns>
-        public static IBuffSystem AcquireBuff(Room room, long npsupportDataId, long buffNodeId, long theUnitIdFrom,
+        public static IBuffSystem AcquireBuff(Scene gameScene, long npsupportDataId, long buffNodeId, long theUnitIdFrom,
             long theUnitIdBelongTo,
             long theSkillCanvasIdBelongTo)
         {
-            UnitComponent unitComponent = room.GetComponent<UnitComponent>();
+            UnitComponent unitComponent = gameScene.GetComponent<UnitComponent>();
             Unit theUnitFrom = unitComponent.Get(theUnitIdFrom);
             Unit theUnitBelongTo = unitComponent.Get(theUnitIdBelongTo);
 
@@ -110,7 +110,7 @@ namespace ET
             Unit theUnitBelongTo,
             NP_RuntimeTree theSkillCanvasBelongTo)
         {
-            LSF_Component lsfComponent = theUnitFrom.BelongToRoom.GetComponent<LSF_Component>();
+            LSF_Component lsfComponent = theUnitFrom.DomainScene().GetComponent<LSF_Component>();
             IBuffSystem resultBuff = ReferencePool.Acquire(AllBuffSystemTypes[buffDataBase.GetType()]) as IBuffSystem;
             resultBuff.BelongtoRuntimeTree = theSkillCanvasBelongTo;
             resultBuff.BuffNodeId = buffNodeId;

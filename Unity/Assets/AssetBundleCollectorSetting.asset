@@ -49,7 +49,7 @@ MonoBehaviour:
       AddressRuleName: AddressByGroupAndFileName
       PackRuleName: PackDirectory
       FilterRuleName: CollectAll
-      AssetTags: 
+      AssetTags: SkillConfig
   - GroupName: Unit
     GroupDesc: Unit
     AssetTags: 

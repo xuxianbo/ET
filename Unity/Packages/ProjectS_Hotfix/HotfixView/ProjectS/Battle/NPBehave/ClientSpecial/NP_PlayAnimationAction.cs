@@ -39,7 +39,6 @@ namespace ET
 
         public override Action GetActionToBeDone()
         {
-#if !SERVER
             //数据初始化
             this.m_OnAnimFinished = this.OnAnimFinished;
             m_Flag = 0;
@@ -51,15 +50,12 @@ namespace ET
                     playAnimInfo.AnimationClipName;
             }
 
-#endif
-
             this.Action = this.PlayAnimation;
             return base.GetActionToBeDone();
         }
 
         private void PlayAnimation()
         {
-#if !SERVER
             // TODO 说明上次动画节点的动画尚未播放完毕，所以就忽略这次重复的播放，这块逻辑应当放在Timeline中处理
             if (m_Flag != 0)
             {
@@ -70,10 +66,8 @@ namespace ET
             HandlePlayAnim(NodeDataForPlayAnims[this.m_Flag].StateTypes,
                 NodeDataForPlayAnims[this.m_Flag].OccAvatarMaskType, NodeDataForPlayAnims[this.m_Flag].FadeOutTime);
             //Log.Info("这次播放的是Q技能动画");
-#endif
         }
-
-#if !SERVER
+        
         /// <summary>
         /// 处理播放动画
         /// </summary>
@@ -106,7 +100,5 @@ namespace ET
                 this.m_Flag = 0;
             }
         }
-
-#endif
     }
 }

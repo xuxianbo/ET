@@ -12,6 +12,8 @@ namespace ET
         {
             Unit,
             Config,
+            DataConfig,
+            SkillConfig,
             Scene,
             Code,
             Effect,

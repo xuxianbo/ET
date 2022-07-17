@@ -72,7 +72,7 @@ namespace ET
         /// </summary>
         public async UniTaskVoid Finish()
         {
-            await BelongToUnit.BelongToRoom.GetComponent<LSF_TimerComponent>().WaitFrameAsync();
+            await BelongToUnit.DomainScene().GetComponent<LSF_TimerComponent>().WaitFrameAsync();
 
             this.m_RootNode.CancelWithoutReturnResult();
             BelongToUnit = null;

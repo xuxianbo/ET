@@ -22,9 +22,7 @@
         MaxMpAdd = MaxMp * 10 + 2,
 
         //速度
-        Speed = 1005,
-        SpeedBase = Speed * 10 + 1,
-        SpeedAdd = Speed * 10 + 2,
+        MoveSpeed = 1005,
 
         //攻击力
         Attack = 1006,

@@ -162,6 +162,8 @@ namespace ET
 		public float ForwardY { get; set; }
 		
 		public float ForwardZ { get; set; }
+		
+		public RoleCamp RoleCamp { get; set; }
 	}
 
 	[Message(OuterOpcode.M2C_CreateUnits)]

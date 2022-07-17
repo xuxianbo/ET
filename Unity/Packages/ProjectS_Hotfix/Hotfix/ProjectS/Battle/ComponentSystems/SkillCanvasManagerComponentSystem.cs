@@ -1,7 +1,16 @@
 ﻿using System.Collections.Generic;
+using ET.cfg.UnitConfig;
 
 namespace ET
 {
+    public class SkillCanvasManagerComponentComponentAwakeSystem : AwakeSystem<SkillCanvasManagerComponent>
+    {
+        public override void Awake(SkillCanvasManagerComponent self)
+        {
+
+        }
+    }
+    
     public class SkillCanvasManagerComponentComponentDestroySystem : DestroySystem<SkillCanvasManagerComponent>
     {
         public override void Destroy(SkillCanvasManagerComponent self)
@@ -21,6 +30,18 @@ namespace ET
     public static class SkillCanvasManagerComponentUtitlites
     {
         #region 公有成员
+
+        public static void InitUnitPresetSkillCanavs(this SkillCanvasManagerComponent self)
+        {
+            Unit unit = self.GetParent<Unit>();
+            UnitBaseConfig unitBaseConfig = ConfigComponent.Instance.AllConfigTables.TbUnitBase.Get(unit.ConfigId);
+
+            foreach (var skillCanvasConfig in unitBaseConfig.SkillList_Ref)
+            {
+                NP_RuntimeTreeFactory.CreateSkillNpRuntimeTree(unit, skillCanvasConfig.NPBehaveId,
+                    skillCanvasConfig.BelongToSkillId).Start();
+            }
+        }
 
         /// <summary>
         /// 添加技能Canvas
@@ -51,7 +72,6 @@ namespace ET
                 self.SkillLevels.Add(skillId, 1);
             }
         }
-
 
         /// <summary>
         /// 获取所有技能行为树
@@ -150,6 +170,11 @@ namespace ET
                 Log.Error($"请求等级的SkillId:{skillId}不存在");
                 return -1;
             }
+        }
+
+        public static void StartExecuteAllTreeNextFrame()
+        {
+            
         }
 
         #endregion

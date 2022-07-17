@@ -12,7 +12,7 @@ namespace ET
         public static async UniTask<bool> FindPathMoveToAsync(this Unit unit, Vector3 target, float targetRange = 0,
             CancellationToken unitaskCancellationToken = default)
         {
-            float speed = unit.GetComponent<NumericComponent>()[NumericType.Speed] / 100f;
+            float speed = unit.GetComponent<NumericComponent>()[NumericType.MoveSpeed] / 100f;
             if (speed < 0.01)
             {
                 return true;

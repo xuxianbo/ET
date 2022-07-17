@@ -1,39 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Cysharp.Threading.Tasks;
+using ET.EventType;
 using MongoDB.Bson.Serialization;
-
-
 using UnityEngine;
 
 namespace ET
 {
+    [Event(SceneType.SingleGame)]
+    public class OnSceneLoadingBegin: AEvent<Scene, LoadingBegin>
+    {
+        protected override async UniTask Run(Scene entity, LoadingBegin a)
+        {
+            await entity.GetComponent<NP_TreeDataRepositoryComponent>().LoadSkillCanvas();
+        }
+    }
+
     public class NP_RuntimeTreeRepositoryAwakeSystem : AwakeSystem<NP_TreeDataRepositoryComponent>
     {
         public override void Awake(NP_TreeDataRepositoryComponent self)
         {
-            // TODO
-            // foreach (var skillCanvasConfig in SkillCanvasConfigCategory.Instance.GetAll())
-            // {
-            //     TextAsset textAsset =
-            //         XAssetLoader.LoadAsset<TextAsset>(
-            //             XAssetPathUtilities.GetSkillConfigPath(skillCanvasConfig.Value.SkillConfigName));
-            //
-            //     if (textAsset.bytes.Length == 0) Log.Info("没有读取到文件");
-            //     try
-            //     {
-            //         NP_DataSupportor MnNpDataSupportor = BsonSerializer.Deserialize<NP_DataSupportor>(textAsset.bytes);
-            //
-            //         Log.Info($"反序列化行为树:{skillCanvasConfig.Value.SkillConfigName}完成");
-            //
-            //         self.NpRuntimeTreesDatas.Add(MnNpDataSupportor.NpDataSupportorBase.NPBehaveTreeDataId, MnNpDataSupportor);
-            //     }
-            //     catch (Exception e)
-            //     {
-            //         Log.Error(e);
-            //         throw;
-            //     }
-            // }
+
         }
     }
 

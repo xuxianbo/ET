@@ -26,7 +26,7 @@ namespace ET
         {
         }
         
-        public struct AfterCreateSingleGameScene
+        public struct AfterCreateSingleGameScene_Logic
         {
         }
 

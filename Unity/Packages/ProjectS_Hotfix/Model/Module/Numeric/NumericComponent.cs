@@ -4,15 +4,6 @@ using ET;
 
 namespace ET
 {
-    public class NumericComponentDestroySystem : DestroySystem<NumericComponent>
-    {
-        public override void Destroy(NumericComponent self)
-        {
-            self.NumericDic.Clear();
-            self.OriNumericDic.Clear();
-        }
-    }
-
     public class NumericComponent : Entity, IDestroy, IAwake
     {
         public Dictionary<int, float> NumericDic = new Dictionary<int, float>();
