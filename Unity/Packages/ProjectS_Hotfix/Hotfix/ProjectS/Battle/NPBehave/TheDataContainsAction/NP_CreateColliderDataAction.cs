@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using ET.Client;
 using MongoDB.Bson.Serialization.Attributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -22,35 +23,31 @@ namespace ET
     [Title("创建一个碰撞体", TitleAlignment = TitleAlignments.Centered)]
     public class NP_CreateColliderAction : NP_ClassForStoreAction
     {
-        [LabelText("碰撞关系配置Id")] [UnityEngine.Tooltip("Excel配置表中Id")]
-        public int CollisionsRelationSupportIdInExcel;
+        [LabelText("碰撞体类型")] public RoleTag RoleTag;
 
-        [LabelText("行为树配置表Id")] [Tooltip("Excel配置表中Id")]
-        public int ColliderNPBehaveTreeIdInExcel;
-
+        [LabelText("碰撞体归属阵营")] public RoleCamp RoleCamp;
+        
         /// <summary>
         /// 比如诺克释放了Q技能，这里如果为True，Q技能的碰撞体就会跟随诺克
         /// </summary>
-        [LabelText("Pos是否跟随释放的Unit")] public bool FollowUnitPos;
-
-        [LabelText("Rot是否跟随释放的Unit")] public bool FollowUnitRot;
+        [LabelText("是否跟随释放的Unit")] public bool FollowUnit;
 
         /// <summary>
         /// 只在跟随Unit时有效，因为不跟随Unit说明是世界空间的碰撞体，
         /// </summary>
-        [ShowIf(nameof(FollowUnitPos))] [LabelText("相对于释放者的偏移量")]
+        [ShowIf(nameof(FollowUnit))] [LabelText("相对于释放者的偏移量")]
         public Vector3 Offset;
 
         /// <summary>
         /// 只在不跟随Unit时有效，跟随Unit代表使用BelongToUnit的Transform
         /// </summary>
-        [HideIf(nameof(FollowUnitRot))] [LabelText("旋转角度")]
+        [HideIf(nameof(FollowUnit))] [LabelText("旋转角度")]
         public NP_BlackBoardRelationData Angle = new NP_BlackBoardRelationData();
 
         /// <summary>
         /// 只在不跟随Unit时有效，因为不跟随Unit说明是世界空间的碰撞体，
         /// </summary>
-        [HideIf(nameof(FollowUnitPos))] [LabelText("目标位置")]
+        [HideIf(nameof(FollowUnit))] [LabelText("目标位置")]
         public Vector3 TargetPos;
 
         public override Action GetActionToBeDone()
@@ -61,38 +58,16 @@ namespace ET
 
         public void CreateColliderData()
         {
-#if SERVER
-            int colliderDataConfigId = Server_B2SCollisionRelationConfigCategory.Instance
-                .Get(CollisionsRelationSupportIdInExcel)
-                .B2S_ColliderConfigId;
-
-            float angle = !this.FollowUnitRot
+            float angle = !this.FollowUnit
                 ? Angle.GetBlackBoardValue<float>(this.BelongtoRuntimeTree.GetBlackboard())
                 : 0;
 
-            Unit colliderUnit = UnitFactory
-                .CreateSpecialColliderUnit(BelongToUnit.BelongToRoom, BelongToUnit, colliderDataConfigId,
-                    CollisionsRelationSupportIdInExcel, ColliderNPBehaveTreeIdInExcel, FollowUnitPos, FollowUnitRot,
-                    Offset, TargetPos, angle);
-
-            // 让客户端创建独特的Unit，用于承载行为树同步
-            LSF_CreateColliderCmd lsfCreateColliderCmd =
-                ReferencePool.Acquire<LSF_CreateColliderCmd>().Init(-1) as LSF_CreateColliderCmd;
-            lsfCreateColliderCmd.SelfId = colliderUnit.Id;
-            lsfCreateColliderCmd.BelongtoUnitId = BelongToUnit.Id;
-            lsfCreateColliderCmd.CollisionsRelationSupportIdInExcel = CollisionsRelationSupportIdInExcel;
-            lsfCreateColliderCmd.ColliderNPBehaveTreeIdInExcel = ColliderNPBehaveTreeIdInExcel;
-            lsfCreateColliderCmd.Angle = angle;
-            lsfCreateColliderCmd.OffsetX = Offset.x;
-            lsfCreateColliderCmd.OffsetZ = Offset.z;
-            lsfCreateColliderCmd.TargetPosX = TargetPos.x;
-            lsfCreateColliderCmd.TargetPosZ = TargetPos.z;
-            lsfCreateColliderCmd.FollowUnitPos = FollowUnitPos;
-            lsfCreateColliderCmd.FollowUnitRot = FollowUnitRot;
-
-            LSF_Component lsfComponent = BelongToUnit.BelongToRoom.GetComponent<LSF_Component>();
-            lsfComponent.AddCmdToSendQueue(lsfCreateColliderCmd);
-#endif
+            UnitFactory
+                .CreateSpecialColliderUnit(BelongToUnit.DomainScene(), new UnitFactory.CreateColliderArgs()
+                {
+                    BelontToUnit = this.BelongToUnit, Angle = angle, FollowUnit = this.FollowUnit,
+                    RoleCamp = this.RoleCamp, RoleTag = this.RoleTag, Offset = this.Offset, TargetPos = this.TargetPos
+                });
         }
     }
 }

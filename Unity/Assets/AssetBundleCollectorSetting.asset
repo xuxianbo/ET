@@ -108,7 +108,7 @@ MonoBehaviour:
     - CollectPath: Assets/Res/Shader
       CollectorType: 0
       AddressRuleName: AddressByCollectorAndFileName
-      PackRuleName: PackDirectory
+      PackRuleName: PackShaderVariants
       FilterRuleName: CollectAll
       AssetTags: 
   - GroupName: Material

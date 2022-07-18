@@ -6,6 +6,7 @@
 
 using System.Collections.Generic;
 using ET;
+using ET.Client;
 using UnityEngine;
 
 namespace ET
@@ -14,18 +15,13 @@ namespace ET
     /// 一个碰撞体Component,包含一个碰撞实例所有信息，直接挂载到碰撞体Unit上
     /// 比如诺手Q技能碰撞体UnitA，那么这个B2S_ColliderComponent的Entity就是UnitA，而其中的BelongToUnit就是诺手
     /// </summary>
-    public class B2S_ColliderComponent: Entity
+    public class B2S_ColliderComponent: Entity, IAwake<UnitFactory.CreateColliderArgs>, IDestroy
     {
-        /// <summary>
-        /// 碰撞关系表中的Id (Excel中的Id)
-        /// </summary>
-        public int B2S_CollisionRelationConfigId;
+        public struct MyStruct
+        {
+            
+        }
         
-        /// <summary>
-        /// 碰撞体数据表中的Id (Excel中的Id)
-        /// </summary>
-        public int B2S_ColliderDataConfigId;
-
         /// <summary>
         /// 碰撞处理者名称
         /// </summary>
@@ -34,7 +30,7 @@ namespace ET
         /// <summary>
         /// Box2D世界中的刚体
         /// </summary>
-        public Rigidbody Body;
+        public MonoBridge MonoBridge;
 
         /// <summary>
         /// 所归属的Unit，也就是产出碰撞体的Unit，

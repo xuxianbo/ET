@@ -27,13 +27,8 @@ namespace ET
     [System.Flags]
     public enum RoleCamp
     {
-        TianZai = 0b0000001,
-        HuiYue = 0b0000010,
-        red = 0b0000100,
-        bule = 0b0001000,
-        yellow = 0b0010000,
-        green = 0b0100000,
-        JunHeng = 0b1000000
+        Player = 0b0000001,
+        Monster = 0b0000010,
     }
 
     public enum RoleTag
@@ -86,7 +81,7 @@ namespace ET
             
             if (roleCamp != this.RoleCamp)
             {
-                if (roleCamp == RoleCamp.JunHeng || this.RoleCamp == RoleCamp.JunHeng)
+                if (roleCamp == RoleCamp.Player)
                 {
                     return RoleCast.Neutral;
                 }

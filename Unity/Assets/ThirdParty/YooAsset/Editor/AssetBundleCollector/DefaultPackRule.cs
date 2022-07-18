@@ -113,4 +113,12 @@ namespace YooAsset.Editor
 			return StringUtility.RemoveExtension(data.AssetPath);
 		}
 	}
+	
+	public class PackShaderVariants : IPackRule
+	{
+		public string GetBundleName(PackRuleData data)
+		{
+			return "projects_shaders";
+		}
+	}
 }

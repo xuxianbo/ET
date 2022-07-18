@@ -9,7 +9,7 @@
             Unit unit = self.GetParent<Unit>();
             
             // 休眠刚体，不再会产生碰撞
-            unit.GetComponent<B2S_ColliderComponent>().Body.gameObject.SetActive(false);
+            unit.GetComponent<B2S_ColliderComponent>().MonoBridge.gameObject.SetActive(false);
             //
             // self.DeadTimerId = TimerComponent.Instance.NewOnceTimer(TimeHelper.ClientNow() + self.ResurrectionTime,
             //     () => { self.GetParent<Unit>()?.RemoveComponent<DeadComponent>(); });
@@ -22,10 +22,10 @@
         {
             Unit unit = self.GetParent<Unit>();
 
-            if (!(unit.GetComponent<B2S_ColliderComponent>().Body is null))
-            {
-                unit.GetComponent<B2S_ColliderComponent>().Body.gameObject.SetActive(true);
-            }
+            // if (!(unit.GetComponent<B2S_ColliderComponent>().Body is null))
+            // {
+            //     unit.GetComponent<B2S_ColliderComponent>().Body.gameObject.SetActive(true);
+            // }
 
             TimerComponent.Instance.Remove(ref self.DeadTimerId);
         }

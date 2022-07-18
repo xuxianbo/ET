@@ -4,6 +4,7 @@
 // Data: 2020年8月15日 13:12:44
 //------------------------------------------------------------
 
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -12,13 +13,12 @@ namespace ET
     /// <summary>
     /// 连接ET和Mono的桥梁
     /// </summary>
-    public class MonoBridge: MonoBehaviour
+    public class MonoBridge : MonoBehaviour
     {
         /// <summary>
         /// 自定义Tag
         /// </summary>
-        [LabelText("自定义Tag")]
-        [InfoBox("作用同GameObject.Tag")]
+        [LabelText("自定义Tag")] [InfoBox("作用同GameObject.Tag")]
         public string CustomTag;
 
         /// <summary>
@@ -26,28 +26,41 @@ namespace ET
         /// </summary>
         public long BelongToUnitId;
 
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-        }
-
+        public Action<MonoBridge> OnCollisionStay_Callback;
+        public Action<MonoBridge> OnCollisionExit_Callback;
+        public Action<MonoBridge> OnTriggerStay_Callback;
+        public Action<MonoBridge> OnTriggerExit_Callback;
+        
         private void OnCollisionStay(Collision other)
         {
+            if (other.gameObject.GetComponent<MonoBridge>() is { } monoBridge)
+            {
+                OnCollisionStay_Callback?.Invoke(monoBridge);
+            }
         }
 
         private void OnCollisionExit(Collision other)
         {
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
+            if (other.gameObject.GetComponent<MonoBridge>() is { } monoBridge)
+            {
+                OnCollisionExit_Callback?.Invoke(monoBridge);
+            }
         }
 
         private void OnTriggerStay(Collider other)
         {
+            if (other.gameObject.GetComponent<MonoBridge>() is { } monoBridge)
+            {
+                OnTriggerStay_Callback?.Invoke(monoBridge);
+            }
         }
 
         private void OnTriggerExit(Collider other)
         {
+            if (other.gameObject.GetComponent<MonoBridge>() is { } monoBridge)
+            {
+                OnTriggerExit_Callback?.Invoke(monoBridge);
+            }
         }
 
 #if UNITY_EDITOR
@@ -63,7 +76,7 @@ namespace ET
 
         public bool CustomTagNotEqualGameObjectName()
         {
-            return CustomTag == m_GameObjectTag? false : true;
+            return CustomTag == m_GameObjectTag ? false : true;
         }
 
         private void Reset()
