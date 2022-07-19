@@ -15,6 +15,7 @@
             "ShaderName": "Skybox/Procedural",
             "PassType": 0,
             "Keywords": [
+                "BILLBOARD_FACE_CAMERA_POS",
                 "_SUNDISK_SIMPLE"
             ]
         },
@@ -24,6 +25,8 @@
             "PassType": 0,
             "Keywords": [
                 "BILLBOARD_FACE_CAMERA_POS",
+                "_MAIN_LIGHT_SHADOWS",
+                "_SHADOWS_SOFT",
                 "_SUNDISK_SIMPLE"
             ]
         },
@@ -88,7 +91,7 @@
             "ShaderName": "Hidden/UIElements/EditorUIE",
             "PassType": 0,
             "Keywords": [
-                ""
+                "BILLBOARD_FACE_CAMERA_POS"
             ]
         },
         {
@@ -96,6 +99,16 @@
             "ShaderName": "Hidden/UIElements/EditorUIE",
             "PassType": 0,
             "Keywords": [
+                "BILLBOARD_FACE_CAMERA_POS",
+                "_MAIN_LIGHT_SHADOWS",
+                "_SHADOWS_SOFT"
+            ]
+        },
+        {
+            "AssetPath": "Packages/com.unity.render-pipelines.universal/Shaders/Utils/Blit.shader",
+            "ShaderName": "Hidden/Universal Render Pipeline/Blit",
+            "PassType": 0,
+            "Keywords": [
                 "BILLBOARD_FACE_CAMERA_POS"
             ]
         },
@@ -104,15 +117,9 @@
             "ShaderName": "Hidden/Universal Render Pipeline/Blit",
             "PassType": 0,
             "Keywords": [
-                ""
-            ]
-        },
-        {
-            "AssetPath": "Packages/com.unity.render-pipelines.universal/Shaders/Utils/Blit.shader",
-            "ShaderName": "Hidden/Universal Render Pipeline/Blit",
-            "PassType": 0,
-            "Keywords": [
-                "BILLBOARD_FACE_CAMERA_POS"
+                "BILLBOARD_FACE_CAMERA_POS",
+                "_MAIN_LIGHT_SHADOWS",
+                "_SHADOWS_SOFT"
             ]
         },
         {
@@ -135,9 +142,31 @@
         {
             "AssetPath": "Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader",
             "ShaderName": "Universal Render Pipeline/Lit",
+            "PassType": 8,
+            "Keywords": [
+                "_ALPHATEST_ON",
+                "_RECEIVE_SHADOWS_OFF"
+            ]
+        },
+        {
+            "AssetPath": "Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader",
+            "ShaderName": "Universal Render Pipeline/Lit",
             "PassType": 13,
             "Keywords": [
-                "_MAIN_LIGHT_SHADOWS"
+                "_MAIN_LIGHT_SHADOWS",
+                "_RECEIVE_SHADOWS_OFF"
+            ]
+        },
+        {
+            "AssetPath": "Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader",
+            "ShaderName": "Universal Render Pipeline/Lit",
+            "PassType": 13,
+            "Keywords": [
+                "BILLBOARD_FACE_CAMERA_POS",
+                "LIGHTPROBE_SH",
+                "_ALPHATEST_ON",
+                "_MAIN_LIGHT_SHADOWS",
+                "_SHADOWS_SOFT"
             ]
         },
         {
@@ -147,6 +176,7 @@
             "Keywords": [
                 "_ALPHATEST_ON",
                 "_MAIN_LIGHT_SHADOWS",
+                "_RECEIVE_SHADOWS_OFF",
                 "_SHADOWS_SOFT"
             ]
         },
@@ -155,7 +185,9 @@
             "ShaderName": "Universal Render Pipeline/Unlit",
             "PassType": 0,
             "Keywords": [
-                ""
+                "BILLBOARD_FACE_CAMERA_POS",
+                "_MAIN_LIGHT_SHADOWS",
+                "_SHADOWS_SOFT"
             ]
         },
         {
@@ -163,7 +195,10 @@
             "ShaderName": "Hidden/AstarPathfindingProject/Navmesh Outline",
             "PassType": 0,
             "Keywords": [
-                ""
+                "BILLBOARD_FACE_CAMERA_POS",
+                "LIGHTPROBE_SH",
+                "_MAIN_LIGHT_SHADOWS",
+                "_SHADOWS_SOFT"
             ]
         },
         {
@@ -171,7 +206,22 @@
             "ShaderName": "Hidden/AstarPathfindingProject/Navmesh",
             "PassType": 0,
             "Keywords": [
-                ""
+                "BILLBOARD_FACE_CAMERA_POS",
+                "LIGHTPROBE_SH",
+                "_MAIN_LIGHT_SHADOWS",
+                "_SHADOWS_SOFT"
+            ]
+        },
+        {
+            "AssetPath": "Assets/Res/Shader/NewUnlitShader.shader",
+            "ShaderName": "Unlit/NewUnlitShader",
+            "PassType": 0,
+            "Keywords": [
+                "BILLBOARD_FACE_CAMERA_POS",
+                "LIGHTPROBE_SH",
+                "_ALPHATEST_ON",
+                "_MAIN_LIGHT_SHADOWS",
+                "_SHADOWS_SOFT"
             ]
         }
     ]

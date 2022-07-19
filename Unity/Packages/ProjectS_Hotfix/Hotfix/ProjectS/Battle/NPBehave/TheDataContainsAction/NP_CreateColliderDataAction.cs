@@ -23,10 +23,16 @@ namespace ET
     [Title("创建一个碰撞体", TitleAlignment = TitleAlignments.Centered)]
     public class NP_CreateColliderAction : NP_ClassForStoreAction
     {
-        [LabelText("碰撞体类型")] public RoleTag RoleTag;
+        [LabelText("将要实例化的Prefab")] public string PrefabABPath;
 
-        [LabelText("碰撞体归属阵营")] public RoleCamp RoleCamp;
-        
+        [LabelText("将要挂载的行为树Id")] public int NP_TreeConfigId;
+
+        [LabelText("将要碰撞的Cast")] public RoleCast TargetCollisionRoleCast;
+
+        [LabelText("将要碰撞的Camp")] public RoleCamp TargetCollisionRoleCamp;
+
+        [LabelText("将要碰撞的Tag")] public RoleTag TargetCollisionRoleTag;
+
         /// <summary>
         /// 比如诺克释放了Q技能，这里如果为True，Q技能的碰撞体就会跟随诺克
         /// </summary>
@@ -62,12 +68,12 @@ namespace ET
                 ? Angle.GetBlackBoardValue<float>(this.BelongtoRuntimeTree.GetBlackboard())
                 : 0;
 
-            UnitFactory
-                .CreateSpecialColliderUnit(BelongToUnit.DomainScene(), new UnitFactory.CreateColliderArgs()
-                {
-                    BelontToUnit = this.BelongToUnit, Angle = angle, FollowUnit = this.FollowUnit,
-                    RoleCamp = this.RoleCamp, RoleTag = this.RoleTag, Offset = this.Offset, TargetPos = this.TargetPos
-                });
+            UnitFactory.CreateColliderArgs createColliderArgs =
+                ReferencePool.Acquire<UnitFactory.CreateColliderArgs>().Init(this.PrefabABPath, this.NP_TreeConfigId,
+                    this.BelongToUnit, angle, this.FollowUnit,
+                    this.TargetCollisionRoleCast, this.TargetCollisionRoleCamp, this.TargetCollisionRoleTag,
+                    this.Offset, this.TargetPos);
+            UnitFactory.CreateSpecialColliderUnit(BelongToUnit.DomainScene(), createColliderArgs);
         }
     }
 }

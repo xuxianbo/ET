@@ -97,7 +97,7 @@ namespace ET
             {
                 return false;
             }
-
+            
             return Equals((NP_BBValue_List_Long) obj);
         }
 

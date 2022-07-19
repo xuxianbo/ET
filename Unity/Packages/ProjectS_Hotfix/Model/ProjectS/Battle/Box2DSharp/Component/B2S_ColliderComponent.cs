@@ -17,15 +17,10 @@ namespace ET
     /// </summary>
     public class B2S_ColliderComponent: Entity, IAwake<UnitFactory.CreateColliderArgs>, IDestroy
     {
-        public struct MyStruct
-        {
-            
-        }
-        
         /// <summary>
-        /// 碰撞处理者名称
+        /// 参数
         /// </summary>
-        public string CollisionHandlerName;
+        public UnitFactory.CreateColliderArgs CreateColliderArgs;
         
         /// <summary>
         /// Box2D世界中的刚体
@@ -33,20 +28,8 @@ namespace ET
         public MonoBridge MonoBridge;
 
         /// <summary>
-        /// 所归属的Unit，也就是产出碰撞体的Unit，
-        /// 比如诺克放一个Q，那么BelongUnit就是诺克
-        /// 需要注意的是，如果这个碰撞体需要同步位置，同步目标是Parent，而不是这个BelongToUnit
+        /// 如果碰撞体Unit本身就挂载有NP_RuntimeTreeManager，则往碰撞体Unit身上的Blackboard传递数据，否则直接找监护人去
         /// </summary>
-        public Unit BelongToUnit;
-
-        /// <summary>
-        /// 是否同步归属的UnitPos
-        /// </summary>
-        public bool SyncPosToBelongUnit;
-        
-        /// <summary>
-        /// 是否同步归属的UnitRot
-        /// </summary>
-        public bool SyncRotToBelongUnit;
+        public NP_RuntimeTreeManager TargetNP_RuntimeTreeManager;
     }
 }

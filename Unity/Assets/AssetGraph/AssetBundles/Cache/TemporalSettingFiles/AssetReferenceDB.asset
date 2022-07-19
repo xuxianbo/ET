@@ -942,16 +942,8 @@ MonoBehaviour:
     m_importFrom: Assets/StreamingAssets/YooAssets/ed3a4cebcd36e06ef75f2f8480b6f3b0
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 04356c7c80a989d42ab83776a95e13c9
-    m_importFrom: Assets/StreamingAssets/YooAssets/400620b811b86ad100afb44f5a145410
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: 78dcb9abd167e784b8c89fa6db8ba7ab
     m_importFrom: Assets/StreamingAssets/YooAssets/f595f096f7158108aa40e241a786b5b2
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 4e3a7afb771086042bb9d2336028cbe8
-    m_importFrom: Assets/Res/Shader/ProjectSShaderVariant.shadervariants
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 46ad1672db73daf4d859f3a19a735454
@@ -966,8 +958,56 @@ MonoBehaviour:
     m_importFrom: Assets/Res/Material/New Material 1.mat
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 4d9bee09cc2d4b74aa546c104f061e80
-    m_importFrom: Assets/StreamingAssets/YooAssets/32ce71efd2f4034b31adef717b13eb1d
+  - m_assetDatabaseId: a098bd7d5939c054982999a9523191df
+    m_importFrom: Assets/Res/Shader/NewSurfaceShader.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f107e0f252972134c89ac6576a304110
+    m_importFrom: Assets/Res/Material/New Material 2.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 718489c739fa0924eb3bc03cac3bb7a8
+    m_importFrom: Assets/Res/Shader/NewUnlitShader.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9b1c9abe35570bc478dad53e4b8b5197
+    m_importFrom: Assets/Res/Material/New Material 3.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4e3a7afb771086042bb9d2336028cbe8
+    m_importFrom: Assets/Res/Shader/ProjectSShaderVariant.shadervariants
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a8f91e4f3105a924bbf447ebc67ad63c
+    m_importFrom: Assets/StreamingAssets/YooAssets/af7bf4165e7ce63e66a908d2937b9754
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 78235e55f1b68ec4fbf3ebeba6efa535
+    m_importFrom: Assets/StreamingAssets/YooAssets/93e4689284d58dfbf7b22a742c76b24d
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 177df0db8aa350944884de3caa8204f0
+    m_importFrom: Assets/Mono/MonoBehaviour/MonoBridge.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e8e85a3836dd5e4448a04754277037d7
+    m_importFrom: Packages/com.nkg.yy/HotfixView/Client/Unit/GameObjectComponentSystem.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 14fea1a56283ee241adfd3b21b47c632
+    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Box2DSharp/Component/B2S_ColliderComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9895fb00ad2645fe973620c0e8b345c6
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/ComponentSystems/B2S_ColliderComponent_System.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6a4f3b1a2ef264d4cb4db43d1c962c24
+    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Box2DSharp/Component/B2S_RoleCastComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2b2101c943e7e704cb40b10d71ec0904
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_CreateColliderDataAction.cs
     m_exportTo: 
     m_variantName: 
   m_version: 2

@@ -26,24 +26,43 @@ namespace ET
         /// </summary>
         public long BelongToUnitId;
 
-        public Action<MonoBridge> OnCollisionStay_Callback;
-        public Action<MonoBridge> OnCollisionExit_Callback;
+        // public Action<MonoBridge> OnCollisionEnter_Callback;
+        // public Action<MonoBridge> OnCollisionStay_Callback;
+        // public Action<MonoBridge> OnCollisionExit_Callback;
+
+        public Action<MonoBridge> OnTriggerEnter_Callback;
         public Action<MonoBridge> OnTriggerStay_Callback;
         public Action<MonoBridge> OnTriggerExit_Callback;
-        
-        private void OnCollisionStay(Collision other)
-        {
-            if (other.gameObject.GetComponent<MonoBridge>() is { } monoBridge)
-            {
-                OnCollisionStay_Callback?.Invoke(monoBridge);
-            }
-        }
 
-        private void OnCollisionExit(Collision other)
+        // private void OnCollisionEnter(Collision other)
+        // {
+        //     if (other.gameObject.GetComponent<MonoBridge>() is { } monoBridge)
+        //     {
+        //         OnCollisionEnter_Callback?.Invoke(monoBridge);
+        //     }
+        // }
+        //
+        // private void OnCollisionStay(Collision other)
+        // {
+        //     if (other.gameObject.GetComponent<MonoBridge>() is { } monoBridge)
+        //     {
+        //         OnCollisionStay_Callback?.Invoke(monoBridge);
+        //     }
+        // }
+        //
+        // private void OnCollisionExit(Collision other)
+        // {
+        //     if (other.gameObject.GetComponent<MonoBridge>() is { } monoBridge)
+        //     {
+        //         OnCollisionExit_Callback?.Invoke(monoBridge);
+        //     }
+        // }
+
+        private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.GetComponent<MonoBridge>() is { } monoBridge)
             {
-                OnCollisionExit_Callback?.Invoke(monoBridge);
+                OnTriggerEnter_Callback?.Invoke(monoBridge);
             }
         }
 

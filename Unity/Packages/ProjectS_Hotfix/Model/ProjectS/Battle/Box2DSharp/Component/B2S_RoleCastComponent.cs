@@ -6,6 +6,7 @@
 
 namespace ET
 {
+    [System.Flags]
     public enum RoleCast
     {
         /// <summary>
@@ -31,6 +32,7 @@ namespace ET
         Monster = 0b0000010,
     }
 
+    [System.Flags]
     public enum RoleTag
     {
         Sprite,
@@ -73,7 +75,16 @@ namespace ET
             }
 
             RoleCamp roleCamp = unit.GetComponent<B2S_RoleCastComponent>().RoleCamp;
-
+            return GetRoleCastWithRoleCamp(roleCamp);
+        }
+        
+        /// <summary>
+        /// 获取与目标的关系
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <returns></returns>
+        public RoleCast GetRoleCastWithRoleCamp(RoleCamp roleCamp)
+        {
             if (roleCamp == this.RoleCamp)
             {
                 return RoleCast.Friendly;

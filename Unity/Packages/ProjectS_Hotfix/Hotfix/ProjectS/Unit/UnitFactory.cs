@@ -57,7 +57,8 @@ namespace ET.Client
         public static Unit CreateSpecialColliderUnit(Scene currentScene, CreateColliderArgs createColliderArgs)
         {
             //为碰撞体新建一个Unit
-            Unit b2sColliderEntity = CreateUnit(currentScene, IdGenerater.Instance.GenerateUnitId(currentScene.Zone), 0);
+            Unit b2sColliderEntity =
+                CreateUnit(currentScene, IdGenerater.Instance.GenerateUnitId(currentScene.Zone), 0);
 
             b2sColliderEntity.AddComponent<NP_SyncComponent>();
             b2sColliderEntity.AddComponent<B2S_ColliderComponent, CreateColliderArgs>(createColliderArgs);
@@ -74,21 +75,83 @@ namespace ET.Client
             return b2sColliderEntity;
         }
 
-        public struct CreateColliderArgs
+        public class CreateColliderArgs : IReference
         {
+            public string PrefabABPath;
+            
+            public int NP_TreeConfigId;
+
             public Unit BelontToUnit;
 
-            public RoleTag RoleTag;
-            
-            public RoleCamp RoleCamp;
-            
+            /// <summary>
+            /// 将要发生碰撞事件的Tag
+            /// </summary>
+            public RoleTag TargetCollsionRoleTag;
+
+            /// <summary>
+            /// 将要发生碰撞事件的Cast
+            /// </summary>
+            public RoleCast TargetCollsionRoleCast;
+
+            /// <summary>
+            /// 将要发生碰撞事件的Camp
+            /// </summary>
+            public RoleCamp TargetCollsionRoleCamp;
+
             public bool FollowUnit;
-            
+
             public Vector3 Offset;
-            
+
             public Vector3 TargetPos;
-            
+
             public float Angle;
+
+            /// <summary>
+            /// 碰撞开始时黑板键
+            /// </summary>
+            public string OnTriggerEnter;
+
+            /// <summary>
+            /// 碰撞持续时黑板键
+            /// </summary>
+            public string OnTriggerStay;
+
+            /// <summary>
+            /// 碰撞结束时黑板键
+            /// </summary>
+            public string OnTriggerExit;
+
+            public CreateColliderArgs Init(string prefabABPath, int npTreeConfigId, Unit belongToUnit, float angle,
+                bool followUnit,
+                RoleCast targetCollsionRoleCast, RoleCamp targetCollsionRoleCamp, RoleTag targetCollsionRoleTag,
+                Vector3 offset, Vector3 targetPos)
+            {
+                BelontToUnit = belongToUnit;
+                Angle = angle;
+                FollowUnit = followUnit;
+                TargetCollsionRoleCamp = targetCollsionRoleCamp;
+                TargetCollsionRoleTag = targetCollsionRoleTag;
+                TargetCollsionRoleCast = targetCollsionRoleCast;
+                Offset = offset;
+                TargetPos = targetPos;
+                return this;
+            }
+
+            public void Clear()
+            {
+                BelontToUnit = null;
+                TargetCollsionRoleCamp = RoleCamp.Player;
+                TargetCollsionRoleTag = RoleTag.Hero;
+                TargetCollsionRoleCast = RoleCast.Friendly;
+                FollowUnit = false;
+                Offset = Vector3.zero;
+                TargetPos = Vector3.zero;
+
+                Angle = 0;
+                OnTriggerEnter = string.Empty;
+                OnTriggerStay = string.Empty;
+                OnTriggerExit = string.Empty;
+            }
         }
     }
 }

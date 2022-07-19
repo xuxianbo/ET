@@ -12,5 +12,14 @@ namespace ET.Client
                 GameObjectPoolComponent.Instance.RecycleGameObject(self.ResName, self.GameObject);
             }
         }
+        
+        [ObjectSystem]
+        public class DestroySystemAwakeComponent : AwakeSystem<GameObjectComponent>
+        {
+            public override void Awake(GameObjectComponent self)
+            {
+                self.GameObject.GetComponent<MonoBridge>().BelongToUnitId = self.GetParent<Unit>().Id;
+            }
+        }
     }
 }
