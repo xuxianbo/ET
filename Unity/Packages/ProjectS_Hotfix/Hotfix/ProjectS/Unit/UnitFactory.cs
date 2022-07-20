@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Cysharp.Threading.Tasks;
+using ET.cfg.SkillConfig;
+using UnityEngine;
 
 namespace ET.Client
 {
@@ -13,7 +15,7 @@ namespace ET.Client
             return unit;
         }
 
-        public static Unit CreatePlayerHero(Scene currentScene, UnitInfo unitInfo)
+        public static async UniTask<Unit> CreatePlayerHero(Scene currentScene, UnitInfo unitInfo)
         {
             Unit unit = CreateUnit(currentScene, unitInfo.UnitId, unitInfo.ConfigId);
 
@@ -27,19 +29,53 @@ namespace ET.Client
             //增加Buff管理组件
             unit.AddComponent<BuffManagerComponent>();
             unit.AddComponent<SkillCanvasManagerComponent>();
-            unit.AddComponent<B2S_RoleCastComponent, RoleCamp, RoleTag>(unitInfo.RoleCamp, RoleTag.Hero);
+            unit.AddComponent<B2S_RoleCastComponent, RoleCamp, RoleTag>(unitInfo.RoleCamp, unitInfo.RoleTag);
 
             unit.AddComponent<CommonAttackComponent_Logic>();
             unit.AddComponent<CastDamageComponent>();
             unit.AddComponent<ReceiveDamageComponent>();
+            unit.AddComponent<DataModifierComponent>();
 
             unit.Position = new Vector3(unitInfo.X, unitInfo.Y, unitInfo.Z);
             unit.Forward = new Vector3(unitInfo.ForwardX, unitInfo.ForwardY, unitInfo.ForwardZ);
 
-            Game.EventSystem.Publish(unit, new EventType.AfterUnitCreate_Logic()
+            await Game.EventSystem.PublishAsync(unit, new EventType.AfterUnitCreate_Logic()
             {
                 UnitConfigId = unitInfo.ConfigId,
                 UnitName = "还是我的Darius"
+            });
+
+            return unit;
+        }
+
+        public static async UniTask<Unit> CreateMonster(Scene currentScene, UnitInfo unitInfo)
+        {
+            Unit unit = CreateUnit(currentScene, unitInfo.UnitId, unitInfo.ConfigId);
+
+            unit.AddComponent<NumericComponent>();
+            unit.AddComponent<MoveComponent>();
+            unit.AddComponent<StackFsmComponent>();
+
+            unit.AddComponent<NP_SyncComponent>();
+            unit.AddComponent<NP_RuntimeTreeManager>();
+
+            //增加Buff管理组件
+            unit.AddComponent<BuffManagerComponent>();
+            unit.AddComponent<SkillCanvasManagerComponent>();
+            unit.AddComponent<B2S_RoleCastComponent, RoleCamp, RoleTag>(unitInfo.RoleCamp, unitInfo.RoleTag);
+
+            unit.AddComponent<CastDamageComponent>();
+            unit.AddComponent<ReceiveDamageComponent>();
+            unit.AddComponent<DataModifierComponent>();
+
+            unit.Position = new Vector3(unitInfo.X, unitInfo.Y, unitInfo.Z);
+            unit.Forward = new Vector3(unitInfo.ForwardX, unitInfo.ForwardY, unitInfo.ForwardZ);
+
+            await Game.EventSystem.PublishAsync(unit, new EventType.AfterUnitCreate_Logic()
+            {
+                IsMonest = true,
+                UnitConfigId = unitInfo.ConfigId,
+                UnitName = "怪物Darius"
             });
 
             return unit;
@@ -54,23 +90,35 @@ namespace ET.Client
         /// <param name="collisionRelationDataConfigId">碰撞关系数据表Id</param>
         /// <param name="colliderNPBehaveTreeIdInExcel">碰撞体的行为树Id</param>
         /// <returns></returns>
-        public static Unit CreateSpecialColliderUnit(Scene currentScene, CreateColliderArgs createColliderArgs)
+        public static async UniTask<Unit> CreateSpecialColliderUnit(Scene currentScene,
+            CreateColliderArgs createColliderArgs)
         {
             //为碰撞体新建一个Unit
             Unit b2sColliderEntity =
                 CreateUnit(currentScene, IdGenerater.Instance.GenerateUnitId(currentScene.Zone), 0);
-
-            b2sColliderEntity.AddComponent<NP_SyncComponent>();
+            
+            GameObject go = await b2sColliderEntity
+                .AddComponent<GameObjectComponent, YooAssetProxy.YooAssetResType, string>(
+                    YooAssetProxy.YooAssetResType.Effect, createColliderArgs.PrefabABPath).CreateGameObjectInternal();
+            
             b2sColliderEntity.AddComponent<B2S_ColliderComponent, CreateColliderArgs>(createColliderArgs);
-            b2sColliderEntity.AddComponent<NP_RuntimeTreeManager>();
-            b2sColliderEntity.AddComponent<SkillCanvasManagerComponent>();
 
-            // // 根据传过来的行为树Id来给这个碰撞Unit加上行为树(如果有的话)
-            // // 如果不加行为树，那么在碰撞体发生碰撞时将会直接传递给BelongToUnit进行处理
-            // NP_RuntimeTreeFactory.CreateSkillNpRuntimeTree(b2sColliderEntity,
-            //         SkillCanvasConfigCategory.Instance.Get(colliderNPBehaveTreeIdInExcel).NPBehaveId,
-            //         SkillCanvasConfigCategory.Instance.Get(colliderNPBehaveTreeIdInExcel).BelongToSkillId)
-            //     .Start();
+            go.transform.position = createColliderArgs.BelontToUnit.Position;
+            go.transform.rotation = createColliderArgs.BelontToUnit.Rotation;
+
+            if (createColliderArgs.NP_TreeConfigId != 0)
+            {
+                b2sColliderEntity.AddComponent<NP_SyncComponent>();
+                b2sColliderEntity.AddComponent<NP_RuntimeTreeManager>();
+                b2sColliderEntity.AddComponent<SkillCanvasManagerComponent>();
+
+                SkillCanvasConfig skillCanvasConfig =
+                    ConfigComponent.Instance.AllConfigTables.TbSkillCanvas.Get(createColliderArgs.NP_TreeConfigId);
+
+                NP_RuntimeTreeFactory.CreateSkillNpRuntimeTree(b2sColliderEntity, skillCanvasConfig.NPBehaveId,
+                        skillCanvasConfig.BelongToSkillId)
+                    .Start();
+            }
 
             return b2sColliderEntity;
         }
@@ -78,7 +126,7 @@ namespace ET.Client
         public class CreateColliderArgs : IReference
         {
             public string PrefabABPath;
-            
+
             public int NP_TreeConfigId;
 
             public Unit BelontToUnit;
@@ -124,8 +172,10 @@ namespace ET.Client
             public CreateColliderArgs Init(string prefabABPath, int npTreeConfigId, Unit belongToUnit, float angle,
                 bool followUnit,
                 RoleCast targetCollsionRoleCast, RoleCamp targetCollsionRoleCamp, RoleTag targetCollsionRoleTag,
-                Vector3 offset, Vector3 targetPos)
+                Vector3 offset, Vector3 targetPos, string onTriggerEnter, string onTriggerStay, string onTriggerExit)
             {
+                this.PrefabABPath = prefabABPath;
+                this.NP_TreeConfigId = npTreeConfigId;
                 BelontToUnit = belongToUnit;
                 Angle = angle;
                 FollowUnit = followUnit;
@@ -134,6 +184,9 @@ namespace ET.Client
                 TargetCollsionRoleCast = targetCollsionRoleCast;
                 Offset = offset;
                 TargetPos = targetPos;
+                this.OnTriggerEnter = onTriggerEnter;
+                this.OnTriggerStay = onTriggerStay;
+                this.OnTriggerExit = onTriggerExit;
                 return this;
             }
 

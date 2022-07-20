@@ -28,6 +28,7 @@ namespace ET.Client
             singleGameScene.AddComponent<ClientSceneFlagComponent>();
             singleGameScene.AddComponent<UnitComponent>();
             singleGameScene.AddComponent<LSF_Component>();
+            singleGameScene.AddComponent<LSF_TimerComponent>();
             singleGameScene.AddComponent<CDComponent>();
             singleGameScene.AddComponent<NP_TreeDataRepositoryComponent>();
 

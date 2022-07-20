@@ -147,7 +147,7 @@ namespace ET
 	
 	public class UnitInfo
 	{
-		public int UnitId { get; set; }
+		public long UnitId { get; set; }
 		
 		public int ConfigId { get; set; }
 		
@@ -164,6 +164,8 @@ namespace ET
 		public float ForwardZ { get; set; }
 		
 		public RoleCamp RoleCamp { get; set; }
+		
+		public RoleTag RoleTag { get; set; }
 	}
 
 	[Message(OuterOpcode.M2C_CreateUnits)]

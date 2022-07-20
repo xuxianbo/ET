@@ -9,7 +9,7 @@ using NPBehave;
 
 namespace ET
 {
-    public class NP_SyncComponent: Entity, IAwake, IFixedUpdate,IDestroy
+    public class NP_SyncComponent : Entity, IAwake, IFixedUpdate, IDestroy
     {
         public SyncContext SyncContext;
     }

@@ -16,7 +16,7 @@ namespace Plugins.NodeEditor
     {
         public override string name => "序列结点";
 
-        [BoxGroup("Selector结点数据")]
+        [BoxGroup("Sequence结点数据")]
         [HideReferenceObjectPicker]
         [HideLabel]
         public NP_SequenceNodeData NP_SequenceNodeData = new NP_SequenceNodeData { NodeDes = "序列组合器"};

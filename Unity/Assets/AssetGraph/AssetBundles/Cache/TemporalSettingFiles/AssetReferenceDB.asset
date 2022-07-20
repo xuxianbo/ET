@@ -13,24 +13,842 @@ MonoBehaviour:
   m_Name: AssetReferenceDB
   m_EditorClassIdentifier: 
   m_assets:
+  - m_assetDatabaseId: 3a43016a28afda64cac45c1459ae0c44
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uxml/VFXSystemBorder.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 49cb5aa34272b034d8b754c65d9cdbfa
+    m_importFrom: Packages/com.unity.visualeffectgraph/Textures/Sparkle.tga
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3aadaa8d8c0ae984c9dd23e939a8b7d5
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/EditStolen.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0353bf5b77c4a6f4a951ab19348ef240
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLines/PassSelection.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 508f717529d39494f944af2bbef4d17e
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXView-light.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d8ade4d6686189b42b129509ce1892dd
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/SceneWindow/Textures/Play.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b8e6baf3d7087be448f2165e3d0ac6cf
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXUpdate.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cd270bc83dc0ce644bf351c3f5b7f30f
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/DefaultStaticMeshOutput.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5813e7dad85d21748a1abefe92420737
+    m_importFrom: Packages/com.unity.visualeffectgraph/Meshes/Hexagon.mesh
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 395238098ca5d124b9c281013f86d46c
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleMeshes/PassVelocity.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9155901fa891f5a4dbf8c0d58a25ff2b
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/Particles.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 397d19ebb00c80e4fa5224568694c743
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uxml/VFXComponentBoard.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dba25e3261c16e34b848637315b82d6d
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/bitfield-bit.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 25552acff6ce8a547874a918ba0c660b
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/PropertyRMDark.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e1f36af35b22fdf40b50e781673e46d7
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXInit.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 32c48a080e4274749960e27b557f8047
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/SceneWindow/Textures/Restart.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e1aade3d2d19bb14d997331051688744
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/title-local.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ad8f200ba081b0a4aa22951683285129
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/Selectable.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8fa6c4009fe2a4d4486c62736fc30ad8
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/UpdateStrips.compute
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 677f238dc37937045b856e9468e21666
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/Templates/VFXParticlePoints.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 548900deb53117d46a19730415f9e1a3
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/title-world.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9a810f28642b2fd499f477940f7e40a1
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXBlock.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7ecf1b434780e3a46ab9f99b684c463a
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXParameter.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 730c9c8a21ae0a64aba043694dfacba7
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/VFXDefines.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0bffc5ab0d39f9f4d9d57e844b66e544
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXCameraSort.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 40d10cb03906c5c4c99c8c26aa65162b
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXFlow.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6f8f5c087a5cb4bd19c1e4898d57e453
+    m_importFrom: Packages/com.unity.visualeffectgraph/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a951408f53d1e4d47b7eff34d67b3e01
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uxml/VFXContext.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9a3339feefbd36b4bb8050846ac3124a
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleHexahedron/PassSelection.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e4543fd16f4ade84e93cca318a387e55
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXOutputUpdate.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 492e24e6541cb77479f4b33875b2391a
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Legacy/Templates/VFXParticleDecal.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b7261d938a155b74cb61a60a16d9f2aa
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/Templates/Empty Particle
+      System.vfx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b320d52a66affe74ab48295d5364d985
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleHexahedron/Pass.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3818b9ab8df317a4283de6940b594723
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/shader/Element3DGridShader.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ff575c018ede8b447b7dfca6f5a171d8
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLines/Pass.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c05780da2d168d44898baee98b8560cd
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePlanarPrimitives/PassForward.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 501f2b44185ecc949986456b535c613b
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLinesSW/Pass.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d333db22a2cc31e48a5aba38045265db
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/cat-background-dark.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9f8c2e70e6a4a6a4d8559aecb89e2f35
+    m_importFrom: Packages/com.unity.visualeffectgraph/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dce4f4094cb939a47bae23257025f79b
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleMeshes/Pass.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 349d67d896d33a54181e800b229b65ec
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/Templates/VFXParticleLinesSW.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: edd2e624d38446449b19b45ea6999363
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXParticleCommon.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 276d9e395ae18fe40a9b4988549f2349
+    m_importFrom: Packages/com.unity.visualeffectgraph/Textures/DefaultParticle.tga
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3abdb569ef6194245afa80549de15113
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/Stop.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8088aa6f43080224f85dad987bcdc10f
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXView-dark.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b8fd50c1927bb714b8fe5141cb40f34a
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/Templates/VFXParticleDecal.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e0f120136b854d841a6b2deeb23caecd
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleHexahedron/PassBasicForward.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e1c9418ea80ea1f438a3b984293b811c
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/Templates/VFXParticleMeshes.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0ddb509da767c8a47a14f6b5e93d1567
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLines/PassShadowCaster.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d82a49d9dcce6634b8bf285efe558305
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXReorderableList.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 38f62d38eebe79c418d9572823b61386
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/shader/GradientBorder.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5e5f3bc0f4e0424448d1a4f2db69b331
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLinesSW/PassDepthOrMV.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0239268e1f948ae45bab17e786b6f177
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleMeshes/PassDepth.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 54933e5d9c8414048bd4ebed9bbc6e34
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLines/PassForward.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1d8481de16af723418a688958c41224b
+    m_importFrom: Packages/com.unity.visualeffectgraph/Textures/Noise.tga
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 613e0ccdaf11df041bdc23a5818cfa58
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/vfx_graph_icon_gray_light.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3306cc38d01201948a364b7492b70c5c
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXBlackboard.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b7833afbecf6e304daa1ceb3c2544bcc
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXControlsDark.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 78ac6c44194fb734195d6049bcfaee71
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/shader/SystemInfo.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 99ae18e2d3c220f46952d11888c112ab
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/Play.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3e34fa3a962bcc9448952f9db90e70b4
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleMeshes/PassDepthOrMV.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5df6daab6a21e1b4a8730bacdb8bdeec
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/shader/GradientDashedBorder.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c907ab2be7d1c354381138f4b6c8264a
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/PropertyRM.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8381a04dc80bca046be0e29c24fee6a0
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Legacy/Templates/VFXParticlePlanarPrimitive.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 80f358478c5023c4ca31d1d9c01a74d3
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXControlsLight.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 95080904881808c4782efd541c341396
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uxml/VFXEdgeDragInfo.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fdeae910927a2ca4aabcdc1830e92c69
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleMeshes/PassShadowCaster.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 16660805ec6c2b34f830aa2435263ea1
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePoints/PassSelection.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e914e1ab36ddab241977d10aa80b12a3
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleHexahedron/PassDepth.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dee90efdbc5950a448c45f2e11e8ff2b
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleDecals/PassSelection.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 690dd9c182dfdec44b478d7a199b9a89
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePoints/PassShadowCaster.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: de530d026654cde48a2d1d5735c979ad
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/ParticleStrips@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3d707c2c34101af48b8dc0b38ea50a1f
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/VFXPasses.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 33fe96500f075374680d8de50a9e30d2
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleDecals/PassForward.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d2131730d2c143a4ba6e429a08f50ae8
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Legacy/VFXCommon.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1f818e317cea12e41ab2d21779e01c5b
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePlanarPrimitives/PassSelection.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 439db59106e9dc948aaf20f86bb03e88
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Legacy/Templates/VFXParticleLinesHW.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ed40687cc3f52b843a2a6c845420d606
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXLabeledField.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5b42e7bf9fe184d48ab50a5bebfddd89
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/title-world@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a8d8823499ff50847aa460cb119c445d
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/Templates/Simple Particle
+      System.vfx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a4b0ed4ca604f654aa05a52c375f713b
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePoints/PassDepth.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1ad4de0742e8a86458dd3b536f7f6b52
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/SceneWindow/Textures/Pause.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f82f2cf1ef0aab74999471137de4cffa
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Legacy/VFXPasses.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bf2c8e09bda2786468d6b49e9f5422bb
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/Templates/VFXParticlePlanarPrimitive.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e9c35c7f5cf76a341a95f55bfe59cb05
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/Restart.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a788682fa62292b41917b1a00e14c709
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/Particles@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4de9a9de8c023d04e8be527887fe676e
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleHexahedron/PassShadowCaster.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 268e13180bceb574198fc52de11e198b
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Legacy/Templates/VFXParticleCube.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6d1fb53d1180fcc43a9d963091714e5a
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLinesSW/PassShadowCaster.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 44a512aac5f0301478d44e07e0310384
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleMeshes/PassForward.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e4f180152dca6244688f0817c69ea58d
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLinesSW/PassSelection.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6dd1cb6278f06f44cbf13012dd50f7fd
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXCommon.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cff15bfb287ae6d46ab44020b5016216
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXReorderableListLight.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dbf0a247eda3c834b86a04d35558ba9f
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/vfx_graph_icon_gray_dark.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 551b014a06a65794193c2af3cdc51f82
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePoints/PassDepthOrMV.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 32d2dc2db02486b40a53fb63e3df5c45
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXControls.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f4d22fb77437608439f0bac189718c42
+    m_importFrom: Packages/com.unity.visualeffectgraph/Meshes/Triangle.mesh
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 29fb3b4593a892c4c89638bbb9d58483
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLines/PassDepth.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e20427b233f846d46931d017af7d647c
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uxml/VFXComponentBoard-event.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 87dca9a8a0d1c274f88d60271811380a
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePlanarPrimitives/PassDepthOrMV.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: de0fae515169ff246a20d58a8a440ed0
+    m_importFrom: Packages/com.unity.visualeffectgraph/Textures/SimpleSmoke.tga
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ff2062f0f80bd744dbb724b77d6463a7
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleHexahedron/PassDepthOrMV.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ccda2131ef139a440a193699457e1561
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/cat-background-light.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 896072fdf73308c4dbd19cfb6a117b96
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXNoise.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1acd6ca26a40f3e49885afad7549c9db
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/spacelocal.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 53f2a7e5f246da14c87a9fd92ecb804c
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/exposed
+      dot.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9dc64da8056fa524b857ee98223ce2c9
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePlanarPrimitives/Pass.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 652c7d237ccc44b70b36875b2cf5ee92
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/output
+      dot.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b1c8f7e3ec7df684c8507fac2e0ab68c
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleSpheres/PassShadowCaster.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 51e705288abc60d4bb5003e1e49054ea
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXView.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5f85611a83a49bb43aee8d670b460941
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/SceneWindow/Textures/Stop.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d6706a1d655f3394a82744aefaa346af
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXParticleHeader.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1c9e0e166435ac24eacc5a8f047aff75
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/Templates/VFXParticleLinesHW.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e8ac990589983154bb5b716597378ec5
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePlanarPrimitives/PassShadowCaster.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d3db5e73c78f0fb4e89c6beb11db882a
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXReorderableListDark.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 93ae95b40d627a3488408555a05aa520
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLinesSW/PassForward.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a411da5568e695348875aad0a62316e5
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/plus.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 05e4b155e817f144baf2cbb34e2a4f9d
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/minus.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e408431ef7eedd9418004034e12a7e8f
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePlanarPrimitives/PassGS.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bc93937138cb1054e98cf187d5a71cbb
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/shader/TimeBar.shader
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c0f42375f75f4034c80e18307a87bd00
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Legacy/Templates/VFXParticleLinesSW.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f9648bd2c2501034a8f52d96d3e630bd
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/PropertyRMLight.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 746e7bd2948ee424aa581a91b823b535
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/Execution.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bc1b5b01f9680d547a92bed9b08ce887
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXEdgeDragInfo.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c071abb088c76054bb603238f21bce1c
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/Templates/Simple Ribbon.vfx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2913ec7d4622250469a8d03b171e292e
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/ParticleStrips.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 65c993dd50bb4c709f1bdfe774c77d13
+    m_importFrom: Packages/com.unity.visualeffectgraph/ValidationConfig.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 591c9a98be9f00f418516de3d2ff09e6
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/SceneWindow/Textures/Step.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6a28846705ce10d43ad06dde463ed4a5
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXTypeColor.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 185ad821b20687a479548502dc796312
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleSpheres/PassDepth.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9df0f1d34c6a28c4a8d03ee8d8d1f9c7
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLinesSW/PassDepth.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7bdfc4bbd4c8e1a429c2f190f79dce59
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXComponentBoard.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c66052feab9db4f4793b5d05f1695b0e
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePoints/Pass.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6400081753199864e8880210a0c8ce24
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/Templates/VFXParticleBasicCube.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ea257ca3cfb12a642a5025e612af6b2a
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/Sort.compute
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0e21207235b68a147a3e90e5e455d866
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uxml/VFXBlackboardSection.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 53796f02bccb5884295a9ce200bb4868
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Legacy/Templates/VFXParticleMeshes.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 591281d1af0a363438f20187cb361b6e
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXNodeUI.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a7d70db1107e66a41a1dcb7a2dbe7758
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXSystemBorder.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5c2949c31aafddd4e8011ffdebb8fdf7
+    m_importFrom: Packages/com.unity.visualeffectgraph/Textures/SignedDistanceField.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 62d56101d2886694b916a93472f46254
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Legacy/Templates/VFXParticlePoints.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6952bb3b42e083e4bb41a64cd34ce4dd
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/Templates/Default Subgraph
+      Block.vfxblock
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 933c4efc089fff24d9582debd1507756
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXCommonOutput.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cf28868a0ab107e46b2d953f4f99fed4
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/Utilities/pCache/Importer/pCache-Icon.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 75039ad0d2b9a1d499153d33fda1a3c1
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleHexahedron/PassForward.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 16b454c8be4c1854fab1aa702812af16
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/Templates/VFXParticleCube.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 04a2e61b1178ef3478b6e9bb0bcef3d7
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXParticleStripCommon.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c7ebaf0ca4d4c8145bcb03461cdaba9f
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePlanarPrimitives/PassDepth.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2f685f3a7ffef474ab59ec9f64e0b126
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleSpheres/Pass.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 960a16cb26dfcb64a9cba454514cd4d9
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleDecals/Pass.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b84f73c7c4a6c6443a3bfbb2f7a504f9
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/Templates/Simple Swarm
+      Particle System.vfx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9c6d51ab04ad5af42afc83ecca6b5c9d
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXOperator.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 71ccc660ddd123e478c0655a1cc5e6df
+    m_importFrom: Packages/com.unity.visualeffectgraph/Meshes/Octagon.mesh
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 2f3a95d539a36bf4eb98f5e6809d7b9b
     m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 94d145a03001466289893f68a1e7ba8a
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/PathFind/PathFindComponentSystems.cs
+  - m_assetDatabaseId: 3c60df67c374b7f44bf987c68120d858
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/title-local@2x.png
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 04f10c5df597f444b8347ed156ad2c89
-    m_importFrom: Packages/com.nkg.yy/ModelView/Client/Global/GlobalComponent.cs
+  - m_assetDatabaseId: 5d6074b5c840b1d42ada800586eeb725
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleLines/PassDepthOrMV.template
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 316de268b22e483d8b0e2e78224af66c
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Scene/AfterCreateSingleGameScene_AddComponent.cs
+  - m_assetDatabaseId: 0d15471467bf5994d8ee3a2e0205ca46
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXNode.uss
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 53f8fbb9d8f3407ba32350c5fa175a6d
-    m_importFrom: Packages/com.nkg.yy/ModelView/ProjectS/PathFind/PathFindComponent.cs
+  - m_assetDatabaseId: a6b20f6d464431e4f9f63037d61d9126
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/Common/VFXCommonCompute.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e9f17ea2d74564042b3d527ab3cbc14c
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/bitfield-bkgnd.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5bf4c07fd55c8db489151afb49f83beb
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uxml/VFXParameter.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4a4e1ef9bae46664e9d4ceddf657236f
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/spaceworld.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 23c51f21a3503f6428b527b01f8a2f4e
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXCopyBuffer.compute
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 91d514e6158c54b468e8bfd8b658d986
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uxml/VFXNode.uxml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d89be2067d175544c866c22da3981e09
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/Pause.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 64b68714a7a2a594c994c8b658209762
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/Templates/Default Subgraph
+      Operator.vfxoperator
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 907c6892149251441896b47345f43418
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/Step.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ba8fe1dcdf649aa468b570b25ab796ce
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleHexahedron/PassVelocity.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fea0c8844b91ec7469c6d20582b5aed8
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Legacy/Templates/VFXParticleBasicCube.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 092c27d29de329c43aa5ad8ca20e4be9
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/Templates/Simple Heads
+      & Sparks.vfx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7e16d986b3a9d1d47ae2d480e3cd0587
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePlanarPrimitives/PassVS.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1471639f3a2608646ab3b39c2ce36ea1
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Legacy/VFXDefines.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 84a17cfa13e40ae4082ef42714f0a81c
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/VFXFillIndirectArgs.compute
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 240c48d92f72ce740b04be1a316fcd13
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePlanarPrimitives/PassVelocity.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 51dca3596e622d644befbfcafdb8395d
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticleMeshes/PassSelection.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 57035ce66d1229144bd535d37615b1d5
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/Templates/Simple Mesh
+      Output.vfx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9d10f94619dff5c428924d6214fa802a
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/ParticlePoints/PassForward.template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d01d8874889eebc4ab0cde7f2b3309de
+    m_importFrom: Packages/com.unity.visualeffectgraph/Textures/Sphere.tga
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7185b3447b066a5489f12a8dae9f0550
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXDataAnchor.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f0efff9416db4174984390120a80ee87
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor/Templates/Simple Heads
+      & Trails.vfx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: be3e66885c31d1d49b5b0ba2ca92f326
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXContext.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ecc21607d5a8adc4581c57b3773e169a
+    m_importFrom: Packages/com.unity.visualeffectgraph/LICENSE.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 385bc181e02fb7549a92fc001132ad46
+    m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/VFXCommon.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 08937e3134903c5488be506a2dac71e9
+    m_importFrom: Packages/com.unity.visualeffectgraph/Textures/vectorfield.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6c193541213e8014c94aa721e12c7a32
+    m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXFlowEdge.uss
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 508e3be70f66dd146a9d866b019f64ae
+    m_importFrom: Assets/Res/Effect/Darius/Darius_R_Effect.vfx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 88078089f63e9524fa06183914f5f933
+    m_importFrom: Assets/Res/Effect/Darius/Darius_Q_Effect.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0000000000000000c100000000000000
+    m_importFrom: ProjectSettings/VFXManager.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f3c266d603db5c44cb6bf4f5be9abefd
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_Q.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e0d691ac8c1d0454ba07089ea820e18a
+    m_importFrom: Assets/Init.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 645147ad86d2cf8428ae88fec9d696a2
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Unit/UnitFactory.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2b2101c943e7e704cb40b10d71ec0904
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_CreateColliderDataAction.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 221aae555ae663048b4fd1ad496cafdd
+    m_importFrom: Assets/Res/Unit/Darius.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 14fea1a56283ee241adfd3b21b47c632
+    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Box2DSharp/Component/B2S_ColliderComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9895fb00ad2645fe973620c0e8b345c6
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/ComponentSystems/B2S_ColliderComponent_System.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1b8ed1adf8801f3478cd27dacf9718ec
+    m_importFrom: Assets/Res/Config/SkillConfig/Darius_Q.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2f29c814ac5e2814fa5adea6548864a4
+    m_importFrom: Packages/com.nkg.yy/ModelView/ProjectS/Unit/GameObjectComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f5016891df5db9c438e1973e134231f5
+    m_importFrom: Packages/com.nkg.yy/HotfixView/Client/Unit/AfterUnitCreate_CreateUnitView.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b2c6b56601b7d044088ae041c3d4946d
+    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Battle/NPBehave/ClientSpecial/NP_ShowSkillIndicatorAction.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e8e85a3836dd5e4448a04754277037d7
+    m_importFrom: Packages/com.nkg.yy/HotfixView/Client/Unit/GameObjectComponentSystem.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ef66534919df4604932af43e963a558e
+    m_importFrom: Packages/com.nkg.yy/ModelView/ProjectS/Battle/Component/GameObjectPoolComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fb756caad3e88f447872b323e8f5aeed
+    m_importFrom: Assets/Res/Texture/Darius/Passive/Darius_Base_P_axe_tip_SoftRays_4x1.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7875db46b59cde3438a48cdeffc2a732
+    m_importFrom: Assets/Res/Texture/Darius/Passive/Darius_Base_P_eraged_sparks.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cc2251826e84419d8e79f7a2e1162a3e
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/Unit/EnterMapFinish_CreateUnit.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ea3ea734244f45718ace869fc83dc952
+    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Battle/ComponentSystems/PlayerHeroControllerSystem.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 53261ca99da085f4baa34531996162da
+    m_importFrom: Packages/com.nkg.yy/Model/Share/EventType.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 606ef955e087f3145b7b4aac464e545a
+    m_importFrom: Packages/com.nkg.yy/Model/Generate/Message/OuterMessage.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f42a19904ec00de44bd783a1ceb02c08
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_Q_Collider.asset
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 964e49ad3f4fe0a4eb1485037f9a41d5
@@ -41,252 +859,48 @@ MonoBehaviour:
     m_importFrom: Assets/Res/Code/ProjectS_Hotfix.pdb.bytes
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 59ea15930c864734d85b7aa479c5c10e
-    m_importFrom: Packages/com.nkg.yy/HotfixView/Client/Global/GlobalComponentSystem.cs
+  - m_assetDatabaseId: 7d3e7be371ed4bdbb0d5a0e797bc5362
+    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/NPBehave/Component/NP_RuntimeTree.cs
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: a4327c14324c47098c157a3637c9c2cd
-    m_importFrom: Packages/com.nkg.yy/ModelView/ProjectS/PathFind/NavAgentComponent.cs
+  - m_assetDatabaseId: d367f6a53ca6dd74f92e6db88d36d882
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/ComponentSystems/NP_RuntimeTreeSystem.cs
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 7f0eaac3c12d46b182fa880fb1de4f4c
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/PathFind/NavAgentComponentSystems.cs
+  - m_assetDatabaseId: 7252eb314038c924abd8e77b6275c95f
+    m_importFrom: Packages/com.nkg.yy/Hotfix/Client/Scene/SceneFactory.cs
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: a94abbe4b5ef48748401d05882ed6d5a
-    m_importFrom: Assets/Mono/YooAsset/YooAssetProxy.cs
+  - m_assetDatabaseId: 1b7697cb1d19c284590ca8b8680a5ead
+    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Component/LSF_TimerComponent.cs
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 7ae9356bc3ecbc04cab9123e2e5ad018
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/UnitConfig/TbUnitRes.cs
+  - m_assetDatabaseId: 00000000000000007000000000000000
+    m_importFrom: ProjectSettings/TimeManager.asset
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 71db1774ff5358a4ea7abf8671f33895
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/SkillConfig/SkillCanvasConfig.cs
+  - m_assetDatabaseId: bd8501b2cb85f364999ff026a2e2da36
+    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/NPBehave/Component/NP_SyncComponent.cs
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 65b5a6ca031645b4fa24237062e06ec4
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/item
+  - m_assetDatabaseId: 6a4f3b1a2ef264d4cb4db43d1c962c24
+    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Box2DSharp/Component/B2S_RoleCastComponent.cs
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: a87cbfb2c2c349a4ea991dc32c4dc8ac
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/item/EQuality.cs
+  - m_assetDatabaseId: 89a6e455084c02342b5185a1e56b71ad
+    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Component/CDComponent.cs
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 1d6af6e11242e3a4183fb98909560f81
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/SceneConfig/TbSceneBase.cs
+  - m_assetDatabaseId: 6c1b7334dc4097f4983e31d4320a9a08
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Editor/NPBehaveGraph/Nodes/Composite/NP_SequenceNode.cs
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 2088c5db2611839478dc2600684b52ae
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/Tables.cs
+  - m_assetDatabaseId: 7d196958dfbea6141a86db28dd2cea00
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_WaitCDAction.cs
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 29a613667858c034ca687c116e1ca500
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/UnitConfig/UnitResConfig.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 9a94a0231eca6b043b2fd7f642b93b7f
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/test
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 7a20b37b5da258b499434dcf95cb0400
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/SceneConfig
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 98e873223f990a747998b7acf802577f
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/item/ItemExchange.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 08b2a8d7f2b2520479fbec54cdaf9c04
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/LuBanSample/TbLuBanSample.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 5ffb83cb10c1add48a08785441ea5ab7
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/SceneConfig/SceneBaseConfig.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 54820adbfbaf1b94782a89fa228f358a
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/UnitConfig
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 98d825dacf72140498f1416493ec84a2
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/SkillConfig
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 365e2f1c16d6466469efae2920d90e82
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/test/AccessFlag.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 291871dacd392264cae58a949ccbc48d
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 84f02cdbd5bed1849ba1f992b2c6eba1
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/SkillConfig/TbSkillCanvas.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 2cb7471039b05cd46b960afcfb41bf6d
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/LuBanSample
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: c7c1bea77252ef44fbc215d387e9eee9
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/LuBanSample/LuBanSampleConfig.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 8cdbb419c05edf143a972e15564db92b
-    m_importFrom: Assets/Res/Config/DataConfig/sceneconfig_tbscenebase.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: b845642876ff4577897e1a167476efcf
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/FGUI/Login/FUI_LoginUtilities.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: b4baab18acb007841b21e36972e0ab1b
-    m_importFrom: Assets/Res/Config/NavConfig/Map1_RecastNav_0.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 9e29dfcff4eb8c541a012f93f8388cbc
-    m_importFrom: Assets/AssetBundleCollectorSetting.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: e0d691ac8c1d0454ba07089ea820e18a
-    m_importFrom: Assets/Init.unity
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: a5294483f20f40d449699101bb428cda
-    m_importFrom: Assets/Res/Scene/Map1.unity
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: f1bf2745ee97465e8161084f1a68ad8e
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/FGUI/Loading/FUI_LoadingComponentSystems.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 95f951245aa7485487faeab2cb85deae
-    m_importFrom: Packages/com.nkg.yy/ModelView/ProjectS/FGUI/Component/Loading/FUI_LoadingComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 3120e6ba9fcfb01428038f609fbb982d
-    m_importFrom: Assets/Res/PathFind/PathFindCore.prefab
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: cc2251826e84419d8e79f7a2e1162a3e
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/Unit/EnterMapFinish_CreateUnit.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: f5016891df5db9c438e1973e134231f5
-    m_importFrom: Packages/com.nkg.yy/HotfixView/Client/Unit/AfterUnitCreate_CreateUnitView.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 645147ad86d2cf8428ae88fec9d696a2
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Unit/UnitFactory.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 0bbdf5888585a444e9561be83ee7a62e
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/ComponentSystems/MapClickCompoentSystem.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 1bcb630938d3fb140bdfda645fa5ef47
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Component/MouseTargetSelectorComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 5fd62f3bae4746a497fedddeb9f3e1aa
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Component/MapClickCompoent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 0d55d77ba949f0545a29e965a7a5b2bf
-    m_importFrom: Assets/Core/Object/EventSystem.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 777a6b6b4bc94d52af83365018cdbc4b
-    m_importFrom: Assets/Core/Object/IFixedUpdateSystem.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: fbb45db570d54a48851272f6a8fa7591
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Move/MoveComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 51b23d48357f4736ad2f95d1d60eb42d
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Move
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 27d98e2540f84ec2bc29f8e0b173241d
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Move
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: e5da9ea2b7b1482bb813f720f1e83639
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Move/MoveStart_PlayRunAnimationByMoveSpeed.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: ac4752db202ed694792102988cce9e6c
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Move/StopMoveFromFSM.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: e87eb9cecfdfcc343b37275d8ca67648
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Move/MoveHelper.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: a7cc7ceb007fd1b40ade56a17c46337a
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Move/MoveComponentSystem.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: d412bf01662c32a4386ad98a19bd97d9
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Move
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 822e3ac4eae38a14bbbc92f3556813e6
-    m_importFrom: Packages/com.nkg.yy/Model/Module/Move/MoveEventType.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 027a5465aab64240a13b96e88a678019
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/BattleEventType.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: f5fafedab57698842a7568257063a404
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/ComponentSystems/CommonAttackComponent_LogicSystem.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 7c7a387368a9d344c867cf98f57fb340
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/SkillSystem/BuffSystem/Core/BuffDataCalculateHelper.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 8c96ecb6bf548ab4a814f4232d96efbd
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_CheckSkillCanBeCastAction.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: d71797c959a24a83939d25e68b7c4ec5
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Battle/ComponentSystems/CommonAttackComponentSystem_View.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 57b1ccf9d51ab60489395e1352ea6949
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_ChangeUnitPropertyAction.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 221aae555ae663048b4fd1ad496cafdd
-    m_importFrom: Assets/Res/Unit/Darius.prefab
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 7f5f0167a3366824d9e79ddd1a196324
-    m_importFrom: Packages/com.nkg.yy/HotfixView/Client/Unit/ChangePosition_SyncGameObjectPos.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: c3fe681baf45ae9459dbdcfd61e8505e
-    m_importFrom: Packages/com.nkg.yy/HotfixView/Client/Unit/ChangeRotation_SyncGameObjectRotation.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 4eab68942e6044d4b675b38269f66822
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/PathFind/Helper/PathModifyHelper.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 282fb6fd4c4646c6b4e944ce603f0455
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/PathFind/Helper
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: fd0226ffb12e4f5f944844feea0854dc
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Move/MoveStop_LogicHandler.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 229a8b15c0694e0ab2588e07daf4dcfd
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Battle/ComponentSystems/StackFSMComponentSystem_View.cs
+  - m_assetDatabaseId: 7c1c4ecdf733c3a48a49c3049cdbaa3b
+    m_importFrom: Assets/Res/Config/DataConfig/unitconfig_tbunitbase.bytes
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: f6ce33b91f6ffe54cadacbf4bb112440
@@ -532,482 +1146,6 @@ MonoBehaviour:
   - m_assetDatabaseId: f6b1a0fe75d5009449cf55ae76220e2b
     m_importFrom: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Resources/DebugUI
       Persistent Canvas.prefab
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 316c7d4db27ff4f46a1722928cf1507c
-    m_importFrom: Assets/Plugins/ShaderControl/Editor/Resources/BuiltShaders.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: a8abff4a5c6889e4381fa7a96637a28f
-    m_importFrom: Assets/Res/Code/Unity.Core.dll.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: dbfeb139bd4ade949b7f9b6b9ca97efe
-    m_importFrom: Assets/StreamingAssets/YooAssets/fce34f4c86969cf818bb7004c08171a1
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 9be31bdcc9aa47c4ca16e62a9f5a7d54
-    m_importFrom: Assets/StreamingAssets/YooAssets/d913e523d530100afc28b3ce3b7e4d09
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 1ae17aaf7ace5244dadcda19759fe897
-    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_2.hash
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 4fb15fb6182ffa14eb2fa860f07dbb6f
-    m_importFrom: Assets/StreamingAssets/YooAssets/a38cffc409bf1f92b76323fcd895b14e
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 87f6ac00cf532124d8ee04d6577e026f
-    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_2.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 0574682553dcf354f821ecdc8f71c1d6
-    m_importFrom: Assets/StreamingAssets/YooAssets/160cf2a76c56b6a03d0c8adb3c2e627e
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: f2a1b736bfcb9b842868c4c3aa919032
-    m_importFrom: Assets/StreamingAssets/YooAssets/c5ec32908666e7ee05f5c53758de8d58
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: d5faf12d3df02ed49aa24c71d286300b
-    m_importFrom: Assets/StreamingAssets/YooAssets/2b5f7980b12afcd0f5ef3d2afdf4b974
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 1322b0fe15e83e64c9a3997bb8466a0e
-    m_importFrom: Assets/StreamingAssets/YooAssets/StaticVersion.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: ab14ae30885f22d4b9e2b18d9e1a1f18
-    m_importFrom: Assets/StreamingAssets/YooAssets/054bafc7554a9f052e3d4fb7f6f72ccf
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: c5e5fd50645ef344db2d10de5ae7855e
-    m_importFrom: Assets/StreamingAssets/YooAssets/5de5713b13b3285e1e7d79624bca4d35
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 6d9e14447c07cfa49b768f593c927016
-    m_importFrom: Assets/StreamingAssets/YooAssets/76d3e39fd732a5db7b8fb1ec5a328897
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 587beb7635b7e114bb90cbc0bced60d8
-    m_importFrom: Assets/StreamingAssets/YooAssets/ca9117b5c0f3b5177fd2b458c413be8e
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 1e9841ce942d2094b8665f43602b56b1
-    m_importFrom: Assets/StreamingAssets/YooAssets/99ce202b2a212cfa16fdaf9384708653
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 4c35c785f7b076e4b937d48333ecc135
-    m_importFrom: Assets/StreamingAssets/YooAssets/8dba91a51222307a244f437f441f5380
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 969f3053696cf734194a6355d22161ef
-    m_importFrom: Assets/StreamingAssets/YooAssets/1da5195aba4309c5840e71cad54596a8
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 86a0c9f68d1efcd429cdbdde2dca77e4
-    m_importFrom: Assets/AssetBundleBuilderSetting.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: e05aa7d1b443ecc4da911ad903990412
-    m_importFrom: Assets/Res/Material/Darius_Skin08_dds.mat
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 313955cd6271f5c4985cba4adc30fc8e
-    m_importFrom: Assets/Res/UniversalRenderPipelineAsset.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 7c9da2bbb01d60742aa412a28170f075
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/UnitConfig/TbUnitAttribute.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 0b93e6b6dc56bdd458d0776853efd35d
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/UnitConfig/UnitAttributeConfig.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: e66cd83aea125cb4d922d6a7835f1b70
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/UnitConfig/TbUnitBase.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 7725145a3daa2f34baefa7933cdd00b0
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/UnitConfig/UnitBaseConfig.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 7c1c4ecdf733c3a48a49c3049cdbaa3b
-    m_importFrom: Assets/Res/Config/DataConfig/unitconfig_tbunitbase.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: ea532e781e923dd47a38d47cb9ffdb38
-    m_importFrom: Assets/Res/Config/DataConfig/unitconfig_tbunitattribute.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 6a6e484dc9736aa4c9215581e6f69438
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Unit
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 786011a2ba862e34eb9c24ec9b2ef79d
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Numeric
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: ca76075f7a604a75857e99707188bdc6
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Numeric/NumericComponentSystems.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 7afe3a75d6450ab48a89f4b8f75218c0
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/Unit/AttributeType.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 5025a607f97fc824f97e2b6c78ca4e65
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Config/Bytes/Unit
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 447ffd7dd6c61f1499741297d544f224
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/SkillSystem/Others/SkillCanvasManagerComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: d6744038221232f4489d5a2e4210ea56
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/ComponentSystems/SkillCanvasManagerComponentSystem.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 606ef955e087f3145b7b4aac464e545a
-    m_importFrom: Packages/com.nkg.yy/Model/Generate/Message/OuterMessage.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 8f436906ba6f2c9439173d8753404010
-    m_importFrom: Packages/com.nkg.yy/Model/Module/Numeric/NumericComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: b1778fe7978c47419d6b36cf0a6fe9bf
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/NPBehave/Component/NP_RuntimeTreeManager.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 053d45c05db66d34fafd100c7fc53b3e
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/SkillSystem/BuffSystem/Core/BuffManagerComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 5ee3c267a457aec4c93606ad5b7273c2
-    m_importFrom: Packages/com.nkg.yy/Model/Module/Numeric/NumericType.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 41d04874c5b221e4cbca512bbfe55cc6
-    m_importFrom: Assets/Res/Model/Darius.fbx
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 5d6075d61d192024192cc6ed1c6a77d3
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/UnitConfig/UnitAttributeConfig.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 3700df8b8d1724e4ab06332bc9f9988d
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitAttribute
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: cec6719cd10c5844b962d219e8178c3c
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/UnitConfig/UnitResConfig.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 53d82f6b811915c45805a60a56cb122c
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/SceneConfig
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: f3a65086fb6fd724085729b880cff918
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitBase
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: bf39d3c5fc2fb234a9a8ec31b3027d41
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/Unit/AttributeType.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: efaea52666afd9e47bbd4a1203df8e0d
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/Unit
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: e1b73f333f3edc64581d7f511d5dd3f8
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/UnitConfig/UnitBaseConfig.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 96e0326813e5a2a40bf218bc67574e7b
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitRes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: a86826018dcec2a4eb1165309675199b
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/SceneConfig.TbSceneBase
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: bf4f2bd647d6d0c478e7609246b50fe7
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/UnitConfig
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 5facdbf6809c8934f9265f0619fe4714
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfig/SceneConfig/SceneBaseConfig.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 04da503a76ada39429710babecd355ff
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/SceneConfig.TbSceneBase/10001.json
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 3a075d0dbdc5e1c4bbe58df4b0db8316
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitAttribute/10001.json
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 28c0a239dcc480c42b0791c5ce0df754
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitRes/10001.json
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 3b2e45fdd2e2a984db1701615c795c6f
-    m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/UnitConfig.TbUnitBase/10001.json
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: f3c266d603db5c44cb6bf4f5be9abefd
-    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_Q.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: b27b20699d216b64796914c75f07e124
-    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/LSF_TestGraph.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: f42a19904ec00de44bd783a1ceb02c08
-    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_Q_Collider.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 1b8ed1adf8801f3478cd27dacf9718ec
-    m_importFrom: Assets/Res/Config/SkillConfig/Darius_Q.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 6bafe7929105f1f44afb1a278db9d38c
-    m_importFrom: Assets/Res/Config/SkillConfig/Darius_TestLSF.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 936f37caf4ca8c541a697b65d0c0f9e5
-    m_importFrom: Assets/Res/Config/SkillConfig/Darius_Q_Collider.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 62fbda52cdd131546b9b4c09af9af993
-    m_importFrom: Assets/Res/Config/DataConfig/skillconfig_tbskillcanvas.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: eabc89905bf8d654cb7526defcfd0b08
-    m_importFrom: Assets/Res/Config/DataConfig/lubansample_tblubansample.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 65347e641e73af74b87844936cf6447c
-    m_importFrom: Assets/Res/Config/DataConfig/unitconfig_tbunitres.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 832e42892c0443ff88d7af3f8bc58850
-    m_importFrom: Assets/Mono/LuBan/LuBanEntry.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: b5d7c761e80d440495edd10268f80b49
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/NPBehave/Component/NP_TreeDataRepositoryComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: aaccb0c31d8ef10468a2c0ebfd84c0be
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/ComponentSystems/NP_TreeDataRepositoryComponentSystems.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: ae1464d9a080cd343be50eeedd5224eb
-    m_importFrom: Assets/Res/Config/SkillConfig/Darius_Hemorrhage.bytes
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 68378f0eb5632a64cb860263ba0fde6f
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Helper/DeepCopyHelper.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: ee345527b95c74042ba9203b034171d6
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Component/LSF_Component.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 30467b5689b28114daf5f477a13e806d
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/ComponentSystems/NP_SyncComponentSystems.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 53261ca99da085f4baa34531996162da
-    m_importFrom: Packages/com.nkg.yy/Model/Share/EventType.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 7252eb314038c924abd8e77b6275c95f
-    m_importFrom: Packages/com.nkg.yy/Hotfix/Client/Scene/SceneFactory.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: bd8501b2cb85f364999ff026a2e2da36
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/NPBehave/Component/NP_SyncComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 785018216a2642bc92365e4240a7a88c
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/ComponentSystems/LSF_ComponentSystem.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 512db10b354186a4ab2b1854ef535b45
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_SetCDInfoAction.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 82bfa9c281971f740801043624785304
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/NPBehave/Core/NPBehave/SyncContext.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 89a6e455084c02342b5185a1e56b71ad
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Component/CDComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: dc8a6d9a1a7288b4ba5d19e434e136a0
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_WaitAChangeableTimeAction.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: e4aaf0c19bdb0f54cbb418349662234d
-    m_importFrom: Packages/com.nkg.yy/Model/Module/Unit/Unit.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 18ede20587927024180566948b304490
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/SkillSystem/BuffSystem/BindStateBuffSystem.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: a97a4a3a842534e4d895d07fcc8963bc
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_AddBuffToSpecifiedUnitAction.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: ebaa8a1a6de1e7646811f35723bba6dc
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/SkillSystem/BuffSystem/ListenBuffCallBackBuffSystem.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 7d3e7be371ed4bdbb0d5a0e797bc5362
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/NPBehave/Component/NP_RuntimeTree.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 9eb0cfb163a80664b9c4ef829b69a721
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/BBValue/NP_ChangeTargetSkillBBValueAction.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 1b7697cb1d19c284590ca8b8680a5ead
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Component/LSF_TimerComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 7d196958dfbea6141a86db28dd2cea00
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_WaitCDAction.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: c4f7dd855221ea74bb078f42dd408122
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/SkillSystem/BuffSystem/ReplaceAttackBuffSystem.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: a415728451b4a2e4c812dd5dd4ea86e3
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/SkillSystem/BuffSystem/Core/BuffFactory.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: acf325a172224e57a34cd440a7cf4c30
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Battle/ComponentSystems/OutLineComponentSystems.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: dfcd061b2507d1b419b8ceb17ecb7448
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_DestroySelfAndRelativeCollidersAction.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: d752239ebce34d9780723f425704c357
-    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Battle/NPBehave/ClientSpecial/NP_PlayAnimationAction.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: a2f05799025f3bb4995a3bc9703fe4e5
-    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_Hemorrhage.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 000a53018e5e7c14aa75273e1f7be8e2
-    m_importFrom: Assets/Editor/Unity.Editor.asmdef
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 4a924dc0a22fc104781bf9aaadd60c29
-    m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleCollector/DefaultPackRule.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 2fa91f25d246411459816310b09480a5
-    m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleCollector/AssetBundleCollectorSettingData.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 08249ae0ae145ca45b440e36d1db8173
-    m_importFrom: Assets/StreamingAssets/YooAssets/a48453329ca79c40c0e58e05dd63fd56
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 000ce5082ce7d3b47ba21b53a4fac6c5
-    m_importFrom: Assets/StreamingAssets/YooAssets/20e2c4d4d7bff068933c79bf07d2bed8
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 6446cefd8d090f6429aa968682863e01
-    m_importFrom: Assets/StreamingAssets/YooAssets/ef32553a84c27b6feaa13709861db475
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 43e9f062eb840c64a89b180c3f8ae4e6
-    m_importFrom: Assets/StreamingAssets/YooAssets/93dde317112e0ae6f887137589f5a6f6
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 66146a206875aba4984952730725eda8
-    m_importFrom: Assets/StreamingAssets/YooAssets/ed3a4cebcd36e06ef75f2f8480b6f3b0
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 78dcb9abd167e784b8c89fa6db8ba7ab
-    m_importFrom: Assets/StreamingAssets/YooAssets/f595f096f7158108aa40e241a786b5b2
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 46ad1672db73daf4d859f3a19a735454
-    m_importFrom: Assets/SVCDebug.json
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: c9018c11b52f25b4d83ca49982616c0f
-    m_importFrom: Assets/ShaderVariantCollectorSetting.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 3a570a9e0724b474a916fc685897785b
-    m_importFrom: Assets/Res/Material/New Material 1.mat
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: a098bd7d5939c054982999a9523191df
-    m_importFrom: Assets/Res/Shader/NewSurfaceShader.shader
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: f107e0f252972134c89ac6576a304110
-    m_importFrom: Assets/Res/Material/New Material 2.mat
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 718489c739fa0924eb3bc03cac3bb7a8
-    m_importFrom: Assets/Res/Shader/NewUnlitShader.shader
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 9b1c9abe35570bc478dad53e4b8b5197
-    m_importFrom: Assets/Res/Material/New Material 3.mat
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 4e3a7afb771086042bb9d2336028cbe8
-    m_importFrom: Assets/Res/Shader/ProjectSShaderVariant.shadervariants
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: a8f91e4f3105a924bbf447ebc67ad63c
-    m_importFrom: Assets/StreamingAssets/YooAssets/af7bf4165e7ce63e66a908d2937b9754
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 78235e55f1b68ec4fbf3ebeba6efa535
-    m_importFrom: Assets/StreamingAssets/YooAssets/93e4689284d58dfbf7b22a742c76b24d
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 177df0db8aa350944884de3caa8204f0
-    m_importFrom: Assets/Mono/MonoBehaviour/MonoBridge.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: e8e85a3836dd5e4448a04754277037d7
-    m_importFrom: Packages/com.nkg.yy/HotfixView/Client/Unit/GameObjectComponentSystem.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 14fea1a56283ee241adfd3b21b47c632
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Box2DSharp/Component/B2S_ColliderComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 9895fb00ad2645fe973620c0e8b345c6
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/ComponentSystems/B2S_ColliderComponent_System.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 6a4f3b1a2ef264d4cb4db43d1c962c24
-    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/Box2DSharp/Component/B2S_RoleCastComponent.cs
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 2b2101c943e7e704cb40b10d71ec0904
-    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/NP_CreateColliderDataAction.cs
     m_exportTo: 
     m_variantName: 
   m_version: 2

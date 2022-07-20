@@ -30,6 +30,14 @@ namespace ET
             self.LsfComponent = self.DomainScene().GetComponent<LSF_Component>();
         }
     }
+    
+    public class LSF_TimerComponentUpdateSystem : FixedUpdateSystem<LSF_TimerComponent>
+    {
+        public override void FixedUpdate(LSF_TimerComponent self)
+        {
+            self.FixedUpdate();
+        }
+    }
 
     [ObjectSystem]
     public class LSF_TimerActionAwakeSystem : AwakeSystem<LSF_TimerAction, TimerClass, uint, object>
@@ -56,7 +64,7 @@ namespace ET
     /// <summary>
     /// 状态帧同步专用计时器组件
     /// </summary>
-    public class LSF_TimerComponent : Entity, IAwake
+    public class LSF_TimerComponent : Entity, IAwake, IFixedUpdate, IDestroy
     {
         public LSF_Component LsfComponent;
 

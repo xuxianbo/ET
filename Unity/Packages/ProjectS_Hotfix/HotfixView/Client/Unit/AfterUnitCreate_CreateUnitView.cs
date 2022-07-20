@@ -11,24 +11,26 @@ namespace ET.Client
         {
             UnitResConfig unitResConfig = ConfigComponent.Instance.AllConfigTables.TbUnitRes[args.UnitConfigId];
 
-            GameObject go =
-                    await GameObjectPoolComponent.Instance.FetchGameObject(unitResConfig.PrefabName,
-                        GameObjectType.Unit);
+            GameObject go = await unit
+                .AddComponent<GameObjectComponent, YooAssetProxy.YooAssetResType, string>(
+                    YooAssetProxy.YooAssetResType.Unit, unitResConfig.PrefabName)
+                .CreateGameObjectInternal();
 
             go.transform.position = unit.Position;
             go.transform.rotation = unit.Rotation;
             go.name = args.UnitName;
-            
-            unit.AddComponent<GameObjectComponent>().GameObject = go;
+
             unit.AddComponent<AnimationComponent>();
             unit.AddComponent<UnitTransformComponent>();
-            
-            unit.AddComponent<MouseTargetSelectorComponent>();
-            unit.AddComponent<MapClickCompoent>();
-
             unit.AddComponent<NavAgentComponent>();
-            
             unit.GetComponent<SkillCanvasManagerComponent>().InitUnitPresetSkillCanavs();
+
+            if (!args.IsMonest)
+            {
+                unit.AddComponent<MouseTargetSelectorComponent>();
+                unit.AddComponent<MapClickCompoent>();
+                unit.AddComponent<PlayerHeroControllerComponent>();
+            }
 
             await UniTask.CompletedTask;
         }

@@ -6,6 +6,7 @@
 
 using System.Collections.Generic;
 using ET;
+using ET.cfg.SkillConfig;
 using ET.Client;
 using UnityEngine;
 
@@ -28,8 +29,13 @@ namespace ET
         public MonoBridge MonoBridge;
 
         /// <summary>
-        /// 如果碰撞体Unit本身就挂载有NP_RuntimeTreeManager，则往碰撞体Unit身上的Blackboard传递数据，否则直接找监护人去
+        /// 如果碰撞体Unit本身就挂载有SkillCanvasManagerComponent，则往碰撞体Unit身上的Blackboard传递数据，否则直接找监护人去
         /// </summary>
-        public NP_RuntimeTreeManager TargetNP_RuntimeTreeManager;
+        public SkillCanvasManagerComponent TargetSkillCanvasManager;
+
+        /// <summary>
+        /// 归属技能Id
+        /// </summary>
+        public SkillCanvasConfig SkillCanvasConfig;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace ET.Client
 {
@@ -12,13 +13,16 @@ namespace ET.Client
                 GameObjectPoolComponent.Instance.RecycleGameObject(self.ResName, self.GameObject);
             }
         }
-        
+
         [ObjectSystem]
-        public class DestroySystemAwakeComponent : AwakeSystem<GameObjectComponent>
+        public class
+            DestroySystemAwakeComponent : AwakeSystem<GameObjectComponent, YooAssetProxy.YooAssetResType, string>
         {
-            public override void Awake(GameObjectComponent self)
+            public override void Awake(GameObjectComponent self, YooAssetProxy.YooAssetResType yooAssetResType,
+                string resName)
             {
-                self.GameObject.GetComponent<MonoBridge>().BelongToUnitId = self.GetParent<Unit>().Id;
+                self.YooAssetResType = yooAssetResType;
+                self.ResName = resName;
             }
         }
     }

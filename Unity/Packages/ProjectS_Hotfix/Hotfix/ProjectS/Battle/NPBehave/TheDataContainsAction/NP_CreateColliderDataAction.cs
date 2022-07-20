@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using ET.Client;
 using MongoDB.Bson.Serialization.Attributes;
 using Sirenix.OdinInspector;
@@ -55,6 +56,24 @@ namespace ET
         /// </summary>
         [HideIf(nameof(FollowUnit))] [LabelText("目标位置")]
         public Vector3 TargetPos;
+        
+        /// <summary>
+        /// 碰撞开始时黑板键
+        /// </summary>
+        [LabelText("碰撞开始时黑板键")]
+        public string OnTriggerEnter;
+
+        /// <summary>
+        /// 碰撞持续时黑板键
+        /// </summary>
+        [LabelText("碰撞持续时黑板键")]
+        public string OnTriggerStay;
+
+        /// <summary>
+        /// 碰撞结束时黑板键
+        /// </summary>
+        [LabelText("碰撞结束时黑板键")]
+        public string OnTriggerExit;
 
         public override Action GetActionToBeDone()
         {
@@ -72,8 +91,8 @@ namespace ET
                 ReferencePool.Acquire<UnitFactory.CreateColliderArgs>().Init(this.PrefabABPath, this.NP_TreeConfigId,
                     this.BelongToUnit, angle, this.FollowUnit,
                     this.TargetCollisionRoleCast, this.TargetCollisionRoleCamp, this.TargetCollisionRoleTag,
-                    this.Offset, this.TargetPos);
-            UnitFactory.CreateSpecialColliderUnit(BelongToUnit.DomainScene(), createColliderArgs);
+                    this.Offset, this.TargetPos, OnTriggerEnter, OnTriggerStay, OnTriggerExit);
+            UnitFactory.CreateSpecialColliderUnit(BelongToUnit.DomainScene(), createColliderArgs).Forget();
         }
     }
 }

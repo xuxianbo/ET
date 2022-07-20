@@ -14,22 +14,37 @@ namespace ET
     {
         public override void Awake(B2S_ColliderComponent self, UnitFactory.CreateColliderArgs a)
         {
+            self.CreateColliderArgs = a;
+
             self.MonoBridge = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject
                 .GetComponent<MonoBridge>();
 
-            self.MonoBridge.OnTriggerEnter_Callback = self.OnTriggerEnter;
-            self.MonoBridge.OnTriggerStay_Callback = self.OnTriggerStay;
-            self.MonoBridge.OnTriggerExit_Callback = self.OnTriggerExit;
-
-            self.TargetNP_RuntimeTreeManager = self.GetParent<Unit>().GetComponent<NP_RuntimeTreeManager>();
-
-            if (self.TargetNP_RuntimeTreeManager == null)
+            if (!string.IsNullOrEmpty(self.CreateColliderArgs.OnTriggerEnter))
             {
-                self.TargetNP_RuntimeTreeManager =
-                    self.CreateColliderArgs.BelontToUnit.GetComponent<NP_RuntimeTreeManager>();
+                self.MonoBridge.OnTriggerEnter_Callback = self.OnTriggerEnter;
+            }
+            
+            if (!string.IsNullOrEmpty(self.CreateColliderArgs.OnTriggerStay))
+            {
+                self.MonoBridge.OnTriggerStay_Callback = self.OnTriggerStay;
+            }
+            
+            if (!string.IsNullOrEmpty(self.CreateColliderArgs.OnTriggerExit))
+            {
+                self.MonoBridge.OnTriggerExit_Callback = self.OnTriggerExit;
+            }
+            
+            self.TargetSkillCanvasManager = self.GetParent<Unit>().GetComponent<SkillCanvasManagerComponent>();
+
+            self.SkillCanvasConfig = ConfigComponent.Instance.AllConfigTables.TbSkillCanvas.Get(a.NP_TreeConfigId);
+
+            if (self.TargetSkillCanvasManager == null)
+            {
+                self.TargetSkillCanvasManager =
+                    self.CreateColliderArgs.BelontToUnit.GetComponent<SkillCanvasManagerComponent>();
             }
 
-            if (self.TargetNP_RuntimeTreeManager == null)
+            if (self.TargetSkillCanvasManager == null)
             {
                 Log.Error("既没在碰撞体Unit身上找到NP_RuntimeTreeManager，也没在监护者BelongToUnit身上找到NP_RuntimeTreeManager，逻辑有误");
                 return;
@@ -45,8 +60,8 @@ namespace ET
             self.MonoBridge.OnTriggerExit_Callback = null;
             self.MonoBridge.OnTriggerStay_Callback = null;
 
-            self.CreateColliderArgs = null;
             ReferencePool.Release(self.CreateColliderArgs);
+            self.CreateColliderArgs = null;
         }
     }
 
@@ -55,7 +70,7 @@ namespace ET
     {
         public static void OnTriggerEnter(this B2S_ColliderComponent self, MonoBridge other)
         {
-            if (self.TargetNP_RuntimeTreeManager == null)
+            if (self.TargetSkillCanvasManager == null)
             {
                 Log.Error("既没在碰撞体Unit身上找到NP_RuntimeTreeManager，也没在监护者BelongToUnit身上找到NP_RuntimeTreeManager，逻辑有误");
                 return;
@@ -64,16 +79,17 @@ namespace ET
             Unit collisionUnit = self.DomainScene().GetComponent<UnitComponent>().Get(other.BelongToUnitId);
             B2S_RoleCastComponent b2SRoleCastComponent = collisionUnit.GetComponent<B2S_RoleCastComponent>();
 
-            if ((b2SRoleCastComponent.RoleCamp | self.CreateColliderArgs.TargetCollsionRoleCamp) ==
+            if ((b2SRoleCastComponent.RoleCamp & self.CreateColliderArgs.TargetCollsionRoleCamp) ==
                 b2SRoleCastComponent.RoleCamp &&
-                (b2SRoleCastComponent.RoleTag | self.CreateColliderArgs.TargetCollsionRoleTag) ==
+                (b2SRoleCastComponent.RoleTag & self.CreateColliderArgs.TargetCollsionRoleTag) ==
                 b2SRoleCastComponent.RoleTag &&
                 b2SRoleCastComponent.GetRoleCastToTarget(self.GetParent<Unit>()) ==
-                self.CreateColliderArgs.TargetCollsionRoleCast) ;
+                self.CreateColliderArgs.TargetCollsionRoleCast)
             {
-                foreach (var runtimeTree in self.TargetNP_RuntimeTreeManager.RuntimeTrees)
+                foreach (var runtimeTree in self.TargetSkillCanvasManager.GetSkillCanvas(self.SkillCanvasConfig
+                             .BelongToSkillId))
                 {
-                    runtimeTree.Value.GetBlackboard().Get<List<long>>(self.CreateColliderArgs.OnTriggerEnter)
+                    runtimeTree.GetBlackboard().Get<List<long>>(self.CreateColliderArgs.OnTriggerEnter)
                         ?.Add(other.BelongToUnitId);
                 }
             }
@@ -81,25 +97,26 @@ namespace ET
 
         public static void OnTriggerStay(this B2S_ColliderComponent self, MonoBridge other)
         {
-            if (self.TargetNP_RuntimeTreeManager == null)
+            if (self.TargetSkillCanvasManager == null)
             {
                 Log.Error("既没在碰撞体Unit身上找到NP_RuntimeTreeManager，也没在监护者BelongToUnit身上找到NP_RuntimeTreeManager，逻辑有误");
                 return;
             }
-            
+
             Unit collisionUnit = self.DomainScene().GetComponent<UnitComponent>().Get(other.BelongToUnitId);
             B2S_RoleCastComponent b2SRoleCastComponent = collisionUnit.GetComponent<B2S_RoleCastComponent>();
 
-            if ((b2SRoleCastComponent.RoleCamp | self.CreateColliderArgs.TargetCollsionRoleCamp) ==
+            if ((b2SRoleCastComponent.RoleCamp & self.CreateColliderArgs.TargetCollsionRoleCamp) ==
                 b2SRoleCastComponent.RoleCamp &&
-                (b2SRoleCastComponent.RoleTag | self.CreateColliderArgs.TargetCollsionRoleTag) ==
+                (b2SRoleCastComponent.RoleTag & self.CreateColliderArgs.TargetCollsionRoleTag) ==
                 b2SRoleCastComponent.RoleTag &&
                 b2SRoleCastComponent.GetRoleCastToTarget(self.GetParent<Unit>()) ==
-                self.CreateColliderArgs.TargetCollsionRoleCast) ;
+                self.CreateColliderArgs.TargetCollsionRoleCast)
             {
-                foreach (var runtimeTree in self.TargetNP_RuntimeTreeManager.RuntimeTrees)
+                foreach (var runtimeTree in self.TargetSkillCanvasManager.GetSkillCanvas(self.SkillCanvasConfig
+                             .BelongToSkillId))
                 {
-                    runtimeTree.Value.GetBlackboard().Get<List<long>>(self.CreateColliderArgs.OnTriggerStay)
+                    runtimeTree.GetBlackboard().Get<List<long>>(self.CreateColliderArgs.OnTriggerStay)
                         ?.Add(other.BelongToUnitId);
                 }
             }
@@ -107,25 +124,26 @@ namespace ET
 
         public static void OnTriggerExit(this B2S_ColliderComponent self, MonoBridge other)
         {
-            if (self.TargetNP_RuntimeTreeManager == null)
+            if (self.TargetSkillCanvasManager == null)
             {
                 Log.Error("既没在碰撞体Unit身上找到NP_RuntimeTreeManager，也没在监护者BelongToUnit身上找到NP_RuntimeTreeManager，逻辑有误");
                 return;
             }
-            
+
             Unit collisionUnit = self.DomainScene().GetComponent<UnitComponent>().Get(other.BelongToUnitId);
             B2S_RoleCastComponent b2SRoleCastComponent = collisionUnit.GetComponent<B2S_RoleCastComponent>();
 
-            if ((b2SRoleCastComponent.RoleCamp | self.CreateColliderArgs.TargetCollsionRoleCamp) ==
+            if ((b2SRoleCastComponent.RoleCamp & self.CreateColliderArgs.TargetCollsionRoleCamp) ==
                 b2SRoleCastComponent.RoleCamp &&
-                (b2SRoleCastComponent.RoleTag | self.CreateColliderArgs.TargetCollsionRoleTag) ==
+                (b2SRoleCastComponent.RoleTag & self.CreateColliderArgs.TargetCollsionRoleTag) ==
                 b2SRoleCastComponent.RoleTag &&
                 b2SRoleCastComponent.GetRoleCastToTarget(self.GetParent<Unit>()) ==
-                self.CreateColliderArgs.TargetCollsionRoleCast) ;
+                self.CreateColliderArgs.TargetCollsionRoleCast)
             {
-                foreach (var runtimeTree in self.TargetNP_RuntimeTreeManager.RuntimeTrees)
+                foreach (var runtimeTree in self.TargetSkillCanvasManager.GetSkillCanvas(self.SkillCanvasConfig
+                             .BelongToSkillId))
                 {
-                    runtimeTree.Value.GetBlackboard().Get<List<long>>(self.CreateColliderArgs.OnTriggerExit)
+                    runtimeTree.GetBlackboard().Get<List<long>>(self.CreateColliderArgs.OnTriggerExit)
                         ?.Add(other.BelongToUnitId);
                 }
             }

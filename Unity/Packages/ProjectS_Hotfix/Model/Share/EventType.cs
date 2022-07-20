@@ -63,6 +63,7 @@ namespace ET
 
         public struct AfterUnitCreate_Logic
         {
+            public bool IsMonest;
             public int UnitConfigId;
             public string UnitName;
         }

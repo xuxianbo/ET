@@ -12,36 +12,33 @@ namespace ET
         /// <summary>
         /// 友善的
         /// </summary>
-        Friendly,
+        Friendly = 1,
 
         /// <summary>
         /// 敌对的
         /// </summary>
-        Adverse,
+        Adverse = Friendly << 1,
 
         /// <summary>
         /// 中立的
         /// </summary>
-        Neutral
+        Neutral = Adverse << 1
     }
 
     [System.Flags]
     public enum RoleCamp
     {
-        Player = 0b0000001,
-        Monster = 0b0000010,
+        Player = 1,
+        Monster = Player << 1,
     }
 
     [System.Flags]
     public enum RoleTag
     {
-        Sprite,
-        AttackRange,
-        NoCollision,
-        Hero,
-        Map,
-        Creeps,
-        SkillCollision,
+        NoCollision = 1,
+        Hero = NoCollision << 1,
+        Map = Hero << 1,
+        Monster = Map << 1,
     }
 
     public class B2S_RoleCastComponentAwakeSystem : AwakeSystem<B2S_RoleCastComponent, RoleCamp, RoleTag>

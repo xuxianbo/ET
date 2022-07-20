@@ -13,94 +13,14 @@ MonoBehaviour:
   m_Name: CustomPushExample
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
-    SerializedBytesString: 
+    SerializedBytesString: AQEFAAAAbgBvAGQAZQBzAC8AAAAAAW8AAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsARwByAGEAcABoAFAAcgBvAGMAZQBzAHMAbwByAC4AQgBhAHMAZQBOAG8AZABlACwAIABjAG8AbQAuAGEAbABlAGwAaQBlAHYAcgAuAE4AbwBkAGUARwByAGEAcABoAFAAcgBvAGMAZQBzAHMAbwByAC4AUgB1AG4AdABpAG0AZQBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgAAAAAABgEAAAAAAAAAAi8BAAAAAUMAAABOAG8AZABlAEcAcgBhAHAAaABQAHIAbwBjAGUAcwBzAG8AcgAuAEUAeABhAG0AcABsAGUAcwAuAEMAbwBtAHAAYQByAGkAcwBvAG4ALAAgAE4AbwBkAGUARwByAGEAcABoAFAAcgBvAGMAZQBzAHMAbwByAC4ARQB4AGEAbQBwAGwAZQBzAAEAAAAtAQ4AAABuAG8AZABlAEMAdQBzAHQAbwBtAE4AYQBtAGUAJwEEAAAARwBVAEkARAABJAAAADgAYQBiADgAMAA2AGEAMAAtADAANwAyADAALQA0AGIAMgAzAC0AYQA5AGEAZgAtADMAZAA4AGMAYgA1AGQAMwAxADEAYwBlABcBDAAAAGMAbwBtAHAAdQB0AGUATwByAGQAZQByAAAAAAADAQgAAABwAG8AcwBpAHQAaQBvAG4ALwIAAAABKAAAAFUAbgBpAHQAeQBFAG4AZwBpAG4AZQAuAFIAZQBjAHQALAAgAFUAbgBpAHQAeQBFAG4AZwBpAG4AZQAuAEMAbwByAGUATQBvAGQAdQBsAGUAIEmlN0QgjuYuwiAAAMhCIAAAyEIFKwEIAAAAZQB4AHAAYQBuAGQAZQBkAAArAQUAAABkAGUAYgB1AGcAACsBCAAAAG4AbwBkAGUATABvAGMAawAAHwEDAAAAaQBuAEEAAAAAAB8BAwAAAGkAbgBCAAAAAAArAQgAAABjAG8AbQBwAGEAcgBlAGQAAB0BDwAAAGMAbwBtAHAAYQByAGUARgB1AG4AYwB0AGkAbwBuAAQAAAAAAAAABQcFAQEGAAAAZwByAG8AdQBwAHMALwMAAAABbAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBHAHIAYQBwAGgAUAByAG8AYwBlAHMAcwBvAHIALgBHAHIAbwB1AHAALAAgAGMAbwBtAC4AYQBsAGUAbABpAGUAdgByAC4ATgBvAGQAZQBHAHIAYQBwAGgAUAByAG8AYwBlAHMAcwBvAHIALgBSAHUAbgB0AGkAbQBlAF0AXQAsACAAbQBzAGMAbwByAGwAaQBiAAIAAAAGAAAAAAAAAAAHBQ==
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: nodes
-      Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[GraphProcessor.BaseNode, com.alelievr.NodeGraphProcessor.Runtime]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 1|NodeGraphProcessor.Examples.Comparison, NodeGraphProcessor.Examples
-    - Name: nodeCustomName
-      Entry: 6
-      Data: 
-    - Name: GUID
-      Entry: 1
-      Data: 8ab806a0-0720-4b23-a9af-3d8cb5d311ce
-    - Name: computeOrder
-      Entry: 3
-      Data: 0
-    - Name: position
-      Entry: 7
-      Data: UnityEngine.Rect, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 734.5826
-    - Name: 
-      Entry: 4
-      Data: -43.72515
-    - Name: 
-      Entry: 4
-      Data: 100
-    - Name: 
-      Entry: 4
-      Data: 100
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: expanded
-      Entry: 5
-      Data: false
-    - Name: debug
-      Entry: 5
-      Data: false
-    - Name: nodeLock
-      Entry: 5
-      Data: false
-    - Name: inA
-      Entry: 4
-      Data: 0
-    - Name: inB
-      Entry: 4
-      Data: 0
-    - Name: compared
-      Entry: 5
-      Data: false
-    - Name: compareFunction
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: groups
-      Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+    SerializationNodes: []
   serializedNodes: []
   edges: []
   stackNodes: []
@@ -148,7 +68,7 @@ MonoBehaviour:
   exposedParameters: []
   serializedParameterList: []
   stickyNotes: []
-  position: {x: -140, y: 355, z: 0}
-  scale: {x: 1.15, y: 1.15, z: 1}
+  position: {x: -258, y: 428, z: 0}
+  scale: {x: 1.3225, y: 1.3225, z: 1}
   references:
     version: 1

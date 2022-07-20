@@ -16,6 +16,14 @@ namespace ET
         }
     }
 
+    public class CDComponentFixedUpdateSystem : FixedUpdateSystem<CDComponent>
+    {
+        public override void FixedUpdate(CDComponent self)
+        {
+            self.FixedUpdate(self.DomainScene().GetComponent<LSF_Component>().CurrentFrame);
+        }
+    }
+
 
     [ObjectSystem]
     public class CDComponentDestroySystem : DestroySystem<CDComponent>
@@ -95,7 +103,7 @@ namespace ET
     /// <summary>
     /// CD组件，用于统一管理所有的CD类型的数据，比如攻速CD，服务器上因试图攻击导致的循环MoveTo CD
     /// </summary>
-    public class CDComponent : Entity, IAwake, IDestroy
+    public class CDComponent : Entity, IAwake, IDestroy, IFixedUpdate
     {
         #region 私有成员
 

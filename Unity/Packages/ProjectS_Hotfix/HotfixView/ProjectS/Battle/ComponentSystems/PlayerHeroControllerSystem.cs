@@ -8,15 +8,14 @@ namespace ET
     {
         public override void Update(PlayerHeroControllerComponent self)
         {
-            // if (self.UserInputComponent.QDown)
-            // {
-            //     Unit unit = self.GetParent<Unit>();
-            //     LSF_PlaySkillInputCmd lsfPlaySkillInputCmd = ReferencePool.Acquire<LSF_PlaySkillInputCmd>();
-            //     lsfPlaySkillInputCmd.Init(unit.Id);
-            //     lsfPlaySkillInputCmd.InputTag = "PlayerInput";
-            //     lsfPlaySkillInputCmd.InputKey = "Q";
-            //     unit.BelongToRoom.GetComponent<LSF_Component>().AddCmdToSendQueue(lsfPlaySkillInputCmd);
-            // }
+            if (self.UserInputComponent.QDown)
+            {
+                Unit unit = self.GetParent<Unit>();
+                foreach (var skillTree in unit.GetComponent<NP_RuntimeTreeManager>().RuntimeTrees)
+                {
+                    skillTree.Value.GetBlackboard().Set("PlayerInput", "Q");
+                }
+            }
             //
             // if (self.UserInputComponent.WDown)
             // {
@@ -86,7 +85,7 @@ namespace ET
     {
         public override void Awake(PlayerHeroControllerComponent self)
         {
-            self.UserInputComponent = Game.Scene.GetComponent<UserInputComponent>();
+            self.UserInputComponent = self.DomainScene().GetComponent<UserInputComponent>();
         }
     }
 }

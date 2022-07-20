@@ -12,30 +12,7 @@ namespace ET
             GameObjectPoolComponent.Instance = self;
         }
     }
-
-    public enum GameObjectType
-    {
-        /// <summary>
-        /// Unit
-        /// </summary>
-        Unit,
-
-        /// <summary>
-        /// 音效
-        /// </summary>
-        Sound,
-
-        /// <summary>
-        /// 特效
-        /// </summary>
-        Effect,
-
-        /// <summary>
-        /// 技能指示器
-        /// </summary>
-        SkillIndictor,
-    }
-
+    
     public class GameObjectPoolComponent : Entity, IAwake
     {
         public static GameObjectPoolComponent Instance { get; set; }
@@ -48,7 +25,7 @@ namespace ET
         public Dictionary<string, Queue<GameObject>> AllCachedGos = new Dictionary<string, Queue<GameObject>>();
 
 
-        public async UniTask<GameObject> FetchGameObject(string resName, GameObjectType gameObjectType)
+        public async UniTask<GameObject> FetchGameObject(string resName, YooAssetProxy.YooAssetResType gameObjectType)
         {
             GameObject gameObject;
             if (AllCachedGos.TryGetValue(resName, out var gameObjects))
@@ -72,35 +49,18 @@ namespace ET
                 }
                 else
                 {
-                    targetprefab = null;
                     YooAssetComponent yooAssetComponent = this.DomainScene().GetComponent<YooAssetComponent>();
-                    switch (gameObjectType)
-                    {
-                        case GameObjectType.Unit:
-                            targetprefab = await yooAssetComponent.LoadAssetAsync<GameObject>(
-                                YooAssetProxy.GetYooAssetFormatResPath(resName, YooAssetProxy.YooAssetResType.Unit));
-                            break;
-                        case GameObjectType.Sound:
-                            targetprefab = await yooAssetComponent.LoadAssetAsync<GameObject>(
-                                YooAssetProxy.GetYooAssetFormatResPath(resName, YooAssetProxy.YooAssetResType.Sound));
-                            break;
-                        case GameObjectType.Effect:
-                            targetprefab = await yooAssetComponent.LoadAssetAsync<GameObject>(
-                                YooAssetProxy.GetYooAssetFormatResPath(resName, YooAssetProxy.YooAssetResType.Effect));
-                            break;
-                        case GameObjectType.SkillIndictor:
-                            targetprefab = await yooAssetComponent.LoadAssetAsync<GameObject>(
-                                YooAssetProxy.GetYooAssetFormatResPath(resName, YooAssetProxy.YooAssetResType.Effect));
-                            break;
-                    }
+
+                    targetprefab = await yooAssetComponent.LoadAssetAsync<GameObject>(
+                        YooAssetProxy.GetYooAssetFormatResPath(resName, gameObjectType));
 
                     if (targetprefab == null)
                     {
                         return null;
                     }
 
-                    AllPrefabs.Add(resName, targetprefab);
-                    AllCachedGos.Add(resName, new Queue<GameObject>());
+                    AllPrefabs[resName] = targetprefab;
+                    AllCachedGos[resName] = new Queue<GameObject>();
                 }
 
                 gameObject = UnityEngine.Object.Instantiate(targetprefab, GlobalComponent.Instance.Unit, true);
