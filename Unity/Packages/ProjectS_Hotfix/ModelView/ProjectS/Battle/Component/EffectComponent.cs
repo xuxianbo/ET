@@ -13,7 +13,7 @@ namespace ET
     /// <summary>
     /// 特效组件，用于管理Unit身上的特效
     /// </summary>
-    public class EffectComponent : Entity
+    public class EffectComponent : Entity, IAwake
     {
         private Dictionary<string, GameObject> AllEffects = new Dictionary<string, GameObject>();
 
@@ -22,11 +22,11 @@ namespace ET
         /// </summary>
         private List<string> effectGroup = new List<string>
         {
-            "Darius/Darius_Passive_Bleed_Effect_1",
-            "Darius/Darius_Passive_Bleed_Effect_2",
-            "Darius/Darius_Passive_Bleed_Effect_3",
-            "Darius/Darius_Passive_Bleed_Effect_4",
-            "Darius/Darius_Passive_Bleed_Effect_5"
+            "Darius_Passive_Bleed_Effect_1",
+            "Darius_Passive_Bleed_Effect_2",
+            "Darius_Passive_Bleed_Effect_3",
+            "Darius_Passive_Bleed_Effect_4",
+            "Darius_Passive_Bleed_Effect_5"
         };
 
         /// <summary>

@@ -10,15 +10,14 @@ namespace ET
 {
     public class PlayEffectBuffSystem : ABuffSystemBase<PlayEffectBuffData>
     {
-#if !SERVER
         public override void OnExecute(uint currentFrame)
         {
-            Game.EventSystem.Publish(this.GetBuffTarget(),new EventType.PlayEffectBuffSystemExcuteEvent()
+            Game.EventSystem.Publish(this.GetBuffTarget(), new EventType.PlayEffectBuffSystemExcuteEvent()
             {
-                PlayEffectBuffData = GetBuffDataWithTType, Target = this.GetBuffTarget(),
+                PlayEffectBuffData = GetBuffDataWithTType,
                 CurrentOverlay = this.CurrentOverlay
             });
-            Log.Info($"Execute播放：{GetBuffDataWithTType.EffectName}");
+
             if (this.BuffData.EventIds != null)
             {
                 foreach (var eventId in this.BuffData.EventIds)
@@ -31,21 +30,21 @@ namespace ET
 
         public override void OnFinished(uint currentFrame)
         {
-            Game.EventSystem.Publish(this.GetBuffTarget(),new EventType.PlayEffectBuffSystemFinishEvent()
+            Game.EventSystem.Publish(this.GetBuffTarget(), new EventType.PlayEffectBuffSystemFinishEvent()
             {
-                PlayEffectBuffData = GetBuffDataWithTType, Target = this.GetBuffTarget(),
+                PlayEffectBuffData = GetBuffDataWithTType,
                 CurrentOverlay = this.CurrentOverlay
             });
         }
 
         public override void OnRefreshed(uint currentFrame)
         {
-            Game.EventSystem.Publish(this.GetBuffTarget(),new EventType.PlayEffectBuffSystemExcuteEvent()
+            Game.EventSystem.Publish(this.GetBuffTarget(), new EventType.PlayEffectBuffSystemExcuteEvent()
             {
-                PlayEffectBuffData = GetBuffDataWithTType, Target = this.GetBuffTarget(),
+                PlayEffectBuffData = GetBuffDataWithTType,
                 CurrentOverlay = this.CurrentOverlay
             });
-            Log.Info($"Refresh播放：{GetBuffDataWithTType.EffectName}");
+
             if (this.BuffData.EventIds != null)
             {
                 foreach (var eventId in this.BuffData.EventIds)
@@ -55,12 +54,5 @@ namespace ET
                 }
             }
         }
-#else
-        public override void OnExecute(uint currentFrame)
-        {
-
-        }
-
-#endif
     }
 }

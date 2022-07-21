@@ -32,14 +32,12 @@ namespace ET
         public struct PlayEffectBuffSystemExcuteEvent
         {
             public PlayEffectBuffData PlayEffectBuffData;
-            public Unit Target;
             public int CurrentOverlay;
         }
 
         public struct PlayEffectBuffSystemFinishEvent
         {
             public PlayEffectBuffData PlayEffectBuffData;
-            public Unit Target;
             public int CurrentOverlay;
         }
 

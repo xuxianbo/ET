@@ -31,6 +31,7 @@ namespace ET.Client
             singleGameScene.AddComponent<LSF_TimerComponent>();
             singleGameScene.AddComponent<CDComponent>();
             singleGameScene.AddComponent<NP_TreeDataRepositoryComponent>();
+            singleGameScene.AddComponent<BattleEventSystemComponent>();
 
             ClientSceneManagerComponent.Instance.SetCurrentSingleGameScene(singleGameScene);
             

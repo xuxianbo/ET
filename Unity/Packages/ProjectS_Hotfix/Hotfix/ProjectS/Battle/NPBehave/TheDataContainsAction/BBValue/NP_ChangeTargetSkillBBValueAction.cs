@@ -56,8 +56,7 @@ namespace ET
             }
             else
             {
-                targetUnit = BelongToUnit.DomainScene().GetComponent<UnitComponent>()
-                    .Get(this.TargetUnitId.GetBlackBoardValue<long>(this.BelongtoRuntimeTree.GetBlackboard()));
+                targetUnit = BelongToUnit.GetComponent<B2S_ColliderComponent>().CreateColliderArgs.BelontToUnit;
             }
 
             List<NP_RuntimeTree> skillContent = targetUnit.GetComponent<SkillCanvasManagerComponent>()

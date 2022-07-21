@@ -760,11 +760,11 @@ MonoBehaviour:
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 508e3be70f66dd146a9d866b019f64ae
-    m_importFrom: Assets/Res/Effect/Darius/Darius_R_Effect.vfx
+    m_importFrom: Assets/Res/Unit/Effect/Darius/Darius_R_Effect.vfx
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 88078089f63e9524fa06183914f5f933
-    m_importFrom: Assets/Res/Effect/Darius/Darius_Q_Effect.prefab
+    m_importFrom: Assets/Res/Unit/Effect/Darius/Darius_Q_Effect.prefab
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 0000000000000000c100000000000000
@@ -788,7 +788,7 @@ MonoBehaviour:
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 221aae555ae663048b4fd1ad496cafdd
-    m_importFrom: Assets/Res/Unit/Darius.prefab
+    m_importFrom: Assets/Res/Unit/Hero/Darius.prefab
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 14fea1a56283ee241adfd3b21b47c632
@@ -1258,6 +1258,98 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 86a0c9f68d1efcd429cdbdde2dca77e4
     m_importFrom: Assets/AssetBundleBuilderSetting.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ff906ecbbd0163f4094f8fa4e305d39f
+    m_importFrom: Assets/Mono/MonoBehaviour/GameEntry/Init.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 86ff0308b3ab400469a9fa0bf93aa1f0
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_E_Collider.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a2f05799025f3bb4995a3bc9703fe4e5
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/SkillGraphs/Darius_Hemorrhage.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ae1464d9a080cd343be50eeedd5224eb
+    m_importFrom: Assets/Res/Config/SkillConfig/Darius_Hemorrhage.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9eb0cfb163a80664b9c4ef829b69a721
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/NPBehave/TheDataContainsAction/BBValue/NP_ChangeTargetSkillBBValueAction.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e41d27fd7dea4389b56243df18566b59
+    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Battle/ComponentSystems/UnitTransformComponentSystems.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3d3d564e89494011bc441092db958a8a
+    m_importFrom: Packages/com.nkg.yy/HotfixView/ProjectS/Battle/SkillSystem/BuffSystems/PlayEffectBuffSystemEvent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cc8c58fe9581ebe499c37f3594581bdc
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/SkillSystem/BuffSystem/PlayEffectBuffSystem.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 027a5465aab64240a13b96e88a678019
+    m_importFrom: Packages/com.nkg.yy/Model/ProjectS/Battle/BattleEventType.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d16fa9d2f97e6474b833db6e7c1c1c0c
+    m_importFrom: Assets/Res/Unit/Hero
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 51bb9506f7e70b744b32fd190ed52724
+    m_importFrom: Assets/Res/Unit/Effect
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 34136a3e2db58e842ac947cd66ce0e0d
+    m_importFrom: Assets/Res/Unit/Effect/Darius
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0aa9fb714e28e974eb1ff67ec08c5bd3
+    m_importFrom: Assets/Res/Unit/Effect/Darius/Darius_Passive_Bleed_Effect_1.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 90f7fdf10fc16c548bf15ace7a253851
+    m_importFrom: Assets/Res/Unit/Effect/Darius/Darius_Passive_Bleed_Effect_5.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e7849aa25b5559b449252d55bd785e3a
+    m_importFrom: Assets/Res/Unit/Effect/Darius/Darius_Passive_Bleed_Effect_3.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a8805255a7ed543438748278cf344c0a
+    m_importFrom: Assets/Res/Unit/Effect/Darius/Darius_OtherDeadLine_Effect.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f66400a7ffd9ea04698e4ea937ed99da
+    m_importFrom: Assets/Res/Unit/Effect/Darius/Darius_FullAngry_Effect.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ce9191d7a289b264a9fe9543a410646f
+    m_importFrom: Assets/Res/Unit/Effect/Darius/Darius_Passive_Bleed_Effect_4.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2d274f78e4ce9784f80b32345fe4f75c
+    m_importFrom: Assets/Res/Unit/Effect/Darius/Darius_W_Effect.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ce11169a32429ef45bc856fb8bf48ad5
+    m_importFrom: Assets/Res/Unit/Effect/Darius/Darius_Passive_Bleed_Effect_2.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9e29dfcff4eb8c541a012f93f8388cbc
+    m_importFrom: Assets/AssetBundleCollectorSetting.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 31e427604ad248aebfd332f91c2bdd95
+    m_importFrom: Packages/com.nkg.yy/ModelView/ProjectS/Battle/Component/EffectComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 053d45c05db66d34fafd100c7fc53b3e
+    m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/SkillSystem/BuffSystem/Core/BuffManagerComponent.cs
     m_exportTo: 
     m_variantName: 
   m_version: 2

@@ -83,12 +83,13 @@ namespace ET
                 b2SRoleCastComponent.RoleCamp &&
                 (b2SRoleCastComponent.RoleTag & self.CreateColliderArgs.TargetCollsionRoleTag) ==
                 b2SRoleCastComponent.RoleTag &&
-                b2SRoleCastComponent.GetRoleCastToTarget(self.GetParent<Unit>()) ==
+                b2SRoleCastComponent.GetRoleCastToTarget(self.CreateColliderArgs.BelontToUnit) ==
                 self.CreateColliderArgs.TargetCollsionRoleCast)
             {
                 foreach (var runtimeTree in self.TargetSkillCanvasManager.GetSkillCanvas(self.SkillCanvasConfig
                              .BelongToSkillId))
                 {
+                    runtimeTree.GetBlackboard().Set<bool>($"{self.CreateColliderArgs.OnTriggerEnter}_bool", true);
                     runtimeTree.GetBlackboard().Get<List<long>>(self.CreateColliderArgs.OnTriggerEnter)
                         ?.Add(other.BelongToUnitId);
                 }
@@ -110,12 +111,13 @@ namespace ET
                 b2SRoleCastComponent.RoleCamp &&
                 (b2SRoleCastComponent.RoleTag & self.CreateColliderArgs.TargetCollsionRoleTag) ==
                 b2SRoleCastComponent.RoleTag &&
-                b2SRoleCastComponent.GetRoleCastToTarget(self.GetParent<Unit>()) ==
+                b2SRoleCastComponent.GetRoleCastToTarget(self.CreateColliderArgs.BelontToUnit) ==
                 self.CreateColliderArgs.TargetCollsionRoleCast)
             {
                 foreach (var runtimeTree in self.TargetSkillCanvasManager.GetSkillCanvas(self.SkillCanvasConfig
                              .BelongToSkillId))
                 {
+                    runtimeTree.GetBlackboard().Set<bool>($"{self.CreateColliderArgs.OnTriggerStay}_bool", true);
                     runtimeTree.GetBlackboard().Get<List<long>>(self.CreateColliderArgs.OnTriggerStay)
                         ?.Add(other.BelongToUnitId);
                 }
@@ -137,12 +139,13 @@ namespace ET
                 b2SRoleCastComponent.RoleCamp &&
                 (b2SRoleCastComponent.RoleTag & self.CreateColliderArgs.TargetCollsionRoleTag) ==
                 b2SRoleCastComponent.RoleTag &&
-                b2SRoleCastComponent.GetRoleCastToTarget(self.GetParent<Unit>()) ==
+                b2SRoleCastComponent.GetRoleCastToTarget(self.CreateColliderArgs.BelontToUnit) ==
                 self.CreateColliderArgs.TargetCollsionRoleCast)
             {
                 foreach (var runtimeTree in self.TargetSkillCanvasManager.GetSkillCanvas(self.SkillCanvasConfig
                              .BelongToSkillId))
                 {
+                    runtimeTree.GetBlackboard().Set<bool>($"{self.CreateColliderArgs.OnTriggerExit}_bool", true);
                     runtimeTree.GetBlackboard().Get<List<long>>(self.CreateColliderArgs.OnTriggerExit)
                         ?.Add(other.BelongToUnitId);
                 }

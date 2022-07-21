@@ -101,8 +101,6 @@ namespace ET.Client
                 .AddComponent<GameObjectComponent, YooAssetProxy.YooAssetResType, string>(
                     YooAssetProxy.YooAssetResType.Effect, createColliderArgs.PrefabABPath).CreateGameObjectInternal();
             
-            b2sColliderEntity.AddComponent<B2S_ColliderComponent, CreateColliderArgs>(createColliderArgs);
-
             go.transform.position = createColliderArgs.BelontToUnit.Position;
             go.transform.rotation = createColliderArgs.BelontToUnit.Rotation;
 
@@ -119,6 +117,8 @@ namespace ET.Client
                         skillCanvasConfig.BelongToSkillId)
                     .Start();
             }
+            
+            b2sColliderEntity.AddComponent<B2S_ColliderComponent, CreateColliderArgs>(createColliderArgs);
 
             return b2sColliderEntity;
         }

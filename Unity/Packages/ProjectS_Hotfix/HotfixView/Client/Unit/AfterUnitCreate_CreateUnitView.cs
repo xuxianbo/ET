@@ -22,6 +22,7 @@ namespace ET.Client
 
             unit.AddComponent<AnimationComponent>();
             unit.AddComponent<UnitTransformComponent>();
+            unit.AddComponent<EffectComponent>();
             unit.AddComponent<NavAgentComponent>();
             unit.GetComponent<SkillCanvasManagerComponent>().InitUnitPresetSkillCanavs();
 

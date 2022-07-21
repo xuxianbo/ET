@@ -9,7 +9,15 @@ using ET;
 
 namespace ET
 {
-    public class BuffManagerComponent : Entity, IAwake, IDestroy
+    public class BuffManagerComponentFixedUpdate: FixedUpdateSystem<BuffManagerComponent>
+    {
+        public override void FixedUpdate(BuffManagerComponent self)
+        {
+            self.FixedUpdate(self.DomainScene().GetComponent<LSF_Component>().CurrentFrame);
+        }
+    }
+
+    public class BuffManagerComponent : Entity, IAwake, IFixedUpdate, IDestroy
     {
         /// <summary>
         /// Buff链表

@@ -50,7 +50,7 @@ namespace ET
         }
     }
 
-    public class B2S_RoleCastComponent : Entity, IAwake<RoleCamp,RoleTag>
+    public class B2S_RoleCastComponent : Entity, IAwake<RoleCamp, RoleTag>
     {
         public RoleTag RoleTag;
 
@@ -74,7 +74,7 @@ namespace ET
             RoleCamp roleCamp = unit.GetComponent<B2S_RoleCastComponent>().RoleCamp;
             return GetRoleCastWithRoleCamp(roleCamp);
         }
-        
+
         /// <summary>
         /// 获取与目标的关系
         /// </summary>
@@ -86,17 +86,10 @@ namespace ET
             {
                 return RoleCast.Friendly;
             }
-            
+
             if (roleCamp != this.RoleCamp)
             {
-                if (roleCamp == RoleCamp.Player)
-                {
-                    return RoleCast.Neutral;
-                }
-                else
-                {
-                    return RoleCast.Adverse;
-                }
+                return RoleCast.Adverse;
             }
 
             return RoleCast.Friendly;
