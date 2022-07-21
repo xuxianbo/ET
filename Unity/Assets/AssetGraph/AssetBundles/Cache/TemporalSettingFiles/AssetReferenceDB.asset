@@ -1176,16 +1176,8 @@ MonoBehaviour:
     m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_2.bytes
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 0574682553dcf354f821ecdc8f71c1d6
-    m_importFrom: Assets/StreamingAssets/YooAssets/160cf2a76c56b6a03d0c8adb3c2e627e
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: a8f91e4f3105a924bbf447ebc67ad63c
     m_importFrom: Assets/StreamingAssets/YooAssets/af7bf4165e7ce63e66a908d2937b9754
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: b206d5cd31859244c83b5b0c3d1ec6a3
-    m_importFrom: Assets/StreamingAssets/YooAssets/b9c0002c9f7ad54d5926d539f8fa9a23
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: f2a1b736bfcb9b842868c4c3aa919032
@@ -1204,16 +1196,8 @@ MonoBehaviour:
     m_importFrom: Assets/StreamingAssets/YooAssets/StaticVersion.bytes
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: ab14ae30885f22d4b9e2b18d9e1a1f18
-    m_importFrom: Assets/StreamingAssets/YooAssets/054bafc7554a9f052e3d4fb7f6f72ccf
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: c5e5fd50645ef344db2d10de5ae7855e
     m_importFrom: Assets/StreamingAssets/YooAssets/5de5713b13b3285e1e7d79624bca4d35
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 68e90baaf3d467a4bb34f2d6c0bd51e2
-    m_importFrom: Assets/StreamingAssets/YooAssets/8b792f52ea6267073e9acbbf7f3a8a7d
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 6d9e14447c07cfa49b768f593c927016
@@ -1228,10 +1212,6 @@ MonoBehaviour:
     m_importFrom: Assets/StreamingAssets/YooAssets/ca9117b5c0f3b5177fd2b458c413be8e
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: a6cf975807cdfa84e98c0aa211b8a441
-    m_importFrom: Assets/StreamingAssets/YooAssets/f5259c90a912c488fd5b8e76736e1521
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: ac5d9382cb5f45943aa037bb164f7e0a
     m_importFrom: Assets/StreamingAssets/YooAssets/acf11f9061c9642fd4b798f124958d8f
     m_exportTo: 
@@ -1242,14 +1222,6 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 4c35c785f7b076e4b937d48333ecc135
     m_importFrom: Assets/StreamingAssets/YooAssets/8dba91a51222307a244f437f441f5380
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: a4e342df8182f6c4aa6e0b2759382ca3
-    m_importFrom: Assets/StreamingAssets/YooAssets/f3887978f0822c751cdd47180794a623
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 4fb15fb6182ffa14eb2fa860f07dbb6f
-    m_importFrom: Assets/StreamingAssets/YooAssets/a38cffc409bf1f92b76323fcd895b14e
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 969f3053696cf734194a6355d22161ef
@@ -1350,6 +1322,50 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 053d45c05db66d34fafd100c7fc53b3e
     m_importFrom: Packages/com.nkg.yy/Hotfix/ProjectS/Battle/SkillSystem/BuffSystem/Core/BuffManagerComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f359c04618d92674884c833c2ee3a47d
+    m_importFrom: Assets/StreamingAssets/YooAssets/4030db9417b0e37b2576e7d902737376
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b99058c1d06dfc24c9df8d12e9027beb
+    m_importFrom: Assets/StreamingAssets/YooAssets/9593e119fa980c60623b24cf0b4ad78a
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 663e6a1e9b7986d48b23306824283cc3
+    m_importFrom: Assets/StreamingAssets/YooAssets/8ead8dae7905cb631b27b9479626890d
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8a2f5b990568dc64583685ce952a3370
+    m_importFrom: Assets/link.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e37c3cc6b95ea2147966bb03de35becd
+    m_importFrom: Assets/Res/Code/UniTask.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a8abff4a5c6889e4381fa7a96637a28f
+    m_importFrom: Assets/Res/Code/Unity.Core.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 35dae95a1a7d6cf409c69fd05ae4f926
+    m_importFrom: Assets/Res/Code/Unity.ThirdParty.dll.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: de512639dbdc41444853156724302161
+    m_importFrom: Assets/StreamingAssets/YooAssets/95eb4181fcc02c8eeadbe67cc1d94b21
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8864d98d1dfee114dbab6c220e8c7012
+    m_importFrom: Assets/StreamingAssets/YooAssets/312518623ebadd4d5cc0d806d439ae74
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ec30d3aafbb7ebb4ea954b860f4d4441
+    m_importFrom: Assets/StreamingAssets/YooAssets/f8cd5d0a27e13aa333c78c752b152a07
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7f82c5a453bed984c9af6de29a3331d2
+    m_importFrom: Assets/StreamingAssets/YooAssets/bd362f79067173d8be28cab257401bf0
     m_exportTo: 
     m_variantName: 
   m_version: 2

@@ -8,6 +8,7 @@
   <assembly fullname="System" preserve="all"/>
     <assembly fullname="UnityEngine.AnimationModule" preserve="all"/>
     <assembly fullname="System.Net.Http" preserve="all"/>
+    <assembly fullname="UnityEngine.VFXModule" preserve="all"/>
     
     <assembly fullname="Unity.NGUI" preserve="all" />
     <assembly fullname="Unity.ThirdParty" preserve="all" />
