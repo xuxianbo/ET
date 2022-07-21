@@ -72,6 +72,9 @@ ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba + UniTask，并提供常用�
 
 ![image](https://user-images.githubusercontent.com/35335061/180250056-bf80ced0-dc70-4521-991e-51dc84c2da63.png)
 
+![image](https://user-images.githubusercontent.com/35335061/180250346-e0baa3a2-796a-4c81-9552-a8c2abb2f1a9.png)
+
+
 # 引用
 
 博客教程：https://www.lfzxb.top/et7-fgui-yooasset-luban-huatuo/
