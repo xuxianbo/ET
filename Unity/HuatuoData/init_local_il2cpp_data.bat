@@ -1,9 +1,9 @@
 @echo off
 rem git clone https://github.com/focus-creative-games/hybridclr
-git clone https://gitee.com/focus-creative-games/hybridclr huatuo_repo
+git clone -b released_for_et7 https://github.com/wqaetly/hybridclr huatuo_repo
 
 rem git clone https://github.com/focus-creative-games/il2cpp_huatuo
-git clone https://gitee.com/focus-creative-games/il2cpp_plus il2cpp_huatuo_repo
+git clone https://github.com/wqaetly/il2cpp_plus.git il2cpp_huatuo_repo
 
 
 rem set default branch
