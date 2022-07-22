@@ -22,7 +22,7 @@ ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba + UniTask，并提供常用�
 # TODO && Features
 
 - [x] 接入 [ET 7.0](https://github.com/egametang/ET)
-- [x] 接入 [huatuo C#代码热更方案](https://github.com/focus-creative-games/huatuo)
+- [x] 接入 [hybridclr C#代码热更方案](https://github.com/focus-creative-games/hybridclr)
 - [x] 接入 [YooAssset 资源热更方案](https://github.com/tuyoogame/YooAsset)
 - [x] 接入 [FGUI UI方案](https://www.fairygui.com/) ，并提供MVVM UI框架
 - [x] 接入 [luban 配置表方案](https://github.com/focus-creative-games/luban)，并提供周边工具链
