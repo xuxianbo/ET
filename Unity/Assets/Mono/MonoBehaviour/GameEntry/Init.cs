@@ -5,12 +5,12 @@ using System.Diagnostics;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Huatuo;
+using Sirenix.OdinInspector;
 
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 using Sirenix.Serialization;
-
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Profiling;
@@ -19,13 +19,6 @@ using Debug = UnityEngine.Debug;
 
 namespace ET
 {
-    // 1 mono模式 2 ILRuntime模式 3 mono热重载模式
-    public enum CodeMode
-    {
-        Mono = 1,
-        Reload = 3,
-    }
-
 #if UNITY_EDITOR
     // 注册Editor下的Log
     [InitializeOnLoad]
@@ -38,11 +31,15 @@ namespace ET
     }
 #endif
 
-    public partial class Init : MonoBehaviour
+    public partial class Init : MonoSingleton<Init>
     {
-        public CodeMode CodeMode = CodeMode.Mono;
+        [LabelText("资源服地址")] public string HotfixResUrl = "http://127.0.0.1:8088";
+
+        [LabelText("版本号")] public int Version = 2;
+
+        [LabelText("资源模式")]
         public YooAssets.EPlayMode PlayMode = YooAssets.EPlayMode.EditorSimulateMode;
-        
+
         private void Awake()
         {
             AppDomain.CurrentDomain.UnhandledException += (sender, e) => { Log.Error(e.ExceptionObject.ToString()); };
@@ -50,12 +47,8 @@ namespace ET
             SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
 
             DontDestroyOnLoad(gameObject);
-            
-            Game.ILog = new UnityLogger();
 
-            CodeLoader.Instance.CodeMode = this.CodeMode;
-            Options.Instance.Develop = 1;
-            Options.Instance.LogLevel = 0;
+            Game.ILog = new UnityLogger();
 
             FUIEntry.Init();
 
@@ -73,20 +66,25 @@ namespace ET
             await YooAssetProxy.StartYooAssetEngine(PlayMode);
 
             // Shader Warm Up
-            ShaderVariantCollection shaderVariantCollection = (await YooAssetProxy.LoadAssetAsync<ShaderVariantCollection>("Shader_ProjectSShaderVariant")).GetAssetObject<ShaderVariantCollection>();
-            
+            ShaderVariantCollection shaderVariantCollection =
+                (await YooAssetProxy.LoadAssetAsync<ShaderVariantCollection>(
+                    YooAssetProxy.GetYooAssetFormatResPath("ProjectSShaderVariant",
+                        YooAssetProxy.YooAssetResType.Shader)))
+                .GetAssetObject<ShaderVariantCollection>();
+
             Stopwatch stopwatch = Stopwatch.StartNew();
-            
-            Log.Info($"开始Shader Warm Up, shaderCount: {shaderVariantCollection.shaderCount} variantCount: {shaderVariantCollection.variantCount}");
-            
+
+            Log.Info(
+                $"开始Shader Warm Up, shaderCount: {shaderVariantCollection.shaderCount} variantCount: {shaderVariantCollection.variantCount}");
+
             shaderVariantCollection.WarmUp();
-            
+
             stopwatch.Stop();
-            
+
             Log.Info($"Shader Warm Up完成, 耗时: {stopwatch.ElapsedMilliseconds}ms");
 
             await LoadCode();
-            
+
             if (PlayMode == YooAssets.EPlayMode.HostPlayMode)
             {
                 FUI_CheckForResUpdateComponent.Release();
@@ -97,7 +95,7 @@ namespace ET
         {
             CodeLoader.Instance.Update?.Invoke();
         }
-        
+
         private void FixedUpdate()
         {
             CodeLoader.Instance.FixedUpdate?.Invoke();

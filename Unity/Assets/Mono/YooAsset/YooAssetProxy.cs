@@ -147,10 +147,11 @@ namespace ET
                 createParameters.DefaultHostServer = GetHostServerURL();
                 createParameters.FallbackHostServer = GetHostServerURL();
 
+                // 如果有其他平台需要，可以在此处进行平台拓展
                 string GetHostServerURL()
                 {
-                    string hostServerIP = "http://127.0.0.1:8088";
-                    string gameVersion = "2";
+                    string hostServerIP = Init.Instance.HotfixResUrl;
+                    string gameVersion = Init.Instance.Version.ToString();
                     return $"{hostServerIP}/StandaloneWindows64/{gameVersion}";
                 }
 

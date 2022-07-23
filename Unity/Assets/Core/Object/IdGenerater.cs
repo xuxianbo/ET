@@ -226,7 +226,7 @@ namespace ET
                 }
             }
 
-            InstanceIdStruct instanceIdStruct = new InstanceIdStruct(this.lastInstanceIdTime, Game.Options.Process, this.instanceIdValue);
+            InstanceIdStruct instanceIdStruct = new InstanceIdStruct(this.lastInstanceIdTime, GlobalDefine.ProcessId, this.instanceIdValue);
             return instanceIdStruct.ToLong();
         }
 
@@ -251,7 +251,7 @@ namespace ET
                 }
             }
             
-            IdStruct idStruct = new IdStruct(this.lastIdTime, Game.Options.Process, value);
+            IdStruct idStruct = new IdStruct(this.lastIdTime, GlobalDefine.ProcessId, value);
             return idStruct.ToLong();
         }
         
@@ -280,7 +280,7 @@ namespace ET
                 }
             }
 
-            UnitIdStruct unitIdStruct = new UnitIdStruct(zone, Game.Options.Process, this.lastUnitIdTime, this.unitIdValue);
+            UnitIdStruct unitIdStruct = new UnitIdStruct(zone, GlobalDefine.ProcessId, this.lastUnitIdTime, this.unitIdValue);
             return unitIdStruct.ToLong();
         }
     }

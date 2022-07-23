@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using Cysharp.Threading.Tasks;
 using Unity.EditorCoroutines.Editor;
 using UnityEditor;
 using UnityEditor.Build.Content;
@@ -12,13 +13,9 @@ using UnityEngine;
 
 namespace ET
 {
-    /// <summary>
-    /// https://et-framework.cn/d/615/4
-    /// </summary>
+    [InitializeOnLoad]
     public static class BuildAssemblieEditor
     {
-        private const string CodeDir = "Assets/Res/Code/";
-
         private static bool s_CompileHotfixCompleted = false;
         private static bool m_IsContainsNkgEditorOnlySymbolDefine = false;
 
@@ -28,8 +25,24 @@ namespace ET
         private static CodeOptimization codeOptimization;
         private static string[] backSymbolDefines;
 
+        private static UniTaskCompletionSource s_UniTaskCompletionSource;
+
+        /// <summary>
+        /// 自动进行dll拷贝操作，避免每次都需要手动编译，但需要注意的是，每次打包必须进行一次手动编译
+        /// </summary>
+        static BuildAssemblieEditor()
+        {
+            File.Copy(Path.Combine(GlobalDefine.UnityAutoCompiledHotfixDllDir, "ProjectS_Hotfix.dll"),
+                Path.Combine(GlobalDefine.CodeDir, "ProjectS_Hotfix.dll.bytes"), true);
+            File.Copy(Path.Combine(GlobalDefine.UnityAutoCompiledHotfixDllDir, "ProjectS_Hotfix.pdb"),
+                Path.Combine(GlobalDefine.CodeDir, "ProjectS_Hotfix.pdb.bytes"), true);
+
+            AssetDatabase.Refresh();
+            Log.Info($"自动从{GlobalDefine.UnityAutoCompiledHotfixDllDir}拷贝ProjectS_Hotfix.dll到项目里，已完成，但正式出包一定进行一次手动编译");
+        }
+
         [MonKey.Command("Build Hotfix Debug Dll", "编译热更DLL（Debug）", Category = "Build")]
-        public static void BuildCodeDebug()
+        public static UniTask BuildCodeDebug()
         {
             assemblyName = "ProjectS_Hotfix";
             includeAssemblies = new[]
@@ -42,11 +55,11 @@ namespace ET
             additionalReferences = Array.Empty<string>();
             codeOptimization = CodeOptimization.Debug;
 
-            BuildAssemblieEditor.BuildMuteAssembly();
+            return BuildAssemblieEditor.BuildMuteAssembly();
         }
 
         [MonKey.Command("Build Hotfix Release Dll", "编译热更DLL（Release）", Category = "Build")]
-        public static void BuildCodeRelease()
+        public static UniTask BuildCodeRelease()
         {
             assemblyName = "ProjectS_Hotfix";
             includeAssemblies = new[]
@@ -59,11 +72,11 @@ namespace ET
             additionalReferences = Array.Empty<string>();
             codeOptimization = CodeOptimization.Release;
 
-            BuildAssemblieEditor.BuildMuteAssembly();
+            return BuildAssemblieEditor.BuildMuteAssembly();
         }
 
         [MonKey.Command("Build Hotfix Data Dll", "编译热更DLL（Debug）", Category = "Build")]
-        public static void BuildData()
+        public static UniTask BuildData()
         {
             assemblyName = "ProjectS_Hotfix_Data";
             includeAssemblies = new[]
@@ -74,12 +87,12 @@ namespace ET
             additionalReferences = Array.Empty<string>();
             codeOptimization = CodeOptimization.Debug;
 
-            BuildAssemblieEditor.BuildMuteAssembly();
+            return BuildAssemblieEditor.BuildMuteAssembly();
         }
 
 
         [MonKey.Command("Build Hotfix Logic Dll", "编译热更DLL（Debug）", Category = "Build")]
-        public static void BuildLogic()
+        public static UniTask BuildLogic()
         {
             assemblyName = "ProjectS_Hotfix_Logic";
             includeAssemblies = new[]
@@ -90,11 +103,13 @@ namespace ET
             additionalReferences = Array.Empty<string>();
             codeOptimization = CodeOptimization.Debug;
 
-            BuildAssemblieEditor.BuildMuteAssembly();
+            return BuildAssemblieEditor.BuildMuteAssembly();
         }
 
-        private static void BuildMuteAssembly()
+        private static UniTask BuildMuteAssembly()
         {
+            s_UniTaskCompletionSource = new UniTaskCompletionSource();
+
             s_CompileHotfixCompleted = false;
 
             List<string> scripts = new List<string>();
@@ -108,15 +123,15 @@ namespace ET
                 }
             }
 
-            string dllPath = Path.Combine(Define.BuildOutputDir, $"{assemblyName}.dll");
-            string pdbPath = Path.Combine(Define.BuildOutputDir, $"{assemblyName}.pdb");
-            if (Directory.Exists(Define.BuildOutputDir))
+            string dllPath = Path.Combine(GlobalDefine.BuildOutputDir, $"{assemblyName}.dll");
+            string pdbPath = Path.Combine(GlobalDefine.BuildOutputDir, $"{assemblyName}.pdb");
+            if (Directory.Exists(GlobalDefine.BuildOutputDir))
             {
                 File.Delete(dllPath);
                 File.Delete(pdbPath);
             }
             else
-                Directory.CreateDirectory(Define.BuildOutputDir);
+                Directory.CreateDirectory(GlobalDefine.BuildOutputDir);
 
             AssemblyBuilder assemblyBuilder = new AssemblyBuilder(dllPath, scripts.ToArray());
 
@@ -194,8 +209,10 @@ namespace ET
             {
                 Debug.LogErrorFormat("build fail：" + assemblyBuilder.assemblyPath);
             }
+
+            return s_UniTaskCompletionSource.Task;
         }
-        
+
         private static void CheckCompileHotfixCompleted()
         {
             if (!s_CompileHotfixCompleted)
@@ -211,13 +228,17 @@ namespace ET
 
             Debug.Log("Compiling finish");
 
-            Directory.CreateDirectory(CodeDir);
+            Directory.CreateDirectory(GlobalDefine.CodeDir);
 
-            File.Copy(Path.Combine(Define.BuildOutputDir, "ProjectS_Hotfix.dll"), Path.Combine(CodeDir, "ProjectS_Hotfix.dll.bytes"), true);
-            File.Copy(Path.Combine(Define.BuildOutputDir, "ProjectS_Hotfix.pdb"), Path.Combine(CodeDir, "ProjectS_Hotfix.pdb.bytes"), true);
+            File.Copy(Path.Combine(GlobalDefine.BuildOutputDir, "ProjectS_Hotfix.dll"),
+                Path.Combine(GlobalDefine.CodeDir, "ProjectS_Hotfix.dll.bytes"), true);
+            File.Copy(Path.Combine(GlobalDefine.BuildOutputDir, "ProjectS_Hotfix.pdb"),
+                Path.Combine(GlobalDefine.CodeDir, "ProjectS_Hotfix.pdb.bytes"), true);
 
             AssetDatabase.Refresh();
             Debug.Log("copy Code.dll to Bundles/Code success!");
+
+            s_UniTaskCompletionSource.TrySetResult();
         }
     }
 }

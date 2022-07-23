@@ -40,7 +40,7 @@ namespace ET
             EditorSceneManager.OpenScene(c_InitScenePath);
             
             // 如果执行打包，就强行替换为非本地调试模式，进行AB加载
-            Init updater = UnityEngine.Object.FindObjectOfType<Init>();
+            Init updater = Init.Instance;
             YooAssets.EPlayMode backPlayMode = updater.PlayMode;
             updater.PlayMode = YooAssets.EPlayMode.HostPlayMode;
 

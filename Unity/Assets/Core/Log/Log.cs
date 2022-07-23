@@ -12,11 +12,7 @@ namespace ET
 
         private static bool CheckLogLevel(int level)
         {
-            if (Options.Instance == null)
-            {
-                return true;
-            }
-            return Options.Instance.LogLevel <= level;
+            return GlobalDefine.LogLevel <= level;
         }
         
         public static void Trace(string msg)
@@ -127,25 +123,6 @@ namespace ET
             StackTrace st = new StackTrace(1, true);
             string s = string.Format(message, args) + '\n' + st;
             Game.ILog.Error(s);
-        }
-        
-        public static void Console(string message)
-        {
-            if (Options.Instance.Console == 1)
-            {
-                System.Console.WriteLine(message);
-            }
-            Game.ILog.Debug(message);
-        }
-        
-        public static void Console(string message, params object[] args)
-        {
-            string s = string.Format(message, args);
-            if (Options.Instance.Console == 1)
-            {
-                System.Console.WriteLine(s);
-            }
-            Game.ILog.Debug(s);
         }
     }
 }
