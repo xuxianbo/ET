@@ -13,16 +13,18 @@ namespace ET
             AssetBundleBuilder assetBundleBuilder = new AssetBundleBuilder();
 
             BuildParameters buildParameters = new BuildParameters();
-            buildParameters.BuildMode = EBuildMode.IncrementalBuild;
-            buildParameters.BuildPipeline = EBuildPipeline.ScriptableBuildPipeline;
+            buildParameters.BuildMode = EBuildMode.ForceRebuild;
+            buildParameters.BuildPipeline = EBuildPipeline.BuiltinBuildPipeline;
             buildParameters.BuildTarget = BuildTarget.StandaloneWindows64;
-            buildParameters.BuildVersion = ++Init.Instance.Version;
+            buildParameters.BuildVersion = 2;
             buildParameters.EnableAddressable = true;
             buildParameters.CompressOption = ECompressOption.LZ4;
             buildParameters.OutputRoot = AssetBundleBuilderHelper.GetDefaultOutputRoot();
             buildParameters.VerifyBuildingResult = true;
 
             assetBundleBuilder.Run(buildParameters);
+            
+            EditorApplication.Exit(0);
         }
 
         /// <summary>
@@ -51,6 +53,9 @@ namespace ET
             {
                 await BuildEXE();
                 BuildAB();
+                
+                // 需要注意的是，一旦使用了UniTask，在batchmode需要自己处理Exit
+                EditorApplication.Exit(0);
             }
         }
     }
