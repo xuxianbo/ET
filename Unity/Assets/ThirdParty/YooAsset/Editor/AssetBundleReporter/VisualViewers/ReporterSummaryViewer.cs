@@ -58,10 +58,13 @@ namespace YooAsset.Editor
 			_buildReport = buildReport;
 			
 			_items.Clear();
+
+			_items.Add(new ItemWrapper("YooAsset版本", buildReport.Summary.YooVersion));
 			_items.Add(new ItemWrapper("引擎版本", buildReport.Summary.UnityVersion));
-			_items.Add(new ItemWrapper("构建时间", buildReport.Summary.BuildTime));
+			_items.Add(new ItemWrapper("构建时间", buildReport.Summary.BuildDate));
 			_items.Add(new ItemWrapper("构建耗时", $"{buildReport.Summary.BuildSeconds}秒"));
 			_items.Add(new ItemWrapper("构建平台", $"{buildReport.Summary.BuildTarget}"));
+			_items.Add(new ItemWrapper("构建管线", $"{buildReport.Summary.BuildPipeline}"));
 			_items.Add(new ItemWrapper("构建模式", $"{buildReport.Summary.BuildMode}"));
 			_items.Add(new ItemWrapper("构建版本", $"{buildReport.Summary.BuildVersion}"));
 			_items.Add(new ItemWrapper("内置资源标签", $"{buildReport.Summary.BuildinTags}"));
@@ -82,6 +85,7 @@ namespace YooAsset.Editor
 			_items.Add(new ItemWrapper(string.Empty, string.Empty));
 			_items.Add(new ItemWrapper("构建结果", string.Empty));
 			_items.Add(new ItemWrapper("构建文件总数", $"{buildReport.Summary.AssetFileTotalCount}"));
+			_items.Add(new ItemWrapper("主资源总数", $"{buildReport.Summary.MainAssetTotalCount}"));
 			_items.Add(new ItemWrapper("资源包总数", $"{buildReport.Summary.AllBundleTotalCount}"));
 			_items.Add(new ItemWrapper("资源包总大小", ConvertSize(buildReport.Summary.AllBundleTotalSize)));
 			_items.Add(new ItemWrapper("内置资源包总数", $"{buildReport.Summary.BuildinBundleTotalCount}"));

@@ -146,7 +146,6 @@ namespace YooAsset.Editor
 					typeof(PackCollector),
 					typeof(PackGroup),
 					typeof(PackRawFile),
-					typeof(PackShaderVariants)
 				};
 
 				var customTypes = EditorTools.GetAssignableTypes(typeof(IPackRule));

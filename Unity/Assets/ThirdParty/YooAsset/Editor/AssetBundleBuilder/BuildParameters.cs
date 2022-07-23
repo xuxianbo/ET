@@ -10,6 +10,33 @@ namespace YooAsset.Editor
 	public class BuildParameters
 	{
 		/// <summary>
+		/// SBP构建参数
+		/// </summary>
+		public class SBPBuildParameters
+		{
+			/// <summary>
+			/// 生成代码防裁剪配置
+			/// </summary>
+			public bool WriteLinkXML = true;
+
+			/// <summary>
+			/// 缓存服务器地址
+			/// </summary>
+			public string CacheServerHost;
+
+			/// <summary>
+			/// 缓存服务器端口
+			/// </summary>
+			public int CacheServerPort;
+		}
+
+		/// <summary>
+		/// 可编程构建管线的参数
+		/// </summary>
+		public SBPBuildParameters SBPParameters;
+
+
+		/// <summary>
 		/// 输出的根目录
 		/// </summary>
 		public string OutputRoot;
@@ -18,6 +45,11 @@ namespace YooAsset.Editor
 		/// 构建的平台
 		/// </summary>
 		public BuildTarget BuildTarget;
+
+		/// <summary>
+		/// 构建管线
+		/// </summary>
+		public EBuildPipeline BuildPipeline;
 
 		/// <summary>
 		/// 构建模式
@@ -86,4 +118,6 @@ namespace YooAsset.Editor
 			return StringUtility.StringToStringList(BuildinTags, ';');
 		}
 	}
+
+
 }

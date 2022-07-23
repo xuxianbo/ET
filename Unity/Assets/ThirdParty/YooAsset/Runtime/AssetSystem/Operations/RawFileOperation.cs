@@ -34,9 +34,7 @@ namespace YooAsset
 			string filePath = GetCachePath();
 			if (File.Exists(filePath) == false)
 				return null;
-
-			byte[] test = File.ReadAllBytes(filePath);
-			return test;
+			return File.ReadAllBytes(filePath);
 		}
 
 		/// <summary>

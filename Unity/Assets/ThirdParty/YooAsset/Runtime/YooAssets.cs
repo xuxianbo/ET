@@ -404,10 +404,7 @@ namespace YooAsset
 			DebugCheckInitialize();
 			AssetInfo assetInfo = ConvertLocationToAssetInfo(location, null);
 			if (assetInfo.IsInvalid)
-			{
-				YooLogger.Warning(assetInfo.Error);
 				return false;
-			}
 
 			BundleInfo bundleInfo = _bundleServices.GetBundleInfo(assetInfo);
 			if (bundleInfo.LoadMode == BundleInfo.ELoadMode.LoadFromRemote)
@@ -469,6 +466,77 @@ namespace YooAsset
 		}
 		#endregion
 
+		#region 原生文件
+		/// <summary>
+		/// 异步获取原生文件
+		/// </summary>
+		/// <param name="location">资源的定位地址</param>
+		/// <param name="copyPath">拷贝路径</param>
+		public static RawFileOperation GetRawFileAsync(string location, string copyPath = null)
+		{
+			DebugCheckInitialize();
+			AssetInfo assetInfo = ConvertLocationToAssetInfo(location, null);
+			return GetRawFileInternal(assetInfo, copyPath);
+		}
+
+		/// <summary>
+		/// 异步获取原生文件
+		/// </summary>
+		/// <param name="assetInfo">资源信息</param>
+		/// <param name="copyPath">拷贝路径</param>
+		public static RawFileOperation GetRawFileAsync(AssetInfo assetInfo, string copyPath = null)
+		{
+			DebugCheckInitialize();
+			if (assetInfo.IsInvalid)
+				YooLogger.Warning(assetInfo.Error);
+			return GetRawFileInternal(assetInfo, copyPath);
+		}
+
+
+		private static RawFileOperation GetRawFileInternal(AssetInfo assetInfo, string copyPath)
+		{
+			if (assetInfo.IsInvalid)
+			{
+				RawFileOperation operation = new CompletedRawFileOperation(assetInfo.Error, copyPath);
+				OperationSystem.StartOperaiton(operation);
+				return operation;
+			}
+
+			BundleInfo bundleInfo = _bundleServices.GetBundleInfo(assetInfo);
+			if (bundleInfo.IsRawFile == false)
+			{
+				string error = $"Cannot load asset bundle file using {nameof(GetRawFileAsync)} interfaces !";
+				YooLogger.Warning(error);
+				RawFileOperation operation = new CompletedRawFileOperation(error, copyPath);
+				OperationSystem.StartOperaiton(operation);
+				return operation;
+			}
+
+			if (_playMode == EPlayMode.EditorSimulateMode)
+			{
+				RawFileOperation operation = new EditorPlayModeRawFileOperation(bundleInfo, copyPath);
+				OperationSystem.StartOperaiton(operation);
+				return operation;
+			}
+			else if (_playMode == EPlayMode.OfflinePlayMode)
+			{
+				RawFileOperation operation = new OfflinePlayModeRawFileOperation(bundleInfo, copyPath);
+				OperationSystem.StartOperaiton(operation);
+				return operation;
+			}
+			else if (_playMode == EPlayMode.HostPlayMode)
+			{
+				RawFileOperation operation = new HostPlayModeRawFileOperation(bundleInfo, copyPath);
+				OperationSystem.StartOperaiton(operation);
+				return operation;
+			}
+			else
+			{
+				throw new NotImplementedException();
+			}
+		}
+		#endregion
+
 		#region 场景加载
 		/// <summary>
 		/// 异步加载场景
@@ -495,69 +563,10 @@ namespace YooAsset
 		public static SceneOperationHandle LoadSceneAsync(AssetInfo assetInfo, LoadSceneMode sceneMode = LoadSceneMode.Single, bool activateOnLoad = true, int priority = 100)
 		{
 			DebugCheckInitialize();
+			if (assetInfo.IsInvalid)
+				YooLogger.Warning(assetInfo.Error);
 			var handle = AssetSystem.LoadSceneAsync(assetInfo, sceneMode, activateOnLoad, priority);
 			return handle;
-		}
-		#endregion
-
-		#region 资源加载
-		/// <summary>
-		/// 异步获取原生文件
-		/// </summary>
-		/// <param name="location">资源的定位地址</param>
-		/// <param name="copyPath">拷贝路径</param>
-		public static RawFileOperation GetRawFileAsync(string location, string copyPath = null)
-		{
-			DebugCheckInitialize();
-			AssetInfo assetInfo = ConvertLocationToAssetInfo(location, null);
-			return GetRawFileInternal(assetInfo, copyPath);
-		}
-
-		/// <summary>
-		/// 异步获取原生文件
-		/// </summary>
-		/// <param name="assetInfo">资源信息</param>
-		/// <param name="copyPath">拷贝路径</param>
-		public static RawFileOperation GetRawFileAsync(AssetInfo assetInfo, string copyPath = null)
-		{
-			DebugCheckInitialize();
-			return GetRawFileInternal(assetInfo, copyPath);
-		}
-
-
-		private static RawFileOperation GetRawFileInternal(AssetInfo assetInfo, string copyPath)
-		{
-			if (assetInfo.IsInvalid)
-			{
-				YooLogger.Warning(assetInfo.Error);
-				RawFileOperation operation = new CompletedRawFileOperation(assetInfo.Error, copyPath);
-				OperationSystem.StartOperaiton(operation);
-				return operation;
-			}
-
-			BundleInfo bundleInfo = _bundleServices.GetBundleInfo(assetInfo);
-			if (_playMode == EPlayMode.EditorSimulateMode)
-			{
-				RawFileOperation operation = new EditorPlayModeRawFileOperation(bundleInfo, copyPath);
-				OperationSystem.StartOperaiton(operation);
-				return operation;
-			}
-			else if (_playMode == EPlayMode.OfflinePlayMode)
-			{
-				RawFileOperation operation = new OfflinePlayModeRawFileOperation(bundleInfo, copyPath);
-				OperationSystem.StartOperaiton(operation);
-				return operation;
-			}
-			else if (_playMode == EPlayMode.HostPlayMode)
-			{
-				RawFileOperation operation = new HostPlayModeRawFileOperation(bundleInfo, copyPath);
-				OperationSystem.StartOperaiton(operation);
-				return operation;
-			}
-			else
-			{
-				throw new NotImplementedException();
-			}
 		}
 		#endregion
 
@@ -569,6 +578,8 @@ namespace YooAsset
 		public static AssetOperationHandle LoadAssetSync(AssetInfo assetInfo)
 		{
 			DebugCheckInitialize();
+			if (assetInfo.IsInvalid)
+				YooLogger.Warning(assetInfo.Error);
 			return LoadAssetInternal(assetInfo, true);
 		}
 
@@ -604,6 +615,8 @@ namespace YooAsset
 		public static AssetOperationHandle LoadAssetAsync(AssetInfo assetInfo)
 		{
 			DebugCheckInitialize();
+			if (assetInfo.IsInvalid)
+				YooLogger.Warning(assetInfo.Error);
 			return LoadAssetInternal(assetInfo, false);
 		}
 
@@ -649,6 +662,8 @@ namespace YooAsset
 		public static SubAssetsOperationHandle LoadSubAssetsSync(AssetInfo assetInfo)
 		{
 			DebugCheckInitialize();
+			if (assetInfo.IsInvalid)
+				YooLogger.Warning(assetInfo.Error);
 			return LoadSubAssetsInternal(assetInfo, true);
 		}
 
@@ -684,6 +699,8 @@ namespace YooAsset
 		public static SubAssetsOperationHandle LoadSubAssetsAsync(AssetInfo assetInfo)
 		{
 			DebugCheckInitialize();
+			if (assetInfo.IsInvalid)
+				YooLogger.Warning(assetInfo.Error);
 			return LoadSubAssetsInternal(assetInfo, false);
 		}
 
@@ -1047,6 +1064,10 @@ namespace YooAsset
 		#endregion
 
 		#region 私有方法
+		/// <summary>
+		/// 资源定位地址转换为资源信息类，失败时内部会发出错误日志。
+		/// </summary>
+		/// <returns>如果转换失败会返回一个无效的资源信息类</returns>
 		private static AssetInfo ConvertLocationToAssetInfo(string location, System.Type assetType)
 		{
 			DebugCheckLocation(location);

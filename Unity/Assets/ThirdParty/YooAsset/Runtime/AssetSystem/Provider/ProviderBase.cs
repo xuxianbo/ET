@@ -18,6 +18,11 @@ namespace YooAsset
 		}
 
 		/// <summary>
+		/// 资源提供者唯一标识符
+		/// </summary>
+		public string ProviderGUID { private set; get; }
+
+		/// <summary>
 		/// 资源信息
 		/// </summary>
 		public AssetInfo MainAssetInfo { private set; get; }
@@ -85,8 +90,9 @@ namespace YooAsset
 		private readonly List<OperationHandleBase> _handles = new List<OperationHandleBase>();
 
 
-		public ProviderBase(AssetInfo assetInfo)
+		public ProviderBase(string providerGUID, AssetInfo assetInfo)
 		{
+			ProviderGUID = providerGUID;
 			MainAssetInfo = assetInfo;
 		}
 
@@ -128,7 +134,6 @@ namespace YooAsset
 		/// <summary>
 		/// 创建操作句柄
 		/// </summary>
-		/// <returns></returns>
 		public T CreateHandle<T>() where T : OperationHandleBase
 		{
 			// 引用计数增加

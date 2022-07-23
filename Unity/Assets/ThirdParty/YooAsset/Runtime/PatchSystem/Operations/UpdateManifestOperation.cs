@@ -382,7 +382,7 @@ namespace YooAsset
 
 				// 忽略APP资源
 				// 注意：如果是APP资源并且哈希值相同，则不需要下载
-				if (appPatchManifest.Bundles.TryGetValue(patchBundle.BundleName, out PatchBundle appPatchBundle))
+				if (appPatchManifest.TryGetPatchBundle(patchBundle.BundleName, out PatchBundle appPatchBundle))
 				{
 					if (appPatchBundle.IsBuildin && appPatchBundle.Hash == patchBundle.Hash)
 						continue;
@@ -472,9 +472,13 @@ namespace YooAsset
 			else
 			{
 				VerifyFailCount++;
+
+				// NOTE：不期望删除断点续传的资源文件
+				/*
 				YooLogger.Warning($"Failed to verify file : {info.FilePath}");
 				if (File.Exists(info.FilePath))
 					File.Delete(info.FilePath);
+				*/
 			}
 			_verifyingList.Remove(info.Bundle);
 		}

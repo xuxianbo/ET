@@ -22,8 +22,10 @@ namespace YooAsset.Editor
 		private List<Type> _encryptionServicesClassTypes;
 		private List<string> _encryptionServicesClassNames;
 
+		private Button _saveButton;
 		private TextField _buildOutputField;
 		private IntegerField _buildVersionField;
+		private EnumField _buildPipelineField;
 		private EnumField _buildModeField;
 		private TextField _buildinTagsField;
 		private PopupField<string> _encryptionField;
@@ -43,7 +45,14 @@ namespace YooAsset.Editor
 
 				visualAsset.CloneTree(root);
 
+				// 配置保存按钮
+				_saveButton = root.Q<Button>("SaveButton");
+				_saveButton.clicked += SaveBtn_clicked;
+
+				// 构建平台
 				_buildTarget = EditorUserBuildSettings.activeBuildTarget;
+
+				// 加密服务类
 				_encryptionServicesClassTypes = GetEncryptionServicesClassTypes();
 				_encryptionServicesClassNames = _encryptionServicesClassTypes.Select(t => t.FullName).ToList();
 
@@ -59,7 +68,20 @@ namespace YooAsset.Editor
 				_buildVersionField.SetValueWithoutNotify(AssetBundleBuilderSettingData.Setting.BuildVersion);
 				_buildVersionField.RegisterValueChangedCallback(evt =>
 				{
+					AssetBundleBuilderSettingData.IsDirty = true;
 					AssetBundleBuilderSettingData.Setting.BuildVersion = _buildVersionField.value;
+				});
+
+				// 构建管线
+				_buildPipelineField = root.Q<EnumField>("BuildPipeline");
+				_buildPipelineField.Init(AssetBundleBuilderSettingData.Setting.BuildPipeline);
+				_buildPipelineField.SetValueWithoutNotify(AssetBundleBuilderSettingData.Setting.BuildPipeline);
+				_buildPipelineField.style.width = 300;
+				_buildPipelineField.RegisterValueChangedCallback(evt =>
+				{
+					AssetBundleBuilderSettingData.IsDirty = true;
+					AssetBundleBuilderSettingData.Setting.BuildPipeline = (EBuildPipeline)_buildPipelineField.value;
+					RefreshWindow();
 				});
 
 				// 构建模式
@@ -69,6 +91,7 @@ namespace YooAsset.Editor
 				_buildModeField.style.width = 300;
 				_buildModeField.RegisterValueChangedCallback(evt =>
 				{
+					AssetBundleBuilderSettingData.IsDirty = true;
 					AssetBundleBuilderSettingData.Setting.BuildMode = (EBuildMode)_buildModeField.value;
 					RefreshWindow();
 				});
@@ -78,6 +101,7 @@ namespace YooAsset.Editor
 				_buildinTagsField.SetValueWithoutNotify(AssetBundleBuilderSettingData.Setting.BuildTags);
 				_buildinTagsField.RegisterValueChangedCallback(evt =>
 				{
+					AssetBundleBuilderSettingData.IsDirty = true;
 					AssetBundleBuilderSettingData.Setting.BuildTags = _buildinTagsField.value;
 				});
 
@@ -91,6 +115,7 @@ namespace YooAsset.Editor
 					_encryptionField.style.width = 300;
 					_encryptionField.RegisterValueChangedCallback(evt =>
 					{
+						AssetBundleBuilderSettingData.IsDirty = true;
 						AssetBundleBuilderSettingData.Setting.EncyptionClassName = _encryptionField.value;
 					});
 					encryptionContainer.Add(_encryptionField);
@@ -110,6 +135,7 @@ namespace YooAsset.Editor
 				_compressionField.style.width = 300;
 				_compressionField.RegisterValueChangedCallback(evt =>
 				{
+					AssetBundleBuilderSettingData.IsDirty = true;
 					AssetBundleBuilderSettingData.Setting.CompressOption = (ECompressOption)_compressionField.value;
 				});
 
@@ -118,6 +144,7 @@ namespace YooAsset.Editor
 				_appendExtensionToggle.SetValueWithoutNotify(AssetBundleBuilderSettingData.Setting.AppendExtension);
 				_appendExtensionToggle.RegisterValueChangedCallback(evt =>
 				{
+					AssetBundleBuilderSettingData.IsDirty = true;
 					AssetBundleBuilderSettingData.Setting.AppendExtension = _appendExtensionToggle.value;
 				});
 
@@ -134,7 +161,24 @@ namespace YooAsset.Editor
 		}
 		public void OnDestroy()
 		{
-			AssetBundleBuilderSettingData.SaveFile();
+			if(AssetBundleBuilderSettingData.IsDirty)
+				AssetBundleBuilderSettingData.SaveFile();
+		}
+		public void Update()
+		{
+			if(_saveButton != null)
+			{
+				if(AssetBundleBuilderSettingData.IsDirty)
+				{
+					if (_saveButton.enabledSelf == false)
+						_saveButton.SetEnabled(true);
+				}
+				else
+				{
+					if(_saveButton.enabledSelf)
+						_saveButton.SetEnabled(false);
+				}
+			}
 		}
 
 		private void RefreshWindow()
@@ -145,6 +189,10 @@ namespace YooAsset.Editor
 			_encryptionField.SetEnabled(enableElement);
 			_compressionField.SetEnabled(enableElement);
 			_appendExtensionToggle.SetEnabled(enableElement);
+		}
+		private void SaveBtn_clicked()
+		{
+			AssetBundleBuilderSettingData.SaveFile();
 		}
 		private void BuildButton_clicked()
 		{
@@ -165,23 +213,28 @@ namespace YooAsset.Editor
 		/// </summary>
 		private void ExecuteBuild()
 		{
-			var buildMode = (EBuildMode)_buildModeField.value;
-
 			string defaultOutputRoot = AssetBundleBuilderHelper.GetDefaultOutputRoot();
 			BuildParameters buildParameters = new BuildParameters();
 			buildParameters.OutputRoot = defaultOutputRoot;
 			buildParameters.BuildTarget = _buildTarget;
-			buildParameters.BuildMode = buildMode;
-			buildParameters.BuildVersion = _buildVersionField.value;
-			buildParameters.BuildinTags = _buildinTagsField.value;
+			buildParameters.BuildPipeline = AssetBundleBuilderSettingData.Setting.BuildPipeline;
+			buildParameters.BuildMode = AssetBundleBuilderSettingData.Setting.BuildMode;
+			buildParameters.BuildVersion = AssetBundleBuilderSettingData.Setting.BuildVersion;
+			buildParameters.BuildinTags = AssetBundleBuilderSettingData.Setting.BuildTags;
 			buildParameters.VerifyBuildingResult = true;
 			buildParameters.EnableAddressable = AssetBundleCollectorSettingData.Setting.EnableAddressable;
-			buildParameters.AppendFileExtension = _appendExtensionToggle.value;
-			buildParameters.CopyBuildinTagFiles = buildMode == EBuildMode.ForceRebuild;
+			buildParameters.AppendFileExtension = AssetBundleBuilderSettingData.Setting.AppendExtension;
+			buildParameters.CopyBuildinTagFiles = AssetBundleBuilderSettingData.Setting.BuildMode == EBuildMode.ForceRebuild;
 			buildParameters.EncryptionServices = CreateEncryptionServicesInstance();
-			buildParameters.CompressOption = (ECompressOption)_compressionField.value;
+			buildParameters.CompressOption = AssetBundleBuilderSettingData.Setting.CompressOption;
 
-			AssetBundleBuilder builder = new AssetBundleBuilder();
+			if (AssetBundleBuilderSettingData.Setting.BuildPipeline == EBuildPipeline.ScriptableBuildPipeline)
+			{
+				buildParameters.SBPParameters = new BuildParameters.SBPBuildParameters();
+				buildParameters.SBPParameters.WriteLinkXML = true;
+			}
+			
+			var builder = new AssetBundleBuilder();
 			bool succeed = builder.Run(buildParameters);
 			if (succeed)
 			{

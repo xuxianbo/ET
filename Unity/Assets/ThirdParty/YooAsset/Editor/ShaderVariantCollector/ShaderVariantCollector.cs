@@ -6,7 +6,6 @@ using System.IO;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
-using Debug = UnityEngine.Debug;
 
 namespace YooAsset.Editor
 {
@@ -14,8 +13,7 @@ namespace YooAsset.Editor
 	public static class ShaderVariantCollector
 	{
 		private const float WaitMilliseconds = 1000f;
-		private static string _svcSaveFilePath;
-		private static string _svcJsonSaveFilePath = "Assets/SVCDebug.json";
+		private static string _saveFilePath;
 		private static bool _isStarted = false;
 		private static readonly Stopwatch _elapsedTime = new Stopwatch();
 
@@ -42,18 +40,15 @@ namespace YooAsset.Editor
 		{
 			AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
 
-			ShaderVariantCollection svc = AssetDatabase.LoadAssetAtPath<ShaderVariantCollection>(_svcSaveFilePath);
+			ShaderVariantCollection svc = AssetDatabase.LoadAssetAtPath<ShaderVariantCollection>(_saveFilePath);
 			if(svc != null)
 			{
 				var wrapper = ShaderVariantCollectionHelper.Extract(svc);
 				string jsonContents = JsonUtility.ToJson(wrapper, true);
-				string savePath = _svcJsonSaveFilePath;
-				
+				string savePath = _saveFilePath.Replace(".shadervariants", ".json");
 				File.WriteAllText(savePath, jsonContents);
 			}
 
-			EditorUtility.SetDirty(svc);
-			
 			AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
 		}
 
@@ -70,7 +65,7 @@ namespace YooAsset.Editor
 			if (Path.GetExtension(saveFilePath) != ".shadervariants")
 				throw new System.Exception("Shader variant file extension is invalid.");
 			EditorTools.CreateFileDirectory(saveFilePath);
-			_svcSaveFilePath = saveFilePath;
+			_saveFilePath = saveFilePath;
 
 			// 聚焦到游戏窗口
 			EditorTools.FocusUnityGameWindow();
@@ -204,7 +199,7 @@ namespace YooAsset.Editor
 		}
 		private static void SaveCurrentShaderVariantCollection()
 		{
-			EditorTools.InvokeNonPublicStaticMethod(typeof(ShaderUtil), "SaveCurrentShaderVariantCollection", _svcSaveFilePath);
+			EditorTools.InvokeNonPublicStaticMethod(typeof(ShaderUtil), "SaveCurrentShaderVariantCollection", _saveFilePath);
 		}
 		public static int GetCurrentShaderVariantCollectionShaderCount()
 		{
