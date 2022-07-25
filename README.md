@@ -13,8 +13,9 @@ ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba + UniTask，并提供常用�
    - /Unity/Assets/Plugins/AstarPathfindingProject
    - /Unity/Assets/Plugins/Animancer
    - /Unity/Assets/Plugins/MonKey Commander
-   - /Unity/Assets/Plugins/Werewolf
    - /Unity/Assets/Plugins/ShaderControl
+   - 最后对ProjectS_Hotfix.asmdef做如下引用即可 ![image](https://user-images.githubusercontent.com/35335061/180807422-0ca3a32b-fdf3-4866-83d5-1ff4a569fee8.png)
+
 
 # 项目截图（IL2CPP PC真机）
 ![QQ截图20220721230643](https://user-images.githubusercontent.com/35335061/180248732-70230143-7e42-4fc3-bcfd-3d93a8cef5ee.png)
