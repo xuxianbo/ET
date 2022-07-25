@@ -10,30 +10,30 @@ using ET.Client;
 namespace ET
 {
     public class
-        B2S_ColliderComponent_System_AwakeSystem0 : AwakeSystem<B2S_ColliderComponent, UnitFactory.CreateColliderArgs>
+        B2S_ColliderComponent_System_AwakeSystem0 : AwakeSystem<B2S_ColliderComponent, UnitDefine.CreateColliderArgs>
     {
-        public override void Awake(B2S_ColliderComponent self, UnitFactory.CreateColliderArgs a)
+        public override void Awake(B2S_ColliderComponent self, UnitDefine.CreateColliderArgs a)
         {
             self.CreateColliderArgs = a;
 
-            self.MonoBridge = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject
-                .GetComponent<MonoBridge>();
+            self.MonoBridge =
+                Game.EventSystem.Callback<B2S_ColliderComponent, MonoBridge>(CallbackType.GetMonoBridge, self);
 
             if (!string.IsNullOrEmpty(self.CreateColliderArgs.OnTriggerEnter))
             {
                 self.MonoBridge.OnTriggerEnter_Callback = self.OnTriggerEnter;
             }
-            
+
             if (!string.IsNullOrEmpty(self.CreateColliderArgs.OnTriggerStay))
             {
                 self.MonoBridge.OnTriggerStay_Callback = self.OnTriggerStay;
             }
-            
+
             if (!string.IsNullOrEmpty(self.CreateColliderArgs.OnTriggerExit))
             {
                 self.MonoBridge.OnTriggerExit_Callback = self.OnTriggerExit;
             }
-            
+
             self.TargetSkillCanvasManager = self.GetParent<Unit>().GetComponent<SkillCanvasManagerComponent>();
 
             self.SkillCanvasConfig = ConfigComponent.Instance.AllConfigTables.TbSkillCanvas.Get(a.NP_TreeConfigId);

@@ -6,8 +6,6 @@
 
 #if !SERVER
 using Cysharp.Threading.Tasks;
-using FairyGUI;
-using Pathfinding;
 using UnityEngine;
 
 namespace ET
@@ -21,26 +19,17 @@ namespace ET
             self.m_MouseTargetSelectorComponent = self.GetParent<Unit>().GetComponent<MouseTargetSelectorComponent>();
         }
     }
-    
+
     public class MapClickComponentUpdate : UpdateSystem<MapClickCompoent>
     {
         public override void Update(MapClickCompoent self)
         {
             if (self.m_UserInputComponent.RightMouseDown)
             {
-                // 状态帧系统测试代码
-
-                if (Stage.isTouchOnUI) //点在了UI上
+                if (self.m_MouseTargetSelectorComponent.TargetGameObject?.GetComponent<MonoBridge>()?.CustomTag ==
+                    "Map")
                 {
-                    //Log.Info("点在UI上");
-                }
-                else //没有点在UI上
-                {
-                    if (self.m_MouseTargetSelectorComponent.TargetGameObject?.GetComponent<MonoBridge>()?.CustomTag ==
-                        "Map")
-                    {
-                        self.MapPathFinder(self.m_MouseTargetSelectorComponent.TargetHitPoint).Forget();
-                    }
+                    self.MapPathFinder(self.m_MouseTargetSelectorComponent.TargetHitPoint).Forget();
                 }
             }
         }
