@@ -64,20 +64,24 @@ namespace ET
         {
             // 先删除再保存，否则ShaderVariantCollection内容将无法及时刷新
             AssetDatabase.DeleteAsset(ShaderVariantCollectorSettingData.Setting.SavePath);
-            ShaderVariantCollector.Run(ShaderVariantCollectorSettingData.Setting.SavePath);
-
-            string resultPath = EditorTools.OpenFilePath("Select File", "Assets/", "shadervariants");
-            if (string.IsNullOrEmpty(resultPath))
-                return;
-            string assetPath = EditorTools.AbsolutePathToAssetPath(resultPath);
-            ShaderVariantCollection collection = AssetDatabase.LoadAssetAtPath<ShaderVariantCollection>(assetPath);
-
-            if (collection != null)
+            
+            ShaderVariantCollector.OnCompletedCallback = () =>
             {
-                Debug.Log("SVC搜集完毕");
-                Debug.Log($"ShaderCount : {collection.shaderCount}");
-                Debug.Log($"VariantCount : {collection.variantCount}");
-            }
+                string resultPath = EditorTools.OpenFilePath("Select File", "Assets/", "shadervariants");
+                if (string.IsNullOrEmpty(resultPath))
+                    return;
+                string assetPath = EditorTools.AbsolutePathToAssetPath(resultPath);
+                ShaderVariantCollection collection = AssetDatabase.LoadAssetAtPath<ShaderVariantCollection>(assetPath);
+
+                if (collection != null)
+                {
+                    Debug.Log("SVC搜集完毕");
+                    Debug.Log($"ShaderCount : {collection.shaderCount}");
+                    Debug.Log($"VariantCount : {collection.variantCount}");
+                }
+            };
+            
+            ShaderVariantCollector.Run(ShaderVariantCollectorSettingData.Setting.SavePath);
         }
     }
 }

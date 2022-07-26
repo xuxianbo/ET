@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace YooAsset.Editor
 		private static string _saveFilePath;
 		private static bool _isStarted = false;
 		private static readonly Stopwatch _elapsedTime = new Stopwatch();
+		public static Action OnCompletedCallback;
 
 		static ShaderVariantCollector()
 		{
@@ -34,6 +36,8 @@ namespace YooAsset.Editor
 
 				// 创建说明文件
 				CreateReadme();
+				
+				OnCompletedCallback?.Invoke();
 			}
 		}
 		private static void CreateReadme()
