@@ -64,25 +64,23 @@ namespace ET
         {
             // 先删除再保存，否则ShaderVariantCollection内容将无法及时刷新
             AssetDatabase.DeleteAsset(ShaderVariantCollectorSettingData.Setting.SavePath);
-            
+
             ShaderVariantCollector.OnCompletedCallback = () =>
             {
-                string resultPath = EditorTools.OpenFilePath("Select File", "Assets/", "shadervariants");
-                if (string.IsNullOrEmpty(resultPath))
-                    return;
-                string assetPath = EditorTools.AbsolutePathToAssetPath(resultPath);
-                ShaderVariantCollection collection = AssetDatabase.LoadAssetAtPath<ShaderVariantCollection>(assetPath);
+                ShaderVariantCollection collection =
+                    AssetDatabase.LoadAssetAtPath<ShaderVariantCollection>(ShaderVariantCollectorSettingData.Setting
+                        .SavePath);
 
                 if (collection != null)
                 {
-                    Debug.Log("SVC搜集完毕");
                     Debug.Log($"ShaderCount : {collection.shaderCount}");
                     Debug.Log($"VariantCount : {collection.variantCount}");
                 }
                 
+                EditorTools.CloseUnityGameWindow();
                 EditorApplication.Exit(0);
             };
-            
+
             ShaderVariantCollector.Run(ShaderVariantCollectorSettingData.Setting.SavePath);
         }
     }
