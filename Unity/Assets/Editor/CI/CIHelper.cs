@@ -79,6 +79,8 @@ namespace ET
                     Debug.Log($"ShaderCount : {collection.shaderCount}");
                     Debug.Log($"VariantCount : {collection.variantCount}");
                 }
+                
+                EditorApplication.Exit(0);
             };
             
             ShaderVariantCollector.Run(ShaderVariantCollectorSettingData.Setting.SavePath);
