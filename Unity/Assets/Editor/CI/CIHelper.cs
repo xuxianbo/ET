@@ -2,6 +2,7 @@
 
 using Cysharp.Threading.Tasks;
 using UnityEditor;
+using UnityEngine;
 using YooAsset.Editor;
 
 namespace ET
@@ -23,7 +24,7 @@ namespace ET
             buildParameters.VerifyBuildingResult = true;
 
             assetBundleBuilder.Run(buildParameters);
-            
+
             EditorApplication.Exit(0);
         }
 
@@ -53,9 +54,29 @@ namespace ET
             {
                 await BuildEXE();
                 BuildAB();
-                
+
                 // 需要注意的是，一旦使用了UniTask，在batchmode需要自己处理Exit
                 EditorApplication.Exit(0);
+            }
+        }
+
+        public static void CollectSVC()
+        {
+            // 先删除再保存，否则ShaderVariantCollection内容将无法及时刷新
+            AssetDatabase.DeleteAsset(ShaderVariantCollectorSettingData.Setting.SavePath);
+            ShaderVariantCollector.Run(ShaderVariantCollectorSettingData.Setting.SavePath);
+
+            string resultPath = EditorTools.OpenFilePath("Select File", "Assets/", "shadervariants");
+            if (string.IsNullOrEmpty(resultPath))
+                return;
+            string assetPath = EditorTools.AbsolutePathToAssetPath(resultPath);
+            ShaderVariantCollection collection = AssetDatabase.LoadAssetAtPath<ShaderVariantCollection>(assetPath);
+
+            if (collection != null)
+            {
+                Debug.Log("SVC搜集完毕");
+                Debug.Log($"ShaderCount : {collection.shaderCount}");
+                Debug.Log($"VariantCount : {collection.variantCount}");
             }
         }
     }
