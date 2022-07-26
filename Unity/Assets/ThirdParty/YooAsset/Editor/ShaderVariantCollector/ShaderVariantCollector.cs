@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -35,7 +34,7 @@ namespace YooAsset.Editor
 				// 创建说明文件
 				CreateReadme();
 				
-				Debug.Log($"构建完毕，耗时：{_elapsedTime.ElapsedMilliseconds}ms");
+				Debug.Log($"搜集SVC完毕");
 
 				OnCompletedCallback?.Invoke();
 			}
@@ -90,8 +89,6 @@ namespace YooAsset.Editor
 			_isStarted = true;
 			_elapsedTime.Reset();
 			_elapsedTime.Start();
-
-			UnityEngine.Debug.LogWarning("已经启动着色器变种收集工作，该工具只支持在编辑器下人工操作！");
 		}
 
 		private static void CreateTemperScene()
