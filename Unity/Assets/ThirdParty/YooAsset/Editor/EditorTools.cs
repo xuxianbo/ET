@@ -197,7 +197,14 @@ namespace YooAsset.Editor
 		/// </summary>
 		public static void DisplayProgressBar(string tips, int progressValue, int totalValue)
 		{
-			EditorUtility.DisplayProgressBar("进度", $"{tips} : {progressValue}/{totalValue}", (float)progressValue / totalValue);
+			if (Application.isBatchMode)
+			{
+				Debug.Log($"进度 ${tips} : {progressValue}/{totalValue}");
+			}
+			else
+			{
+				EditorUtility.DisplayProgressBar("进度", $"{tips} : {progressValue}/{totalValue}", (float)progressValue / totalValue);
+			}
 		}
 
 		/// <summary>
