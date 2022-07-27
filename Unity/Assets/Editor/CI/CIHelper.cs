@@ -89,6 +89,11 @@ namespace ET
             // 命令行参数 -buildABVersion 为AB版本，一般以流水线构建版本号为准
             int buildVersion = GetBuildVersion();
 
+            if (buildVersion < 1)
+            {
+                Debug.LogError("未正确填写-buildABVersion参数，示例-buildABVersion %build.number%");
+            }
+
             // 从构建命令里获取参数
             static int GetBuildVersion()
             {
