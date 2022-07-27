@@ -57,6 +57,8 @@ namespace ET
             // 2. 将文件夹移动到同父级目录的CDN文件夹下
             string oriABPath =
                 $"{buildParameters.OutputRoot}/{EditorUserBuildSettings.activeBuildTarget}/{buildVersion}";
+            string finalABDir =
+                $"{buildParameters.OutputRoot}/CDN/{EditorUserBuildSettings.activeBuildTarget}";
             string finalABPath =
                 $"{buildParameters.OutputRoot}/CDN/{EditorUserBuildSettings.activeBuildTarget}/{Init.Instance.Version}";
             if (Directory.Exists(finalABPath))
