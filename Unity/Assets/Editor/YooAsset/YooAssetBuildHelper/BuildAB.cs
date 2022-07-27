@@ -7,6 +7,7 @@
 using UnityEditor;
 using UnityEngine;
 using System.IO;
+using UnityEditor.SceneManagement;
 using YooAsset.Editor;
 
 namespace ET
@@ -29,6 +30,8 @@ namespace ET
         public static void BuildABWithVersion(int buildVersion = 0)
         {
             Debug.Log($"开始构建AB，平台为：{EditorUserBuildSettings.activeBuildTarget} Version为 {buildVersion}");
+
+            EditorSceneManager.OpenScene(GlobalDefine.InitScenePath);
 
             // 构建参数
             string defaultOutputRoot = AssetBundleBuilderHelper.GetDefaultOutputRoot();
