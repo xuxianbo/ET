@@ -92,6 +92,7 @@ namespace ET
             if (buildVersion < 1)
             {
                 Debug.LogError("未正确填写-buildABVersion参数，示例-buildABVersion %build.number%");
+                return;
             }
 
             // 从构建命令里获取参数
