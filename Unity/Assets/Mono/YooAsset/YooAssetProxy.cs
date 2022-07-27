@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using YooAsset;
+using UnityEngine;
 
 namespace ET
 {
@@ -146,13 +147,32 @@ namespace ET
                 createParameters.ClearCacheWhenDirty = false;
                 createParameters.DefaultHostServer = GetHostServerURL();
                 createParameters.FallbackHostServer = GetHostServerURL();
-
-                // 如果有其他平台需要，可以在此处进行平台拓展
+                
                 string GetHostServerURL()
                 {
                     string hostServerIP = Init.Instance.HotfixResUrl;
-                    string gameVersion = Init.Instance.Version.ToString();
-                    return $"{hostServerIP}/StandaloneWindows64/{gameVersion}";
+                    string gameVersion = Init.Instance.Version;
+                    
+#if UNITY_EDITOR
+                    if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.Android)
+                        return $"{hostServerIP}/CDN/Android/{gameVersion}";
+                    else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.iOS)
+                        return $"{hostServerIP}/CDN/IPhone/{gameVersion}";
+                    else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.WebGL)
+                        return $"{hostServerIP}/CDN/WebGL/{gameVersion}";
+                    else
+                        return $"{hostServerIP}/CDN/StandaloneWindows64/{gameVersion}";
+#else
+		            if (Application.platform == RuntimePlatform.Android)
+			            return $"{hostServerIP}/CDN/Android/{gameVersion}";
+		            else if (Application.platform == RuntimePlatform.IPhonePlayer)
+			            return $"{hostServerIP}/CDN/IPhone/{gameVersion}";
+		            else if (Application.platform == RuntimePlatform.WebGLPlayer)
+			            return $"{hostServerIP}/CDN/WebGL/{gameVersion}";
+		            else
+			            return $"{hostServerIP}/CDN/StandaloneWindows64/{gameVersion}";
+#endif
+                    return $"{hostServerIP}/CDN/StandaloneWindows64/{gameVersion}";
                 }
 
                 // 如果是资源热更模式，则需要等待热更完毕后再Invoke回调

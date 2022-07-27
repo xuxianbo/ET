@@ -18,26 +18,23 @@ namespace ET
 {
     public static class BuildStandalonePlayer
     {
-        private const string c_RelativeDirPrefix = "../Release/";
-        private const string c_InitScenePath = "Assets/Init.unity";
-        
         [MonKey.Command("Build EXE", "打出EXE文件，并刷新用于AOT元数据补充的DLL", Category = "Build")]
         public static void Build()
         {
             var outputPath =
-                $"{c_RelativeDirPrefix}/ProjectS_EXE"; //EditorUtility.SaveFolderPanel("Choose Location of the Built Game", "", "");
+                $"{GlobalDefine.RelativeDirPrefix}/ProjectS_EXE"; //EditorUtility.SaveFolderPanel("Choose Location of the Built Game", "", "");
             if (outputPath.Length == 0)
                 return;
 
             #region 将Unity的BuildInScene设置为仅包含Init，因为我们为了支持在编辑器模式下的测试而必须将所有Scene放到Unity的BuildInSetting里
 
             var backScenes = EditorBuildSettings.scenes;
-            var scenes = new EditorBuildSettingsScene[] { new EditorBuildSettingsScene(c_InitScenePath, true) };
+            var scenes = new EditorBuildSettingsScene[] { new EditorBuildSettingsScene(GlobalDefine.InitScenePath, true) };
             EditorBuildSettings.scenes = scenes;
 
             #endregion
 
-            EditorSceneManager.OpenScene(c_InitScenePath);
+            EditorSceneManager.OpenScene(GlobalDefine.InitScenePath);
             
             // 如果执行打包，就强行替换为非本地调试模式，进行AB加载
             Init updater = Init.Instance;

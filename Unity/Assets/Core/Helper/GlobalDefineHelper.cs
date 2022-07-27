@@ -11,6 +11,8 @@ namespace ET
         public static bool DevelopMode = true;
         public const string BuildOutputDir = "./Temp/Bin/Debug";
         public const string CodeDir = "Assets/Res/Code/";
+        public const string InitScenePath = "Assets/Init.unity";
+        public const string RelativeDirPrefix = "../Release/";
         public const string UnityAutoCompiledHotfixDllDir = "Library/ScriptAssemblies";
         public static int LogLevel = 0;
         public static int ProcessId;

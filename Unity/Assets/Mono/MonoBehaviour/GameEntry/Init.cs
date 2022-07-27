@@ -35,7 +35,8 @@ namespace ET
     {
         [LabelText("资源服地址")] public string HotfixResUrl = "http://127.0.0.1:8088";
 
-        [LabelText("版本号")] public int Version = 2;
+        [InfoBox("例如v1.0")]
+        [LabelText("版本标识")] public string Version = "v0.0.1";
 
         [LabelText("资源模式")]
         public YooAssets.EPlayMode PlayMode = YooAssets.EPlayMode.EditorSimulateMode;

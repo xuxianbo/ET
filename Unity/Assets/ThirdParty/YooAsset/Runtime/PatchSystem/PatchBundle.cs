@@ -52,6 +52,10 @@ namespace YooAsset
 		/// </summary>
 		public bool IsRawFile { private set; get; }
 
+		/// <summary>
+		/// 文件名称
+		/// </summary>	
+		public string FileName { private set; get; }
 
 
 		public PatchBundle(string bundleName, string hash, string crc, long sizeBytes, string[] tags)
@@ -88,6 +92,38 @@ namespace YooAsset
 			IsEncrypted = value.Test(0);
 			IsBuildin = value.Test(1);
 			IsRawFile = value.Test(2);
+		}
+
+		/// <summary>
+		/// 解析文件名称
+		/// </summary>
+		public void ParseFileName(int nameStype)
+		{
+			if (nameStype == 1)
+			{
+				FileName = Hash;
+			}
+			else if (nameStype == 2)
+			{
+				string tempFileExtension = System.IO.Path.GetExtension(BundleName);
+				FileName = $"{Hash}{tempFileExtension}";
+			}
+			else if (nameStype == 3)
+			{
+				string tempFileExtension = System.IO.Path.GetExtension(BundleName);
+				string tempBundleName = BundleName.Replace('/', '_').Replace(tempFileExtension, "");
+				FileName = $"{tempBundleName}_{Hash}";
+			}
+			else if (nameStype == 4)
+			{
+				string tempFileExtension = System.IO.Path.GetExtension(BundleName);
+				string tempBundleName = BundleName.Replace('/', '_').Replace(tempFileExtension, "");
+				FileName = $"{tempBundleName}_{Hash}{tempFileExtension}";
+			}
+			else
+			{
+				throw new NotImplementedException();
+			}
 		}
 
 		/// <summary>

@@ -28,8 +28,9 @@ namespace YooAsset.Editor
 
 			// 创建新补丁清单
 			PatchManifest patchManifest = new PatchManifest();
-			patchManifest.EnableAddressable = buildParameters.Parameters.EnableAddressable;
 			patchManifest.ResourceVersion = buildParameters.Parameters.BuildVersion;
+			patchManifest.EnableAddressable = buildParameters.Parameters.EnableAddressable;
+			patchManifest.OutputNameStyle = (int)buildParameters.Parameters.OutputNameStyle;
 			patchManifest.BuildinTags = buildParameters.Parameters.BuildinTags;
 			patchManifest.BundleList = GetAllPatchBundle(buildParameters, buildMapContext, encryptionContext);
 			patchManifest.AssetList = GetAllPatchAsset(buildParameters, buildMapContext, patchManifest);
@@ -81,12 +82,6 @@ namespace YooAsset.Editor
 				bool isEncrypted = encryptionContext.IsEncryptFile(bundleName);
 				bool isBuildin = IsBuildinBundle(tags, buildinTags);
 				bool isRawFile = bundleInfo.IsRawFile;
-
-				// 附加文件扩展名
-				if (buildParameters.Parameters.AppendFileExtension)
-				{
-					hash += bundleInfo.GetAppendExtension();
-				}
 
 				PatchBundle patchBundle = new PatchBundle(bundleName, hash, crc32, size, tags);
 				patchBundle.SetFlagsValue(isEncrypted, isBuildin, isRawFile);
