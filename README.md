@@ -34,11 +34,15 @@ ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba + UniTask，并提供常用�
 - [x] 接入 [luban 配置表方案](https://github.com/focus-creative-games/luban)，并提供周边工具链
 - [x] 接入 [UniTask 异步方案](https://github.com/Cysharp/UniTask), 并基于UniTask对所有异步模块进行改造
 - [x] 全面移植 [NKGMoba技能系统](https://gitee.com/NKG_admin/NKGMobaBasedOnET)，及其周边工具链
+- [x] 提供一个Entities可视化Debug工具
 
 # 使用指引
 
 项目使用Monkey Command对所有的编辑器指令进行封装，无需每次选择MenuItem进行调用，直接按 《'》 键呼出Monkey Command界面，然后搜索指定指令回车调用即可
 ![image](https://user-images.githubusercontent.com/35335061/180249168-1616fafc-d58f-4620-9886-64fed1d2d2ae.png)
+
+## Entities Debug工具
+![QQ截图20220828194025](https://user-images.githubusercontent.com/35335061/187073093-c1f78181-4955-4543-ba80-f1ae35c0caf2.png)
 
 ## 出包流程
 
