@@ -3,7 +3,8 @@
     "rootNamespace": "ET",
     "references": [
         "Unity.ThirdParty",
-        "UniTask"
+        "UniTask",
+        "EntitiesOverView.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
