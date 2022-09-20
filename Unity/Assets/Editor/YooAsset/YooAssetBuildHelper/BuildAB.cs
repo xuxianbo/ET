@@ -63,13 +63,10 @@ namespace ET
                 $"{buildParameters.OutputRoot}/CDN/{EditorUserBuildSettings.activeBuildTarget}/{Init.Instance.Version}";
             if (Directory.Exists(finalABDir))
             {
-                Directory.Delete(finalABDir);
-            }
-            else
-            {
-                Directory.CreateDirectory(finalABDir);
+                Directory.Delete(finalABDir, true);
             }
 
+            Directory.CreateDirectory(finalABDir);
             Directory.Move(oriABPath, finalABPath);
 
             Debug.Log($"构建AB结果:{succeed}，将{oriABPath}移动到{finalABPath}");

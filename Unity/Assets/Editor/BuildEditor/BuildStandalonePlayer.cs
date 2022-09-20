@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using HybridCLR.Editor;
 using SimpleJSON;
 using Sirenix.Serialization;
 using UnityEditor;
@@ -57,8 +58,7 @@ namespace ET
             EditorBuildSettings.scenes = backScenes;
 
             // 将AOT热更元数据补充dll复制到项目中
-            var projDir = Path.GetDirectoryName(Application.dataPath);
-            var dstPath = $"{projDir}/HuatuoData/AssembliesPostIl2CppStrip/{EditorUserBuildSettings.activeBuildTarget}";
+            var dstPath = SettingsUtil.GetAssembliesPostIl2CppStripDir(EditorUserBuildSettings.activeBuildTarget);
 
             DLLNameListForAOT dllNameListForAOT = SerializationUtility.DeserializeValue<DLLNameListForAOT>( AssetDatabase
                 .LoadAssetAtPath<TextAsset>("Assets/Res/OtherNativeRes/DLLNameListForAOT.json").bytes, DataFormat.JSON);

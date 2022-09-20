@@ -1593,10 +1593,6 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_LayoutHorizontal.png
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: cce956f8dcc4d184f8e6221af9d526a5
-    m_importFrom: Assets/TestSeri.bytes
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: 0f1decc1c3e014bf7933055fcb120a53
     m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/ConditionalGraph.asset
     m_exportTo: 
@@ -6802,10 +6798,6 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/Particles/ParticlesInput.hlsl
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 8a2f5b990568dc64583685ce952a3370
-    m_importFrom: Assets/link.xml
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: 92a8a2733f9d18a44aad998449c6ee51
     m_importFrom: Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareNormalsTexture.hlsl
     m_exportTo: 
@@ -7127,6 +7119,646 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 12611d5382af79a49b0717b6a7614260
     m_importFrom: Packages/com.nkg.yy/ProjectS_Hotfix.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8a2abb8b3a764f948a82978ac9cb51f4
+    m_importFrom: Assets/Mono/HybirdCLR
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ab4c2bdf612d55a4f80d6868cca19577
+    m_importFrom: Assets/Editor/HybridCLR
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1a8357532218e6f49a9bb9401382d6d4
+    m_importFrom: Assets/Editor/HybridCLR/AssetBundleBuildCommand.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7796c8df856ac4a4a9d644329c1f0958
+    m_importFrom: Assets/Editor/HybridCLR/BuildPlayerCommand.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 46bc62d5236f5e941850776c435a9560
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Commands/MethodBridgeGeneratorCommand.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a6d5e365e1b7d9742bee023ea54b31f2
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Runtime
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 13ba8ce62aa80c74598530029cb2d649
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Runtime/HybridCLR.Runtime.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2c7d5b71981fba643b4c21ed01bcb675
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Runtime/LoadImageErrorCode.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4b6765bf0d03fd243b47d74c9b73c38b
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 26324be9505c9f54996bcbb62ba49132
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/PlatformAdaptor_Universal64.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5d61847c152e7384ab15aea89a942f54
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Common/OutBuffer.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 103704591750908419902643015e920a
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/EqualityUtil.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9af6345cc5ab1ae4a81262ab4b537911
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Template
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 73c80167cede90a4a8fc4938bab053c8
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/RangeCoder
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 07595a9b5b2f54c44a67022ae3e077d4
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Meta/GenericArgumentContext.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a855cbfe314340a43b3d71672dcbb058
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/RangeCoder/RangeCoder.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dc0b3921c07ef224cb3656391f4317c3
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Common/CommandLineParser.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: defceb25af6d66a4c8d9b0cbf4393a01
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Resources
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 121d574bf01969444aa6619a8f6dbb4c
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Meta/PathAssemblyResolver.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 37dcefc9d952dc34f9fba085a160a968
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/LZMA/LzmaEncoder.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c7268273c19288b44a2ac493c8db07cd
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Tests/Editor
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1a72550a949e322419b9c5d6e4fe495d
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/BundleFileInfo.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 15d4563ad83546c42bc65c99be9bd54a
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Template/FileRegionReplace.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4455f7304f8678f408dd6cf21734f55e
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/ScriptingAssembliesJsonPatcher.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f9b938458cc610e4d8a910c4499693cf
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/BundleFileReader.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ee1ec106190e514489c7ba32bc7bc2e7
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/Analyzer.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c60a9ce2c6df6774498e337ad69a356b
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/LZMA/LzmaDecoder.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bff17a6e8ee060c4eb9ac97fcf30bf78
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/PlatformAdaptor_Arm64.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2cbbab4859728cc4786e422ed5e6e91e
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/SevenZip.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f3dbfe2e8b6a92742b18e287c5d281dd
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MetaUtil.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4107364c7434b2042ad647b28e322513
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/EndianBinaryWriter.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ef79f786b772db344a4792a5cba382ff
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/RangeCoder/RangeCoderBitTree.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a26873724919287449e2c9eec68ef1da
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 78d06a3ad750c0b4b80b583188b02df3
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Meta/UnityEditorAssemblyResolver.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 653a22d285c79f44a8113c5571b2d26b
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/GlobalgamedatasPatcher.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f3fd3305ff6e02448a7b0470cfe65b77
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/RangeCoder/RangeCoderBit.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4aa66b41c89ed7742ad067898725f7ff
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 59ab7ccacd9a9944bb9456da235d6760
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f80d2287f01c89642a74b0a60f7a3305
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/BuildProcessors
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ddcd6644c83d2a94f9668d6e913bd80e
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/CompressionType.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ec7e894280a62fb439cae3af161d18c3
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/UnityFS.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 333112c3785a6ec4cbbfec8515081cac
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/LZ/LzInWindow.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9f4fba00efa28594ea18888f574d028a
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/ICoder.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2df5b12e9f986254493be40acd36b665
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Tests
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 02eda21769c083346a5bd9b7dca49427
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/BinaryWriterExtensions.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 79b9ed6799d3caf459cf2dfae5765a23
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/StorageBlockFlags.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2262fbf5672028a48b0c63821d7ff0c0
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/StreamExtensions.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 69e748de769c24948afd4f8a9df82b8c
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Template/TemplateUtil.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 099de05eebdffaf4baeed3290dc98aaf
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/ArchiveFlags.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7886905937fafb64999dc4e358565982
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/ParamOrReturnType.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fad7df04825c947489aad0d5d0c191a7
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/StreamFile.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e189374413a3f00468e49d51d8b27a09
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/HybridCLRGlobalSettings.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 96788c7fe08d5d54d95a87cfbdcb643a
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/UnityBinFileDefines.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 959fbf0bb06629542969354505189240
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Installer/InstallerWindow.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a83572c42056f474db56e761a4f35e38
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/LZ
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7db18e1736f593c4089c85d764cf8620
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Commands/ReversePInvokeWrapperGeneratorCommand.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5d4ae4a5c0bba49469c525887d812717
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/HashUtil.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a84e427dd05adde44b4345b3fd49007a
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/BinaryReaderExtensions.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6ea025f5b275726479ba55e956574898
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Common/InBuffer.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d6705163b267de54a868f5e84f6c7024
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/BundleFileWriter.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 960a0257c3a17f64b810193308ce1558
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Installer/BashUtil.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 92f51c069d2607447ae2f61de80540fb
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Commands
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cbe63fb39b5bdcc448f3589b475fb5d8
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/MethodBridgeSig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5fcd2f5c8b724164a8a01cee73896d1a
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/LZMA
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3ba8015d2d5df3a459615ffc06635e6d
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/LZ/LzBinTree.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d5cc4ae4adc319b4bb1e115567d7613e
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/LinkGenerator/LinkXmlWriter.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 40dc58bec5631f14c9c17c8a486496d4
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/StorageBlock.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3171ed79d43e06c4b8c889b0a3f38969
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/Generator.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ca69cf4ffd628394a9dd1ef1c56f7f20
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/LZ4.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fb741900113b22443a2054ddba6b131b
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/PlatformAdaptor_Universal32.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5cedddbfa873eb94496b496e2a3ce8aa
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Common
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c3fabc41cf17c444995fc01a76c5dbe6
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ebf14107fd82b364cb7d61276d444829
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/PlatformAdaptorBase.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bf7714fc37515834382cd5836b503a9f
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/SettingsUtil.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9dec2922e3df5464aa047b636eb19e0d
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/BuildProcessors/FilterHotFixAssemblies.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fb4ba063068b17247b2d0233420aa5f0
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/BuildProcessors/CheckSettings.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d0bb58ecc915d9d47b8567adaa2d0ca6
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Common/CRC.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fa4650e79a52228488aa85e0690ca52c
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Meta/AssemblyCache.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6606a654e10b3ba48b76b566b903b353
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/SevenZipHelper.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0342c7d8575fdea49896260c77285286
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Meta/AssemblyReferenceDeepCollector.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5afd7344483678a4abcb56158fd1442d
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/TypeInfo.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e3eea8a6a32b6ac4ba609b39715e25e2
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/Node.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2373f786d14518f44b0f475db77ba4de
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/HybridCLR.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ae7ec6e3674077d46898fe821d24bf85
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/UnityBinFile.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9b02c037f0fa1014da65773804248d8d
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/EndianBinaryReader.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 89b83906438c52d4b9af4aaef055f177
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Meta/CombinedAssemblyResolver.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 08f44f6e8bfbc2c45afae7bdd2d7f21f
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2f6cbab4506c18248b410a164be891d2
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/EndianType.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4f5b96abdbc4c424eb1bc3bc34b3a1a4
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Commands/LinkGeneratorCommand.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bb296a6e14ab7c44cb6388693d581a62
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/LZ/LzOutWindow.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bf11b6c8bbc5afd4cb4a11921e5bd81e
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Commands/CompileDllCommand.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 461aca0581e45834ebf40aada9e47d9b
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/GenericMethod.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2dea9131580d652b0dea32b98e62e786
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 62f365191077342479f8227edadf57e3
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/LZMA/LzmaBase.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 259c1cb7fe681f74eb435ab8f268890d
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/ReversePInvokeWrap
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c20f09bfbe3f32143aae872d3813d9e9
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Commands/PrebuildCommand.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 49b3dbcebadb1b543a42e01afec07ed1
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/ValueTypeSizeAligmentCalculator.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f121e0520fa65c240884d43fd00b3c2a
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/Header.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3787c7d8b775c754aa4ae06bf78e96ea
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Meta
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fd3dd4871efd10e46947cb61c13797fd
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/LinkGenerator/Analyzer.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3092132801508f8489d070e71d64c880
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/GenericClass.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7d883f182f206fa4db31f4085ce0ecdc
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/ReversePInvokeWrap/ReversePInvokeWrapperGenerator.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f7884710ec2f8e545b3fe9aa05def5a8
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/BuildProcessors/CopyStrippedAOTAssemblies.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 97dc0bbfed2593247a18261f1c2fdf66
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/dnlib.dll
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f962a018018dbb945a19f82d2e098686
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Meta/IAssemblyResolver.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 44c8627d126b30d4e9560b1f738264ca
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Installer/InstallerController.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bfd1ee430d8108042a2607d92d7f58ad
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/7zip/Compress/LZ/IMatchFinder.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3a1563e7820e5b648a6a6691677f564c
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Resources/Templates
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c04e163336b93af44b4b565d0ab195e2
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/ParamInfo.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a2c8f84b297371d4cbcd5ca655bf360d
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Installer
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: deee8d06a7f05bf4d9ab4b78f0a8a47c
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/MethodBridgeGenerator/PlatformABI.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9d75864f21fa69e47806505b278a065a
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Runtime/RuntimeApi.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5186a137e0258034cb3832bdf6b16a70
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/LinkGenerator
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bf7c4cf970660614fb54d838ec6e7eda
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Plugins/UnityFS/UnityBinUtils.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9bb6e2908d8948648979c9ff6bb7937d
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/BuildProcessors/PatchScriptingAssemblyList.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d85d22160bba31d43a585868d849be85
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Resources/Templates/MethodBridge_Universal32.cpp.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c17b14190f752214d8596ece3dee1b25
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Resources/Templates/ReversePInvokeMethodStub.cpp.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7b2d5d0a85ef3bf44be6cbe94ed5ed2a
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/CHANGELOG.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b4b6051e2483d664facc72a5102dcffc
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/README.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f09e582706a5776448316f6c584e63a6
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/LICENSE
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8ea8eca3a387d9d4988a2fca1036f2e7
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/package.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 54bbff33565abb240b9491e8a474a44e
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Resources/Templates/MethodBridge_Arm64.cpp.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a5b684cec94b4a2429121412e1d36bca
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Resources/Templates/MethodBridge_Universal64.cpp.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 000a53018e5e7c14aa75273e1f7be8e2
+    m_importFrom: Assets/Editor/Unity.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ff906ecbbd0163f4094f8fa4e305d39f
+    m_importFrom: Assets/Mono/MonoBehaviour/GameEntry/Init.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7e6f8efa26264467beff93e592a9c6cc
+    m_importFrom: Assets/Mono/MonoBehaviour/GameEntry/Init_LoadCode.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6e17cd4649ea94c0cb18f30a60b9b4b4
+    m_importFrom: Assets/Mono/Unity.Mono.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fcea206ef13c3124f8e3af8343c34365
+    m_importFrom: Assets/HybridCLRGlobalSettings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: be5f6c843b645e8418f9e56b8397f6fd
+    m_importFrom: Assets/LinkGenerator
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6800208792fdccc47adb41012c93793f
+    m_importFrom: Assets/LinkGenerator/link.xml
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2d06e8cf45c18764db16886c76475f5e
+    m_importFrom: Assets/Mono/CodeLoader.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b20c9f1da71f43a6a0320f246e2980ef
+    m_importFrom: Assets/Editor/BuildEditor/BuildStandalonePlayer.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 01598c50ff71ccc4aa7eb698528fd746
+    m_importFrom: Assets/StreamingAssets
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d64c315b209a27e46aca1571c98a8fa8
+    m_importFrom: Assets/StreamingAssets/YooAssets
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 60297163b83f65944b0089aabbcfc991
+    m_importFrom: Assets/StreamingAssets/YooAssets/5de5713b13b3285e1e7d79624bca4d35
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: de85b906a935e7945bbfff69ad2ecf72
+    m_importFrom: Assets/StreamingAssets/YooAssets/99ce202b2a212cfa16fdaf9384708653
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3f910363952b87e49a297a380341c770
+    m_importFrom: Assets/StreamingAssets/YooAssets/d5aa2007c05af1697ca15b554ac10113
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dd2e4744c7f455a41a2e847c07f0f76f
+    m_importFrom: Assets/StreamingAssets/YooAssets/a9d94991011d39d8761d1fed53680ca9
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 52e44e48f8b90314980e0ca42eb2176c
+    m_importFrom: Assets/StreamingAssets/YooAssets/e4b64a9512b1c08caa8b69b7da3cb34f
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ab9c3c71bb1f554439f8b9ccf5ff0b6a
+    m_importFrom: Assets/StreamingAssets/YooAssets/94cfdf17b2ed76476a249d38066d5379
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 476540c58135e04478e7a738e7d4585d
+    m_importFrom: Assets/StreamingAssets/YooAssets/76d3e39fd732a5db7b8fb1ec5a328897
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d4d86a9f3b8953e489e37deee6166191
+    m_importFrom: Assets/StreamingAssets/YooAssets/ddc871976d8b750778b7960eec36e8b1
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: be2b07233953d694888281fa23a7d1d7
+    m_importFrom: Assets/StreamingAssets/YooAssets/0c374834034a19a9ff098909ab740c6c
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8c3d5b4114d4fe14da6141c7895e4d20
+    m_importFrom: Assets/StreamingAssets/YooAssets/99151ec776f758f68b0906000f20b298
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1391ea9b371c5ee41ae4790ca7878cca
+    m_importFrom: Assets/StreamingAssets/YooAssets/af7bf4165e7ce63e66a908d2937b9754
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 105cdb773df9e4f43863dda7b66933e6
+    m_importFrom: Assets/StreamingAssets/YooAssets/f595f096f7158108aa40e241a786b5b2
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cbbbcc9863db219459f15db3aab9949f
+    m_importFrom: Assets/StreamingAssets/YooAssets/4311f703e4b3530bace47225c7ee70be
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e408835169f98e040b8c523409a36684
+    m_importFrom: Assets/StreamingAssets/YooAssets/StaticVersion.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 65253bca79689ea4f872681cbed69811
+    m_importFrom: Assets/StreamingAssets/YooAssets/858bce90c62623b1478d25668c41c029
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bda9b05a721d9de4fba39ebee21ed722
+    m_importFrom: Assets/StreamingAssets/YooAssets/d913e523d530100afc28b3ce3b7e4d09
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3cfd67522d8e2a64fb5b890a55a3bca1
+    m_importFrom: Assets/StreamingAssets/YooAssets/8dba91a51222307a244f437f441f5380
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c2413976ae68a5a41beefb152da0fae1
+    m_importFrom: Assets/StreamingAssets/YooAssets/b0bd94b6c1438876786238484bbb3f7f
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d60db4f55720764488f47028cd6dd070
+    m_importFrom: Assets/StreamingAssets/YooAssets/ca9117b5c0f3b5177fd2b458c413be8e
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 954bc83b1b8d2d9419201c6dd7c45ed7
+    m_importFrom: Assets/StreamingAssets/YooAssets/f5a8b2b148c92f90be924061350fb2aa
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a0b78a4a887ab214ab66716b8603a02d
+    m_importFrom: Assets/StreamingAssets/YooAssets/ef32553a84c27b6feaa13709861db475
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b2397389c53325147b52e168bd492b7b
+    m_importFrom: Assets/StreamingAssets/YooAssets/4030db9417b0e37b2576e7d902737376
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0ed48bb370171bd48a7a76a6e1605320
+    m_importFrom: Assets/StreamingAssets/YooAssets/c5ec32908666e7ee05f5c53758de8d58
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f3ceb84cb6774d328472bb594416b502
+    m_importFrom: Assets/Editor/YooAsset/YooAssetBuildHelper/BuildAB.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fd2d2ee8372a7f143b931542e6f05520
+    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_13.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 63b7339367a8cf2449cd302a28269af8
+    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_13.hash
     m_exportTo: 
     m_variantName: 
   m_version: 2
