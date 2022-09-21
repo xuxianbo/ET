@@ -17,7 +17,6 @@ ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba + UniTask，并提供常用�
    - /Unity/Assets/Plugins/Sirenix
    - /Unity/Assets/Plugins/AstarPathfindingProject
    - /Unity/Assets/Plugins/Animancer
-   - /Unity/Assets/Plugins/MonKey Commander
    - /Unity/Assets/Plugins/ShaderControl
    - 最后对ProjectS_Hotfix.asmdef做如下引用即可 ![image](https://user-images.githubusercontent.com/35335061/180807422-0ca3a32b-fdf3-4866-83d5-1ff4a569fee8.png)
 
@@ -35,6 +34,12 @@ ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba + UniTask，并提供常用�
 - [x] 接入 [UniTask 异步方案](https://github.com/Cysharp/UniTask), 并基于UniTask对所有异步模块进行改造
 - [x] 全面移植 [NKGMoba技能系统](https://gitee.com/NKG_admin/NKGMobaBasedOnET)，及其周边工具链
 - [x] 提供一个Entities可视化Debug工具
+
+# 备忘
+
+由于框架本身做了一些打包流程和程序集拆分相关的优化，所以在接入hybridclr时需要做一些修改
+
+ - 注释用于构建时过滤程序集的脚本 ：[FilterHotFixAssemblies.cs](https://github.com/wqaetly/ET/blob/et7_fgui_yooasset_luban_huatuo/Unity/Packages/com.focus-creative-games.hybridclr_unity/Editor/BuildProcessors/FilterHotFixAssemblies.cs) 因为如果HybridCLRGlobalSettings.asset里本身所引用的热更程序集/热更asmdef就不进包的话（例如设置成Only Include Editor Plaform），就会抛出异常，从而导致整个构建过程的Dll是错误的
 
 # 使用指引
 
