@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using HybridCLR.Editor;
+using HybridCLR.Editor.Commands;
 using SimpleJSON;
 using Sirenix.Serialization;
 using UnityEditor;
@@ -22,6 +23,8 @@ namespace ET
         [MonKey.Command("Build EXE", "打出EXE文件，并刷新用于AOT元数据补充的DLL", Category = "Build")]
         public static void Build()
         {
+            PrebuildCommand.GenerateAll();
+            
             var outputPath =
                 $"{GlobalDefine.RelativeDirPrefix}/ProjectS_EXE"; //EditorUtility.SaveFolderPanel("Choose Location of the Built Game", "", "");
             if (outputPath.Length == 0)
