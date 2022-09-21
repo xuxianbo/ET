@@ -14,6 +14,8 @@ namespace HybridCLR.Editor.MethodBridgeGenerator
         public PlatformABI CallConventionType { get; } = PlatformABI.Universal64;
 
         public override bool IsArch32 => false;
+        
+        public override bool IsSupportHFA => true;
 
         protected override TypeInfo OptimizeSigType(TypeInfo type, bool returnType)
         {
