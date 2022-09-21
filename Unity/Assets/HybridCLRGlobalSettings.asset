@@ -18,8 +18,10 @@ MonoBehaviour:
   - {fileID: 5897886265953266890, guid: 12611d5382af79a49b0717b6a7614260, type: 3}
   hotUpdateAssemblies: []
   outputLinkFile: LinkGenerator/link.xml
+  outputAOTGenericReferenceFile: Main/AOTGenericReferences.cs
+  maxGenericReferenceIteration: 4
   ReversePInvokeWrapperCount: 10
-  maxMethodBridgeGenericIteration: 10
+  maxMethodBridgeGenericIteration: 4
   hotUpdateDllOutputDir: HotUpdateDlls
   hybridCLRDataDir: HybridCLRData
   strippedAssemblyDir: AssembliesPostIl2CppStrip

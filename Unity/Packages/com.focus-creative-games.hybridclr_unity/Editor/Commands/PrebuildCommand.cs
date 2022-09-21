@@ -15,9 +15,15 @@ namespace HybridCLR.Editor.Commands
         [MenuItem("HybridCLR/Generate_Link_AOT_MethodBridge_ReversePInvoke", priority = 30)]
         public static void GenerateAll()
         {
+            // 顺序随意
             ReversePInvokeWrapperGeneratorCommand.GenerateReversePInvokeWrapper();
+
+            // AOTReferenceGeneratorCommand 涉及到代码生成，必须在MethodBridgeGeneratorCommand之前
+            AOTReferenceGeneratorCommand.GenerateAOTGenericReference();
             MethodBridgeGeneratorCommand.GenerateMethodBridge();
-            LinkGeneratorCommand.GenerateLinkXml();
+
+            // 顺序随意，只要保证 GenerateLinkXml之前有调用过CompileDll即可
+            LinkGeneratorCommand.GenerateLinkXml(false);
         }
     }
 }
