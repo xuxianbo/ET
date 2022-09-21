@@ -13,7 +13,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Huatuo;
+using HybridCLR;
 
 namespace ET
 {
@@ -51,7 +51,7 @@ namespace ET
                 {
 #if !UNITY_EDITOR
                 // 加载assembly对应的dll，会自动为它hook。一旦aot泛型函数的native函数不存在，用解释器版本代码
-                int err = Huatuo.HuatuoApi.LoadMetadataForAOTAssembly((IntPtr)ptr, dllBytes.Length);
+                int err = RuntimeApi.LoadMetadataForAOTAssembly((IntPtr)ptr, dllBytes.Length);
                 Debug.Log("LoadMetadataForAOTAssembly. ret:" + err);
 #endif
                 }

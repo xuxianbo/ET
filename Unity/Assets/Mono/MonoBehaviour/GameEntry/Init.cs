@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Huatuo;
 using Sirenix.OdinInspector;
 
 #if UNITY_EDITOR

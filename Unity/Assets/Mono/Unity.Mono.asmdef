@@ -8,7 +8,8 @@
         "FairyGUI.Runtime",
         "Unity.TextMeshPro",
         "UniTask",
-        "UniTask.YooAsset"
+        "UniTask.YooAsset",
+        "HybridCLR.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

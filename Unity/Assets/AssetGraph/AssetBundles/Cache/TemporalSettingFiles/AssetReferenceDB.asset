@@ -129,6 +129,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.core/package.json
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: 6800208792fdccc47adb41012c93793f
+    m_importFrom: Assets/LinkGenerator/link.xml
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: efb7b60811b9a4ec7b92ecfcaa9bcd0d
     m_importFrom: Assets/Plugins/AstarPathfindingProject/Editor/EditorAssets/LightSkin/infoButton@1x.png
     m_exportTo: 
@@ -175,6 +179,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: e527da26d83136045880b7e0049519e3
     m_importFrom: Packages/com.nkg.lubangenerateconfig.editor/GenerateConfigData/SkillConfig.TbSkillCanvas/10004.json
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8c3d5b4114d4fe14da6141c7895e4d20
+    m_importFrom: Assets/StreamingAssets/YooAssets/99151ec776f758f68b0906000f20b298
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 063144fddd2c1be41b9d09dec6314fc7
@@ -683,6 +691,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.shadergraph/Editor/Resources/Styles/Controls/TextureSlotControlView.uss
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: b4b6051e2483d664facc72a5102dcffc
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/README.md
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 3235ecefad2a6a645aa0222aca200aeb
     m_importFrom: Packages/com.unity.timeline/Editor/StyleSheets/res/Timeline_LightSkin.txt
     m_exportTo: 
@@ -759,6 +771,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_RenderDoc@2x.png
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: dd2e4744c7f455a41a2e847c07f0f76f
+    m_importFrom: Assets/StreamingAssets/YooAssets/a9d94991011d39d8761d1fed53680ca9
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: deba0a6f7ec514207b7e850591a6f942
     m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example3_Recast_Navmesh1/Debris.prefab
     m_exportTo: 
@@ -775,8 +791,8 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.timeline/Editor/StyleSheets/Images/LightSkin/TimelinePingPong.png
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 995c7b348de57438c891b65236c1d7b2
-    m_importFrom: Packages/com.unity.assetgraph/Editor/SettingTemplate/setting.m4v
+  - m_assetDatabaseId: 1391ea9b371c5ee41ae4790ca7878cca
+    m_importFrom: Assets/StreamingAssets/YooAssets/af7bf4165e7ce63e66a908d2937b9754
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: ba8fe1dcdf649aa468b570b25ab796ce
@@ -800,6 +816,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/2D/Light2D-Shape.shader
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: 995c7b348de57438c891b65236c1d7b2
+    m_importFrom: Packages/com.unity.assetgraph/Editor/SettingTemplate/setting.m4v
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 510a2f57334933e4a8dbabe4c30204e4
     m_importFrom: Packages/com.unity.render-pipelines.universal/Textures/FilmGrain/Medium05.png
     m_exportTo: 
@@ -810,6 +830,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 325b1a823e35d84478e89669f808ecb9
     m_importFrom: Packages/com.unity.render-pipelines.core/ShaderLibrary/SDF2D.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c2413976ae68a5a41beefb152da0fae1
+    m_importFrom: Assets/StreamingAssets/YooAssets/b0bd94b6c1438876786238484bbb3f7f
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 79641ba14fe04324b8905bafbf3e82ed
@@ -891,6 +915,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 2384eb5de05269b44a58f8dd1d83d725
     m_importFrom: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/Camera1.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8ea8eca3a387d9d4988a2fca1036f2e7
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/package.json
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 02e071f10b6a15d4d87dac88ce529302
@@ -1063,6 +1091,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/Utils/Blit.shader
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: 60297163b83f65944b0089aabbcfc991
+    m_importFrom: Assets/StreamingAssets/YooAssets/5de5713b13b3285e1e7d79624bca4d35
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 3a8dfc560c19b49488acdf0647df26ad
     m_importFrom: Assets/Res/Animation/Darius/model_darius_channel_model.anim
     m_exportTo: 
@@ -1093,6 +1125,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 0db5a27336918594d860a43da98f2b47
     m_importFrom: Packages/com.unity.shadergraph/ShaderGraphLibrary/PreviewPass.hlsl
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 105cdb773df9e4f43863dda7b66933e6
+    m_importFrom: Assets/StreamingAssets/YooAssets/f595f096f7158108aa40e241a786b5b2
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 5e5f3bc0f4e0424448d1a4f2db69b331
@@ -1235,6 +1271,10 @@ MonoBehaviour:
     m_importFrom: Assets/ThirdParty/YooAsset/LICENSE.md
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: a3899f5eb6fb8904798ca83deb04b370
+    m_importFrom: Assets/StreamingAssets/YooAssets/cdc51f805c0772f93069f08ad41ed0ba
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 02c3588c32f640d47bb70ee3fa774fce
     m_importFrom: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_LayoutVertical.png
     m_exportTo: 
@@ -1346,10 +1386,6 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 5a97d5afa6254804f81b7ba956296996
     m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/IconInfo.psd
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: 0e3b67ee9a801e44a91fbbc86f99dbe9
-    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Settings/MonKey Settings.asset
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: d39b354dc753cdb47af163cf9e70c144
@@ -1593,10 +1629,6 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_LayoutHorizontal.png
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: cce956f8dcc4d184f8e6221af9d526a5
-    m_importFrom: Assets/TestSeri.bytes
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: 0f1decc1c3e014bf7933055fcb120a53
     m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/ConditionalGraph.asset
     m_exportTo: 
@@ -1727,6 +1759,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 928b290746aa740428fdb3021b136b4c
     m_importFrom: Packages/com.unity.assetgraph/Editor/GUI/GraphicResources/NodeImage/on_node6@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cbbbcc9863db219459f15db3aab9949f
+    m_importFrom: Assets/StreamingAssets/YooAssets/4311f703e4b3530bace47225c7ee70be
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: d7ab2029fbe34d0499a26f57de1f51d6
@@ -1999,6 +2035,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.searcher/Editor/Resources/SearcherItem.uxml
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: e5b2d0d056eae02458eb695b831c98b2
+    m_importFrom: Assets/StreamingAssets/YooAssets/0c374834034a19a9ff098909ab740c6c
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 32bb368cd5ab3a5489eaff718426b90d
     m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/Relay test.asset
     m_exportTo: 
@@ -2008,12 +2048,16 @@ MonoBehaviour:
       Resources.unitypackage
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: d38d5a5256466c349a81338d02621916
-    m_importFrom: Packages/com.unity.scriptablebuildpipeline/package.json
+  - m_assetDatabaseId: b2397389c53325147b52e168bd492b7b
+    m_importFrom: Assets/StreamingAssets/YooAssets/4030db9417b0e37b2576e7d902737376
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 0b3e755f11799b5458a47d6b897a9393
     m_importFrom: Assets/ThirdParty/LuBan/LubanLib/SimpleJSON/README
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d38d5a5256466c349a81338d02621916
+    m_importFrom: Packages/com.unity.scriptablebuildpipeline/package.json
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: a466d8d94f39e48f39b1afecb4985632
@@ -2723,6 +2767,10 @@ MonoBehaviour:
     m_importFrom: Assets/ThirdParty/YooAsset/Editor/AssetBundleReporter/AssetBundleReporterWindow.uxml
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: c17b14190f752214d8596ece3dee1b25
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Resources/Templates/ReversePInvokeMethodStub.cpp.txt
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 93842094f0dbac941bac7d2af67241b3
     m_importFrom: Packages/com.unity.shadergraph/Editor/Resources/Styles/PropertyNameReferenceField.uss
     m_exportTo: 
@@ -2966,6 +3014,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 009ae346a3f1b42eb864a151c39805d3
     m_importFrom: Packages/com.unity.assetgraph/Editor/GUI/GraphicResources/NodeImage/node6@2x.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8dc91d7f3f33c45469dc3947c76110c7
+    m_importFrom: Assets/StreamingAssets/YooAssets/d26f66f5023bd831d88867b2900da86e
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 33fe96500f075374680d8de50a9e30d2
@@ -3438,12 +3490,12 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.timeline/Editor/StyleSheets/Extensions/common.uss
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 87b43a3c29f8b204497c1a75291dffc1
-    m_importFrom: Assets/Res/Texture/Darius/E/21A22ECFE49A1D13.mat
+  - m_assetDatabaseId: f7ada0af4f174f0694ca6a487b8f543d
+    m_importFrom: Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 0717f60ed9d9a44a69be47fdb2044b74
-    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/ExposedPropertiesExample.asset
+  - m_assetDatabaseId: 87b43a3c29f8b204497c1a75291dffc1
+    m_importFrom: Assets/Res/Texture/Darius/E/21A22ECFE49A1D13.mat
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: b8034c807692d4dc8975b8b0df202123
@@ -3452,10 +3504,6 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: ba49fb9c40425224caa98afdd8d13991
     m_importFrom: Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/InspectorConfig.asset
-    m_exportTo: 
-    m_variantName: 
-  - m_assetDatabaseId: f7ada0af4f174f0694ca6a487b8f543d
-    m_importFrom: Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 5fd9a8feb75a4b5894c241777f519d4e
@@ -3499,12 +3547,16 @@ MonoBehaviour:
       Interactive/Autodesk Interactive Transparent.shadergraph
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: d3cbe921f7b3d9a3257e7c61a5761796
-    m_importFrom: Packages/com.unity.modules.terrainphysics/package.json
+  - m_assetDatabaseId: 0717f60ed9d9a44a69be47fdb2044b74
+    m_importFrom: Assets/Plugins/NodeEditor/Examples/Saves/ExposedPropertiesExample.asset
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: d3d92ca2f0e9e4bfb9c0fbe69453486a
     m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example12_Procedural/TopDownOverlay.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d3cbe921f7b3d9a3257e7c61a5761796
+    m_importFrom: Packages/com.unity.modules.terrainphysics/package.json
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 907c6892149251441896b47345f43418
@@ -3601,6 +3653,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: f6b2f191795d9844d91a828ec64869de
     m_importFrom: Assets/Res/Animation/Darius/model_darius_idle2_model.anim
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b1342be9edb2f924d835d23732669547
+    m_importFrom: Assets/StreamingAssets/YooAssets/858bce90c62623b1478d25668c41c029
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: de84beceec1978d489bdfcb4d9e53859
@@ -3968,12 +4024,12 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/CenterLight.png
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 0a9d941450e7c46cf8928d06762c2189
-    m_importFrom: Assets/Plugins/AstarPathfindingProject/Editor/EditorAssets/images/upDownArrow_02.png
+  - m_assetDatabaseId: b3f0d976f6d6802479d6465d11b3aa68
+    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/SlicedBackground3.psd
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: c376f0326e973764e98d5060a34695f7
-    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorConeDistort.shader
+  - m_assetDatabaseId: 0a9d941450e7c46cf8928d06762c2189
+    m_importFrom: Assets/Plugins/AstarPathfindingProject/Editor/EditorAssets/images/upDownArrow_02.png
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: dee90efdbc5950a448c45f2e11e8ff2b
@@ -3984,8 +4040,8 @@ MonoBehaviour:
     m_importFrom: Assets/Res/Texture/Darius/Passive_1/bleed_blood_drop.mat
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: b3f0d976f6d6802479d6465d11b3aa68
-    m_importFrom: Assets/Plugins/IngameDebugConsole/Sprites/SlicedBackground3.psd
+  - m_assetDatabaseId: c376f0326e973764e98d5060a34695f7
+    m_importFrom: Assets/Plugins/Werewolf/StatusIndicators/Scripts/Shaders/ProjectorConeDistort.shader
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: e8aa120f1b4731e43a2dd31eb70bbbe2
@@ -4411,6 +4467,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.assetgraph/Editor/GUI/GraphicResources/NodeImage/on_node3.png
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: d60db4f55720764488f47028cd6dd070
+    m_importFrom: Assets/StreamingAssets/YooAssets/ca9117b5c0f3b5177fd2b458c413be8e
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: b04e6b995408741cf8dc427c6173f5f8
     m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example2_Terrain/Example2.unity
     m_exportTo: 
@@ -4474,6 +4534,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 4a4e1ef9bae46664e9d4ceddf657236f
     m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/spaceworld.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3f910363952b87e49a297a380341c770
+    m_importFrom: Assets/StreamingAssets/YooAssets/d5aa2007c05af1697ca15b554ac10113
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 8ccec084228b3b74a898f38126eb142f
@@ -4617,6 +4681,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.shadergraph/Editor/Resources/Styles/TabbedView.uss
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: f09e582706a5776448316f6c584e63a6
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/LICENSE
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 18c6490536702e840b89a326d93a92a1
     m_importFrom: Packages/com.unity.shadergraph/Editor/Resources/Icons/sg_subgraph_icon_gray_dark@16.png
     m_exportTo: 
@@ -4644,6 +4712,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 77480111a80ad46e7b0d10da3fd3a092
     m_importFrom: Packages/com.unity.sysroot/Third Party Notices.md
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bda9b05a721d9de4fba39ebee21ed722
+    m_importFrom: Assets/StreamingAssets/YooAssets/d913e523d530100afc28b3ce3b7e4d09
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: dba25e3261c16e34b848637315b82d6d
@@ -4821,6 +4893,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: f0b67500f7fad3b4c9f2b13e8f41ba6e
     m_importFrom: Packages/com.unity.render-pipelines.universal/Textures/FilmGrain/Medium02.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e408835169f98e040b8c523409a36684
+    m_importFrom: Assets/StreamingAssets/YooAssets/StaticVersion.bytes
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 1a7852b1b33b816498b6af1e739f5995
@@ -5149,6 +5225,10 @@ MonoBehaviour:
     m_importFrom: Assets/Plugins/NodeEditor/NodeGraphProcessor/Editor/Resources/GraphProcessorStyles/PinnedElementView.uss
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: a0b78a4a887ab214ab66716b8603a02d
+    m_importFrom: Assets/StreamingAssets/YooAssets/ef32553a84c27b6feaa13709861db475
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: a8d5c97876fe84413b2f630e2debf75b
     m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/Particles/ParticlesLitForwardPass.hlsl
     m_exportTo: 
@@ -5187,6 +5267,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 407bc68d299748449bbf7f48ee690f8d
     m_importFrom: Assets/TextMesh Pro/Shaders/TMPro.cginc
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7b2d5d0a85ef3bf44be6cbe94ed5ed2a
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/CHANGELOG.md
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 05f4cef9e16814ff3908457d37cdcb33
@@ -5276,6 +5360,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 9acccb10aedcfd14e9ec238cf61a52c1
     m_importFrom: Assets/Res/Code/ProjectS_Hotfix.pdb.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fcea206ef13c3124f8e3af8343c34365
+    m_importFrom: Assets/HybridCLRGlobalSettings.asset
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 2c6472a689b6ae34e806881d3066cfb3
@@ -5463,6 +5551,10 @@ MonoBehaviour:
     m_importFrom: Assets/Res/Texture/Darius/Passive/Darius_Base_P_axe_tip_sphere.mat
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: 54bbff33565abb240b9491e8a474a44e
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Resources/Templates/MethodBridge_Arm64.cpp.txt
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 7ecf1b434780e3a46ab9f99b684c463a
     m_importFrom: Packages/com.unity.visualeffectgraph/Editor Default Resources/uss/VFXParameter.uss
     m_exportTo: 
@@ -5577,12 +5669,16 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/PostProcessing/Bloom.shader
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 66c95bb3c74257f41bae2622511dc02d
-    m_importFrom: Packages/com.unity.ide.rider/package.json
+  - m_assetDatabaseId: de85b906a935e7945bbfff69ad2ecf72
+    m_importFrom: Assets/StreamingAssets/YooAssets/99ce202b2a212cfa16fdaf9384708653
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 360dded8761e81d4d98c10f469d55492
     m_importFrom: Packages/com.unity.timeline/Editor/StyleSheets/Images/DarkSkin/TimelineLoop.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 66c95bb3c74257f41bae2622511dc02d
+    m_importFrom: Packages/com.unity.ide.rider/package.json
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: c4d07963851f89b48822d6273b3b3e1e
@@ -5682,6 +5778,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 6e0bae036cdbd42bfb17a675c07df5f9
     m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Materials/PathBlueArea.mat
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d85d22160bba31d43a585868d849be85
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Resources/Templates/MethodBridge_Universal32.cpp.txt
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: dd89cf5b9246416f84610a006f916af7
@@ -6149,6 +6249,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_Duplicate.png
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: d4d86a9f3b8953e489e37deee6166191
+    m_importFrom: Assets/StreamingAssets/YooAssets/ddc871976d8b750778b7960eec36e8b1
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: bd7b7cac6eb0c3f469781d9a729a1c94
     m_importFrom: Packages/com.unity.timeline/Editor/StyleSheets/Images/Icons/TimelineEditModeRippleOFF.png
     m_exportTo: 
@@ -6272,6 +6376,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.assetgraph/Editor/GUI/GraphicResources/NodeImage/on_node2.png
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: 0ed48bb370171bd48a7a76a6e1605320
+    m_importFrom: Assets/StreamingAssets/YooAssets/c5ec32908666e7ee05f5c53758de8d58
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 49cb5aa34272b034d8b754c65d9cdbfa
     m_importFrom: Packages/com.unity.visualeffectgraph/Textures/Sparkle.tga
     m_exportTo: 
@@ -6328,6 +6436,10 @@ MonoBehaviour:
   - m_assetDatabaseId: 2fd6421f253b4ef1a19526541f9ffc0c
     m_importFrom: Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text
       Component Icon.psd
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 14488c421b4be754c888657e302c9034
+    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_16.bytes
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 58c573829af3c7c44aaf7d3125df048a
@@ -6586,6 +6698,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.shadergraph/Editor/Resources/Styles/Controls/TextureArraySlotControlView.uss
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: 2589849b87c33414389246a50ac15287
+    m_importFrom: Assets/StreamingAssets/YooAssets/PatchManifest_16.hash
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: d4e06a71fc03595429cac47cd385c4c1
     m_importFrom: Assets/Plugins/Animancer/Internal/Editor/Animancer Icon.png
     m_exportTo: 
@@ -6612,6 +6728,10 @@ MonoBehaviour:
     m_variantName: 
   - m_assetDatabaseId: 4b00c6f950101422fa5468a704bece11
     m_importFrom: Assets/Plugins/AstarPathfindingProject/ExampleScenes/Example13_Moving/Moving.unity
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 476540c58135e04478e7a738e7d4585d
+    m_importFrom: Assets/StreamingAssets/YooAssets/76d3e39fd732a5db7b8fb1ec5a328897
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: d2131730d2c143a4ba6e429a08f50ae8
@@ -6802,10 +6922,6 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.universal/Shaders/Particles/ParticlesInput.hlsl
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 8a2f5b990568dc64583685ce952a3370
-    m_importFrom: Assets/link.xml
-    m_exportTo: 
-    m_variantName: 
   - m_assetDatabaseId: 92a8a2733f9d18a44aad998449c6ee51
     m_importFrom: Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareNormalsTexture.hlsl
     m_exportTo: 
@@ -6907,6 +7023,10 @@ MonoBehaviour:
     m_importFrom: Packages/com.unity.render-pipelines.universal/ShaderLibrary/UnityGBuffer.hlsl
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: a5b684cec94b4a2429121412e1d36bca
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/Resources/Templates/MethodBridge_Universal64.cpp.txt
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 16b454c8be4c1854fab1aa702812af16
     m_importFrom: Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/Universal/Templates/VFXParticleCube.template
     m_exportTo: 
@@ -6972,8 +7092,16 @@ MonoBehaviour:
     m_importFrom: Assets/Plugins/AstarPathfindingProject/Editor/EditorAssets/LightSkin/lock_open@1x.png
     m_exportTo: 
     m_variantName: 
+  - m_assetDatabaseId: 3cfd67522d8e2a64fb5b890a55a3bca1
+    m_importFrom: Assets/StreamingAssets/YooAssets/8dba91a51222307a244f437f441f5380
+    m_exportTo: 
+    m_variantName: 
   - m_assetDatabaseId: 352dd7fc77ee28c479bf6504efe94f16
     m_importFrom: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/Duplicate.png
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 12508622b39618b42a430d27f248fc27
+    m_importFrom: Assets/StreamingAssets/YooAssets/f5a8b2b148c92f90be924061350fb2aa
     m_exportTo: 
     m_variantName: 
   - m_assetDatabaseId: 9c442dc870b456e48b615cd8add0e9ef
@@ -7125,8 +7253,28 @@ MonoBehaviour:
     m_importFrom: Assets/ThirdParty/YooAsset/package.json
     m_exportTo: 
     m_variantName: 
-  - m_assetDatabaseId: 12611d5382af79a49b0717b6a7614260
-    m_importFrom: Packages/com.nkg.yy/ProjectS_Hotfix.asmdef
+  - m_assetDatabaseId: 9dec2922e3df5464aa047b636eb19e0d
+    m_importFrom: Packages/com.focus-creative-games.hybridclr_unity/Editor/BuildProcessors/FilterHotFixAssemblies.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 99375d10aff7fff45a4fc5159251494e
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Settings/MonKeySettings.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0e3b67ee9a801e44a91fbbc86f99dbe9
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Settings/MonKey Settings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 265b7e513500428aadb61f88d80f436b
+    m_importFrom: Assets/Plugins/MonKey Commander/Editor/Settings/MonkeySettingEditWindow.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 451e67ef6a140c34a9d70b3ec35953da
+    m_importFrom: Assets/Main/AOTGenericReferences.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: da7abbd02dacb14409e698aa13e6eca9
+    m_importFrom: Assets/Main
     m_exportTo: 
     m_variantName: 
   m_version: 2
