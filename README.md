@@ -1,6 +1,6 @@
 # 本项目包含多个解决方案
 
-ET 7.0 + FGUI + luban + huatuo + YooAsset + NKGMoba + UniTask，并提供常用的编辑器工具。
+ET 7.0 + FGUI + luban + hybridclr + YooAsset + NKGMoba + UniTask，并提供常用的编辑器工具。
 
 # 用前须知
 
