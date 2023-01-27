@@ -43,7 +43,11 @@ ET 7.0 + FGUI + luban + hybridclr + YooAsset + NKGMoba + UniTask，并提供常�
 
 # 使用指引
 
-项目使用Monkey Command对所有的编辑器指令进行封装，无需每次选择MenuItem进行调用，直接按 《'》 键呼出Monkey Command界面，然后搜索指定指令回车调用即可
+项目使用Monkey Command对所有的编辑器指令进行封装，无需每次选择MenuItem进行调用
+首次打开项目，需要应用一次配置，等待编译完成即可
+![image](https://user-images.githubusercontent.com/35335061/215094310-4b98bb26-31d6-4640-88ff-5b2fdaf14fe1.png)
+
+直接按 《'》 键呼出Monkey Command界面，然后搜索指定指令回车调用即可
 ![image](https://user-images.githubusercontent.com/35335061/180249168-1616fafc-d58f-4620-9886-64fed1d2d2ae.png)
 
 ## Entities Debug工具
